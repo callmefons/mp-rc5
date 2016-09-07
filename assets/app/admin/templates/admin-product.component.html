@@ -39,9 +39,12 @@
             <!--editMode-->
             <div class="tab-content">
 
-                <a class="pull-right" (click)="goToListing()">
-                    <span class="label label-default">{{apps.status}}</span>
-                </a>
+                <div class="row">
+                    <p *ngIf="update">Wating update status...</p>
+                    <span class="label label-default label-status pull-right"
+                          *ngIf="!update">{{apps.status}}</span>
+                </div>
+
 
 
                 <div id="details" class="tab-pane fade in active">
@@ -294,7 +297,10 @@
                         type='submit'
                         [disabled]='!myForm.valid'>Needs Review
                 </button>
-                <button class="btn btn-primary" (click)="updateProductStatus(apps.id,'approve')">Approve</button>
+                <button
+                        [disabled]="!updated"
+                        class="btn btn-primary" (click)="updateProductStatus(apps.id,'approve')">Approve
+                </button>
             </div>
         </form>
     </div>

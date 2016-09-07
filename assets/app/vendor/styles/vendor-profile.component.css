@@ -14,3 +14,23 @@
 .btn-group-save{
   margin: 0 15px 15px 15px;
 }
+
+.previewLogo{
+  max-width: 75%;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+.custom-file-upload {
+  color: #333;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+  border-radius: 3px;
+  white-space: nowrap;
+  font-weight: 400;
+}

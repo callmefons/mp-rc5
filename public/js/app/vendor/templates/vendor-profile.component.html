@@ -48,6 +48,19 @@
 
                                 <div *ngFor="let vendor of vendor_profile">
                                     <div class="col-md-6">
+                                        <img [src]="myFormLogo" [hidden]="!src" class="img-responsive previewLogo" alt="Logo">
+                                        <fieldset class="form-group">
+                                            <p *ngIf="!fileChosen">No file chosen</p>
+                                            <label class="custom-file-upload">
+                                                <input type="file"
+                                                       image-upload
+                                                       (imageSelected)="fileChangeLogo($event)"
+                                                       [resizeOptions]="resizeOptions"
+                                                       formControlName="logo"
+                                                >
+                                                Add Logo
+                                            </label>
+                                        </fieldset>
                                         <fieldset class="form-group">
                                             <label>Name:</label>
                                             <input type="text"

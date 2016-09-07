@@ -14,236 +14,241 @@ import {DomSanitizationService, SafeResourceUrl, SafeUrl} from '@angular/platfor
  * This class represents the lazy loaded HomeComponent.
  */
 @Component({
-  moduleId: module.id,
-  selector: 'sd-admin-product',
-  templateUrl: 'templates/admin-product.component.html',
-  styleUrls: ['styles/admin-product.component.css'],
+    moduleId: module.id,
+    selector: 'sd-admin-product',
+    templateUrl: 'templates/admin-product.component.html',
+    styleUrls: ['styles/admin-product.component.css'],
 })
 
 export class AdminProductComponent implements OnInit, OnDestroy {
 
-  id: any;
-  loading = true;
-  sub: Subscription;
+    id: any;
+    loading = true;
+    sub: Subscription;
 
-  errorMessage: string;
+    errorMessage: string;
 
-  products: any = [];
-  apps: any = [];
-  languagesTag: any = [];
-  categoriesTag: any = [];
-  departmentsTag: any = [];
-  industriesTag: any = [];
+    products: any = [];
+    apps: any = [];
+    languagesTag: any = [];
+    categoriesTag: any = [];
+    departmentsTag: any = [];
+    industriesTag: any = [];
 
-  features: any = [];
-
-
-  myForm: FormGroup;
-  sub_updateStatus: Subscription;
-  updateStatus$: Observable<any>;
-  updated: boolean = true;
-  reviewed: boolean = false;
-
-  /*Set thumbnail and Screenshot*/
-  screenshots: any = [];
-  thumbnail: any = [];
-  count: number = 0;
-  max: number = 4;
-  index: number = 0;
-  selected: any = '';
+    features: any = [];
 
 
- /*Log Service*/
-  logs$:Observable<any>;
-  sub_logs:Subscription;
-  logs:any = [];
+    myForm: FormGroup;
+    sub_updateStatus: Subscription;
+    updateStatus$: Observable<any>;
+    updated: boolean = true;
+    reviewed: boolean = false;
+
+    /*Set thumbnail and Screenshot*/
+    screenshots: any = [];
+    thumbnail: any = [];
+    count: number = 0;
+    max: number = 4;
+    index: number = 0;
+    selected: any = '';
 
 
-  //Media
-  embedUrl: SafeResourceUrl;
-
-  constructor(private _fb: FormBuilder,
-              private route: ActivatedRoute,
-              private _router: Router,
-              public _sanitizer: DomSanitizationService,
-              private _productService: ProductService) {
-    this.myForm = this._fb.group({
-      id: [''],
-      status: [''],
-      comment: [''],
-    });
-  }
-
-  ngOnInit() {
-    this.getProductId();
-  }
-
-  ngOnDestroy() {
-    if(this.sub_updateStatus)this.sub_updateStatus.unsubscribe();
-    if(this.sub)this.sub.unsubscribe();
-    if(this.sub_delete) this.sub_delete.unsubscribe();
-  }
-
-  getProductId() {
-    this.sub = this.route.params.subscribe((params: any) => {
-      this.id = +params['id'];
-      this._productService.getProductId(this.id)
-        .subscribe((products: any) => {
-          console.log(products);
-
-          this.products = products;
-          this.apps = products.data;
-
-          this.embedYoutube(this.apps.youtube);
-
-          for (let i = 0; i < this.products.languages.length; i++) {
-            this.languagesTag.push(this.products.languages[i]);
-          }
-          for (let i = 0; i < this.products.departments.length; i++) {
-            this.departmentsTag.push(this.products.departments[i]);
-          }
-          for (let i = 0; i < this.products.categories.length; i++) {
-            this.categoriesTag.push(this.products.categories[i]);
-          }
-          for (let i = 0; i < this.products.industries.length; i++) {
-            this.industriesTag.push(this.products.industries[i]);
-          }
+    /*Log Service*/
+    logs$: Observable<any>;
+    sub_logs: Subscription;
+    logs: any = [];
 
 
-          for (let i = 0; i < this.products.data.features.length; i++) {
-            this.features.push(this.products.data.features[i]);
-          }
-          for (let i = 0; i < this.products.data.screenshots.length; i++) {
-            this.screenshots.push(this.products.data.screenshots[i]);
-          }
-          this.setThumbnail();
-          this.selected = this.screenshots[0].url;
+    //Media
+    embedUrl: SafeResourceUrl;
 
-          this.loading = false;
+    constructor(private _fb: FormBuilder,
+                private route: ActivatedRoute,
+                private _router: Router,
+                public _sanitizer: DomSanitizationService,
+                private _productService: ProductService) {
+        this.myForm = this._fb.group({
+            id: [''],
+            status: [''],
+            comment: [''],
         });
-
-      //After get param Id
-      this.getLogProduct();
-
-    });
-  }
-
-  //For Needs Review
-  onSubmit(value: Object) {
-    this.updated = false;
-    this.reviewed = false;
-
-    const statusLog = new StatusLog(
-      this.myForm.value.comment
-    );
-
-    this.updateStatus$ = this._productService.updateProductStatus(
-      this.id,
-      'deny',
-      statusLog
-    );
-
-    this.sub_updateStatus = this.updateStatus$.subscribe((res) => {
-      this.updated = true;
-      this.reviewed = true;
-      console.log(res);
-    }, error => this.errorMessage = <any>error);
-
-  }
-
-  updateProductStatus(id: any, status: any) {
-    this.updated = false;
-    this.updateStatus$ = this._productService.updateProductStatus(id, status);
-    this.sub_updateStatus = this.updateStatus$.subscribe(() => {
-      this.updated = true;
-
-    }, error => this.errorMessage = <any>error);
-  }
-
-
-  /*Screenshot*/
-  onSelect(_screenshot: string, i: number, j: number) {
-    this.selected = _screenshot;
-
-    if (i != 0) {
-      this.index = ((j + 1) + (4 * i) - 1);
-    } else {
-      this.index = j;
-    }
-  }
-
-  onControl(condition: string) {
-
-    if (condition == 'plus') {
-
-      if (this.index < this.screenshots.length - 1) {
-        this.index++;
-      } else {
-        this.index = 0;
-      }
-
-    } else {
-
-      if (this.index != 0) {
-        this.index--;
-      } else {
-        this.index = this.screenshots.length - 1;
-      }
-
     }
 
-    this.selected = this.screenshots[this.index].url;
-  }
+    ngOnInit() {
+        this.getProductId();
+    }
+
+    onRefresh() {
+        this.getProductId();
+    }
+
+    ngOnDestroy() {
+        if (this.sub_updateStatus)this.sub_updateStatus.unsubscribe();
+        if (this.sub)this.sub.unsubscribe();
+        if (this.sub_delete) this.sub_delete.unsubscribe();
+    }
+
+    getProductId() {
+        this.sub = this.route.params.subscribe((params: any) => {
+            this.id = +params['id'];
+            this._productService.getProductId(this.id)
+                .subscribe((products: any) => {
+
+                    this.products = products;
+                    this.apps = products.data;
+
+                    this.embedYoutube(this.apps.youtube);
+
+                    for (let i = 0; i < this.products.languages.length; i++) {
+                        this.languagesTag.push(this.products.languages[i]);
+                    }
+                    for (let i = 0; i < this.products.departments.length; i++) {
+                        this.departmentsTag.push(this.products.departments[i]);
+                    }
+                    for (let i = 0; i < this.products.categories.length; i++) {
+                        this.categoriesTag.push(this.products.categories[i]);
+                    }
+                    for (let i = 0; i < this.products.industries.length; i++) {
+                        this.industriesTag.push(this.products.industries[i]);
+                    }
 
 
-  setThumbnail() {
-    for (let i: number = 0; i < Math.ceil((this.screenshots.length / 4)); i++) {
+                    for (let i = 0; i < this.products.data.features.length; i++) {
+                        this.features.push(this.products.data.features[i]);
+                    }
+                    for (let i = 0; i < this.products.data.screenshots.length; i++) {
+                        this.screenshots.push(this.products.data.screenshots[i]);
+                    }
+                    this.setThumbnail();
+                    this.selected = this.screenshots[0].url;
 
-      this.thumbnail[i] = [];
+                    this.loading = false;
+                });
 
-      for (let j: number = 0; j < 4; j++) {
-        if (this.count < this.screenshots.length) {
-          this.thumbnail[i][j] = this.screenshots[this.count].url;
-          this.count++;
+            //After get param Id
+            this.getLogProduct();
+
+        });
+    }
+
+    //For Needs Review
+    onSubmit(value: Object) {
+        this.updated = false;
+        this.reviewed = false;
+
+        const statusLog = new StatusLog(
+            this.myForm.value.comment
+        );
+
+        this.updateStatus$ = this._productService.updateProductStatus(
+            this.id,
+            'deny',
+            statusLog
+        );
+
+        this.sub_updateStatus = this.updateStatus$.subscribe((res) => {
+            this.updated = true;
+            this.reviewed = true;
+            this.onRefresh();
+        }, error => this.errorMessage = <any>error);
+
+    }
+
+    updateProductStatus(id: any, status: any) {
+        this.updated = false;
+        this.updateStatus$ = this._productService.updateProductStatus(id, status);
+        this.sub_updateStatus = this.updateStatus$.subscribe(() => {
+            this.updated = true;
+            this.onRefresh();
+
+        }, error => this.errorMessage = <any>error);
+    }
+
+
+    /*Screenshot*/
+    onSelect(_screenshot: string, i: number, j: number) {
+        this.selected = _screenshot;
+
+        if (i != 0) {
+            this.index = ((j + 1) + (4 * i) - 1);
+        } else {
+            this.index = j;
         }
-      }
     }
 
-  }
+    onControl(condition: string) {
 
-  video: boolean = false;
-  embedYoutube(url: any) {
+        if (condition == 'plus') {
 
-    if (url !== '') {
-      this.video = true;
-      let id = url.split('=', 2)[1];
-      this.embedUrl = this._sanitizer.bypassSecurityTrustResourceUrl(`https://www.youtube.com/embed/${id}`);
+            if (this.index < this.screenshots.length - 1) {
+                this.index++;
+            } else {
+                this.index = 0;
+            }
+
+        } else {
+
+            if (this.index != 0) {
+                this.index--;
+            } else {
+                this.index = this.screenshots.length - 1;
+            }
+
+        }
+
+        this.selected = this.screenshots[this.index].url;
+    }
+
+
+    setThumbnail() {
+        for (let i: number = 0; i < Math.ceil((this.screenshots.length / 4)); i++) {
+
+            this.thumbnail[i] = [];
+
+            for (let j: number = 0; j < 4; j++) {
+                if (this.count < this.screenshots.length) {
+                    this.thumbnail[i][j] = this.screenshots[this.count].url;
+                    this.count++;
+                }
+            }
+        }
 
     }
-  }
+
+    video: boolean = false;
+
+    embedYoutube(url: any) {
+
+        if (url !== '') {
+            this.video = true;
+            let id = url.split('=', 2)[1];
+            this.embedUrl = this._sanitizer.bypassSecurityTrustResourceUrl(`https://www.youtube.com/embed/${id}`);
+
+        }
+    }
 
 
-  goToListing() {
-    this._router.navigate([`admin/listing`]);
-  }
+    goToListing() {
+        this._router.navigate([`admin/listing`]);
+    }
 
 
-  private getLogProduct() {
-    this.logs$ = this._productService.getLogProduct(this.id);
-    this.sub_logs = this.logs$.subscribe((logs:any) => {
-      this.logs = logs.data;
-      this.loading = false;
-    }), (err:any) => this.errorMessage = err;
-  }
+    private getLogProduct() {
+        this.logs$ = this._productService.getLogProduct(this.id);
+        this.sub_logs = this.logs$.subscribe((logs: any) => {
+            this.logs = logs.data;
+            this.loading = false;
+        }), (err: any) => this.errorMessage = err;
+    }
 
-  sub_delete:Subscription;
-  deleteProduct$:Observable<any>;
+    sub_delete: Subscription;
+    deleteProduct$: Observable<any>;
 
-  deleteProduct(id:any){
-    this.deleteProduct$ = this._productService.deleteProduct(id);
-    this.sub_delete = this.deleteProduct$.subscribe(() =>{
-      this._router.navigate([`admin/listing`]);
-    });
-  }
+    deleteProduct(id: any) {
+        this.deleteProduct$ = this._productService.deleteProduct(id);
+        this.sub_delete = this.deleteProduct$.subscribe(() => {
+            this._router.navigate([`admin/listing`]);
+        });
+    }
 }
 

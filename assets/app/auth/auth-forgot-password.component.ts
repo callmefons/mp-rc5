@@ -38,11 +38,8 @@ export class AuthForgotPasswordComponent implements OnInit, OnDestroy {
 
   onSubmit(value:Object) {
 
-    console.log(value);
-
     this._accountManagetment.forgotPassword(value).
     subscribe((res) => {
-      console.log(res);
     });
 
     // this._authService.signup(user)

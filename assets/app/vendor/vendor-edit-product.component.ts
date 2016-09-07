@@ -44,10 +44,10 @@ export class VendorEditProductComponent implements OnInit, OnDestroy {
   myFormFeatures: any[] = [];
 
   myFormLogo:string = '';
-  fileChosen:boolean = false;
+  fileChosen:boolean = true;
 
   myFormScreenshots:any[] = [];
-  screenshotsChosen:boolean = false;
+  screenshotsChosen:boolean = true;
 
   resizeOptions: ResizeOptions = {
     resizeMaxHeight: 500,

@@ -70,7 +70,6 @@ export class AuthRegisterComponent implements OnInit, OnDestroy {
   }
 
   onSubmit(value:Object) {
-    console.log(value);
     // const user = new User(this.myForm.value.name, this.myForm.value.email,
     //   this.myForm.value.password, this.myForm.value.password_confirmation,
     //   this.myForm.value.company_name, this.myForm.value.country,
@@ -78,7 +77,6 @@ export class AuthRegisterComponent implements OnInit, OnDestroy {
 
     this.auth$ = this._authService.signup(value);
     this.sub = this.auth$.subscribe((res) => {
-          console.log(res);
         },
         error => this.errorMessage = <any>error);
   }

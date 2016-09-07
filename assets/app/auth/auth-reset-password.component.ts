@@ -40,11 +40,9 @@ export class AuthResetPasswordComponent implements OnInit, OnDestroy {
 
   onSubmit(value:Object) {
 
-    console.log(value);
 
     this._accountManagetment.newPassword(value).
     subscribe((res) => {
-      console.log(res);
     });
 
   }
