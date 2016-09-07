@@ -1,0 +1,44 @@
+<!--<p>-->
+<!--Howdy! Here's a list of awesome computer scientists. Do you know any others? Add to the list yourself.-->
+<!--</p>-->
+
+<!--<form (submit)="addName()">-->
+<!--<input [(ngModel)]="newName" name="newName" placeholder="Awesome Computer Scientist">-->
+<!--<button type="submit">Add</button>-->
+<!--</form>-->
+
+<!--<ul>-->
+<!--<li *ngFor="let name of names">{{name}}</li>-->
+<!--</ul>-->
+<navbar-component></navbar-component>
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
+
+<!--<div class="container">-->
+  <!--<div class="row">-->
+    <!--<div class="col-md-12">-->
+      <!--<carousel class="carousel" [interval]="myInterval" [noWrap]="noWrapSlides">-->
+        <!--<slide *ngFor="let slidez of slides; let index=index"-->
+               <!--[active]="slidez.active">-->
+          <!--<img [src]="slidez.image" style="margin:auto;" class="img-responsive">-->
+
+          <!--<div class="carousel-caption">-->
+            <!--<h4>Slide {{index}}</h4>-->
+
+            <!--<p>{{slidez.text}}</p>-->
+          <!--</div>-->
+
+        <!--</slide>-->
+      <!--</carousel>-->
+    <!--</div>-->
+  <!--</div>-->
+  <!--<div class="row row&#45;&#45;well" *ngIf="!loading">-->
+    <!--<div class="col-md-3" *ngFor="let item of categoriesTag">-->
+      <!--<div class="well well&#45;&#45;list" (click)="goToProductList(item.id)">-->
+        <!--{{item.name}}-->
+      <!--</div>-->
+    <!--</div>-->
+  <!--</div>-->
+<!--</div>-->
+

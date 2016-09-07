@@ -1,0 +1,39 @@
+<navbar-vendor-component></navbar-vendor-component>
+
+<div class="container">
+    <div *ngIf="loading">
+        <!--<loader-template></loader-template>-->
+    </div>
+    <div *ngIf="!loading" class="row--content">
+        <div class="row" *ngFor="let organization of vendor_organization">
+            <!--Left-->
+            <div class="col-md-8">
+                <div class="row">
+                    <div class="col-md-6">
+                        <img class="img-responsive mp-company-logo" [src]="organization?.logo">
+                    </div>
+                    <div class="col-md-6">
+                        <h4>Name: {{organization?.companyname}}</h4>
+                        <h6>Link: <a href="{{organization?.url}}">{{organization?.url}}</a></h6>
+                    </div>
+                </div>
+            </div>
+            <!--Right-->
+            <div class="col-md-4">
+                <button class="btn btn-primary" (click)="goToEditProfile()">Edit Company Profile</button>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+            <button class="btn btn-default" (click)="goToAddService()">Add New Listing</button>
+            <button class="btn btn-default" (click)="goToViewAllListing()">All Listing</button>
+        </div>
+
+        <div class="row row--clicky-component">
+            <mp-clicky-component></mp-clicky-component>
+        </div>
+
+    </div>
+</div>

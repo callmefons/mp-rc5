@@ -1,0 +1,91 @@
+<navbar-admin-component></navbar-admin-component>
+<div class="container">
+    <h1>Admin Dashboard</h1>
+    <div class="row">
+        <!--Moderate New Listings-->
+        <div class="col-xs-12 col-md-6" style="margin-bottom: 45px">
+            <h4 style="margin-bottom: 15px">Moderate New Listings</h4>
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <div class="row row-table" *ngFor="let product of product">
+                        <div class="col-xs-3">
+                            <p>
+                                <small>{{product?.companyname}}</small>
+                            </p>
+                        </div>
+                        <div class="col-xs-3">
+                            <p>
+                                <small>{{product?.name}}</small>
+                            </p>
+                        </div>
+                        <div class="col-xs-3">
+
+                            <div class="row" *ngFor="let category of product.category">
+                                <p>
+                                    <small>{{category}}</small>
+                                </p>
+                            </div>
+
+                        </div>
+                        <div class="col-xs-3">
+                            <button type="button" class="btn-detail btn btn-default btn-sm"
+                                    (click)="goToProductDetail(product.id)">Moderate
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-3 col-md-offset-9"
+                        >
+                            <button type="button" class="btn btn-primary"
+                                    (click)="goToListing()">View All
+                            </button>
+                        </div>
+                    </div>
+
+                </li>
+
+            </ul>
+        </div>
+
+
+        <!--Moderate Vendors-->
+        <div class="col-xs-12 col-md-6" style="margin-bottom: 45px">
+            <h4 style="margin-bottom: 15px">Moderate Vendors</h4>
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <div class="row row-table" *ngFor="let vendor of vendor">
+                        <div class="col-xs-4">
+                            <p>
+                                <small>{{vendor?.companyname}}</small>
+                            </p>
+                        </div>
+                        <div class="col-xs-4">
+                            <p>
+                                <small>{{vendor?.name}}</small>
+                            </p>
+                        </div>
+                        <div class="col-xs-4">
+                            <button type="button" class="btn-detail btn btn-default btn-sm"
+                                    (click)="goToVendorProfile(vendor.id)">View Profile
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-3 col-md-offset-9"
+                        >
+                            <button type="button" class="btn btn-primary">View All</button>
+                        </div>
+                    </div>
+
+                </li>
+
+            </ul>
+        </div>
+    </div>
+
+
+    <div class="row">
+    </div>
+</div>

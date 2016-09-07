@@ -1,0 +1,301 @@
+<div class="modal fade" id="modalDelete" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Are you sure you want to delete this item?</h4>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal"
+                        (click)="deleteProduct(apps.id)">Delete
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<navbar-admin-component></navbar-admin-component>
+<div class="container">
+    <a (click)="goToListing()">All Listing</a>
+    <h1>Listing Details</h1>
+    <div class="row btn--delete">
+        <button class="btn btn-danger pull-right"
+                data-toggle="modal"
+                data-target="#modalDelete">Delete
+        </button>
+    </div>
+    <div class="row">
+
+        <div class="col-xs-12">
+            <ul class="nav nav-tabs">
+                <li class="active"><a data-toggle="tab" href="#details">Details</a></li>
+                <li><a data-toggle="tab" href="#content">Content </a></li>
+                <li><a data-toggle="tab" href="#media">Media</a></li>
+                <li><a data-toggle="tab" href="#history">History</a></li>
+                <li><a data-toggle="tab" href="#statistics">Statistics</a></li>
+
+            </ul>
+
+            <!--editMode-->
+            <div class="tab-content">
+
+                <a class="pull-right" (click)="goToListing()">
+                    <span class="label label-default">{{apps.status}}</span>
+                </a>
+
+
+                <div id="details" class="tab-pane fade in active">
+                    <div class="row row--content" *ngIf="!loading">
+                        <div class="col-md-6">
+                            <div class="well">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <h5>{{apps.name}}</h5>
+                                        <p>Name: {{apps?.developername}}</p>
+                                        <p>Company name: {{apps?.companyname}}</p>
+                                        <p>Joined: {{apps?.joined}}</p>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div *ngFor="let category of products.categories">
+                                            <span class="label label-default">{{category.name}}</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <h5>Industries</h5>
+                                    <div *ngFor="let industry of products.industries">
+                                        <span class="label label-default label--float">{{industry.name}}</span>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <h5>Departments</h5>
+                                    <div *ngFor="let department of products.departments">
+                                        <span class="label label-default label--float">{{department.name}}</span>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-6">
+                            <div class="row">
+                                <h5>Purchase Link:</h5>
+                                <a href="">{{apps?.purchase_link}}</a>
+                            </div>
+
+                            <div class="row ">
+
+                                <h5>Payment and Pricing</h5>
+                                <div *ngFor="let pricing of products.pricingmodels">
+                                    <div *ngIf="pricing.id == 5">
+                                        <b>{{pricing.model}}</b> : {{pricing.other_model}}
+                                    </div>
+                                    <div *ngIf="pricing.id !== 1 && pricing.id !== 5">
+                                        <b>{{pricing.model}}</b> : {{pricing.price_start}} {{pricing.currency}} -
+                                        {{pricing.price_end}}
+                                        {{pricing.currency}}
+                                    </div>
+                                    <div *ngIf="pricing.id == 1">
+                                        <b>{{pricing.model}}</b> : {{pricing.day}} days
+                                    </div>
+                                </div>
+
+                                <b>Add-Ons:</b>
+                                <span
+                                        *ngFor="let extraservices of products.extraservices; let last = last;">
+               {{extraservices.name}}<span *ngIf="!last">,</span>
+           </span>
+                                products
+                            </div>
+
+                        </div>
+
+
+                    </div>
+                </div>
+
+
+                <!--Content-->
+                <div id="content" class="tab-pane fade in">
+                    <div class="row row--content">
+                        <button class="btn btn-default">English</button>
+                        <button class="btn btn-default">Thai</button>
+                        <hr>
+                        <div class="col-md-3">
+
+
+                            <h5>{{apps.name}}</h5>
+                            <img class="img-responsive img-responsive--logo" [src]="apps.logo" alt="apps.name">
+
+
+                        </div>
+                        <div class="col-md-3">
+                            <div class="row">
+                                <h5>Description</h5>
+                                <p>{{apps.description}}</p>
+                            </div>
+                            <div class="row">
+                                <h5>Features</h5>
+                                <ul>
+                                    <li *ngFor="let feature of features">{{feature.text}}</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="row">
+                                <h5>Short Description</h5>
+                                <p>{{apps.language}}</p>
+                            </div>
+                            <div class="row">
+                                <h5>Languages</h5>
+                                <div *ngFor="let language of languagesTag">
+                                    <span class="label label-default label--float">{{language.name}}</span>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="row row--content">
+                        <div class="col-md-6">
+                            <div class="row">
+                                <h5>Minimum Requirements</h5>
+                                <p>{{apps.minrequirement}}</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="row">
+                                <h5>Terms & Conditions</h5>
+                                <p>{{apps.termsncond}}</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div id="media" class="tab-pane fade in">
+                    <div class="row row--content">
+
+                        <div class="col-md-6">
+                            <!--screen shot-->
+                            <div class="row">
+                                <h5>Screenshots</h5>
+                                <div class="col-md-1">
+                                    <div (click)="onControl('minus')" class="btn_control">‹</div>
+                                </div>
+                                <div class="col-md-10">
+                                    <img src="{{selected}}" class="big-screenshot img-thumbnail img-responsive">
+                                </div>
+                                <div class="col-md-1">
+                                    <div class="btn_control" (click)="onControl('plus')">›</div>
+                                </div>
+                            </div>
+
+                            <!--myCarousel-->
+                            <div class="row">
+                                <h5>Title of Screenshot</h5>
+                                <div id="myCarousel" class="carousel slide">
+                                    <!-- Carousel items -->
+                                    <div class="carousel-inner">
+                                        <div class="{{i == 0 ? 'item active': 'item'}}"
+                                             *ngFor="let th of thumbnail; let i = index;">
+                                            <div class="row">
+                                                <div class="col-xs-3 col-md-3 col-md-3 carousel-thumbnail"
+                                                     *ngFor="let thum of thumbnail[i]; let j = index">
+                                                    <a><img [src]="thum" class="img-responsive"
+                                                            (click)="onSelect(thum, i, j)"></a>
+                                                </div>
+                                            </div>
+                                            <!--/row-->
+                                        </div>
+                                    </div>
+                                    <!--/carousel-inner-->
+                                    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                                        <div class="arrow">‹</div>
+                                    </a>
+                                    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                                        <div class="arrow">›</div>
+                                    </a>
+                                </div>
+                                <!--/myCarousel-->
+                            </div>
+
+                        </div>
+
+
+                        <div class="col-md-6">
+                            <!--Video-->
+                            <div class="row">
+                                <h4>Video</h4>
+                                <div *ngIf="video">
+                                    <iframe class="video" width="350" height="250"
+                                            [src]="embedUrl">
+                                    </iframe>
+
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <h4>Title of Video</h4>
+                                <a href="{{apps.yourube}}">{{apps.youtube}}</a>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+                <div id="history" class="tab-pane fade in">
+                    <div class="row row--content">
+                        <div class="well">
+                            <div *ngFor="let log of logs.logs">
+                                <p><b>{{log?.date}}</b>| Listing {{log?.action}} by {{log?.by}} from
+                                    {{log?.companyname}}</p>
+                                <p *ngIf="log?.action === 'moderated'">
+                                    <br>
+                                    Sent back for <b>Review</b>
+                                    <br>
+                                    Notes: {{log?.comment}}</p>
+                                <hr>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div id="statistics" class="tab-pane fade in">
+                    <div class="row">
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <div class="row row--comment-box">
+        <form [formGroup]="myForm" (ngSubmit)="myForm.valid && onSubmit(myForm.value)" novalidate>
+
+            <div class="col-md-9">
+                <fieldset class="form-group">
+                    <label>Comment:</label>
+                    <textarea class="form-control" rows="5" formControlName="comment"></textarea>
+                </fieldset>
+            </div>
+            <div class="col-md-3">
+                <button class='btn btn-primary'
+                        type='submit'
+                        [disabled]='!myForm.valid'>Needs Review
+                </button>
+                <button class="btn btn-primary" (click)="updateProductStatus(apps.id,'approve')">Approve</button>
+            </div>
+        </form>
+    </div>
+</div>

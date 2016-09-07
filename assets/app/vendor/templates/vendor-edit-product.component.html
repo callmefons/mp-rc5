@@ -1,0 +1,624 @@
+<!-- Modal -->
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Service Updated</h4>
+            </div>
+            <div class="modal-body">
+                <p *ngIf="!updated">Waiting for Add Service...</p>
+                <p *ngIf="updated">Successfully Updated</p>
+            </div>
+            <div class="modal-footer">
+                <div *ngIf="updated">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal"
+                            (click)="onCancle()">Back
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<navbar-vendor-component></navbar-vendor-component>
+
+<div class="container">
+    <div *ngIf="!loading">
+        <hr>
+        <div class="row">
+            <h1>Manage {{apps.name}}</h1>
+            <h4 class="pull-right"><span class="label label-default">{{apps.status}}</span></h4>
+        </div>
+        <hr>
+
+        <!--Edit Service -->
+
+        <div class="row">
+            <form [formGroup]="myForm" (ngSubmit)="myForm.valid && onSubmit(apps.id,myForm.value)" novalidate>
+
+                <div class="row pull-right">
+                    <!-- Single button -->
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                                aria-haspopup="true"
+                                aria-expanded="false">
+                            Actions<span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li *ngIf="apps.status === 'draft' || apps.status === 'review'">
+                                <a (click)="updateProductStatus(apps.id,'pending')">Send for Review</a></li>
+                            <li *ngIf="apps.status === 'approved' || apps.status === 'archived'">
+                                <a (click)="updateProductStatus(apps.id,'publish')">Publish</a></li>
+                            <li *ngIf="apps.status === 'published'">
+                                <a (click)="updateProductStatus(apps.id,'archive')">Archive</a></li>
+                        </ul>
+                    </div>
+                    <button
+                            class='btn btn-primary' type='submit'
+                            data-toggle="modal" data-target="#myModal">Save
+                    </button>
+                    <button type="button"
+                            class="btn btn-danger" data-dismiss="modal"
+                            (click)="onCancle()">Cancel
+                    </button>
+
+                </div>
+                <div class="row">
+                    <!--Image-->
+                    <div class="col-md-3">
+                        <img [src]="myFormLogo"
+                             [hidden]="!src" class="img-responsive previewLogo" alt="Logo">
+                        <fieldset class="form-group">
+                            <label class="custom-file-upload">
+                                <input type="file"
+                                       image-upload
+                                       #logo
+                                       (imageSelected)="fileChangeLogo($event)"
+                                       [resizeOptions]="resizeOptions"
+                                       formControlName="logo">
+                                Add Logo
+                            </label>
+                        </fieldset>
+
+                    </div>
+                    <div class="col-md-4 content-center">
+                        <!--Name-->
+                        <div class="row">
+                            <fieldset class="form-group">
+                                <label>Name</label>
+                                <input type="text"
+                                       [(ngModel)]="apps.name"
+                                       class="form-control"
+                                       placeholder="Name is Here"
+                                       formControlName="name">
+                            </fieldset>
+                        </div>
+
+                        <!--Description-->
+                        <div class="row">
+                            <fieldset class="form-group">
+                                <label>Description</label>
+                                <textarea
+                                        type="text"
+                                        class="form-control"
+                                        placeholder="Description"
+                                        [(ngModel)]="apps.description"
+                                        formControlName="description"></textarea>
+                            </fieldset>
+                        </div>
+
+                        <!--Short Description-->
+                        <div class="row">
+                            <fieldset class="form-group">
+                                <label>Short Description</label>
+                                <textarea type="text"
+                                          class="form-control"
+                                          placeholder="Short Description"
+                                          [(ngModel)]="apps.shortdescription"
+                                          formControlName="shortdescription"></textarea>
+                            </fieldset>
+                        </div>
+
+                        <!--Feature-->
+                        <div class="row">
+                            <div *ngFor="let feature of myFormFeatures">
+                                <pre>{{ feature }}</pre>
+                                <button type="button" (click)="onDeleteFeature(feature)"
+                                        class="btn btn-danger btn-xs">Delete
+                                </button>
+                            </div>
+                            <fieldset class="form-group">
+                                <label>Features</label>
+                                <input
+                                        #newFeature
+                                        type="text"
+                                        class="form-control"
+                                        placeholder="Features"
+                                        formControlName="features">
+                                <button type="button" class="btn btn-sm btn-default"
+                                        (click)="onAddNewFeature(newFeature.value)">+ Feature
+                                </button>
+                            </fieldset>
+                        </div>
+
+
+                    </div>
+                    <div class="col-md-5">
+                        <!--Purchase Link-->
+                        <div class="row">
+                            <h4>Purchase Link</h4>
+                            <fieldset class="form-group">
+                                <input
+                                        type="text"
+                                        class="form-control"
+                                        placeholder="URL where users can purchase"
+                                        [(ngModel)]="apps.purchase_link"
+                                        formControlName="purchase_link">
+                            </fieldset>
+                        </div>
+
+                        <div class="row">
+                            <h4>Payment and Pricing</h4>
+
+                            <form class="form-horizontal">
+                                <div class="checkbox" *ngFor="let opt of pricingmodelsTag; let i = index;">
+                                    <label>
+                                        <input #{{opt.dbid}} type="checkbox"
+                                               (change)="onCheckboxPricingModel(opt,$event)"
+                                               [checked]="checkedId(opt.dbid,'pricingmodels')"
+                                        > {{opt.name}}</label>
+
+                                    <form class="form-horizontal">
+
+                                        <div *ngIf="showFreeService && opt.name === 'Freemium Version'">
+                                            <form class="form-inline">
+                                                <div class="form-group">
+                                                    <label>Trial Length</label>
+                                                    <input class="form-control"
+                                                           type="number"
+                                                           [(ngModel)]="dayModel"
+                                                           [ngModelOptions]="{standalone: true}"
+                                                           #day
+                                                           (change)="onInputDay(opt.dbid,day.value)">
+                                                    <label>days</label>
+                                                </div>
+
+                                            </form>
+                                        </div>
+
+                                        <div *ngIf="showMonthly && opt.name === 'Monthly Pricing'">
+
+                                            <div class="row">
+                                                <div class="col-xs-3">
+                                                    Single Price
+                                                    <input
+                                                            type="radio"
+                                                            name="plan"
+                                                            [checked]="singlepriceMonthly"
+                                                            (change)="onSelectPricingPlan('Single Price',opt.dbid, opt.name)">
+                                                </div>
+                                                <div *ngIf="singlepriceMonthly ">
+                                                    <div class="col-xs-6">
+                                                        <input class="form-control"
+                                                               [(ngModel)]="priceStartMonthlyModel"
+                                                               [ngModelOptions]="{standalone: true}"
+                                                               placeholder="Amount"
+                                                               type="number" #price_start
+                                                               (change)="onInputPrice(opt.dbid,price_start.value,price_end.value)">
+                                                        <input class="form-control"
+                                                               type="number"
+                                                               [class.hidden]=true
+                                                               #price_end
+                                                               (change)="onInputPrice(opt.dbid,price_start.value,price_end.value)">
+                                                    </div>
+                                                    <div class="col-xs-3">
+                                                        <select class="form-control"
+                                                                [(ngModel)]="currencyMonthlyModel"
+                                                                [ngModelOptions]="{standalone: true}"
+                                                                #currency
+                                                                (change)="onInputPrice(opt.dbid,price_start.value,price_end.value,currency.value)">
+                                                            <option *ngFor="let opt of options.currency" [value]="opt">
+                                                                {{opt}}
+                                                            </option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-xs-3">
+                                                    Price range
+                                                    <input type="radio" name="plan"
+                                                           [checked]="pricerangeMonthly"
+                                                           (change)="onSelectPricingPlan('Price range',opt.dbid, opt.name)">
+
+                                                </div>
+                                                <div *ngIf="pricerangeMonthly">
+                                                    <div class="col-xs-3">
+                                                        <input class="form-control"
+                                                               [(ngModel)]="priceStartMonthlyModel"
+                                                               [ngModelOptions]="{standalone: true}"
+                                                               type="number"
+                                                               placeholder="To"
+                                                               #price_start
+                                                               (change)="onInputPrice(opt.dbid,price_start.value,price_end.value)">
+                                                    </div>
+                                                    <div class="col-xs-3">
+                                                        <input class="form-control"
+                                                               [(ngModel)]="priceEndMonthlyModel"
+                                                               [ngModelOptions]="{standalone: true}"
+                                                               type="number"
+                                                               placeholder="End"
+                                                               #price_end
+                                                               (change)="onInputPrice(opt.dbid,price_start.value,price_end.value)">
+                                                    </div>
+                                                    <div class="col-xs-3">
+                                                        <select class="form-control"
+                                                                [(ngModel)]="currencyMonthlyModel"
+                                                                [ngModelOptions]="{standalone: true}"
+                                                                #currency
+                                                                (change)="onInputPrice(opt.dbid,price_start.value,price_end.value,currency.value)">
+                                                            <option *ngFor="let opt of options.currency" [value]="opt">
+                                                                {{opt}}
+                                                            </option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div *ngIf="showYearly && opt.name === 'Yearly Subscription'">
+
+                                            <div class="row">
+                                                <div class="col-xs-3">
+                                                    Single Price
+                                                    <input
+                                                            type="radio"
+                                                            name="plan"
+                                                            [checked]="singlepriceYearly"
+                                                            (change)="onSelectPricingPlan('Single Price',opt.dbid, opt.name)">
+                                                </div>
+                                                <div *ngIf="singlepriceYearly ">
+                                                    <div class="col-xs-6">
+                                                        <input class="form-control"
+                                                               placeholder="Amount"
+                                                               [(ngModel)]="priceStartYearlyModel"
+                                                               [ngModelOptions]="{standalone: true}"
+                                                               type="number" #price_start
+                                                               (change)="onInputPrice(opt.dbid,price_start.value,price_end.value)">
+                                                        <input class="form-control"
+                                                               type="number"
+                                                               [class.hidden]=true
+                                                               #price_end
+                                                               (change)="onInputPrice(opt.dbid,price_start.value,price_end.value)">
+                                                    </div>
+                                                    <div class="col-xs-3">
+                                                        <select class="form-control"
+                                                                [(ngModel)]="currencyYearlyModel"
+                                                                [ngModelOptions]="{standalone: true}"
+                                                                #currency
+                                                                (change)="onInputPrice(opt.dbid,price_start.value,price_end.value,currency.value)">
+                                                            <option *ngFor="let opt of options.currency" [value]="opt">
+                                                                {{opt}}
+                                                            </option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-xs-3">
+                                                    Price range
+                                                    <input type="radio" name="plan"
+                                                           [checked]="pricerangeYearly"
+                                                           (change)="onSelectPricingPlan('Price range',opt.dbid, opt.name)">
+
+                                                </div>
+                                                <div *ngIf="pricerangeYearly">
+                                                    <div class="col-xs-3">
+                                                        <input class="form-control"
+                                                               [(ngModel)]="priceStartYearlyModel"
+                                                               [ngModelOptions]="{standalone: true}"
+                                                               type="number"
+                                                               placeholder="To"
+                                                               #price_start
+                                                               (change)="onInputPrice(opt.dbid,price_start.value,price_end.value)">
+                                                    </div>
+                                                    <div class="col-xs-3">
+                                                        <input class="form-control"
+                                                               [(ngModel)]="priceEndYearlyModel"
+                                                               [ngModelOptions]="{standalone: true}"
+                                                               type="number"
+                                                               placeholder="End"
+                                                               #price_end
+                                                               (change)="onInputPrice(opt.dbid,price_start.value,price_end.value)">
+                                                    </div>
+                                                    <div class="col-xs-3">
+                                                        <select class="form-control"
+                                                                [(ngModel)]="currencyYearlyModel"
+                                                                [ngModelOptions]="{standalone: true}"
+                                                                #currency
+                                                                (change)="onInputPrice(opt.dbid,price_start.value,price_end.value,currency.value)">
+                                                            <option *ngFor="let opt of options.currency" [value]="opt">
+                                                                {{opt}}
+                                                            </option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div *ngIf="showLifetime && opt.name === 'Lifetime License'">
+
+                                            <div class="row">
+                                                <div class="col-xs-3">
+                                                    Single Price
+                                                    <input
+                                                            type="radio"
+                                                            name="plan"
+                                                            [checked]="singlepriceLifetime"
+                                                            (change)="onSelectPricingPlan('Single Price',opt.dbid, opt.name)">
+                                                </div>
+                                                <div *ngIf="singlepriceLifetime ">
+                                                    <div class="col-xs-6">
+                                                        <input class="form-control"
+                                                               [(ngModel)]="priceStartLifetimeModel"
+                                                               [ngModelOptions]="{standalone: true}"
+                                                               placeholder="Amount"
+                                                               type="number" #price_start
+                                                               (change)="onInputPrice(opt.dbid,price_start.value,price_end.value)">
+                                                        <input class="form-control"
+                                                               type="number"
+                                                               [class.hidden]=true
+                                                               #price_end
+                                                               (change)="onInputPrice(opt.dbid,price_start.value,price_end.value)">
+                                                    </div>
+                                                    <div class="col-xs-3">
+                                                        <select class="form-control"
+                                                                [(ngModel)]="currencyLifetimeModel"
+                                                                [ngModelOptions]="{standalone: true}"
+                                                                #currency
+                                                                (change)="onInputPrice(opt.dbid,price_start.value,price_end.value,currency.value)">
+                                                            <option *ngFor="let opt of options.currency" [value]="opt">
+                                                                {{opt}}
+                                                            </option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-xs-3">
+                                                    Price range
+                                                    <input type="radio" name="plan"
+                                                           [checked]="pricerangeLifetime"
+                                                           (change)="onSelectPricingPlan('Price range',opt.dbid, opt.name)">
+
+                                                </div>
+                                                <div *ngIf="pricerangeLifetime">
+                                                    <div class="col-xs-3">
+                                                        <input class="form-control"
+                                                               [(ngModel)]="priceStartLifetimeModel"
+                                                               [ngModelOptions]="{standalone: true}"
+                                                               type="number"
+                                                               placeholder="To"
+                                                               #price_start
+                                                               (change)="onInputPrice(opt.dbid,price_start.value,price_end.value)">
+
+
+                                                    </div>
+                                                    <div class="col-xs-3">
+                                                        <input class="form-control"
+                                                               [(ngModel)]="priceEndLifetimeModel"
+                                                               [ngModelOptions]="{standalone: true}"
+                                                               type="number"
+                                                               placeholder="End"
+                                                               #price_end
+                                                               (change)="onInputPrice(opt.dbid,price_start.value,price_end.value)">
+                                                    </div>
+                                                    <div class="col-xs-3">
+                                                        <select class="form-control"
+                                                                [(ngModel)]="currencyLifetimeModel"
+                                                                [ngModelOptions]="{standalone: true}"
+                                                                #currency
+                                                                (change)="onInputPrice(opt.dbid,price_start.value,price_end.value,currency.value)">
+                                                            <option *ngFor="let opt of options.currency" [value]="opt">
+                                                                {{opt}}
+                                                            </option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div *ngIf="showOther && opt.name === 'Other'">
+                                            <form class="form-inline">
+                                                <div class="form-group">
+                                                    <label>Other Model</label>
+                                                    <input class="form-control"
+                                                           [(ngModel)]="otherModel"
+                                                           [ngModelOptions]="{standalone: true}"
+                                                           type="text"
+                                                           placeholder="Model"
+                                                           #other_model
+                                                           (change)="onInputOtherModel(opt.dbid,other_model.value)">
+                                                </div>
+
+                                            </form>
+                                        </div>
+
+
+                                    </form>
+
+                                </div>
+                            </form>
+                        </div>
+
+                        <!--Extra Services you offer-->
+                        <div class="row">
+                            <h4>Extra Services you offer</h4>
+                            <div *ngFor="let opt of extraservicesTag; let i = index">
+                                <div class="checkbox">
+                                    <label><input #{{opt.dbid}} type="checkbox"
+                                                  (change)="onCheckboxExtraservices(opt,$event)"
+                                                  [checked]="checkedId(opt.dbid,'extraservices')"
+                                    >{{opt.name}}</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!--Screenshots-->
+                <div class="row">
+                    <div class="col-md-12">
+                        <fieldset class="form-group">
+                            <label class="custom-file-upload">
+                                <input type="file"
+                                       multiple
+                                       image-upload
+                                       (imageSelected)="fileChangeScreenshots($event)"
+                                       [resizeOptions]="resizeOptions"
+                                       #screenshots
+                                       formControlName="screenshots">
+                                Add Screenshots
+                            </label>
+                        </fieldset>
+
+
+                        <div class="col-md-2" *ngFor="let src of myFormScreenshots">
+                            <img [src]="src" class="img-responsive" alt="Image">
+                            <button type="button" class="btn btn-danger" (click)="onDeleteScreenshot(src)">Delete
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Video-->
+                <div class="row">
+
+                    <h4>Video</h4>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <fieldset class="form-group">
+                                <input
+                                        #myVideo
+                                        type="text"
+                                        class="form-control"
+                                        placeholder="Video"
+                                >
+                                <button type="button" class="btn btn-sm btn-default"
+                                        (click)="embedYoutube(myVideo.value)">Embed
+                                </button>
+                            </fieldset>
+                        </div>
+
+                        <div class="col-md-8">
+                            <div *ngIf="video">
+                                <iframe class="video" width="350" height="250"
+                                        [src]="embedUrl">
+                                </iframe>
+
+                            </div>
+                            <button type="button" class="btn btn-sm btn-danger"
+                                    (click)="deleteVideo()">Delete
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!--Minimum Requirements-->
+                <div class="row">
+                    <div class="col-md-6">
+                        <h4>Minimum Requirements</h4>
+                        <fieldset class="form-group">
+                    <textarea type="text"
+                              class="form-control"
+                              placeholder="Minimum Requirements"
+                              [(ngModel)]="apps.minrequirement"
+                              formControlName="minrequirement"></textarea>
+                        </fieldset>
+                    </div>
+
+                    <div class="col-md-6">
+                        <h4>Terms Conditions</h4>
+                        <fieldset class="form-group">
+                    <textarea type="text"
+                              class="form-control"
+                              placeholder="Terms Conditions"
+                              [(ngModel)]="apps.termsncond"
+                              formControlName="termsncond"></textarea>
+                        </fieldset>
+                    </div>
+
+                </div>
+
+                <!--ALL TAG-->
+                <div class="col-md-3">
+                    <h4>Language</h4>
+                    <form class="form-horizontal">
+                        <div *ngFor="let opt of languagesTag; let i = index">
+                            <div class="checkbox">
+                                <label><input #{{opt.dbid}} type="checkbox"
+                                              (change)="onCheckboxLanguages(opt,$event)"
+                                              [checked]="checkedId(opt.dbid,'languages')"
+                                >{{opt.name}}</label>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-3">
+                    <h4>Category</h4>
+                    <p>What type of service is this</p>
+                    <form class="form-horizontal">
+                        <div *ngFor="let opt of categoriesTag">
+                            <div class="checkbox">
+                                <label>
+                                    <input #{{opt.dbid}}
+                                           type="checkbox"
+                                           (change)="onCheckboxCategories(opt,$event)"
+                                           [checked]="checkedId(opt.dbid,'categories')"
+                                    >{{opt.name}}
+                                </label>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-3">
+                    <h4>Department</h4>
+                    <p>What departments does this Service best apply to</p>
+                    <form class="form-horizontal">
+                        <div *ngFor="let opt of departmentsTag">
+                            <div class="checkbox">
+                                <label>
+                                    <input #{{opt.dbid}} type="checkbox"
+                                           (change)="onCheckboxDepartments(opt,$event)"
+                                           [checked]="checkedId(opt.dbid,'departments')"
+                                    >{{opt.name}}</label>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-3">
+                    <h4>Industry</h4>
+                    <p>What Industry is this Service designed for</p>
+                    <form class="form-horizontal">
+                        <div *ngFor="let opt of industriesTag">
+                            <div class="checkbox">
+                                <label><input #{{opt.dbid}} type="checkbox"
+                                              (change)="onCheckboxIndustries(opt,$event)"
+                                              [checked]="checkedId(opt.dbid,'industries')"
+                                >{{opt.name}}</label>
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>

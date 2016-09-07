@@ -1,0 +1,193 @@
+<!-- Modal -->
+<div class="modal fade" id="modalSignup" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">You're almost there</h4>
+      </div>
+      <div class="modal-body">
+        <p>Please check your email for a link to complete your registration, and join our marketplace</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="goToLogin()">OK</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<navbar-component></navbar-component>
+
+<div class="container">
+  <div class="row">
+
+    <div class="col-md-6">
+      <h2>List your service and be found by customers all over Thailand</h2>
+
+      <div class="row row--content">
+        <h5 class="well--title">Why list with us?</h5>
+
+        <div class="col-md-6">
+          <div class="well">It's Free!</div>
+        </div>
+        <div class="col-md-6">
+          <div class="well">Get Found</div>
+        </div>
+
+      </div>
+
+
+      <div class="row row--content">
+        <h5 class="well--title">Simple Process</h5>
+        <div class="col-md-4">
+          <div class="well">1 <br>Create an Account</div>
+        </div>
+        <div class="col-md-4">
+          <div class="well">2 <br>List your Service</div>
+        </div>
+        <div class="col-md-4">
+          <div class="well">3 <br>Get Approved & Post</div>
+        </div>
+      </div>
+
+
+    </div>
+
+
+    <div class="col-md-6">
+
+      <h2>Register for an account</h2>
+      <form [formGroup]="myForm" (ngSubmit)="myForm.valid && onSubmit(myForm.value)"
+            novalidate>
+
+        <fieldset class="form-group">
+          <label for="personal_name"> Name</label>
+          <input type="text" class="form-control" placeholder="Name"
+                 id="personal_name"
+                 formControlName="personal_name">
+          <div class='validation-error' *ngIf='myForm.controls.personal_name.touched'>
+            <div *ngIf="myForm.controls.personal_name.hasError('required')">Name is required</div>
+          </div>
+        </fieldset>
+
+        <fieldset class="form-group">
+          <label for="email">Work E-mail</label>
+          <input type="email" class="form-control" placeholder="Mail"
+                 id="email"
+                 formControlName="email">
+          <div class='validation-error' *ngIf="myForm.controls.email.touched">
+            <div *ngIf="myForm.controls.email.hasError('required')">email is required</div>
+            <div *ngIf="myForm.controls.email.hasError('invalidEmail')">email is invalid</div>
+          </div>
+        </fieldset>
+
+        <fieldset class="form-group">
+          <label for="password">Password</label>
+          <input type="password" class="form-control" placeholder="Password at least 8 characters" minlength='8'
+                 id="password"
+                 formControlName="password">
+          <div class='validation-error' *ngIf="myForm.controls.password.touched">
+            <div *ngIf="myForm.controls.password.hasError('required')">Password is required</div>
+            <div *ngIf="myForm.controls.password.hasError('minlength')">Password isn't long enough
+              (Minimum 8 in length)
+            </div>
+            <div *ngIf="myForm.controls.password.hasError('invalidPassword')">Password is invalid (At
+              least 1 Uppercase Alphabet, 1 Lowercase Alphabet, 1 Number and 1 Special Character)
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="form-group">
+          <label for="password_confirmation">Confirm Password</label>
+          <input type="password" class="form-control" placeholder="Confirm Password"
+                 id="password_confirmation"
+                 formControlName="password_confirmation">
+          <div class='validation-error' *ngIf="myForm.controls.password_confirmation.touched">
+            <div *ngIf="myForm.controls.password_confirmation.hasError('mismatchedPasswords')">
+              Passwords do not match
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="form-group">
+          <label for="company">Company Name</label>
+          <input type="text" class="form-control" placeholder="Company"
+                 id="company"
+                 formControlName="company_name">
+          <div class='validation-error' *ngIf="myForm.controls.company_name.touched">
+            <div *ngIf="myForm.controls.company_name.hasError('required')">company name is required
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="form-group">
+          <label for="country">Country</label>
+          <select class="form-control"
+                  id="country"
+                  formControlName="country"
+                  (change)="onSelectCountry($event.target.value)">
+            <option *ngFor="let country of countries" [value]="country.name">{{country.name}}</option>
+          </select>
+          <div class='validation-error' *ngIf="myForm.controls.country.touched">
+            <div *ngIf="myForm.controls.country.hasError('required')">country name is required</div>
+          </div>
+        </fieldset>
+
+        <fieldset class="form-group">
+          <div *ngIf="!citytype" [class.hidden]="disabled">
+            <label>City</label>
+            <select class="form-control"
+                    formControlName="city"
+            >
+              <option *ngFor="let city of citys" [value]="city?.name">{{city.name}}</option>
+            </select>
+
+          </div>
+          <div *ngIf="!statetype" [class.hidden]="disabled">
+            <label>State</label>
+            <select class="form-control"
+                    formControlName="state"
+            >
+              <option *ngFor="let state of states" [value]="state?.name">{{state.name}}</option>
+            </select>
+          </div>
+        </fieldset>
+
+        <fieldset class="form-group">
+          <div *ngIf="citytype">
+            <label>City</label>
+            <select class="form-control"
+                    formControlName="city"
+                    [disabled]="!countrySelected">
+              <option *ngFor="let city of citys" [value]="city?.name">{{city.name}}</option>
+            </select>
+
+          </div>
+          <div *ngIf="statetype">
+            <label>State</label>
+            <select class="form-control"
+                    formControlName="state"
+                    [disabled]="!countrySelected">
+              <option *ngFor="let state of states" [value]="state?.name">{{state.name}}</option>
+            </select>
+          </div>
+        </fieldset>
+
+        <!--<re-captcha (captchaResponse)="handleCorrectCaptcha($event)"-->
+        <!--[site_key]="'6LdLzCcTAAAAAA9mjgJ0uo0nHvoYNHiVCuPn-g-f'"></re-captcha>-->
+        <!--<button class='btn btn-primary' type='submit' [disabled]='!myForm.valid || !fCaptchaPassed' data-toggle="modal" data-target="#myModal">Sign Up</button><button class='btn btn-primary' type='submit' [disabled]='!myForm.valid || !fCaptchaPassed' data-toggle="modal" data-target="#myModal">Sign Up</button>-->
+        <button class='btn btn-primary' type='submit'
+                [disabled]='!myForm.valid' data-toggle="modal"
+                data-target="#modalSignup">Sign Up
+        </button>
+
+      </form>
+
+
+    </div>
+
+
+  </div>
+
+</div>

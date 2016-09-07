@@ -1,0 +1,165 @@
+<div class="modal fade" id="modalLog" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Log</h4>
+            </div>
+            <div class="modal-body" *ngFor="let log of logs">
+                <p><b>{{log?.date}}</b>| Listing {{log?.action}} by {{log?.by}} from {{log?.companyname}}</p>
+                <hr>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="goToLogin()">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<navbar-admin-component></navbar-admin-component>
+<div class="container">
+    <a (click)="goToDashboard()">Dashboard</a>
+    <h1>All Listings</h1>
+
+
+    <div class="row">
+        <div class="col-xs-12">
+            <ul class="nav nav-tabs">
+                <li class="active"><a data-toggle="tab" href="#new">New <span
+                        class="badge">{{product_new_length}}</span></a></li>
+                <li><a data-toggle="tab" href="#reviewing">Vendors Reviewing <span class="badge">{{product_review_length}}</span></a>
+                </li>
+                <li><a data-toggle="tab" href="#all">All <span class="badge">{{product_all_length}}</span></a></li>
+            </ul>
+
+            <!--editMode-->
+            <div class="tab-content">
+
+                <div id="new" class="tab-pane fade in active">
+                    <div class="row">
+                        <div class="table-responsive">
+                            <table class="table table-striped table-hover" *ngIf="!loading">
+                                <thead>
+                                <tr>
+                                    <th>Company</th>
+                                    <th>Service Name</th>
+                                    <th>Category</th>
+                                    <th>Log</th>
+                                    <th>Status</th>
+                                    <th>View</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr *ngFor="let product of product_new; let i = index;">
+                                    <td>{{product?.companyname}}</td>
+                                    <td>{{product?.name}}</td>
+                                    <td>
+                                        <div class="row" *ngFor="let category of product.category">
+                                            <li>{{category}}</li>
+                                        </div>
+                                    </td>
+                                    <td><i class="fa fa-file-code-o fx-5x"
+                                           aria-hidden="true"
+                                           data-toggle="modal"
+                                           data-target="#modalLog" (click)="showLog(product.log)"></i>
+                                    </td>
+                                    <td>{{product?.status}}</td>
+                                    <td>
+                                        <button class="btn btn-primary" (click)="goToProductDetail(product.id)">View
+                                        </button>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="reviewing" class="tab-pane fade in">
+                    <div class="row">
+                        <div class="table-responsive">
+                            <table class="table table-striped table-hover" *ngIf="!loading">
+                                <thead>
+                                <tr>
+                                    <th>Company</th>
+                                    <th>Service Name</th>
+                                    <th>Category</th>
+                                    <th>Log</th>
+                                    <th>Status</th>
+                                    <th>View</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr *ngFor="let product of product_review; let i = index;">
+                                    <td>{{product?.companyname}}</td>
+                                    <td>{{product?.name}}</td>
+                                    <td>
+                                        <div class="row" *ngFor="let category of product.category">
+                                            <li>{{category}}</li>
+                                        </div>
+                                    </td>
+                                    <td><i class="fa fa-file-code-o fx-5x"
+                                           aria-hidden="true"
+                                           data-toggle="modal"
+                                           data-target="#modalLog" (click)="showLog(product.log)"></i>
+                                    </td>
+                                    <td>{{product?.status}}</td>
+                                    <td>
+                                        <button class="btn btn-primary" (click)="goToProductDetail(product.id)">View
+                                        </button>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div id="all" class="tab-pane fade in">
+                    <div class="row">
+                        <div class="table-responsive">
+                            <table class="table table-striped table-hover" *ngIf="!loading">
+                                <thead>
+                                <tr>
+                                    <th>Company</th>
+                                    <th>Service Name</th>
+                                    <th>Category</th>
+                                    <th>Log</th>
+                                    <th>Status</th>
+                                    <th>View</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr *ngFor="let product of product_all; let i = index;">
+                                    <td>{{product?.companyname}}</td>
+                                    <td>{{product?.name}}</td>
+                                    <td>
+                                        <div class="row" *ngFor="let category of product.category">
+                                            <li>{{category}}</li>
+                                        </div>
+                                    </td>
+                                    <td><i class="fa fa-file-code-o fx-5x"
+                                           aria-hidden="true"
+                                           data-toggle="modal"
+                                           data-target="#modalLog" (click)="showLog(product.log)"></i>
+                                    </td>
+                                    <td>{{product?.status}}</td>
+                                    <td>
+                                        <button class="btn btn-primary" (click)="goToProductDetail(product.id)">View
+                                        </button>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+</div>

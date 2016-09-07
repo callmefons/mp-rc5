@@ -1,0 +1,81 @@
+<navbar-admin-component></navbar-admin-component>
+<div class="container">
+
+    <div *ngIf="resetPassword">
+        <alert dismissOnTimeout="3000" [type]="'success'"><b>Success:</b> Your password has been reset</alert>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="table-responsive">
+                <!--<div *ngIf="loading">-->
+                <!--<loader-template></loader-template>-->
+                <!--</div>-->
+                <table class="table table-striped table-hover" *ngIf="!loading_vendor">
+                    <thead>
+                    <tr>
+                        <th>User Name</th>
+                        <th>Company Name</th>
+                        <th><input
+                                class="form-control"
+                                type="text" [(ngModel)]="name" type="text" placeholder="Users"></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr *ngFor="let vendor of vendor | search:'name':name">
+                        <td>{{vendor?.name}}</td>
+                        <td>{{vendor?.companyname}}</td>
+                        <td>
+                            <button class="btn btn-default" (click)="viewProfile(vendor.id)">View Profile</button>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div *ngIf="!onInit"
+                 class="well">
+                <div *ngIf="!loading_detail">
+                    <span class="label label-default pull-right" *ngIf="detail_vendor.archived === '0'">activate</span>
+                    <span class="label label-default pull-right" *ngIf="detail_vendor.archived === '1'">archived</span>
+                    <br>
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <h5><b>Name:</b></h5>
+                            <h5><b>Email:</b></h5>
+                            <h5><b>Phone:</b></h5>
+                            <h5><b>Company:</b></h5>
+                            <h5><b>Position:</b></h5>
+                            <h5><b>LinkedIn</b></h5>
+                            <h5><b>Listing</b></h5>
+                        </div>
+                        <div class="col-xs-9">
+                            <h5>{{detail_vendor?.name}}</h5>
+                            <h5>{{detail_vendor?.email}}</h5>
+                            <h5>{{detail_vendor?.phonenumber}}</h5>
+                            <h5>{{detail_vendor?.company_name}}</h5>
+                            <h5>{{detail_vendor?.position}}</h5>
+                            <h5>{{detail_vendor?.linkedin}}</h5>
+                            <div *ngFor="let app of apps">
+                                <div class="row">
+                                    <div class="col-xs-9"><a (click)="goToDetail(app.id)">{{app.name}}</a></div>
+                                    <div class="col-xs-3">
+                                        <span class="label label-default pull-right">{{app.status}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <button [disabled]="detail_vendor.archived === '1'"
+                            class="btn btn-primary" (click)="archiveAccount(detail_vendor.id)">
+                        Archive Account
+                    </button>
+                    <hr>
+                    <button class="btn btn-danger" (click)="resetPasswordAccount(detail_vendor.id)">Reset Password
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

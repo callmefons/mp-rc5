@@ -1,0 +1,53 @@
+.button-group {
+  padding: 25px;
+}
+
+li.send:hover {
+  color: orangered;
+  cursor: hand;
+}
+
+a.clicky_log_outbound {
+  color: black;
+}
+
+.btn {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.analytic__tab {
+  float: left;
+  margin-bottom: -4px;
+  display: block;
+  position: relative;
+  background-color: transparent;
+  border: none;
+}
+
+.analytic__active {
+  margin-right: 2px;
+  line-height: 1.42857;
+  border: none;
+  border-radius: 4px 4px 0 0;
+  padding: 10px 15px;
+  display: block;
+  position: relative;
+  color: #595959;
+  background-color: #fff;
+}
+
+.chart {
+  display: block;
+}
+
+.row--tab {
+    margin-top: 20px;
+}
+.row--content {
+      border-left: 1px solid #ddd;
+      border-right: 1px solid #ddd;
+      border-bottom: 1px solid #ddd;
+      margin: 0px -15px -15px -15px;
+
+  }

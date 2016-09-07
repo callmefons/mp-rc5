@@ -1,0 +1,398 @@
+<!-- Modal -->
+<div class="modal fade" id="modalUpdate" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Update Profile</h4>
+            </div>
+            <div class="modal-body">
+                <p>Successfully updated</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<navbar-vendor-component></navbar-vendor-component>
+
+<div class="container">
+
+    <h1>Profile</h1>
+    <div class="row">
+        <div class="col-xs-12">
+            <ul class="nav nav-tabs" *ngIf="editMode">
+                <li class="active"><a data-toggle="tab" href="#profile">Profile</a></li>
+                <li><a data-toggle="tab" href="#companyInfo">Company Info</a></li>
+                <li><a data-toggle="tab" href="#account">Account</a></li>
+            </ul>
+
+            <!--editMode-->
+            <div class="tab-content" *ngIf="editMode">
+
+                <form [formGroup]="myForm" (ngSubmit)="myForm.valid && onSubmit(myForm.value)" novalidate>
+                    <div *ngIf="editMode">
+                        <div class="pull-right">
+                            <button type="button" class="btn btn-danger" (click)="Cancle()">Cancle</button>
+                            <button class='btn btn-info' type='submit' data-toggle="modal" data-target="#modalUpdate">Save
+                            </button>
+                        </div>
+
+                    </div>
+                    <div id="profile" class="tab-pane fade in active">
+                        <div *ngIf="!loading_profile">
+                            <div class="row row--tab-content">
+
+                                <div *ngFor="let vendor of vendor_profile">
+                                    <div class="col-md-6">
+                                        <fieldset class="form-group">
+                                            <label>Name:</label>
+                                            <input type="text"
+                                                   class="form-control"
+                                                   formControlName="name"
+                                                   [(ngModel)]="vendor.name">
+                                        </fieldset>
+
+                                        <label>Email:</label>{{ vendor?.email }}<br>
+
+                                        <fieldset class="form-group">
+                                            <label>Position:</label>
+                                            <input type="text"
+                                                   class="form-control"
+                                                   formControlName="position"
+                                                   [(ngModel)]="vendor.position">
+                                        </fieldset>
+                                        <fieldset class="form-group">
+                                            <label>Department:</label>
+                                            <input type="text"
+                                                   class="form-control"
+                                                   formControlName="department"
+                                                   [(ngModel)]="vendor.department">
+                                        </fieldset>
+                                        <fieldset class="form-group">
+                                            <label>Phone:</label>
+                                            <input type="text"
+                                                   class="form-control"
+                                                   formControlName="countrycode"
+                                                   [(ngModel)]="vendor.countrycode">
+                                        </fieldset>
+                                        <fieldset class="form-group">
+                                            <label>Phone Number:</label>
+                                            <input type="text"
+                                                   class="form-control"
+                                                   formControlName="phonenumber"
+                                                   [(ngModel)]="vendor.phonenumber">
+                                        </fieldset>
+                                        <fieldset class="form-group">
+                                            <label>Linkedin:</label>
+                                            <input type="text"
+                                                   class="form-control"
+                                                   formControlName="linkedin"
+                                                   [(ngModel)]="vendor.linkedin">
+                                        </fieldset>
+
+                                    </div>
+                                </div>
+
+                                <div *ngFor="let vendor of vendor_organization">
+
+                                    <div class="col-md-6">
+                                        <fieldset class="form-group">
+                                            <label>Organization Type</label>
+                                            <select class="form-control"
+                                                    formControlName="organization_type"
+                                                    [(ngModel)]="vendor.organization">
+                                                <option *ngFor="let opt of options.organizations" [value]="opt">
+                                                    {{opt}}
+                                                </option>
+                                            </select>
+                                        </fieldset>
+                                        <fieldset class="form-group">
+                                            <label>Suite/Floor:</label>
+                                            <input type="text" class="form-control" placeholder="Suite/Floor"
+                                                   formControlName="suite"
+                                                   [(ngModel)]="vendor.suite">
+                                        </fieldset>
+                                        <fieldset class="form-group">
+                                            <label>Number Street:</label>
+                                            <input type="text" class="form-control" placeholder="Number Street:"
+                                                   formControlName="numberstreet"
+                                                   [(ngModel)]="vendor.numberstreet">
+                                        </fieldset>
+                                        <fieldset class="form-group">
+                                            <label>Country</label>
+                                            <select class="form-control"
+                                                    formControlName="country"
+                                                    [(ngModel)]="vendor.country"
+                                                    (change)="onSelectCountry($event.target.value)">
+                                                <option *ngFor="let country of countries" [value]="country.name">
+                                                    {{country.name}}
+                                                </option>
+                                            </select>
+                                        </fieldset>
+
+                                        <fieldset class="form-group">
+                                            <div *ngIf="!citytype" [class.hidden]="disabled">
+                                                <label>City</label>
+                                                <select class="form-control"
+                                                        formControlName="city"
+                                                >
+                                                    <option *ngFor="let city of citys" [value]="city?.name">
+                                                        {{city.name}}
+                                                    </option>
+                                                </select>
+
+                                            </div>
+                                            <div *ngIf="!statetype" [class.hidden]="disabled">
+                                                <label>State</label>
+                                                <select class="form-control"
+                                                        formControlName="state"
+                                                >
+                                                    <option *ngFor="let state of states" [value]="state?.name">
+                                                        {{state.name}}
+                                                    </option>
+                                                </select>
+                                            </div>
+                                        </fieldset>
+
+                                        <fieldset class="form-group">
+                                            <div *ngIf="citytype">
+                                                <label>City</label>
+                                                <select class="form-control"
+                                                        formControlName="city"
+                                                        [(ngModel)]="vendor.city"
+                                                >
+                                                    <option *ngFor="let city of citys" [value]="city?.name">
+                                                        {{city.name}}
+                                                    </option>
+                                                </select>
+
+                                            </div>
+                                            <div *ngIf="statetype">
+                                                <label>State</label>
+                                                <select class="form-control"
+                                                        formControlName="state"
+                                                        [(ngModel)]="vendor.state"
+                                                >
+                                                    <option *ngFor="let state of states" [value]="state?.name">
+                                                        {{state.name}}
+                                                    </option>
+                                                </select>
+                                            </div>
+                                        </fieldset>
+                                        <fieldset class="form-group">
+                                            <label>Zip/Postal Code:</label>
+                                            <input type="text" class="form-control" placeholder="Zip/Postal Code:"
+                                                   formControlName="zip"
+                                                   [(ngModel)]="vendor.zip">
+                                        </fieldset>
+                                        <fieldset class="form-group">
+                                            <label>Company Phone:</label>
+                                            <input type="text" class="form-control" placeholder="Company Phone:"
+                                                   formControlName="companyphone"
+                                                   [(ngModel)]="vendor.companyphone">
+                                        </fieldset>
+                                        <fieldset class="form-group">
+                                            <label>Tax Id:</label>
+                                            <input type="text" class="form-control" placeholder="Tax Id:"
+                                                   formControlName="taxid"
+                                                   [(ngModel)]="vendor.taxid">
+                                        </fieldset>
+                                        <fieldset class="form-group">
+                                            <label>Facebook:</label>
+                                            <input type="text" class="form-control" placeholder="Facebook:"
+                                                   formControlName="facebook"
+                                                   [(ngModel)]="vendor.facebook">
+                                        </fieldset>
+                                        <fieldset class="form-group">
+                                            <label>Twitter:</label>
+                                            <input type="text" class="form-control" placeholder="Twitter:"
+                                                   formControlName="twitter"
+                                                   [(ngModel)]="vendor.twitter">
+                                        </fieldset>
+                                        <fieldset class="form-group">
+                                            <label>Line:</label>
+                                            <input type="text" class="form-control" placeholder="Line:"
+                                                   formControlName="line"
+                                                   [(ngModel)]="vendor.line">
+                                        </fieldset>
+                                        <fieldset class="form-group">
+                                            <label>Company Name:</label>
+                                            <input type="text" class="form-control" placeholder="Company Name:"
+                                                   formControlName="company_name"
+                                                   [(ngModel)]="vendor.companyname">
+                                        </fieldset>
+                                        <fieldset class="form-group">
+                                            <label>Url:</label>
+                                            <input type="text" class="form-control" placeholder="Url:"
+                                                   formControlName="url"
+                                                   [(ngModel)]="vendor.url">
+                                        </fieldset>
+                                        <fieldset class="form-group">
+                                            <label>Year Founded</label>
+                                            <select class="form-control"
+                                                    formControlName="year"
+                                                    [(ngModel)]="vendor.year">
+                                                <option *ngFor="let opt of options.year_founded" [value]="opt">{{opt}}
+                                                </option>
+                                            </select>
+                                        </fieldset>
+                                        <fieldset class="form-group">
+                                            <label>What is your company mission statement or tagline</label>
+                                            <textarea class="form-control" rows="6"
+                                                      formControlName="mission"
+                                                      [(ngModel)]="vendor.mission">
+                            </textarea>
+                                        </fieldset>
+                                        <fieldset class="form-group">
+                                            <label>How were you founded or started?:</label>
+                                            <textarea class="form-control" rows="6"
+                                                      formControlName="founded"
+                                                      [(ngModel)]="vendor.founded">
+                            </textarea>
+                                        </fieldset>
+                                        <fieldset class="form-group">
+                                            <label>Team Size:</label>
+                                            <input type="text" class="form-control" placeholder="Team Size:"
+                                                   formControlName="size"
+                                                   [(ngModel)]="vendor.size">
+                                        </fieldset>
+                                        <fieldset class="form-group">
+                                            <label>Incubator Affiliation:</label>
+                                            <input type="text" class="form-control" placeholder="Incubator Affiliation:"
+                                                   formControlName="affiliation"
+                                                   [(ngModel)]="vendor.affiliation">
+                                        </fieldset>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <ul class="nav nav-tabs" *ngIf="!editMode">
+                <li class="active"><a data-toggle="tab" href="#profileEdit">Profile</a></li>
+                <li><a data-toggle="tab" href="#companyInfoEdit">Company Info</a></li>
+                <li><a data-toggle="tab" href="#accountEdit">Account</a></li>
+            </ul>
+            <!--editMode-->
+            <div class="tab-content" *ngIf="!editMode">
+
+                <div *ngIf="!editMode">
+                    <button class="btn btn-primary pull-right" (click)="onEdit()">Edit</button>
+                </div>
+
+                <div id="profileEdit" class="tab-pane fade in active">
+                    <div *ngIf="!loading_profile">
+                        <div class="row row--tab-content" *ngFor="let vendor of vendor_profile">
+                            <div class="col-md-6">
+                                <label>Name:</label>{{ vendor?.name }}<br>
+                                <label>Email:</label>{{ vendor?.email }}<br>
+                            </div>
+                            <div class="col-md-6">
+                                <label>Position:</label> {{ vendor?.position }}<br>
+                                <label>Department:</label> {{ vendor?.department }}<br>
+                                <label>Phone:</label> {{vendor?.countrycode}} - {{ vendor?.phonenumber }}<br>
+                                <label>Linkedin:</label> {{ vendor?.linkedin }}<br>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div id="companyInfoEdit" class="tab-pane fade">
+                    <div *ngIf="!loading_organization">
+                        <div class="row row--tab-content" *ngFor="let vendor of vendor_organization">
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>vendor:</label> {{ vendor?.vendor }}<br>
+                                        <label>Address</label>
+                                        <br>
+                                        <label>Suite:</label> {{ vendor?.suite }}<br>
+                                        <label>Number Street:</label> {{ vendor?.numberstreet }}<br>
+                                        <label>Country:</label> {{ vendor?.country }}<br>
+                                        <label>State:</label> {{ vendor?.state }}<br>
+                                        <label>City:</label> {{ vendor?.city }}<br>
+                                        <label>Zip/Postal Code:</label> {{ vendor?.zip }}<br>
+                                        <label>Company Phone:</label> {{ vendor?.companyphone }}<br>
+                                        <label>Tax Id:</label> {{ vendor?.taxid }}<br>
+                                        <label>Facebook:</label> {{ vendor?.facebook }}<br>
+                                        <label>Twitter:</label> {{ vendor?.twitter }}<br>
+                                        <label>Line:</label> {{ vendor?.line }}<br>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <img class="img-responsive" [src]="vendor?.logo">
+
+                                                <!-- <img src="{{ vendor?.logo }}" class="img-responsive" alt="Company Image"> -->
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label>Company Name:</label> {{ vendor?.companyname }}<br>
+                                                <label>Url:</label> {{ vendor?.url }}<br>
+                                                <label>Year:</label> {{ vendor?.year }}<br>
+                                            </div>
+                                        </div>
+                                        <label>Mission:</label> {{ vendor?.mission }}<br>
+                                        <label>How were you founded or started?:</label> {{ vendor?.founded }}<br>
+                                        <label>Team Size:</label> {{ vendor?.size }}<br>
+                                        <label>Incubator Affiliation:</label> {{ vendor?.affiliation }}<br>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div id="accountEdit" class="tab-pane fade">
+
+                    <div class="row">
+                        <div class="col-md-6">
+
+                            <!--<form [formGroup]="myForm" (ngSubmit)="myForm.valid && onSubmitPassword(myForm.value)" novalidate>-->
+
+                            <!--<h3>Reset Password</h3>-->
+
+                            <!--<fieldset class="form-group">-->
+                            <!--<label>Current Password</label>-->
+                            <!--<input type="password" class="form-control"-->
+                            <!--placeholder="Current Password" minlength='8'-->
+                            <!--formControlName="currentpassword">-->
+                            <!--</fieldset>-->
+
+                            <!--<fieldset class="form-group">-->
+                            <!--<label>New Password</label>-->
+                            <!--<input type="password" class="form-control"-->
+                            <!--placeholder="New Password" minlength='8'-->
+                            <!--formControlName="newpassword">-->
+                            <!--</fieldset>-->
+
+                            <!--<fieldset class="form-group">-->
+                            <!--<label>Confirm New Password</label>-->
+                            <!--<input type="password" class="form-control" placeholder="Confirm New Password"-->
+                            <!--formControlName="newpassword_confirmation">-->
+                            <!--</fieldset>-->
+
+                            <!--<div class="row">-->
+                            <!--<div class="col-md-12">-->
+                            <!--<button class='btn btn-info' type='submit'>Save!!-->
+                            <!--</button>-->
+                            <!--</div>-->
+                            <!--</div>-->
+
+                            <!--</form>-->
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,61 @@
+<navbar-component></navbar-component>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="checkbox">
+        <div *ngFor="let opt of all_tag; let i = index">
+          <div *ngIf="opt.name == 'Thai'">
+            <hr>
+            <h4>Language</h4>
+            <hr>
+          </div>
+          <div *ngIf="opt.name == 'Operations'">
+            <hr>
+            <h4>Department</h4>
+            <hr>
+          </div>
+          <div *ngIf="opt.name == 'Customer Management'">
+            <hr>
+            <h4>Categories</h4>
+            <hr>
+          </div>
+          <div *ngIf="opt.name == 'Agro & Food Industry'">
+            <hr>
+            <h4>Industries</h4>
+            <hr>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input #{{i}} type="checkbox"
+                     [checked]="i == service_id"
+                     (change)="onCheckboxFilterTag(i,$event)"
+              >{{opt.name}}</label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-9">
+      <div *ngIf="!loading && checkedFirst">
+        <div class="row">
+          <div class="well pull-right">
+            <div class="well--circle"><h4>{{product_length}} Service</h4></div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3 product" *ngFor="let product of products_filter">
+            <div class="product product--logo">
+              <img [src]="product.logo" alt="product.name" class="img-responsive">
+            </div>
+            <div>
+              <h4>{{product.name}}</h4>
+              <button class="btn btn-default" (click)="goToProductDetail(product.id)">More Details</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

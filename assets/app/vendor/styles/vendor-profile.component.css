@@ -1,0 +1,10 @@
+.tab-content{
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  padding: 5px;
+}
+.row--tab-content{
+    margin-top: 20px;
+  }
+

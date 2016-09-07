@@ -1,0 +1,85 @@
+.row--content{
+    padding: 20px;
+}
+
+
+.rating{
+    margin-right: 5px;
+}
+
+.img-responsive--logo {
+    max-width: 120px;
+}
+
+
+.label-default{
+    margin-left: 2px;
+}
+
+
+.feature{
+    margin-top: 15px;
+}
+
+.tab-content{
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    padding: 5px;
+}
+
+/*Screenshot*/
+.big-screenshot{
+    margin-top: 15px;
+    max-height: 250px;
+    max-width: 250px;
+    margin: 0 auto;
+    display: inherit;
+}
+.btn_control{
+    color: grey;
+    padding: 5px;
+    font-size: 72px;
+}
+
+.btn_control:hover{
+    color: darkgray;
+    cursor: pointer;
+}
+/* my carousel */
+
+.carousel {
+    padding-left: 35px;
+    padding-right: 35px;
+}
+
+.carousel-thumbnail{
+    margin-top: 15px;
+}
+
+.carousel-inner .active.left { left: -25%; }
+.carousel-inner .next        { left:  25%; }
+.carousel-inner .prev    { left: -25%; }
+.carousel-control        { width:  4%; }
+.carousel-control.left,.carousel-control.right {
+    background-image:none;
+}
+
+.arrow{
+    color: #5e5e5e;
+    position: absolute;
+    top: 50%;
+    margin-top: -.75em;
+    font-size: 2em;
+    text-shadow: none;
+}
+
+.selected{
+    border: 4px solid orangered;
+}
+
+.carousel-thumbnail{
+    max-height: 200px;
+    cursor: hand;
+}
+

@@ -1,0 +1,72 @@
+<!-- Modal -->
+<div class="modal fade" id="modalReview" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Thank You!</h4>
+      </div>
+      <div class="modal-body">
+        <p>Your Review has been Published</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Review Again
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--<div *ngIf="loading">-->
+  <!--<loader-template></loader-template>-->
+<!--</div>-->
+
+<div class="row row--review">
+  <div class="" *ngIf="!loading">
+    <!--<h1>{{title}}</h1>-->
+    <form [formGroup]="myForm" (ngSubmit)="myForm.valid && onSubmit(myForm.value)" novalidate>
+
+      <div class="row">
+        <fieldset class="form-group">
+          <label>Services</label>
+          <select class="form-control"
+                  formControlName="productid"
+                  ngDefaultControl>
+            <option *ngFor="let opt of products" [value]="opt.id">{{opt.name}}</option>
+          </select>
+        </fieldset>
+      </div>
+
+      <div class="row">
+        <rating
+          class="rating"
+          [(ngModel)]="rating"
+          [ngModelOptions]="{standalone: true}"
+          max="5"
+          stateOn="glyphicon-star"
+          stateOff="glyphicon-star-empty"
+          ngDefaultControl>
+        </rating>
+      </div>
+
+      <div class="row">
+        <fieldset class="form-group">
+          <label>Review</label>
+          <textarea class="form-control"
+                    formControlName="reviewcomment"
+          ></textarea>
+        </fieldset>
+      </div>
+
+
+      <button class='btn btn-primary' type='submit'
+              [disabled]='!myForm.valid' data-toggle="modal" data-target="#modalReview">Save
+      </button>
+
+    </form>
+
+
+  </div>
+
+</div>

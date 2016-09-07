@@ -1,0 +1,16 @@
+.carousel{
+  margin-bottom:20px;
+}
+.row--well{
+    margin-top: 20px;
+  }
+
+.well:hover{
+    cursor: pointer;
+    background-color: #e1e1e1;
+}
+.well--list{
+    text-align: center;
+    padding-top: 20px;
+  }
+

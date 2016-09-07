@@ -1,0 +1,16 @@
+.row--content{
+    padding: 20px;
+  }
+
+
+.well{
+  text-align: center;
+  width:100%;
+  min-height: 120px;
+  padding-top: 40px;
+}
+.well--title{
+    padding-left: 20px;
+
+}
+
