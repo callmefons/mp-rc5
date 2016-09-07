@@ -43,9 +43,11 @@ export class VendorEditProductComponent implements OnInit, OnDestroy {
 
   myFormFeatures: any[] = [];
 
-  myFormLogo: string = '';
+  myFormLogo:string = '';
+  fileChosen:boolean = false;
 
-  myFormScreenshots: any[] = [];
+  myFormScreenshots:any[] = [];
+  screenshotsChosen:boolean = false;
 
   resizeOptions: ResizeOptions = {
     resizeMaxHeight: 500,
@@ -338,16 +340,20 @@ export class VendorEditProductComponent implements OnInit, OnDestroy {
 
   fileChangeLogo(imageResult: ImageResult) {
     this.myFormLogo = imageResult.resized.dataURL;
+    this.fileChosen = true;
   }
 
   fileChangeScreenshots(imageResult: ImageResult) {
     this.myFormScreenshots.push(imageResult.resized.dataURL);
+    this.screenshotsChosen = true;
   }
 
   onDeleteScreenshot(src: any) {
     let i = this.myFormScreenshots.indexOf(src);
     if (i != -1) {
       this.myFormScreenshots.splice(i, 1);
+    }else{
+      this.screenshotsChosen = false;
     }
   }
 

@@ -33,16 +33,17 @@
         <form [formGroup]="myForm" (ngSubmit)="myForm.valid && onSubmit(myForm.value)" novalidate
               enctype="multipart/form-data">
 
-          <div class="row pull-right">
-            <div class="col-md-6">
+          <div class="row">
+            <div class=".col-md-3 .col-md-offset-3">
+              <button type="button"
+                      class="btn btn-danger pull-right"
+                      (click)="onCancle()">Cancel
+              </button>
               <button [disabled]='!myForm.valid'
-                      class='btn btn-primary pull-right' type='submit' data-toggle="modal"
+                      class="btn btn-primary pull-right btn-save"
+                      type='submit' data-toggle="modal"
                       data-target="#myModal">
                 Save
-              </button>
-            </div>
-            <div class="col-md-6">
-              <button type="button" class="btn btn-danger pull-right" (click)="onCancle()">Cancel
               </button>
             </div>
           </div>
@@ -51,6 +52,7 @@
             <div class="col-md-3">
               <img [src]="myFormLogo" [hidden]="!src" class="img-responsive previewLogo" alt="Logo">
               <fieldset class="form-group">
+                <p *ngIf="!fileChosen">No file chosen</p>
                 <label class="custom-file-upload">
                   <input type="file"
                          image-upload
@@ -414,7 +416,9 @@
           <!--Screenshots-->
           <div class="row">
             <div class="col-md-12">
+              <h4>Screenshots</h4>
               <fieldset class="form-group">
+                <p *ngIf="!screenshotsChosen">No file chosen</p>
                 <label class="custom-file-upload">
                   <input type="file"
                          multiple
@@ -438,10 +442,9 @@
           </div>
 
 
-          <div class="col-md-12">
-            <h4>Video</h4>
-            <div class="row">
+          <div class="row">
               <div class="col-md-4">
+                <h4>Video</h4>
                 <fieldset class="form-group">
                   <input
                           #myVideo
@@ -461,12 +464,12 @@
                 <div *ngIf="video">
                   <iframe class="video" width="350" height="250" [src]="embedUrl"></iframe>
                 </div>
-                <button type="button" class="btn btn-sm btn-danger"
-                        (click)="deleteVideo()">Delete
+                <button type="button"
+                        class="btn btn-sm btn-danger"
+                        (click)="deleteVideo()"
+                        *ngIf="video">Delete
                 </button>
               </div>
-            </div>
-
           </div>
 
 

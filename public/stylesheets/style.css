@@ -44,3 +44,7 @@ a{
 .modal-body .form-horizontal .col-sm-offset-2 {
   margin-left: 15px;
 }
+
+textarea {
+  resize: none;
+}

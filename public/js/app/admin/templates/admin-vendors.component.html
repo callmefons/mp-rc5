@@ -4,6 +4,8 @@
     <div *ngIf="resetPassword">
         <alert dismissOnTimeout="3000" [type]="'success'"><b>Success:</b> Your password has been reset</alert>
     </div>
+    <h1>Manage Vendors</h1>
+
     <div class="row">
         <div class="col-md-6">
             <div class="table-responsive">
@@ -52,10 +54,10 @@
                         <div class="col-xs-9">
                             <h5>{{detail_vendor?.name}}</h5>
                             <h5>{{detail_vendor?.email}}</h5>
-                            <h5>{{detail_vendor?.phonenumber}}</h5>
-                            <h5>{{detail_vendor?.company_name}}</h5>
-                            <h5>{{detail_vendor?.position}}</h5>
-                            <h5>{{detail_vendor?.linkedin}}</h5>
+                            <h5>{{detail?.phonenumber}}</h5>
+                            <h5>{{detail?.company_name}}</h5>
+                            <h5>{{detail?.position}}</h5>
+                            <h5>{{detail?.linkedin}}</h5>
                             <div *ngFor="let app of apps">
                                 <div class="row">
                                     <div class="col-xs-9"><a (click)="goToDetail(app.id)">{{app.name}}</a></div>

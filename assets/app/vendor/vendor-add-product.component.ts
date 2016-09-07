@@ -45,8 +45,10 @@ export class VendorAddProductComponent implements OnInit, OnDestroy {
   myFormFeatures:any[] = [];
 
   myFormLogo:string = '';
+  fileChosen:boolean = false;
 
   myFormScreenshots:any[] = [];
+  screenshotsChosen:boolean = false;
 
   resizeOptions:ResizeOptions = {
     resizeMaxHeight: 500,
@@ -227,8 +229,10 @@ export class VendorAddProductComponent implements OnInit, OnDestroy {
     }
   }
 
+
   fileChangeScreenshots(imageResult:ImageResult) {
     this.myFormScreenshots.push(imageResult.resized.dataURL);
+    this.screenshotsChosen = true;
   }
 
 
@@ -236,11 +240,14 @@ export class VendorAddProductComponent implements OnInit, OnDestroy {
     let i = this.myFormScreenshots.indexOf(src);
     if (i != -1) {
       this.myFormScreenshots.splice(i, 1);
+    }else{
+      this.screenshotsChosen = false;
     }
   }
 
   fileChangeLogo(imageResult:ImageResult) {
     this.myFormLogo = imageResult.resized.dataURL;
+    this.fileChosen = true;
   }
 
   showMonthly : boolean = false;

@@ -32,14 +32,16 @@
             <div class="tab-content" *ngIf="editMode">
 
                 <form [formGroup]="myForm" (ngSubmit)="myForm.valid && onSubmit(myForm.value)" novalidate>
-                    <div *ngIf="editMode">
-                        <div class="pull-right">
-                            <button type="button" class="btn btn-danger" (click)="Cancle()">Cancle</button>
-                            <button class='btn btn-info' type='submit' data-toggle="modal" data-target="#modalUpdate">Save
+
+                    <div class="row" *ngIf="editMode">
+                        <div class=".col-md-3 .col-md-offset-3 btn-group-save">
+                            <button type="button" class="btn btn-danger pull-right" (click)="Cancle()">Cancle</button>
+                            <button class='btn btn-info pull-right btn-save' type='submit' data-toggle="modal" data-target="#modalUpdate">Save
                             </button>
                         </div>
-
                     </div>
+
+
                     <div id="profile" class="tab-pane fade in active">
                         <div *ngIf="!loading_profile">
                             <div class="row row--tab-content">

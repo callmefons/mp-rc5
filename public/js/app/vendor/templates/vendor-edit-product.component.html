@@ -69,6 +69,7 @@
                         <img [src]="myFormLogo"
                              [hidden]="!src" class="img-responsive previewLogo" alt="Logo">
                         <fieldset class="form-group">
+                            <p *ngIf="!fileChosen">No file chosen</p>
                             <label class="custom-file-upload">
                                 <input type="file"
                                        image-upload
@@ -474,7 +475,9 @@
                 <!--Screenshots-->
                 <div class="row">
                     <div class="col-md-12">
+                        <h4>Screenshots</h4>
                         <fieldset class="form-group">
+                            <p *ngIf="!screenshotsChosen">No file chosen</p>
                             <label class="custom-file-upload">
                                 <input type="file"
                                        multiple
@@ -498,10 +501,8 @@
 
                 <!--Video-->
                 <div class="row">
-
-                    <h4>Video</h4>
-                    <div class="row">
-                        <div class="col-md-4">
+                    <div class="col-md-4">
+                        <h4>Video</h4>
                             <fieldset class="form-group">
                                 <input
                                         #myVideo
@@ -527,8 +528,6 @@
                             </button>
                         </div>
                     </div>
-
-                </div>
 
                 <!--Minimum Requirements-->
                 <div class="row">
@@ -557,6 +556,7 @@
                 </div>
 
                 <!--ALL TAG-->
+                <div class="row">
                 <div class="col-md-3">
                     <h4>Language</h4>
                     <form class="form-horizontal">
@@ -616,6 +616,7 @@
 
                         </div>
                     </form>
+                </div>
                 </div>
             </form>
 
