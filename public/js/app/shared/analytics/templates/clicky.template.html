@@ -48,7 +48,7 @@
                        aria-hidden="true"
                     ></i> Note <span class="badge">
             {{app.review_count}}</span></button>
-                <button *ngIf="app.status === 'pending'"
+                <button *ngIf="app.status !== 'pending'"
                         class="btn btn-primary"
                         (click)="goToEditApp(app.id)">Edit Listing
                 </button>
