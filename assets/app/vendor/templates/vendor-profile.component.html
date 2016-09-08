@@ -15,6 +15,26 @@
     </div>
 </div>
 
+
+<div class="modal fade" id="modalResetPassword" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Update Profile</h4>
+            </div>
+            <div class="modal-body">
+                <p *ngIf="!resetPassword">Waiting...</p>
+                <p *ngIf="resetPassword">Successfully updated</p>
+            </div>
+            <div class="modal-footer">
+                <button *ngIf="resetPassword"
+                        type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 <navbar-vendor-component></navbar-vendor-component>
 
 <div class="container">
@@ -36,7 +56,9 @@
                     <div class="row" *ngIf="editMode">
                         <div class=".col-md-3 .col-md-offset-3 btn-group-save">
                             <button type="button" class="btn btn-danger pull-right" (click)="Cancle()">Cancle</button>
-                            <button class='btn btn-info pull-right btn-save' type='submit' data-toggle="modal" data-target="#modalUpdate">Save
+                            <button class='btn btn-info pull-right btn-save' type='submit'
+                                    data-toggle="modal"
+                                    data-target="#modalUpdate">Save
                             </button>
                         </div>
                     </div>
@@ -48,7 +70,8 @@
 
                                 <div *ngFor="let vendor of vendor_profile">
                                     <div class="col-md-6">
-                                        <img [src]="myFormLogo" [hidden]="!src" class="img-responsive previewLogo" alt="Logo">
+                                        <img [src]="myFormLogo" [hidden]="!src" class="img-responsive previewLogo"
+                                             alt="Logo">
                                         <fieldset class="form-group">
                                             <p *ngIf="!fileChosen">No file chosen</p>
                                             <label class="custom-file-upload">
@@ -369,38 +392,42 @@
                     <div class="row">
                         <div class="col-md-6">
 
-                            <!--<form [formGroup]="myForm" (ngSubmit)="myForm.valid && onSubmitPassword(myForm.value)" novalidate>-->
+                            <form [formGroup]="myPasswordForm" (ngSubmit)="myPasswordForm.valid &&
+                            onSubmitPassword(myPasswordForm.value)"
+                                  novalidate>
 
-                            <!--<h3>Reset Password</h3>-->
+                                <h4>Reset Password</h4>
 
-                            <!--<fieldset class="form-group">-->
-                            <!--<label>Current Password</label>-->
-                            <!--<input type="password" class="form-control"-->
-                            <!--placeholder="Current Password" minlength='8'-->
-                            <!--formControlName="currentpassword">-->
-                            <!--</fieldset>-->
+                                <fieldset class="form-group">
+                                    <label>Current Password</label>
+                                    <input type="password" class="form-control"
+                                           placeholder="Current Password" minlength='8'
+                                           formControlName="currentpassword">
+                                </fieldset>
 
-                            <!--<fieldset class="form-group">-->
-                            <!--<label>New Password</label>-->
-                            <!--<input type="password" class="form-control"-->
-                            <!--placeholder="New Password" minlength='8'-->
-                            <!--formControlName="newpassword">-->
-                            <!--</fieldset>-->
+                                <fieldset class="form-group">
+                                    <label>New Password</label>
+                                    <input type="password" class="form-control"
+                                           placeholder="New Password" minlength='8'
+                                           formControlName="newpassword">
+                                </fieldset>
 
-                            <!--<fieldset class="form-group">-->
-                            <!--<label>Confirm New Password</label>-->
-                            <!--<input type="password" class="form-control" placeholder="Confirm New Password"-->
-                            <!--formControlName="newpassword_confirmation">-->
-                            <!--</fieldset>-->
+                                <fieldset class="form-group">
+                                    <label>Confirm New Password</label>
+                                    <input type="password" class="form-control" placeholder="Confirm New Password"
+                                           formControlName="newpassword_confirmation">
+                                </fieldset>
 
-                            <!--<div class="row">-->
-                            <!--<div class="col-md-12">-->
-                            <!--<button class='btn btn-info' type='submit'>Save!!-->
-                            <!--</button>-->
-                            <!--</div>-->
-                            <!--</div>-->
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <button data-toggle="modal"
+                                                data-target="#modalResetPassword"
+                                                class='btn btn-info' type='submit'>Reset
+                                        </button>
+                                    </div>
+                                </div>
 
-                            <!--</form>-->
+                            </form>
 
                         </div>
                     </div>

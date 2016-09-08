@@ -44,12 +44,11 @@ a.clicky_log_outbound {
 .row--tab {
     margin-top: 20px;
 }
-.row--content {
-      border-left: 1px solid #ddd;
-      border-right: 1px solid #ddd;
-      border-bottom: 1px solid #ddd;
-      margin: 0px -15px -15px -15px;
-
+.row--tab--content{
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  margin: 0px -15px -15px -15px;
 }
 .label-status{
   margin-right: 15px;

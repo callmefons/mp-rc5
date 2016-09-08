@@ -95,6 +95,13 @@ export class VendorProfileComponent implements OnInit, OnDestroy {
             line: ['']
         });
 
+
+        this.myPasswordForm= this._fb.group({
+            currentpassword:[''],
+            newpassword:[''],
+            newpassword_confirmation:['']
+        });
+
         this.countries = this._countryService.getCountries();
 
     }
@@ -204,6 +211,21 @@ export class VendorProfileComponent implements OnInit, OnDestroy {
         this.myFormLogo = imageResult.resized.dataURL;
         this.fileChosen = true;
     }
+
+    //Reset Password
+    myPasswordForm: FormGroup;
+    resetPassword:boolean = false;
+    onSubmitPassword(value: Object) {
+
+        this.resetPassword = false;
+
+        this._vendorService.resetPasswordAccount(value)
+            .subscribe((res) => {
+                    this.resetPassword = true;
+                },
+                error => this.errorMessage = <any>error);
+    }
+
 
     editMode: boolean = false;
 
