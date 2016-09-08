@@ -5,10 +5,12 @@ import {VendorService} from "../shared/api-service/vendor/vendor.service";
 import {AuthService} from "../shared/api-service/auth/auth.service";
 import {storage} from "../shared/helpers/storage";
 import {Router} from "@angular/router";
+import {CHART_DIRECTIVES} from "ng2-charts/ng2-charts";
 
 /**
  * This class represents the lazy loaded HomeComponent.
  */
+
 @Component({
   moduleId: module.id,
   selector: 'sd-vendor',

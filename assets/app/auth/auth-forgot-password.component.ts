@@ -5,49 +5,49 @@ import {AccountManagementService} from "../shared/api-service/admin/account-mana
 
 
 @Component({
-  moduleId: module.id,
-  selector: 'sd-admin',
-  templateUrl: 'templates/auth-forgot-password.component.html',
-  styleUrls: ['styles/auth-forgot-password.component.css'],
+    moduleId: module.id,
+    selector: 'sd-admin',
+    templateUrl: 'templates/auth-forgot-password.component.html',
+    styleUrls: ['styles/auth-forgot-password.component.css'],
 })
 
 export class AuthForgotPasswordComponent implements OnInit, OnDestroy {
 
-  disabled:boolean = true;
+    disabled: boolean = true;
 
-  errorMessage:string;
-  myForm:FormGroup;
+    errorMessage: string;
+    myForm: FormGroup;
 
-  constructor(private _fb:FormBuilder,
-              private _router:Router,
-              private _accountManagetment:AccountManagementService) {
+    constructor(private _fb: FormBuilder,
+                private _router: Router,
+                private _accountManagetment: AccountManagementService) {
 
-  }
+    }
 
-  ngOnInit() {
+    ngOnInit() {
 
-    this.myForm = this._fb.group({
-      email: ['']
-    });
+        this.myForm = this._fb.group({
+            email: ['']
+        });
 
-  }
+    }
 
-  ngOnDestroy(){
+    ngOnDestroy() {
 
-  }
+    }
 
-  onSubmit(value:Object) {
+    success: boolean = false;
 
-    this._accountManagetment.forgotPassword(value).
-    subscribe((res) => {
-    });
+    onSubmit(value: Object) {
+        this.success = false;
+        this._accountManagetment.forgotPassword(value).subscribe((res) => {
+            this.success = true;
+        });
+    }
 
-    // this._authService.signup(user)
-    //     .subscribe((res) => {
-    //             // console.log(res);
-    //         },
-    //         error => this.errorMessage = <any>error);
-  }
+    goToLogin(){
+        this._router.navigate(['']);
+    }
 
 }
 

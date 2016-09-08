@@ -3,16 +3,16 @@
     [
       {
         "name": "ng2-bootstrap",
-        "raw": "ng2-bootstrap@1.1.1",
-        "rawSpec": "1.1.1",
+        "raw": "ng2-bootstrap",
+        "rawSpec": "",
         "scope": null,
-        "spec": "1.1.1",
-        "type": "version"
+        "spec": "latest",
+        "type": "tag"
       },
       "/Users/nattafahh/Desktop/07 Errors"
     ]
   ],
-  "_from": "ng2-bootstrap@1.1.1",
+  "_from": "ng2-bootstrap@latest",
   "_id": "ng2-bootstrap@1.1.1",
   "_inCache": true,
   "_installable": true,
@@ -30,11 +30,11 @@
   "_phantomChildren": {},
   "_requested": {
     "name": "ng2-bootstrap",
-    "raw": "ng2-bootstrap@1.1.1",
-    "rawSpec": "1.1.1",
+    "raw": "ng2-bootstrap",
+    "rawSpec": "",
     "scope": null,
-    "spec": "1.1.1",
-    "type": "version"
+    "spec": "latest",
+    "type": "tag"
   },
   "_requiredBy": [
     "/"
@@ -42,7 +42,7 @@
   "_resolved": "https://registry.npmjs.org/ng2-bootstrap/-/ng2-bootstrap-1.1.1.tgz",
   "_shasum": "02fc5d9f5ee3c71e1a44e7675a0d9a9f6a65a936",
   "_shrinkwrap": null,
-  "_spec": "ng2-bootstrap@1.1.1",
+  "_spec": "ng2-bootstrap",
   "_where": "/Users/nattafahh/Desktop/07 Errors",
   "author": {
     "email": "valorkin@gmail.com",

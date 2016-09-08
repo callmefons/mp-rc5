@@ -83,9 +83,9 @@ export class AdminProductComponent implements OnInit, OnDestroy {
     }
 
     ngOnDestroy() {
-        if (this.sub_updateStatus)this.sub_updateStatus.unsubscribe();
-        if (this.sub)this.sub.unsubscribe();
-        if (this.sub_delete) this.sub_delete.unsubscribe();
+        // if (this.sub_updateStatus){this.sub_updateStatus.unsubscribe();}
+        // if (this.sub){this.sub.unsubscribe();}
+        // if (this.sub_delete){this.sub_delete.unsubscribe();}
     }
 
     getProductId() {

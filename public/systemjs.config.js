@@ -6,7 +6,8 @@
         'rxjs':                       'js/vendor/rxjs',
         '@angular':                   'js/vendor/@angular',
         'ng2-bootstrap': 'js/vendor/ng2-bootstrap',
-        'moment': 'js/vendor/moment/moment.js'
+        'moment': 'js/vendor/moment/moment.js',
+        'ng2-charts':'js/vendor/ng2-charts'
 
     };
 
@@ -14,7 +15,8 @@
     var packages = {
         'app':                        { main: 'boot.js',  defaultExtension: 'js' },
         'rxjs':                       { defaultExtension: 'js' },
-        'ng2-bootstrap': { defaultExtension: 'js' }
+        'ng2-bootstrap': { defaultExtension: 'js' },
+        'ng2-charts': { main: 'ng2-charts.js', defaultExtension: 'js' }
 
     };
 

@@ -20,6 +20,8 @@ import {ClickyComponent} from "./analytics/clicky.component";
 import {ClickyService} from "./analytics/clicky.service";
 import {AlertComponent, AlertModule, RatingComponent} from "ng2-bootstrap/ng2-bootstrap";
 import {ReviewComponent} from "./review/review.component";
+import {BaseChartComponent} from "ng2-charts/ng2-charts";
+import {ClickyAdminComponent} from "./analytics/clicky-admin.component";
 
 /**
  * Do not specify providers for modules that might be imported by a lazy loaded module.
@@ -30,7 +32,7 @@ import {ReviewComponent} from "./review/review.component";
         CommonModule,
         RouterModule,
         ReactiveFormsModule,
-        FormsModule
+        FormsModule,
     ],
     declarations: [
         Search,
@@ -39,9 +41,11 @@ import {ReviewComponent} from "./review/review.component";
         NavbarVendorComponent,
         NavbarAdminComponent,
         ClickyComponent,
+        ClickyAdminComponent,
         ImageUpload,
         AlertComponent,
-        RatingComponent
+        RatingComponent,
+        BaseChartComponent
     ],
     exports: [
         CommonModule,
@@ -51,6 +55,7 @@ import {ReviewComponent} from "./review/review.component";
         NavbarVendorComponent,
         NavbarAdminComponent,
         ClickyComponent,
+        ClickyAdminComponent,
         ImageUpload,
         Search,
         AlertComponent,

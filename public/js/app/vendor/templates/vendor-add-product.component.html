@@ -143,10 +143,20 @@
                 <h4>Payment and Pricing</h4>
 
                 <form class="form-horizontal">
+
+                  <div class="checkbox">
+                    <label>
+                      <input type="checkbox"
+                             [checked]="checkAll"
+                             (change)="onCheckboxPricingModel(0,$event)"> All
+                    </label>
+                  </div>
+
                   <div class="checkbox" *ngFor="let opt of options.pricing_model">
                     <label>
                       <input #{{opt.id}} type="checkbox"
                              (change)="onCheckboxPricingModel(opt,$event)"
+                             [checked]="checkAll"
                       > {{opt.name}}</label>
 
                     <form class="form-horizontal">

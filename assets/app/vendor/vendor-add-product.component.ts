@@ -265,70 +265,121 @@ export class VendorAddProductComponent implements OnInit, OnDestroy {
   singlepriceLifetime:boolean = false;
   pricerangeLifetime:boolean = false;
 
+  allId:any;
+  allModel:any;
+
+  checkAll:boolean = false;
+
+
   onCheckboxPricingModel(value:any, event:any) {
+
     if (event.currentTarget.checked == true) {
 
-      if(value.name === 'Yearly Subscription'){
-        this.showYearly = true
-      }
-      if(value.name === 'Monthly Subscription'){
+      if (value == 0){
         this.showMonthly = true;
-      }
-      if(value.name === 'Lifetime License'){
+        this.showYearly = true;
         this.showLifetime = true;
-      }
-      if(value.name === 'Freemium Version'){
         this.showFreeService = true;
-      }
-      if(value.name === 'Other'){
         this.showOther = true;
+
+        this.allId = _.map(this.options.pricing_model, 'id');
+        this.allModel = _.map(this.options.pricing_model, 'name');
+        this.checkAll = true;
+
+
+        for(let i = 0; i < this.allId.length; i++){
+          this.myFormPricingModel.push({
+            'id': this.allId[i],
+            'model': this.allModel[i],
+            "plan":'',
+            "price_start":'',
+            "price_end":'',
+            "currency":'',
+            "day":'',
+            "other_model":''
+          });
+        }
+
+      }else{
+
+        if(value.name === 'Yearly Subscription'){
+          this.showYearly = true
+        }
+        if(value.name === 'Monthly Subscription'){
+          this.showMonthly = true;
+        }
+        if(value.name === 'Lifetime License'){
+          this.showLifetime = true;
+        }
+        if(value.name === 'Freemium Version'){
+          this.showFreeService = true;
+        }
+        if(value.name === 'Other'){
+          this.showOther = true;
+        }
+
+        this.myFormPricingModel.push({
+          'id': value.id,
+          'model': value.name,
+          "plan":'',
+          "price_start":'',
+          "price_end":'',
+          "currency":'',
+          "day":'',
+          "other_model":''
+        });
       }
-
-      this.myFormPricingModel.push({
-        'id': value.id,
-        'model': value.name,
-        "plan":'',
-        "price_start":'',
-        "price_end":'',
-        "currency":'',
-        "day":'',
-        "other_model":''
-      });
-
-      // console.log(this.myFormPricingModel);
 
     }
     if (event.currentTarget.checked == false) {
 
-      if(value.name === 'Yearly Subscription'){
+      if(value == 0){
+        this.myFormPricingModel = [];
+        this.allId = [];
+        this.allModel = [];
+        this.checkAll = false;
         this.showYearly = false
         this.singlepriceYearly = false;
         this.pricerangeYearly = false;
-      }
-      if(value.name === 'Monthly Subscription'){
         this.showMonthly = false;
         this.singlepriceMonthly = false;
         this.pricerangeMonthly = false;
-      }
-      if(value.name === 'Lifetime License'){
         this.showLifetime = false;
         this.singlepriceLifetime = false;
         this.pricerangeLifetime = false;
-      }
-      if(value.name === 'Freemium Version'){
         this.showFreeService = false;
-      }
-      if(value.name === 'Other'){
         this.showOther = false;
+      }else{
+        if(value.name === 'Yearly Subscription'){
+          this.showYearly = false
+          this.singlepriceYearly = false;
+          this.pricerangeYearly = false;
+        }
+        if(value.name === 'Monthly Subscription'){
+          this.showMonthly = false;
+          this.singlepriceMonthly = false;
+          this.pricerangeMonthly = false;
+        }
+        if(value.name === 'Lifetime License'){
+          this.showLifetime = false;
+          this.singlepriceLifetime = false;
+          this.pricerangeLifetime = false;
+        }
+        if(value.name === 'Freemium Version'){
+          this.showFreeService = false;
+        }
+        if(value.name === 'Other'){
+          this.showOther = false;
+        }
+
+        let i = _.findIndex(this.myFormPricingModel, ['id', value.id]);
+
+        if (i != -1) {
+          this.myFormPricingModel.splice(i, 1);
+        }
+
       }
 
-      let i = _.findIndex(this.myFormPricingModel, ['id', value.id]);
-
-      if (i != -1) {
-        this.myFormPricingModel.splice(i, 1);
-      }
-
-      // console.log(this.myFormPricingModel);
     }
 
   }

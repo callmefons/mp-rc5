@@ -47,16 +47,22 @@ gulp.task('vendor', function() {
     gulp.src('node_modules/systemjs/**')
         .pipe(gulp.dest(vendor + '/systemjs/'));
 
-    //zonejs
-    return gulp.src('node_modules/zone.js/**')
-        .pipe(gulp.dest(vendor + '/zone.js/'));
-
     //ng2-bootstrap
     gulp.src('node_modules/ng2-bootstrap/**')
         .pipe(gulp.dest(vendor + '/ng2-bootstrap/'));
     //moment
     gulp.src('node_modules/moment/**')
         .pipe(gulp.dest(vendor + '/moment/'));
+
+    //ng2-charts
+    gulp.src('node_modules/ng2-charts/**')
+        .pipe(gulp.dest(vendor + '/ng2-charts/'));
+
+
+    //zonejs
+    return gulp.src('node_modules/zone.js/**')
+        .pipe(gulp.dest(vendor + '/zone.js/'));
+
 });
 
 gulp.task('watch', function() {
