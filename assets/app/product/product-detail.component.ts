@@ -91,6 +91,8 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
           this.loading = false;
         });
 
+        console.log(id);
+
         this.getReview(id);
 
       });
@@ -151,13 +153,14 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
   }
 
   getReview(id: any) {
+
     if (this._authService.isLoggedIn() == true) {
       this._reviewService.getReviewById(id)
         .subscribe((reviews: any) => {
+          console.log(reviews);
           for (let i = 0; i < reviews.data.length; i++) {
             this.reviews.push(reviews.data[i]);
           }
-          ;
         });
     } else {
       this._reviewService.getReviewById(id)

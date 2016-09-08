@@ -42,7 +42,7 @@ export declare class ComponentsHelper {
      * @param providers - optional array of providers
      * @returns {ComponentRef<T>} - returns ComponentRef<T>
      */
-    appendNextToLocation<T>(ComponentClass: Type<T>, location: ViewContainerRef, providers?: ResolvedReflectiveProvider[]): ComponentRef<T>;
+    // appendNextToLocation<T>(ComponentClass: Type<T>, location: ViewContainerRef, providers?: ResolvedReflectiveProvider[]): ComponentRef<T>;
     /**
      * Helper methods to add ComponentClass(like modal backdrop) with options
      * of type ComponentOptionsClass to element next to application root
@@ -53,5 +53,5 @@ export declare class ComponentsHelper {
      * @param contextInjector - injector to resolve root view container (any injector except root injector will fit)
      * @returns {ComponentRef<T>} - returns ComponentRef<T>
      */
-    appendNextToRoot<T>(ComponentClass: Type<T>, ComponentOptionsClass: any, options: any, contextInjector: Injector): ComponentRef<T>;
+    // appendNextToRoot<T>(ComponentClass: Type<T>, ComponentOptionsClass: any, options: any, contextInjector: Injector): ComponentRef<T>;
 }

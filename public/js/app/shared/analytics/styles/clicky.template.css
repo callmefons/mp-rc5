@@ -50,4 +50,7 @@ a.clicky_log_outbound {
       border-bottom: 1px solid #ddd;
       margin: 0px -15px -15px -15px;
 
-  }
+}
+.label-status{
+  margin-right: 15px;
+}

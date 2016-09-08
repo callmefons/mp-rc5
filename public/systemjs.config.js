@@ -6,7 +6,7 @@
         'rxjs':                       'js/vendor/rxjs',
         '@angular':                   'js/vendor/@angular',
         'ng2-bootstrap': 'js/vendor/ng2-bootstrap',
-            'moment': 'js/vendor/moment/moment.js'
+        'moment': 'js/vendor/moment/moment.js'
 
     };
 

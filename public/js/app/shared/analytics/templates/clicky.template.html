@@ -1,79 +1,86 @@
 <div class="modal fade" id="myModal" role="dialog" *ngIf="!loading">
-  <div class="modal-dialog">
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Log</h4>
-      </div>
-      <div class="modal-body" *ngFor="let log of logs; let i = index;">
-        <p><b>[{{i}}] {{log?.date}}</b>| Listing {{log?.action}} by {{log?.by}} from {{log?.companyname}}</p>
-        <br>
-        <p *ngIf="log?.action === 'moderated'"><b>Sent back for Review</b><br>
-          Notes: {{log?.comment}}
-        <hr>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="goToLogin()">OK</button>
-      </div>
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Log</h4>
+            </div>
+            <div class="modal-body" *ngFor="let log of logs; let i = index;">
+                <p><b>[{{i}}] {{log?.date}}</b>| Listing {{log?.action}} by {{log?.by}} from {{log?.companyname}}</p>
+                <br>
+                <p *ngIf="log?.action === 'moderated'"><b>Sent back for Review</b><br>
+                    Notes: {{log?.comment}}
+                <hr>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="goToLogin()">OK</button>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
 
 
 <div class="row row--tab">
-  <div class="analytic">
-    <!-- Nav tabs -->
-    <ul class="nav nav-tabs">
-      <li class="{{app.name === selected ? 'active': ''}}" *ngFor="let app of apps"
-          (click)="getAnalytics(app.name)">
-        <a>{{app.name}}</a>
-      </li>
-    </ul>
-  </div>
+    <div class="analytic">
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs">
+            <li class="{{app.name === selected ? 'active': ''}}" *ngFor="let app of apps"
+                (click)="getAnalytics(app.name)">
+                <a>{{app.name}}</a>
+            </li>
+        </ul>
+    </div>
 </div>
 <div class="row--tab--content">
-  <div class="row" *ngFor="let app of apps">
-    <div *ngIf="app.name === selected">
-      <div class="button-group pull-right">
+    <div class="row" *ngFor="let app of apps">
+        <div *ngIf="app.name === selected">
+            <div class="button-group pull-right">
 
-        <button type="button" class="btn btn-primary"
-                data-toggle="modal"
-                data-target="#myModal" (click)="showLog(app.log)">
-          <i class="fa fa-file-code-o fx-5x"
-             aria-hidden="true"
-          ></i> Note <span class="badge">
+                <div class="row">
+                    <span class="pull-right label label-default label-status">{{app.status}}</span>
+                </div>
+
+                <button type="button" class="btn btn-primary"
+                        data-toggle="modal"
+                        data-target="#myModal" (click)="showLog(app.log)">
+                    <i class="fa fa-file-code-o fx-5x"
+                       aria-hidden="true"
+                    ></i> Note <span class="badge">
             {{app.review_count}}</span></button>
-        <button class="btn btn-primary" (click)="goToEditApp(app.id)">Edit Listing</button>
+                <button *ngIf="app.status === 'pending'"
+                        class="btn btn-primary"
+                        (click)="goToEditApp(app.id)">Edit Listing
+                </button>
 
-      </div>
+            </div>
+        </div>
     </div>
-  </div>
-  <br>
-  <div class="row">
-    <div class="col-md-6">
-      <!--<base-chart class="chart"-->
-                  <!--[datasets]="lineChartData"-->
-                  <!--[labels]="lineChartLabels"-->
-                  <!--[options]="lineChartOptions"-->
-                  <!--[colors]="lineChartColours"-->
-                  <!--[legend]="lineChartLegend"-->
-                  <!--[chartType]="lineChartType"-->
-                  <!--(chartHover)="chartHovered($event)"-->
-                  <!--(chartClick)="chartClicked($event)"></base-chart>-->
-    <!--</div>-->
+    <br>
+    <div class="row">
+        <div class="col-md-6">
+            <!--<base-chart class="chart"-->
+            <!--[datasets]="lineChartData"-->
+            <!--[labels]="lineChartLabels"-->
+            <!--[options]="lineChartOptions"-->
+            <!--[colors]="lineChartColours"-->
+            <!--[legend]="lineChartLegend"-->
+            <!--[chartType]="lineChartType"-->
+            <!--(chartHover)="chartHovered($event)"-->
+            <!--(chartClick)="chartClicked($event)"></base-chart>-->
+            <!--</div>-->
 
-    <!--<div class="col-md-6">-->
-      <!--<base-chart class="chart"-->
-                  <!--[datasets]="lineChartData__2"-->
-                  <!--[labels]="lineChartLabels__2"-->
-                  <!--[options]="lineChartOptions__2"-->
-                  <!--[colors]="lineChartColours__2"-->
-                  <!--[legend]="lineChartLegend__2"-->
-                  <!--[chartType]="lineChartType__2"-->
-                  <!--(chartHover)="chartHovered($event)"-->
-                  <!--(chartClick)="chartClicked($event)"></base-chart>-->
+            <!--<div class="col-md-6">-->
+            <!--<base-chart class="chart"-->
+            <!--[datasets]="lineChartData__2"-->
+            <!--[labels]="lineChartLabels__2"-->
+            <!--[options]="lineChartOptions__2"-->
+            <!--[colors]="lineChartColours__2"-->
+            <!--[legend]="lineChartLegend__2"-->
+            <!--[chartType]="lineChartType__2"-->
+            <!--(chartHover)="chartHovered($event)"-->
+            <!--(chartClick)="chartClicked($event)"></base-chart>-->
+        </div>
+
     </div>
-
-  </div>
 </div>
