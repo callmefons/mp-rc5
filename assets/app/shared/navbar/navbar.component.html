@@ -41,18 +41,15 @@
             </div>
 
             <!-- Modal Footer -->
-            <div class="modal-footer" *ngIf="!login">
-                <button type="button" class="btn btn-default"
-                        data-dismiss="modal"
-                        (click)="goToRegister()">
+            <div class="modal-footer modal-footer-register" *ngIf="!login">
+                <p><a data-dismiss="modal"
+                      (click)="goToRegister()">
                     Create new account
-                </button>
-                <button
-                        (click)="goToForgotPassword()"
-                        data-dismiss="modal"
-                        type="button" class="btn btn-primary">
+                </a></p>
+                <p><a (click)="goToForgotPassword()"
+                      data-dismiss="modal">
                     Forgot password
-                </button>
+                </a></p>
             </div>
 
         </div>

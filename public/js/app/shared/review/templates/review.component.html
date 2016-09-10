@@ -31,6 +31,7 @@
         <fieldset class="form-group">
           <label>Services</label>
           <select class="form-control"
+                  [(ngModel)]="productId"
                   formControlName="productid"
                   ngDefaultControl>
             <option *ngFor="let opt of products" [value]="opt.id">{{opt.name}}</option>
@@ -59,10 +60,12 @@
         </fieldset>
       </div>
 
+      <div class="row">
+        <button class='btn btn-primary' type='submit'
+                [disabled]='!myForm.valid' data-toggle="modal" data-target="#modalReview">Save
+        </button>
+      </div>
 
-      <button class='btn btn-primary' type='submit'
-              [disabled]='!myForm.valid' data-toggle="modal" data-target="#modalReview">Save
-      </button>
 
     </form>
 

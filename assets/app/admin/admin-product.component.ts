@@ -38,7 +38,7 @@ export class AdminProductComponent implements OnInit, OnDestroy {
     features: any = [];
 
 
-    myForm: FormGroup;
+    myFormAdminReview: FormGroup;
     sub_updateStatus: Subscription;
     updateStatus$: Observable<any>;
     updated: boolean = true;
@@ -67,7 +67,7 @@ export class AdminProductComponent implements OnInit, OnDestroy {
                 private _router: Router,
                 public _sanitizer: DomSanitizationService,
                 private _productService: ProductService) {
-        this.myForm = this._fb.group({
+        this.myFormAdminReview = this._fb.group({
             id: [''],
             status: [''],
             comment: [''],
@@ -137,7 +137,7 @@ export class AdminProductComponent implements OnInit, OnDestroy {
         this.reviewed = false;
 
         const statusLog = new StatusLog(
-            this.myForm.value.comment
+            this.myFormAdminReview.value.comment
         );
 
         this.updateStatus$ = this._productService.updateProductStatus(
@@ -150,6 +150,7 @@ export class AdminProductComponent implements OnInit, OnDestroy {
             this.updated = true;
             this.reviewed = true;
             this.onRefresh();
+            this.myFormAdminReview.reset();
         }, error => this.errorMessage = <any>error);
 
     }

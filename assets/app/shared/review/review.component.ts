@@ -1,5 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {Router} from '@angular/router';
 import {Observable, Subscription} from "rxjs/Rx";
 import {Location} from '@angular/common';
 
@@ -8,6 +7,8 @@ import {ProductService} from "../api-service/product/product.service";
 import {Product} from "../models/product.model";
 import {FormGroup, FormBuilder} from "@angular/forms";
 import {ReviewService} from "../api-service/review.service";
+import {ActivatedRoute, Router} from "@angular/router";
+import {Input} from "@angular/core";
 
 @Component({
   moduleId: module.id,
@@ -18,6 +19,11 @@ import {ReviewService} from "../api-service/review.service";
 })
 
 export class ReviewComponent implements OnInit {
+
+
+  //Input Form Product Detail
+  @Input()
+  productId: any;
 
   title:string = 'Review a Service';
   errorMessage:string;
@@ -43,13 +49,14 @@ export class ReviewComponent implements OnInit {
               private _fb:FormBuilder,
               public _reviewService:ReviewService,
               public _productService:ProductService,
-              private _router:Router) {
+              private _router:Router,
+            private route: ActivatedRoute) {
 
 
     this.myForm = this._fb.group({
       reviewcomment: [''],
       reviewscore: [''],
-      productid: ['']
+      productid: []
     });
   }
 
@@ -62,6 +69,7 @@ export class ReviewComponent implements OnInit {
     if(this.sub_review)this.sub_review.unsubscribe();
   }
 
+  id:any;
   getProducts() {
     this.products$ = this._productService.getProduct();
     this.sub = this.products$.subscribe((products:any)=> {
