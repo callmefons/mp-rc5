@@ -2,25 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="faff2c17-11cb-4609-98dd-54203a84a7ed" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/admin/admin-product.component.ts" afterPath="$PROJECT_DIR$/assets/app/admin/admin-product.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/admin/templates/admin-product.component.html" afterPath="$PROJECT_DIR$/assets/app/admin/templates/admin-product.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/product/templates/product-detail.component.html" afterPath="$PROJECT_DIR$/assets/app/product/templates/product-detail.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/shared/navbar/navbar.component.css" afterPath="$PROJECT_DIR$/assets/app/shared/navbar/navbar.component.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/shared/navbar-admin/navbar-admin.component.html" afterPath="$PROJECT_DIR$/assets/app/shared/navbar-admin/navbar-admin.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/shared/navbar-vendor/navbar-vendor.component.html" afterPath="$PROJECT_DIR$/assets/app/shared/navbar-vendor/navbar-vendor.component.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/shared/navbar/navbar.component.html" afterPath="$PROJECT_DIR$/assets/app/shared/navbar/navbar.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/shared/review/review.component.ts" afterPath="$PROJECT_DIR$/assets/app/shared/review/review.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/shared/review/templates/review.component.html" afterPath="$PROJECT_DIR$/assets/app/shared/review/templates/review.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/vendor/templates/vendor-add-product.component.html" afterPath="$PROJECT_DIR$/assets/app/vendor/templates/vendor-add-product.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/vendor/templates/vendor-edit-product.component.html" afterPath="$PROJECT_DIR$/assets/app/vendor/templates/vendor-edit-product.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/admin/templates/admin-product.component.html" afterPath="$PROJECT_DIR$/public/js/app/admin/templates/admin-product.component.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/boot.js" afterPath="$PROJECT_DIR$/public/js/app/boot.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/product/templates/product-detail.component.html" afterPath="$PROJECT_DIR$/public/js/app/product/templates/product-detail.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/shared/navbar/navbar.component.css" afterPath="$PROJECT_DIR$/public/js/app/shared/navbar/navbar.component.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/shared/navbar-admin/navbar-admin.component.html" afterPath="$PROJECT_DIR$/public/js/app/shared/navbar-admin/navbar-admin.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/shared/navbar-vendor/navbar-vendor.component.html" afterPath="$PROJECT_DIR$/public/js/app/shared/navbar-vendor/navbar-vendor.component.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/shared/navbar/navbar.component.html" afterPath="$PROJECT_DIR$/public/js/app/shared/navbar/navbar.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/shared/review/templates/review.component.html" afterPath="$PROJECT_DIR$/public/js/app/shared/review/templates/review.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/vendor/templates/vendor-add-product.component.html" afterPath="$PROJECT_DIR$/public/js/app/vendor/templates/vendor-add-product.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/vendor/templates/vendor-edit-product.component.html" afterPath="$PROJECT_DIR$/public/js/app/vendor/templates/vendor-edit-product.component.html" />
     </list>
     <ignored path="07 Errors.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -53,6 +42,46 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="navbar.component.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/app/shared/navbar/navbar.component.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="303">
+              <caret line="67" column="19" selection-start-line="67" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="navbar-admin.component.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/app/shared/navbar-admin/navbar-admin.component.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="navbar-vendor.component.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/app/shared/navbar-vendor/navbar-vendor.component.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="boot.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/js/app/boot.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="13" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="review.component.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/app/shared/review/review.component.ts">
           <provider selected="true" editor-type-id="text-editor">
@@ -61,36 +90,6 @@
               <folding>
                 <element signature="e#0#48#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="vendor-add-product.component.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/app/vendor/templates/vendor-add-product.component.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="20" selection-end-column="6" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="vendor-edit-product.component.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/app/vendor/templates/vendor-edit-product.component.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="29" column="14" selection-start-line="29" selection-start-column="14" selection-end-line="29" selection-end-column="14" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="product-detail.component.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/app/product/templates/product-detail.component.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2034">
-              <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -135,16 +134,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="navbar.component.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/app/shared/navbar/navbar.component.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" column="22" selection-start-line="1" selection-start-column="22" selection-end-line="1" selection-end-column="22" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="Git.Settings">
@@ -169,7 +158,6 @@
         <option value="$PROJECT_DIR$/assets/app/vendor/styles/vendor-edit-product.component.css" />
         <option value="$PROJECT_DIR$/assets/app/shared/analytics/clicky.component.ts" />
         <option value="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/utils/components-helper.service.d.ts" />
-        <option value="$PROJECT_DIR$/assets/app/shared/navbar-admin/navbar-admin.component.html" />
         <option value="$PROJECT_DIR$/assets/app/vendor/vendor-add-product.component.ts" />
         <option value="$PROJECT_DIR$/gulpfile.js" />
         <option value="$PROJECT_DIR$/public/systemjs.config.js" />
@@ -183,7 +171,6 @@
         <option value="$PROJECT_DIR$/assets/app/shared/analytics/clicky-admin.component.ts" />
         <option value="$PROJECT_DIR$/assets/app/auth/templates/auth-forgot-password.component.html" />
         <option value="$PROJECT_DIR$/assets/app/auth/auth-forgot-password.component.ts" />
-        <option value="$PROJECT_DIR$/assets/app/shared/navbar-vendor/navbar-vendor.component.html" />
         <option value="$PROJECT_DIR$/assets/app/shared/api-service/vendor/all-vendor.service.ts" />
         <option value="$PROJECT_DIR$/assets/app/shared/api-service/admin/account-management.service.ts" />
         <option value="$PROJECT_DIR$/assets/app/shared/api-service/vendor/vendor.service.ts" />
@@ -198,12 +185,14 @@
         <option value="$PROJECT_DIR$/assets/app/product/product-detail.component.ts" />
         <option value="$PROJECT_DIR$/assets/app/product/templates/product-detail.component.html" />
         <option value="$PROJECT_DIR$/assets/app/shared/review/templates/review.component.html" />
-        <option value="$PROJECT_DIR$/assets/app/shared/navbar/navbar.component.html" />
         <option value="$PROJECT_DIR$/assets/app/shared/navbar/navbar.component.css" />
         <option value="$PROJECT_DIR$/assets/app/vendor/templates/vendor-edit-product.component.html" />
         <option value="$PROJECT_DIR$/assets/app/vendor/templates/vendor-add-product.component.html" />
         <option value="$PROJECT_DIR$/assets/app/admin/templates/admin-product.component.html" />
         <option value="$PROJECT_DIR$/assets/app/admin/admin-product.component.ts" />
+        <option value="$PROJECT_DIR$/assets/app/shared/navbar/navbar.component.html" />
+        <option value="$PROJECT_DIR$/assets/app/shared/navbar-admin/navbar-admin.component.html" />
+        <option value="$PROJECT_DIR$/assets/app/shared/navbar-vendor/navbar-vendor.component.html" />
       </list>
     </option>
   </component>
@@ -310,7 +299,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
+              <option name="myItemId" value="shared" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -332,11 +321,63 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
+              <option name="myItemId" value="shared" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
+              <option name="myItemId" value="navbar-vendor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mp-rc5" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mp-rc5" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="shared" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="navbar-admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mp-rc5" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mp-rc5" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="shared" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="navbar" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -441,12 +482,12 @@
       <workItem from="1473321936941" duration="791000" />
       <workItem from="1473322788157" duration="540000" />
       <workItem from="1473323394503" duration="12234000" />
-      <workItem from="1473485812225" duration="3392000" />
+      <workItem from="1473485812225" duration="3921000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="66124000" />
+    <option name="totallyTimeSpent" value="66653000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="4" y="23" width="1276" height="777" extended-state="6" />
@@ -516,13 +557,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/gulpfile.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-619">
-          <caret line="5" column="17" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/typings.d.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -690,13 +724,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/shared/navbar-vendor/navbar-vendor.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/app/shared/rxjs-operators.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -825,22 +852,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/shared/navbar-admin/navbar-admin.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/shared/navbar/navbar.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="43" column="58" selection-start-line="43" selection-start-column="37" selection-end-line="43" selection-end-column="58" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/app/shared/navbar/navbar.component.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -911,6 +922,38 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2277">
           <caret line="69" column="30" selection-start-line="69" selection-start-column="30" selection-end-line="69" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/app/boot.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="13" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/shared/navbar/navbar.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="303">
+          <caret line="67" column="19" selection-start-line="67" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/shared/navbar-admin/navbar-admin.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/shared/navbar-vendor/navbar-vendor.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
           <folding />
         </state>
       </provider>
