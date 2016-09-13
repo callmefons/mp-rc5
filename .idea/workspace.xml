@@ -1,31 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="faff2c17-11cb-4609-98dd-54203a84a7ed" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/app/admin/styles/admin-setting.component.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/app/admin/templates/admin-setting.component.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/app/shared/navbar-admin/navbar-admin.component.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/analytic.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/shared/navbar-admin/navbar-vendor.component.css" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/app/shared/navbar-admin/navbar-vendor.component.css" afterPath="$PROJECT_DIR$/assets/app/admin/admin-setting.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/admin/admin.routing.ts" afterPath="$PROJECT_DIR$/assets/app/admin/admin.routing.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/product/product-detail.component.ts" afterPath="$PROJECT_DIR$/assets/app/product/product-detail.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/shared/analytics/clicky-admin.component.ts" afterPath="$PROJECT_DIR$/assets/app/shared/analytics/clicky-admin.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/shared/analytics/clicky.component.ts" afterPath="$PROJECT_DIR$/assets/app/shared/analytics/clicky.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/shared/analytics/clicky.service.ts" afterPath="$PROJECT_DIR$/assets/app/shared/analytics/clicky.service.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/shared/navbar-admin/navbar-admin.component.html" afterPath="$PROJECT_DIR$/assets/app/shared/navbar-admin/navbar-admin.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/shared/navbar-admin/navbar-admin.component.ts" afterPath="$PROJECT_DIR$/assets/app/shared/navbar-admin/navbar-admin.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/shared/navbar-vendor/navbar-vendor.component.css" afterPath="$PROJECT_DIR$/assets/app/shared/navbar-vendor/navbar-vendor.component.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/shared/navbar-vendor/navbar-vendor.component.html" afterPath="$PROJECT_DIR$/assets/app/shared/navbar-vendor/navbar-vendor.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/shared/navbar/navbar.component.css" afterPath="$PROJECT_DIR$/assets/app/shared/navbar/navbar.component.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/boot.js" afterPath="$PROJECT_DIR$/public/js/app/boot.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/shared/navbar-admin/navbar-admin.component.html" afterPath="$PROJECT_DIR$/public/js/app/shared/navbar-admin/navbar-admin.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/shared/navbar-vendor/navbar-vendor.component.css" afterPath="$PROJECT_DIR$/public/js/app/shared/navbar-vendor/navbar-vendor.component.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/shared/navbar-vendor/navbar-vendor.component.html" afterPath="$PROJECT_DIR$/public/js/app/shared/navbar-vendor/navbar-vendor.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/shared/navbar/navbar.component.css" afterPath="$PROJECT_DIR$/public/js/app/shared/navbar/navbar.component.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/index.hbs" afterPath="$PROJECT_DIR$/views/index.hbs" />
-    </list>
+    <list default="true" id="faff2c17-11cb-4609-98dd-54203a84a7ed" name="Default" comment="" />
     <ignored path="07 Errors.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -47,11 +23,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
+      <file leaf-file-name="package.json" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="26" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
+            <state relative-caret-position="360">
+              <caret line="24" column="11" selection-start-line="24" selection-start-column="11" selection-end-line="24" selection-end-column="11" />
               <folding />
             </state>
           </provider>
@@ -79,7 +55,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="clicky-admin.component.ts" pinned="false" current-in-tab="true">
+      <file leaf-file-name="clicky-admin.component.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/app/shared/analytics/clicky-admin.component.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="263">
@@ -460,12 +436,12 @@
       <workItem from="1473322788157" duration="540000" />
       <workItem from="1473323394503" duration="12234000" />
       <workItem from="1473485812225" duration="4111000" />
-      <workItem from="1473651391153" duration="18835000" />
+      <workItem from="1473651391153" duration="18999000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="85678000" />
+    <option name="totallyTimeSpent" value="85842000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="34" y="23" width="1276" height="621" extended-state="0" />
@@ -919,14 +895,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="26" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/app/admin/admin-product.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-30">
@@ -960,6 +928,14 @@
           <folding>
             <element signature="e#0#48#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="11" selection-start-line="24" selection-start-column="11" selection-end-line="24" selection-end-column="11" />
+          <folding />
         </state>
       </provider>
     </entry>
