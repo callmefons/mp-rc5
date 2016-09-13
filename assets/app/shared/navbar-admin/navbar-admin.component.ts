@@ -51,6 +51,10 @@ export class NavbarAdminComponent {
         this._router.navigate([`admin/vendor/1/index`]);
     }
 
+    goToAdminSettings(){
+        this._router.navigate([`admin/settings`]);
+    }
+
     goToDirectory(){
         this._router.navigate([``]);
     }

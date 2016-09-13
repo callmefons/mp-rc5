@@ -10,6 +10,7 @@ import {AdminVendorsComponent} from "./admin-vendors.component";
 import {AdminLisitingComponent} from "./admin-listing.component";
 import {AdminProductComponent} from "./admin-product.component";
 import {AuthGuard} from "../shared/api-service/auth/auth-guard.service";
+import {AdminSettingComponent} from "./admin-setting.component";
 
 export const ADMIN_ROUTES: Routes = [
   {
@@ -22,6 +23,7 @@ export const ADMIN_ROUTES: Routes = [
       {path: 'vendor/:id/:mode', component:AdminVendorsComponent},
       {path: 'listing', component:AdminLisitingComponent},
       {path: 'product/:id', component:AdminProductComponent},
+      {path: 'settings', component:AdminSettingComponent},
     ]
   }
 ];

@@ -147,7 +147,14 @@ export class ClickyComponent {
   public lineChartLabels:Array<any> = new Array(7);
   public lineChartOptions:any = {
     animation: false,
-    responsive: true
+    responsive: true,
+    scales: {
+      yAxes: [{
+        ticks: {
+          beginAtZero:true
+        }
+      }]
+    }
   };
   public lineChartColours:Array<any> = [
     { // grey
@@ -170,7 +177,14 @@ export class ClickyComponent {
   public lineChartLabels__2:Array<any> = new Array(7);
   public lineChartOptions__2:any = {
     animation: false,
-    responsive: true
+    responsive: true,
+    scales: {
+      yAxes: [{
+        ticks: {
+          beginAtZero:true
+        }
+      }]
+    }
   };
   public lineChartColours__2:Array<any> = [
     { // dark grey

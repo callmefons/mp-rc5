@@ -1,3 +1,7 @@
 .modal-footer-register{
     padding: 0 15px 0;
 }
+
+.nav-border-right{
+    border-right: 1px solid #dddddd;
+}

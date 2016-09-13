@@ -1,0 +1,31 @@
+.tab-content {
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    padding: 5px;
+}
+
+.title-tag{
+    padding: 20px;
+}
+
+.well-tag{
+    margin: 30px;
+    margin-bottom: 0;
+    margin-top: 5px;
+    padding: 10px;
+}
+
+.well-tag:hover{
+    cursor: pointer;
+}
+
+.btn-delete{
+    margin-left: 250px;
+}
+
+.selected {
+    background-color: red;
+    color: white;
+}
+

@@ -6,6 +6,7 @@ import {SafeResourceUrl, SafeUrl} from '@angular/platform-browser';
 import {AuthService} from "../shared/api-service/auth/auth.service";
 import {ReviewService} from "../shared/api-service/review.service";
 
+declare var ClickyLog: Function;
 /**
  * This class represents the lazy loaded HomeComponent.
  */
@@ -102,6 +103,7 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
     if (this.sub)this.sub.unsubscribe();
   }
 
+
   onSelect(_screenshot: string, i: number, j: number) {
     this.selected = _screenshot;
 
@@ -164,7 +166,6 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
       this._reviewService.getReviewById(id)
         .subscribe((reviews: any) => {
           this.reviews.push(reviews.data[0]);
-
         });
     }
   }
@@ -173,4 +174,7 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
     this._router.navigate([`auth/register`]);
   }
 
+  visitWebsite(name: string){
+    ClickyLog(name);
+  }
 }
