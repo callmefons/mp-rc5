@@ -168,7 +168,10 @@
             to see more reviews
         </div>
 
-            <customer-review-service [productId]="apps.id" ngDefaultControl></customer-review-service>
+            <customer-review-service [productId]="apps.id"
+                                     ngDefaultControl
+                                     (success)="onSuccess($event)"
+            ></customer-review-service>
 
     </div>
 

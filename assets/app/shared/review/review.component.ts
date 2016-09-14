@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit,EventEmitter} from '@angular/core';
 import {Observable, Subscription} from "rxjs/Rx";
 import {Location} from '@angular/common';
 
@@ -8,7 +8,7 @@ import {Product} from "../models/product.model";
 import {FormGroup, FormBuilder} from "@angular/forms";
 import {ReviewService} from "../api-service/review.service";
 import {ActivatedRoute, Router} from "@angular/router";
-import {Input} from "@angular/core";
+import {Input,Output} from "@angular/core";
 
 @Component({
   moduleId: module.id,
@@ -24,6 +24,9 @@ export class ReviewComponent implements OnInit {
   //Input Form Product Detail
   @Input()
   productId: any;
+
+  @Output()
+  success: EventEmitter<any> = new EventEmitter();
 
   title:string = 'Review a Service';
   errorMessage:string;
@@ -88,6 +91,7 @@ export class ReviewComponent implements OnInit {
 
     this.review$ = this._reviewService.onReview(review);
       this.sub_review = this.review$.subscribe((res:any) => {
+        this.success.emit('success');
         },
         error => this.errorMessage = <any>error);
   }

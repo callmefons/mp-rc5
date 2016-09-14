@@ -174,6 +174,14 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
     this._router.navigate([`auth/register`]);
   }
 
+  //Output form review directive
+  onSuccess(results: any) {
+    if(results == 'success'){
+      this.ngOnInit();
+    }
+  }
+
+
   visitWebsite(name: string){
     ClickyLog(name);
   }
