@@ -14,9 +14,9 @@
                 <div class="col-md-9">
                     <h3>{{apps.name}}</h3>
                     <p>{{apps.company_name}}</p>
-                    <span class="label label-default" *ngFor="let opt of languagesTag">
-                    {{opt?.name}}
-                </span>
+                    <div class="col-xs-2">
+                        <span class="label label-default" *ngFor="let opt of languagesTag">{{opt?.name}}</span>
+                    </div>
                 </div>
             </div>
 
@@ -31,9 +31,11 @@
                     </p>
                 </div>
                 <div class="col-xs-12">
-                    <p>Departments:
-                        <span class="label label-default" *ngFor="let opt of departmentsTag">{{opt?.name}}</span>
-                    </p>
+                    <p>Departments:</p>
+                            <span class="label label-default"
+                                  *ngFor="let opt of departmentsTag; let index = index;">
+                    {{opt?.name}}</span>
+
                 </div>
 
             </div>
@@ -168,10 +170,7 @@
             to see more reviews
         </div>
 
-            <customer-review-service [productId]="apps.id"
-                                     ngDefaultControl
-                                     (success)="onSuccess($event)"
-            ></customer-review-service>
+        <customer-review-service [productId]="apps.id" ngDefaultControl></customer-review-service>
 
     </div>
 

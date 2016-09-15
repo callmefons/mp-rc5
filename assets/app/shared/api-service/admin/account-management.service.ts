@@ -15,8 +15,8 @@ export class AccountManagementService {
   constructor (private _http: Http, private _router: Router) {}
   response:any;
 
-  archiveAccount(userId:any) {
-    return this._http.post(`${config.apiUrl}archive/user/${userId}?token=${storage.getAuthToken()}`
+  archiveAccount(userId:any, status:any) {
+    return this._http.post(`${config.apiUrl}${status}/user/${userId}?token=${storage.getAuthToken()}`
       , { headers: request.getJsonHeaders() }).cache()
       .map(this.extractData)
       .catch(this.handleError);

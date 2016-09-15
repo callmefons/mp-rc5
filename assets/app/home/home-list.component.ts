@@ -68,7 +68,7 @@ export class HomeListComponent implements OnInit, OnDestroy {
   }
 
   goToProductList(productId:any) {
-    this._router.navigate([`/product/${productId - 1}`]);
+    this._router.navigate([`/product/${productId}`]);
   }
 
 }

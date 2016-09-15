@@ -44,21 +44,21 @@ export class AuthRegisterComponent implements OnInit, OnDestroy {
               private _authService:AuthService,
               private _router:Router) {
 
+  }
+
+  ngOnInit() {
+    this.getCountry();
     this.myForm = this._fb.group({
       personal_name: ['', Validators.required],
       email: ['', Validators.compose([Validators.required, emailValidator])],
       password: ['', Validators.compose([Validators.required, passwordValidator])],
       password_confirmation: ['', Validators.required],
       company_name: ['', Validators.required],
-      country: ['', Validators.required],
+      country: [this.countries[0].name, Validators.required],
       state: [''],
-      city: ['']
+      city: [''],
+      role:['customer']
     });
-  }
-
-  ngOnInit() {
-    this.getCountry();
-      // {validator: matchingPasswords('password', 'password_confirmation')});
   }
 
   ngOnDestroy(){
@@ -70,11 +70,6 @@ export class AuthRegisterComponent implements OnInit, OnDestroy {
   }
 
   onSubmit(value:Object) {
-    // const user = new User(this.myForm.value.name, this.myForm.value.email,
-    //   this.myForm.value.password, this.myForm.value.password_confirmation,
-    //   this.myForm.value.company_name, this.myForm.value.country,
-    //   this.myForm.value.state, this.myForm.value.city);
-
     this.auth$ = this._authService.signup(value);
     this.sub = this.auth$.subscribe((res) => {
         },

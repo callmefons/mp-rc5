@@ -27,17 +27,17 @@
     <!--<h1>{{title}}</h1>-->
     <form [formGroup]="myForm" (ngSubmit)="myForm.valid && onSubmit(myForm.value)" novalidate>
 
-      <div class="row">
-        <fieldset class="form-group">
-          <label>Services</label>
-          <select class="form-control"
-                  [(ngModel)]="productId"
-                  formControlName="productid"
-                  ngDefaultControl>
-            <option *ngFor="let opt of products" [value]="opt.id">{{opt.name}}</option>
-          </select>
-        </fieldset>
-      </div>
+      <!--<div class="row">-->
+        <!--<fieldset class="form-group">-->
+          <!--<label>Services</label>-->
+          <!--<select class="form-control"-->
+                  <!--[(ngModel)]="productId"-->
+                  <!--formControlName="productid"-->
+                  <!--ngDefaultControl>-->
+            <!--<option *ngFor="let opt of products" [value]="opt.id">{{opt.name}}</option>-->
+          <!--</select>-->
+        <!--</fieldset>-->
+      <!--</div>-->
 
       <div class="row">
         <rating

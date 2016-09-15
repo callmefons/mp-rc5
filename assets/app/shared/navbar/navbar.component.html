@@ -65,7 +65,9 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" [routerLink]="['/']">G-Directory</a>
+        <a class="navbar-brand" [routerLink]="['/']">
+            <p class="text-logo-trabila" >TRABILA</p>
+            <p class="text-logo-directory">DIRECTORY</p></a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -80,13 +82,13 @@
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Industry <b class="caret"></b></a>
                 <ul class="dropdown-menu">
-                    <li *ngFor="let link of industriesTag"><a (click)="goToProductList(link.id)">{{link.name}}</a></li>
+                    <li *ngFor="let link of industriesTag"><a (click)="goToBrowsePage(link.id)">{{link.name}}</a></li>
                 </ul>
             </li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Departments <b class="caret"></b></a>
                 <ul class="dropdown-menu">
-                    <li *ngFor="let link of departmentsTag"><a (click)="goToProductList(link.id)">{{link.name}}</a></li>
+                    <li *ngFor="let link of departmentsTag"><a (click)="goToBrowsePage(link.id)">{{link.name}}</a></li>
                 </ul>
             </li>
         </ul>
@@ -101,6 +103,10 @@
             </form>
         </div>
         <ul class="nav navbar-nav navbar-right">
+
+            <li><a style="color:#337ab7" (click)="goToRegisterVendor()">List your service</a></li>
+            <li><a style="color:#337ab7" (click)="goToRegister()">Register</a></li>
+
             <li *ngIf="_authService.isLoggedIn() && checkRole() === 'vendor'"><a (click)="goToVendor()">Vendor</a></li>
             <li *ngIf="_authService.isLoggedIn() && checkRole() === 'admin'"><a (click)="goToAdmin()">Admin</a></li>
             <li *ngIf="_authService.isLoggedIn()"><a><i class="fa fa-user" aria-hidden="true"></i>

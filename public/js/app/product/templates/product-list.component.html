@@ -1,61 +1,137 @@
 <navbar-component></navbar-component>
 
 <div class="container">
-  <div class="row">
-    <div class="col-md-3">
-      <div class="checkbox">
-        <div *ngFor="let opt of all_tag; let i = index">
-          <div *ngIf="opt.name == 'Thai'">
-            <hr>
-            <h4>Language</h4>
-            <hr>
-          </div>
-          <div *ngIf="opt.name == 'Operations'">
-            <hr>
-            <h4>Department</h4>
-            <hr>
-          </div>
-          <div *ngIf="opt.name == 'Customer Management'">
-            <hr>
-            <h4>Categories</h4>
-            <hr>
-          </div>
-          <div *ngIf="opt.name == 'Agro & Food Industry'">
-            <hr>
-            <h4>Industries</h4>
-            <hr>
-          </div>
-          <div class="checkbox">
-            <label>
-              <input #{{i}} type="checkbox"
-                     [checked]="i == service_id"
-                     (change)="onCheckboxFilterTag(i,$event)"
-              >{{opt.name}}</label>
-          </div>
+    <h1>{{title_category_name}}</h1>
+    <div class="row">
+        <div class="col-md-3">
+
+            <div class="row">
+                <div class="col-md-12" *ngFor="let cat of categoriesTag">
+                    <div class="well well-catgory"
+                         [style.background-color]="getStyle(cat.id)"
+                         (click)="goToProductList(cat.id)">{{cat.name}}
+                    </div>
+                </div>
+            </div>
+
+            <div class="checkbox">
+                <accordion *ngIf="!loading">
+                    <h4 style="margin-left: 15px;">Filter by:</h4>
+                    <accordion-group
+                            #group_industry
+                            [isOpen]="status_type === 'industry'">
+                        <div accordion-heading>
+                            Industry
+                            <i class="pull-right glyphicon"
+                               [ngClass]="{'glyphicon-chevron-down': group_industry?.isOpen, 'glyphicon-chevron-right': !group_industry?.isOpen}"></i>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox"
+                                       (change)="onCheckAllIndustry($event)"
+                                >All Industry</label>
+                        </div>
+                        <div class="checkbox" *ngFor="let opt of all_tag; let i = index">
+                            <label *ngIf="opt.type === 'industry'">
+                                <input #{{i}} type="checkbox"
+                                       [checked]="opt.id == service_id || all_industry"
+                                       (change)="onCheckboxFilterTag(opt.id,$event)"
+                                >{{opt.name}} ({{opt.count}})</label>
+                        </div>
+                    </accordion-group>
+                    <accordion-group
+                            [class.hidden]="true"
+                            #group_category
+                            [isOpen]="status_type === 'category'">
+                        <div accordion-heading>
+                            Category
+                            <i class="pull-right glyphicon"
+                               [ngClass]="{'glyphicon-chevron-down': group_category?.isOpen, 'glyphicon-chevron-right': !group_category?.isOpen}"></i>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox"
+                                       (change)="onCheckAllCategory($event)"
+                                >All Category</label>
+                        </div>
+                        <div class="checkbox" *ngFor="let opt of all_tag; let i = index">
+                            <label *ngIf="opt.type === 'category'">
+                                <input #{{i}} type="checkbox"
+                                       [checked]="opt.id == service_id || all_category"
+                                       (change)="onCheckboxFilterTag(opt.id,$event)"
+                                >{{opt.name}} ({{opt.count}})</label>
+                        </div>
+                    </accordion-group>
+                    <accordion-group
+                            #group_language
+                            [isOpen]="status_type === 'language'">
+                        <div accordion-heading>
+                            Language
+                            <i class="pull-right glyphicon"
+                               [ngClass]="{'glyphicon-chevron-down': group_language?.isOpen, 'glyphicon-chevron-right': !group_language?.isOpen}"></i>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox"
+                                       (change)="onCheckAllLanguage($event)"
+                                >All Language</label>
+                        </div>
+                        <div class="checkbox" *ngFor="let opt of all_tag; let i = index">
+                            <label *ngIf="opt.type === 'language'">
+                                <input #{{i}} type="checkbox"
+                                       [checked]="opt.id == service_id || all_language"
+                                       (change)="onCheckboxFilterTag(opt.id,$event)"
+                                >{{opt.name}} ({{opt.count}})</label>
+                        </div>
+                    </accordion-group>
+                    <accordion-group
+                            #group_department
+                            [isOpen]="status_type === 'department'">
+                        <div accordion-heading>
+                            Department
+                            <i class="pull-right glyphicon"
+                               [ngClass]="{'glyphicon-chevron-down': group_department?.isOpen, 'glyphicon-chevron-right': !group_department?.isOpen}"></i>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox"
+                                       (change)="onCheckAllDepartment($event)"
+                                >All Department</label>
+                        </div>
+                        <div class="checkbox" *ngFor="let opt of all_tag; let i = index">
+                            <label *ngIf="opt.type === 'department'">
+                                <input #{{i}} type="checkbox"
+                                       [checked]="opt.id == service_id || all_department"
+                                       (change)="onCheckboxFilterTag(opt.id,$event)"
+                                >{{opt.name}} ({{opt.count}})</label>
+                        </div>
+                    </accordion-group>
+                </accordion>
+            </div>
         </div>
-      </div>
+
+        <div class="col-md-9">
+            <div *ngIf="!loading && checkedFirst">
+                <div class="row">
+                    <div class="well pull-right well-border-circle">
+                        <div class="well-circle"><h4>{{product_length}} Service</h4></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3 product" *ngFor="let product of products_filter">
+                        <div class="product product--logo">
+                            <img [src]="product.logo" alt="product.name" class="img-responsive">
+                        </div>
+                        <div>
+                            <h4>{{product.name}}</h4>
+                            <button class="btn btn-default" (click)="goToProductDetail(product.id)">More Details
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 
-    <div class="col-md-9">
-      <div *ngIf="!loading && checkedFirst">
-        <div class="row">
-          <div class="well pull-right">
-            <div class="well--circle"><h4>{{product_length}} Service</h4></div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-3 product" *ngFor="let product of products_filter">
-            <div class="product product--logo">
-              <img [src]="product.logo" alt="product.name" class="img-responsive">
-            </div>
-            <div>
-              <h4>{{product.name}}</h4>
-              <button class="btn btn-default" (click)="goToProductDetail(product.id)">More Details</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </div>
 </div>

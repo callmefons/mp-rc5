@@ -8,6 +8,8 @@ import {Router, ActivatedRoute} from "@angular/router";
 import {ProductService} from "../shared/api-service/product/product.service";
 import {AllVendorService} from "../shared/api-service/vendor/all-vendor.service";
 import {AccountManagementService} from "../shared/api-service/admin/account-management.service";
+import {Input} from "../../../public/js/vendor/@angular/core/esm/src/metadata";
+import {stat} from "fs";
 
 
 @Component({
@@ -63,6 +65,7 @@ export class AdminVendorsComponent implements OnInit, OnDestroy {
                 }
 
             });
+
     }
 
     ngOnDestroy() {
@@ -85,11 +88,29 @@ export class AdminVendorsComponent implements OnInit, OnDestroy {
 
     archive_account: boolean = false;
 
-    archiveAccount(userId: any) {
-        this.archive_account$ = this._accountService.archiveAccount(userId);
+    archive_success:boolean = false;
+    unarchive_success:boolean = false;
+    errorStatus:boolean;
+    errorText:string;
+    userId:number;
+    status:string;
+
+    confirmArchiveAccount(userId: any, status:any){
+        this.archive_success = false;
+        this.unarchive_success = false;
+        this.userId = userId;
+        this.status = status;
+    }
+
+    archiveAccount(userId: any, status:any) {
+        this.archive_account$ = this._accountService.archiveAccount(userId, status);
         this.sub_archive = this.archive_account$.subscribe((res: any)=> {
             this.viewProfile(this.detail_vendor.id);
-            this.archive_account = true;
+
+            if(res.status == 'success'){
+                this.archive_success = true ? (status === 'archive') : this.unarchive_success = true;
+            }
+
         });
     }
 

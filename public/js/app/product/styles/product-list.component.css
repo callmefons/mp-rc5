@@ -8,13 +8,26 @@
      height: 150px;
  }
 
-
-.well{
+.well-border-circle{
     border-radius: 100px;
 }
-.well--circle{
+.well-circle{
      text-align: center;
      max-width: 60px;
      max-height: 80px;
- }
+}
 
+.well-catgory:hover{
+    cursor: pointer;
+    background-color: #e1e1e1;
+}
+
+.well-catgory{
+    padding: 10px;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.glyphicon{
+    font-size: 8px;
+}

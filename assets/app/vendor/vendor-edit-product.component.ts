@@ -216,6 +216,9 @@ export class VendorEditProductComponent implements OnInit, OnDestroy {
 
         this.updated = false;
 
+
+        console.log(product);
+
         this._productService.updateProduct(appId, product)
             .subscribe((res) => {
                     this.updated = true;
@@ -285,7 +288,6 @@ export class VendorEditProductComponent implements OnInit, OnDestroy {
     }
 
     checkedId(id: number, type: any) {
-
 
         if (type == 'categories') {
             for (let i = 0; i < this.myFormCategories.length; i++) {
@@ -404,6 +406,78 @@ export class VendorEditProductComponent implements OnInit, OnDestroy {
     currencyMonthlyModel: any;
     currencyYearlyModel: any;
     currencyLifetimeModel: any;
+
+    checkedPricingAll:boolean;
+
+    onCheckboxPricingModelAll(value:any, event:any){
+
+        let temp: any = {
+            pricingId: [],
+            formPricingId: [],
+            pricingName: [],
+            formPricingName: [],
+            id:[],
+            model:[]
+        };
+
+        if(event.currentTarget.checked == true){
+            this.checkedPricingAll = true;
+
+            for(let i = 0; i < this.pricingmodelsTag.length; i++){
+                temp.pricingId.push(this.pricingmodelsTag[i].dbid);
+                temp.pricingName.push(this.pricingmodelsTag[i].name);
+            }
+
+            for(let i = 0; i < this.myFormPricingModel.length; i++){
+                if(this.myFormPricingModel !== undefined){
+                    temp.formPricingId.push(this.myFormPricingModel[i].id);
+                    temp.formPricingName.push(this.myFormPricingModel[i].model);
+                }
+            }
+
+            temp.id = _.difference(temp.pricingId,temp.formPricingId);
+            temp.model = _.difference(temp.pricingName,temp.formPricingName);
+
+            for(let i = 0; i < temp.id.length; i++){
+                this.myFormPricingModel.push({
+                    'id': temp.id[i],
+                    'model': temp.model[i],
+                    "plan": '',
+                    "price_start": '',
+                    "price_end": '',
+                    "currency": '',
+                    "day": '',
+                    "other_model": ''
+                });
+            }
+
+            this.showMonthly = true;
+            this.showYearly = true;
+            this.showLifetime = true;
+            this.showFreeService = true;
+            this.showOther = true;
+        }
+        if(event.currentTarget.checked == false){
+            this.checkedPricingAll = false;
+            this.showYearly = false;
+            this.singlepriceYearly = false;
+            this.pricerangeYearly = false;
+            this.showMonthly = false;
+            this.singlepriceMonthly = false;
+            this.pricerangeMonthly = false;
+            this.showLifetime = false;
+            this.singlepriceLifetime = false;
+            this.pricerangeLifetime = false;
+            this.showFreeService = false;
+            this.showOther = false;
+            for(let i =0; i < this.pricingmodelsTag.length; i++){
+                this.onResetBindingModel(this.pricingmodelsTag[i].name);
+            }
+            this.myFormPricingModel = [];
+
+        }
+
+    }
 
 
     onCheckboxPricingModel(value: any, event: any) {

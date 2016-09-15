@@ -5,3 +5,19 @@
 .nav-border-right{
     border-right: 1px solid #dddddd;
 }
+
+.text-logo-trabila{
+    text-align: center;
+    line-height: 0px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    font-size: 25px;
+}
+
+.text-logo-directory{
+    line-height: 4px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 800;
+    margin-bottom: 0;
+}

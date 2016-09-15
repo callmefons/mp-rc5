@@ -14,10 +14,23 @@ declare var _: any;
   moduleId: module.id,
   selector: 'sd-product',
   templateUrl: 'templates/product-list.component.html',
-  styleUrls: ['styles/product-list.component.css'],
+  styleUrls: ['styles/product-list.component.css']
 })
 
 export class ProductListComponent implements OnInit, OnDestroy {
+
+  public oneAtATime:boolean = true;
+  public items:Array<string> = ['Item 1', 'Item 2', 'Item 3'];
+
+  public status:Object = {
+    isFirstOpen: true,
+    isFirstDisabled: false,
+  };
+
+  status_type:string;
+  //For title page
+  title_category_name:string;
+
 
   errorMessage: any;
   loading: boolean = true;
@@ -57,24 +70,24 @@ export class ProductListComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.all_product$ = this._productService.getProduct();
     this.sub = this.route
-      .params
-      .subscribe(params => {
-        this.service_id = +params['id'];
+        .params
+        .subscribe(params => {
+          this.service_id = +params['id'];
 
-        this.all_product$.subscribe((products: any) => {
-          this.products = products;
-          this.loading = false;
+          this.all_product$.subscribe((products: any) => {
+            this.products = products;
+            this.loading = false;
 
-          //Reset all_tag when user click link navbar
-          this.all_tag = [];
-          this.temp_products = [];
-          this.checkedFirst = false;
+            //Reset all_tag when user click link navbar
+            this.all_tag = [];
+            this.temp_products = [];
+            this.checkedFirst = false;
 
-          this.getProductTags();
+            this.getProductTags();
+
+          });
 
         });
-
-      });
   }
 
   ngOnDestroy() {
@@ -88,21 +101,29 @@ export class ProductListComponent implements OnInit, OnDestroy {
 
     this.products_filter = this.products;
     this._productService.getProductTags()
-      .subscribe(
-        product_tags => {
-          this.languagesTag = product_tags.languages;
-          this.departmentsTag = product_tags.departments;
-          this.categoriesTag = product_tags.categories;
-          this.industriesTag = product_tags.industries;
+        .subscribe(
+            product_tags => {
+              this.languagesTag = product_tags.languages;
+              this.departmentsTag = product_tags.departments;
+              this.categoriesTag = product_tags.categories;
+              this.industriesTag = product_tags.industries;
 
-          if (this.languagesTag != [] && this.departmentsTag != [] && this.categoriesTag != [] && this.industriesTag != []) {
-            this.all_tag.push(...this.industriesTag, ...this.categoriesTag, ...this.languagesTag, ...this.departmentsTag);
-            this.setFilter();
-            this.onAutoCheckboxFilterTag(this.service_id);
-          }
+              if (this.languagesTag != [] && this.departmentsTag != [] && this.categoriesTag != [] && this.industriesTag != []) {
+                this.all_tag.push(...this.industriesTag, ...this.categoriesTag, ...this.languagesTag, ...this.departmentsTag);
+                this.setFilter();
+                this.onAutoCheckboxFilterTag(this.service_id);
+              }
 
-        }),
-      (error: any) => this.errorMessage = <any>error
+              //Service Id Plus 1 because service_id start index at 0 but alltag start 1
+              for(let i = 0; i < this.all_tag.length; i ++){
+                if(this.all_tag[i].id === this.service_id){
+                  this.status_type = this.all_tag[i].type;
+                  this.title_category_name = this.all_tag[i].name;
+                }
+              }
+
+            }),
+        (error: any) => this.errorMessage = <any>error
   }
 
   setFilter() {
@@ -124,32 +145,111 @@ export class ProductListComponent implements OnInit, OnDestroy {
     }
   }
 
+  all_industry: boolean = false;
+
+  onCheckAllIndustry(event:any){
+
+    this.service_id = null;
+
+    if(event.currentTarget.checked == true){
+      this.all_industry = true;
+    }else{
+      this.all_industry = false;
+    }
+
+    for(let i =0; i < this.all_tag.length; i++){
+      if(this.all_tag[i].type === 'industry'){
+        this.onCheckboxFilterTag(this.all_tag[i].id,event);
+      }
+    }
+
+  }
+  all_category: boolean = false;
+
+  onCheckAllCategory(event:any){
+
+    this.service_id = null;
+
+    if(event.currentTarget.checked == true){
+      this.all_category = true;
+    }else{
+      this.all_category = false;
+    }
+
+    for(let i =0; i < this.all_tag.length; i++){
+      if(this.all_tag[i].type === 'category'){
+        this.onCheckboxFilterTag(this.all_tag[i].id,event);
+      }
+    }
+
+  }
+
+  all_language: boolean = false;
+
+  onCheckAllLanguage(event:any){
+
+    this.service_id = null;
+
+    if(event.currentTarget.checked == true){
+      this.all_language = true;
+    }else{
+      this.all_language = false;
+    }
+
+    for(let i =0; i < this.all_tag.length; i++){
+      if(this.all_tag[i].type === 'language'){
+        this.onCheckboxFilterTag(this.all_tag[i].id,event);
+      }
+    }
+
+  }
+
+  all_department: boolean = false;
+
+  onCheckAllDepartment(event:any){
+
+    this.service_id = null;
+
+    if(event.currentTarget.checked == true){
+      this.all_department = true;
+    }else{
+      this.all_department = false;
+    }
+
+    for(let i =0; i < this.all_tag.length; i++){
+      if(this.all_tag[i].type === 'department'){
+        this.onCheckboxFilterTag(this.all_tag[i].id,event);
+      }
+    }
+
+  }
+
   onAutoCheckboxFilterTag(value: any) {
     this.checkedFirst = true;
     for (let i = 0; i < this.options.length; i++) {
-      if (value == i) {
+      if ((value - 1) == i) {
         this.temp_products.push(...this.options[i]);
       }
     }
     this.products_filter = _.uniqBy(this.temp_products, 'id');
     this.product_length = this.products_filter.length;
+
   }
 
   onCheckboxFilterTag(value: any, event: any) {
 
     if (event.currentTarget.checked == true) {
       for (let i = 0; i < this.options.length; i++) {
-        if (value == i) {
+        if ((value - 1) == i) {
           this.temp_products.push(...this.options[i]);
         }
       }
       this.products_filter = _.uniqBy(this.temp_products, 'name');
-
     }
 
     if (event.currentTarget.checked == false) {
       this.temp_products = _.filter(this.temp_products, (temp_products: any) => {
-        return temp_products.optionId !== value
+        return temp_products.optionId !== (value - 1)
       });
       if (_.isEmpty(this.temp_products)) {
         this.products_filter = this.products;
@@ -162,8 +262,15 @@ export class ProductListComponent implements OnInit, OnDestroy {
     this.product_length = this.products_filter.length;
   }
 
+  getStyle(categoryId:number){
+     return (this.service_id == categoryId) ? '#e1e1e1'  : '#f5f5f5';
+  }
+
+  goToProductList(productId: any) {
+    this._router.navigate([`/product/${productId}`]);
+  }
+
   goToProductDetail(productId:number){
     this._router.navigate([`product/${productId}/detail`]);
   }
-
 }

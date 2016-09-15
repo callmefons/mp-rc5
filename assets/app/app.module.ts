@@ -28,16 +28,21 @@ import {AdminDashboardComponent} from "./admin/admin-dashboard.component";
 import {AdminLisitingComponent} from "./admin/admin-listing.component";
 import {AdminProductComponent} from "./admin/admin-product.component";
 import {AdminVendorsComponent} from "./admin/admin-vendors.component";
+import {BrowsePageComponent} from "./product/browse-page.component";
+import {AdminSettingComponent} from "./admin/admin-setting.component";
+import {AuthRegisterVendorComponent} from "./auth/auth-register-vendor.component";
 
 @NgModule({
     declarations: [
         AppComponent,
         ErrorComponent,
-        AuthComponent,AuthForgotPasswordComponent,AuthRegisterComponent,AuthResetPasswordComponent,
-        ProductComponent,ProductDetailComponent,ProductListComponent,
+        AuthComponent,AuthForgotPasswordComponent,AuthRegisterComponent,
+        AuthResetPasswordComponent,AuthRegisterVendorComponent,
+        ProductComponent,ProductDetailComponent,ProductListComponent,BrowsePageComponent,
         VendorComponent,VendorListingComponent,VendorAddProductComponent,VendorEditProductComponent,
         VendorProfileComponent,VendorDashboardComponent,
-        AdminComponent,AdminDashboardComponent,AdminLisitingComponent,AdminProductComponent,AdminVendorsComponent
+        AdminComponent,AdminDashboardComponent,AdminLisitingComponent,
+        AdminProductComponent,AdminVendorsComponent,AdminSettingComponent
     ],
     imports: [
         BrowserModule, ROUTING, RouterModule.forRoot(APP_ROUTES),

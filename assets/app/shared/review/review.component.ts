@@ -59,7 +59,7 @@ export class ReviewComponent implements OnInit {
     this.myForm = this._fb.group({
       reviewcomment: [''],
       reviewscore: [''],
-      productid: []
+      productid: ['']
     });
   }
 
@@ -86,7 +86,7 @@ export class ReviewComponent implements OnInit {
     const review = new Review(
       this.myForm.value.reviewcomment,
       this.rating,
-      this.myForm.value.productid
+      this.productId
     );
 
     this.review$ = this._reviewService.onReview(review);

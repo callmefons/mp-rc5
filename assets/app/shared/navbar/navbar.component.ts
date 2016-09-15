@@ -115,7 +115,11 @@ export class NavbarComponent {
     }
 
     goToProductList(productId: any) {
-        this._router.navigate([`/product/${productId - 1}`]);
+        this._router.navigate([`/product/${productId}`]);
+    }
+
+    goToBrowsePage(productId: any){
+        this._router.navigate([`/product/browse-page/${productId}`]);
     }
 
     goToVendor() {
@@ -129,6 +133,11 @@ export class NavbarComponent {
     goToRegister() {
         // this.hideChildModal();
         this._router.navigate([`auth/register`]);
+    }
+
+    goToRegisterVendor() {
+        // this.hideChildModal();
+        this._router.navigate([`auth/register-vendor`]);
     }
 
     goToForgotPassword() {

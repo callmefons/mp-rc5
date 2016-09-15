@@ -160,19 +160,18 @@
 
                             <form class="form-horizontal">
 
-                                <!--<div class="checkbox">-->
-                                    <!--<label>-->
-                                        <!--<input type="checkbox"-->
-                                               <!--[checked]="checkAll"-->
-                                               <!--(change)="onCheckboxPricingModel(0,$event)"> All-->
-                                    <!--</label>-->
-                                <!--</div>-->
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox"
+                                               (change)="onCheckboxPricingModelAll(0,$event)"> All
+                                    </label>
+                                </div>
 
                                 <div class="checkbox" *ngFor="let opt of pricingmodelsTag; let i = index;">
                                     <label>
                                         <input #{{opt.dbid}} type="checkbox"
                                                (change)="onCheckboxPricingModel(opt,$event)"
-                                               [checked]="checkedId(opt.dbid,'pricingmodels')"
+                                               [checked]="checkedId(opt.dbid,'pricingmodels') || checkedPricingAll"
                                         > {{opt.name}}</label>
 
                                     <form class="form-horizontal">
