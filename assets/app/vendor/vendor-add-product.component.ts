@@ -172,9 +172,8 @@ export class VendorAddProductComponent implements OnInit, OnDestroy {
 
         let tempProduct: any[] = [];
         tempProduct.push(product, product_thai);
-        console.log(tempProduct);
 
-        this._productService.addProduct(product)
+        this._productService.addProduct(tempProduct)
             .subscribe((res: any) => {
                     this.added = true;
                     this.myForm.reset();

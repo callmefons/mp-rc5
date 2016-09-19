@@ -42,6 +42,7 @@ export class VendorEditProductComponent implements OnInit, OnDestroy {
     myFormPricingModel: any[] = [];
 
     myFormFeatures: any[] = [];
+    myFormThaiFeatures:any[] = [];
 
     myFormLogo: string = '';
     fileChosen: boolean = true;
@@ -91,7 +92,9 @@ export class VendorEditProductComponent implements OnInit, OnDestroy {
             price_start: [''],
             price_end: [''],
             currency: [''],
-            licensing_model: ['']
+            licensing_model: [''],
+            thai_description: [''],
+            thai_shortdescription: ['']
         });
     }
 
@@ -213,13 +216,33 @@ export class VendorEditProductComponent implements OnInit, OnDestroy {
             this.myFormPricingModel,
             this.myFormExtraservices
         );
+        const product_thai = new Product(
+            null,
+            this.myForm.value.name,
+            this.myFormLogo,
+            this.myForm.value.thai_description,
+            this.myForm.value.thai_shortdescription,
+            this.myForm.value.minrequirement,
+            this.myForm.value.termsncond,
+            this.myFormUrl,
+            this.myFormIndustries,
+            this.myFormLanguages,
+            this.myFormDepartments,
+            this.myFormCategories,
+            this.myFormThaiFeatures,
+            this.myFormScreenshots,
+            this.myForm.value.purchase_link,
+            this.myFormPricingModel,
+            this.myFormExtraservices
+        );
 
         this.updated = false;
 
+        let tempProduct: any[] = [];
+        tempProduct.push(product, product_thai);
 
-        console.log(product);
 
-        this._productService.updateProduct(appId, product)
+        this._productService.updateProduct(appId, tempProduct)
             .subscribe((res) => {
                     this.updated = true;
                 },
@@ -332,16 +355,42 @@ export class VendorEditProductComponent implements OnInit, OnDestroy {
 
     }
 
-    onAddNewFeature(newFeature: string) {
-        if (newFeature) {
-            this.myFormFeatures.push(newFeature);
+    newFeature:string;
+    newThaiFeature:string;
+    onAddNewFeature(newFeature: string, lang: string) {
+
+        switch (lang) {
+            case 'th':
+                if (newFeature) {
+                    this.myFormThaiFeatures.push(newFeature);
+                    this.newThaiFeature = '';
+                }
+                break;
+            case 'en':
+                if (newFeature) {
+                    this.myFormFeatures.push(newFeature);
+                    this.newFeature = '';
+                }
+                break;
+
         }
     }
 
-    onDeleteFeature(feature: string) {
-        let i = this.myFormFeatures.indexOf(feature);
-        if (i != -1) {
-            this.myFormFeatures.splice(i, 1);
+    onDeleteFeature(feature: string, lang: string) {
+
+        switch (lang){
+            case 'th':
+                let i = this.myFormThaiFeatures.indexOf(feature);
+                if (i != -1) {
+                    this.myFormThaiFeatures.splice(i, 1);
+                }
+                break;
+            case 'en':
+                let j = this.myFormFeatures.indexOf(feature);
+                if (j != -1) {
+                    this.myFormFeatures.splice(j, 1);
+                }
+                break;
         }
     }
 
@@ -734,6 +783,23 @@ export class VendorEditProductComponent implements OnInit, OnDestroy {
 
     onCancle() {
         this.router.navigate([`/vendor/dashboard`]);
+    }
+
+    thaiInput: boolean = false;
+
+    onChangeLanguaeFrom(lang: string) {
+
+        switch (lang) {
+            case 'th':
+                this.thaiInput = true;
+                break;
+            case 'en':
+                this.thaiInput = false;
+                break;
+            default:
+                this.thaiInput = false;
+        }
+
     }
 
 }

@@ -80,7 +80,7 @@ export class ProductService {
       .catch(this.handleError);
   }
 
-  updateProduct(id:any, product: Product){
+  updateProduct(id:any, product: any){
     const body = JSON.stringify(product);
     return this._http.put(`${config.apiUrl}product/${id}?token=${storage.getAuthToken()}`,
       body, { headers: request.getJsonHeaders() }).cache()
