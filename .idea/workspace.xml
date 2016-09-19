@@ -2,19 +2,99 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="faff2c17-11cb-4609-98dd-54203a84a7ed" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/npm-debug.log" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/npm-debug.log.1534958196" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/npm-debug.log.1682613022" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/npm-debug.log.2656776531" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/npm-debug.log.3274215153" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/npm-debug.log.3823435159" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/npm-debug.log.3978888588" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/npm-debug.log.749678220" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/shared/navbar-admin/navbar-admin.component.html" afterPath="$PROJECT_DIR$/assets/app/shared/navbar-admin/navbar-admin.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/shared/navbar-vendor/navbar-vendor.component.html" afterPath="$PROJECT_DIR$/assets/app/shared/navbar-vendor/navbar-vendor.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/shared/navbar-admin/navbar-admin.component.html" afterPath="$PROJECT_DIR$/public/js/app/shared/navbar-admin/navbar-admin.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/shared/navbar-vendor/navbar-vendor.component.html" afterPath="$PROJECT_DIR$/public/js/app/shared/navbar-vendor/navbar-vendor.component.html" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/admin/admin-dashboard.component.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/admin/admin-listing.component.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/admin/admin-product.component.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/admin/admin-setting.component.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/admin/admin-vendors.component.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/admin/admin.component.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/admin/admin.module.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/admin/admin.routing.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/admin/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/app.component.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/app.module.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/app.routing.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/auth/auth-forgot-password.component.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/auth/auth-register-vendor.component.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/auth/auth-register.component.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/auth/auth-reset-password.component.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/auth/auth.component.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/auth/auth.module.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/auth/auth.routing.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/auth/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/errors/error.component.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/errors/error.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/errors/error.service.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/home/home-list.component.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/home/home.component.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/home/home.module.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/home/home.routing.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/home/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/product/browse-page.component.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/product/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/product/product-detail.component.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/product/product-list.component.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/product/product.component.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/product/product.module.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/product/product.routing.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/shared/analytics/clicky-admin.component.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/shared/analytics/clicky.component.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/shared/analytics/clicky.service.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/shared/api-service/admin/account-management.service.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/shared/api-service/auth/auth-guard.service.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/shared/api-service/auth/auth.service.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/shared/api-service/auth/can-deactivate-guard.service.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/shared/api-service/auth/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/shared/api-service/product/product.service.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/shared/api-service/review.service.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/shared/api-service/vendor/all-vendor.service.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/shared/api-service/vendor/vendor.service.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/shared/config/api.config.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/shared/config/env.config.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/shared/helpers/request.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/shared/helpers/storage.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/shared/helpers/validators.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/shared/models/product-tag.model.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/shared/models/product.model.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/shared/models/review.model.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/shared/models/status-log.model.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/shared/models/user.model.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/shared/models/vendor-company.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/shared/models/vendor.model.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/shared/navbar-admin/navbar-admin.component.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/shared/navbar-vendor/navbar-vendor.component.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/shared/navbar/navbar.component.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/shared/ng2-service/ng2-country/city.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/shared/ng2-service/ng2-country/country.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/shared/ng2-service/ng2-country/country.service.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/shared/ng2-service/ng2-country/state.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/shared/ng2-service/ng2-country/state.service.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/shared/ng2-service/ng2-imageupload/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/shared/ng2-service/ng2-imageupload/src/image-upload.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/shared/ng2-service/ng2-imageupload/src/interfaces.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/shared/ng2-service/ng2-imageupload/src/utils.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/shared/pipes/searchaccout.pipe.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/shared/review/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/shared/review/review.component.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/shared/rxjs-operators.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/shared/shared.module.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/translate/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/translate/lang-en.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/translate/lnag-th.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/translate/tranlate.component.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/translate/translate.pipe.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/translate/translate.service.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/translate/translations.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/vendor/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/vendor/vendor-add-product.component.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/vendor/vendor-dashboard.component.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/vendor/vendor-edit-product.component.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/vendor/vendor-listing.component.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/vendor/vendor-profile.component.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/vendor/vendor.component.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/vendor/vendor.module.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/vendor/vendor.routing.js" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/boot.js" afterPath="$PROJECT_DIR$/public/js/app/boot.js" />
     </list>
     <ignored path="07 Errors.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -50,7 +130,7 @@
       <file leaf-file-name="vendor-edit-product.component.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/app/vendor/templates/vendor-edit-product.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="334">
+            <state relative-caret-position="1785">
               <caret line="119" column="76" selection-start-line="119" selection-start-column="76" selection-end-line="119" selection-end-column="76" />
               <folding />
             </state>
@@ -70,7 +150,7 @@
       <file leaf-file-name="navbar.component.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/app/shared/navbar/navbar.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
+            <state relative-caret-position="1140">
               <caret line="76" column="41" selection-start-line="76" selection-start-column="10" selection-end-line="76" selection-end-column="41" />
               <folding />
             </state>
@@ -80,7 +160,7 @@
       <file leaf-file-name="navbar-admin.component.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/app/shared/navbar-admin/navbar-admin.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
+            <state relative-caret-position="435">
               <caret line="29" column="33" selection-start-line="29" selection-start-column="33" selection-end-line="29" selection-end-column="33" />
               <folding>
                 <element signature="n#style#0;n#li#0;n#ul#1;n#div#1;n#nav#0;n#!!top" expanded="true" />
@@ -93,7 +173,7 @@
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="150">
-              <caret line="10" column="25" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
+              <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -102,7 +182,7 @@
       <file leaf-file-name="navbar-vendor.component.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/app/shared/navbar-vendor/navbar-vendor.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
+            <state relative-caret-position="360">
               <caret line="24" column="78" selection-start-line="24" selection-start-column="10" selection-end-line="24" selection-end-column="78" />
               <folding>
                 <element signature="n#style#0;n#li#0;n#ul#1;n#div#1;n#nav#0;n#!!top" expanded="true" />
@@ -212,8 +292,8 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="y" value="23" />
-    <option name="width" value="1408" />
-    <option name="height" value="774" />
+    <option name="width" value="1440" />
+    <option name="height" value="789" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -240,6 +320,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -260,8 +342,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -369,18 +449,19 @@
       <workItem from="1474254555482" duration="5980000" />
       <workItem from="1474261339232" duration="1826000" />
       <workItem from="1474264176841" duration="555000" />
+      <workItem from="1474269634490" duration="282000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="151140000" />
+    <option name="totallyTimeSpent" value="151422000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1408" height="774" extended-state="0" />
-    <editor active="false" />
+    <frame x="0" y="23" width="1440" height="789" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33093005" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26004228" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24233577" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -693,9 +774,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="11" column="21" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#42#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -703,7 +781,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="18" column="17" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -711,7 +788,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="18" column="17" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -726,7 +802,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3240">
           <caret line="223" column="23" selection-start-line="223" selection-start-column="17" selection-end-line="223" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -756,7 +831,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/app/vendor/templates/vendor-edit-product.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="334">
+        <state relative-caret-position="1785">
           <caret line="119" column="76" selection-start-line="119" selection-start-column="76" selection-end-line="119" selection-end-column="76" />
           <folding />
         </state>
@@ -772,7 +847,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/app/shared/navbar/navbar.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
+        <state relative-caret-position="1140">
           <caret line="76" column="41" selection-start-line="76" selection-start-column="10" selection-end-line="76" selection-end-column="41" />
           <folding />
         </state>
@@ -782,7 +857,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -790,13 +864,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/app/shared/navbar-vendor/navbar-vendor.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
+        <state relative-caret-position="360">
           <caret line="24" column="78" selection-start-line="24" selection-start-column="10" selection-end-line="24" selection-end-column="78" />
           <folding>
             <element signature="n#style#0;n#li#0;n#ul#1;n#div#1;n#nav#0;n#!!top" expanded="true" />
@@ -806,7 +879,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/app/shared/navbar-admin/navbar-admin.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
+        <state relative-caret-position="435">
           <caret line="29" column="33" selection-start-line="29" selection-start-column="33" selection-end-line="29" selection-end-column="33" />
           <folding>
             <element signature="n#style#0;n#li#0;n#ul#1;n#div#1;n#nav#0;n#!!top" expanded="true" />
@@ -817,7 +890,7 @@
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
-          <caret line="10" column="25" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
+          <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
           <folding />
         </state>
       </provider>
