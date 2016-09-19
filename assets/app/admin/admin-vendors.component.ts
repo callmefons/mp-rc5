@@ -1,16 +1,9 @@
 import {Component, OnInit, OnDestroy} from '@angular/core';
-import {Vendor} from "../shared/models/vendor.model";
 import {Observable, Subscription} from "rxjs";
-import {VendorService} from "../shared/api-service/vendor/vendor.service";
-import {AuthService} from "../shared/api-service/auth/auth.service";
-import {storage} from "../shared/helpers/storage";
 import {Router, ActivatedRoute} from "@angular/router";
 import {ProductService} from "../shared/api-service/product/product.service";
 import {AllVendorService} from "../shared/api-service/vendor/all-vendor.service";
 import {AccountManagementService} from "../shared/api-service/admin/account-management.service";
-import {Input} from "../../../public/js/vendor/@angular/core/esm/src/metadata";
-import {stat} from "fs";
-
 
 @Component({
     moduleId: module.id,

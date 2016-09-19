@@ -8,6 +8,7 @@ import { storage } from '../../helpers/storage';
 import { request } from '../../helpers/request';
 import config = require('../../config/api.config');
 import 'rxjs/add/operator/cache';
+import Any = jasmine.Any;
 
 @Injectable()
 export class ProductService {
@@ -70,8 +71,9 @@ export class ProductService {
       .catch(this.handleError);
   }
 
-  addProduct(product: Product) {
+  addProduct(product: any) {
     const body = JSON.stringify(product);
+      console.log(body)
     return this._http.post(`${config.apiUrl}product?token=${storage.getAuthToken()}`,
       body, { headers: request.getJsonHeaders() }).cache()
       .map(this.extractData)

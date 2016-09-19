@@ -22,6 +22,11 @@ import {AlertComponent, RatingComponent,AccordionModule} from "ng2-bootstrap/ng2
 import {ReviewComponent} from "./review/review.component";
 import {BaseChartComponent} from "ng2-charts/ng2-charts";
 import {ClickyAdminComponent} from "./analytics/clicky-admin.component";
+import {TranslateComponent} from "../translate/tranlate.component";
+import {TranslatePipe} from "../translate/translate.pipe";
+import {TRANSLATION_PROVIDERS} from "../translate/translations";
+import {TranslateService} from "../translate/translate.service";
+import {provide, PLATFORM_PIPES} from "@angular/core";
 
 /**
  * Do not specify providers for modules that might be imported by a lazy loaded module.
@@ -47,6 +52,8 @@ import {ClickyAdminComponent} from "./analytics/clicky-admin.component";
         AlertComponent,
         RatingComponent,
         BaseChartComponent,
+        TranslateComponent,
+        TranslatePipe
     ],
     exports: [
         CommonModule,
@@ -62,7 +69,9 @@ import {ClickyAdminComponent} from "./analytics/clicky-admin.component";
         AlertComponent,
         RatingComponent,
         ReviewComponent,
-        AccordionModule
+        AccordionModule,
+        TranslateComponent,
+        TranslatePipe
     ]
 })
 export class SharedModule {
@@ -79,7 +88,10 @@ export class SharedModule {
                 DataCountryService,
                 AllVendorService,
                 AccountManagementService,
-                ClickyService
+                ClickyService,
+                TRANSLATION_PROVIDERS,
+                TranslateService,
+                provide(PLATFORM_PIPES, {useValue: [TranslatePipe], multi: true})
             ]
         };
     }

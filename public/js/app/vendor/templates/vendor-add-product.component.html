@@ -29,6 +29,12 @@
     <div *ngIf="!loading">
         <div class="row">
             <h1>Add Lisiting</h1>
+            <hr>
+            <p>Enter Content in
+                <button class="btn btn-default" (click)="onChangeLanguaeFrom('en')">English</button>
+                <button class="btn btn-default" (click)="onChangeLanguaeFrom('th')">Thai</button>
+            </p>
+            <hr>
             <div>
                 <div class="row">
                     <form [formGroup]="myForm" (ngSubmit)="myForm.valid && onSubmit(myForm.value)" novalidate
@@ -82,7 +88,7 @@
                                 </div>
 
                                 <!--Description-->
-                                <div class="row">
+                                <div class="row" [class.hidden]="thaiInput">
                                     <fieldset class="form-group">
                                         <label>Description</label>
                                         <textarea
@@ -93,7 +99,7 @@
                                     </fieldset>
                                 </div>
 
-                                <div class="row">
+                                <div class="row" [class.hidden]="thaiInput">
                                     <fieldset class="form-group">
                                         <label>Short Description</label>
                                         <textarea type="text"
@@ -104,25 +110,70 @@
 
                                 </div>
 
+                                <!-- Thai Description-->
+                                <div class="row" [class.hidden]="!thaiInput">
+                                    <fieldset class="form-group">
+                                        <label>รายละเอียด</label>
+                                        <textarea
+                                                type="text"
+                                                class="form-control"
+                                                placeholder="รายละเอียด"
+                                                formControlName="thai_description"></textarea>
+                                    </fieldset>
+                                </div>
+
+                                <div class="row" [class.hidden]="!thaiInput">
+                                    <fieldset class="form-group">
+                                        <label>รายละเอียดแบบย่อ</label>
+                                        <textarea type="text"
+                                                  class="form-control"
+                                                  placeholder="รายละเอียดแบบย่อ"
+                                                  formControlName="thai_shortdescription"></textarea>
+                                    </fieldset>
+
+                                </div>
+
 
                                 <!--Feature-->
-                                <div class="row">
+                                <div class="row" [class.hidden]="thaiInput">
                                     <div *ngFor="let feature of myFormFeatures">
                                         <pre>{{ feature }}</pre>
-                                        <button type="button" (click)="onDeleteFeature(feature)"
+                                        <button type="button" (click)="onDeleteFeature(feature, 'en')"
                                                 class="btn btn-danger btn-xs">Delete
                                         </button>
                                     </div>
                                     <fieldset class="form-group">
                                         <label>Features</label>
                                         <input
-                                                #newFeature
+                                                [(ngModel)]="newFeature"
+                                                [ngModelOptions]="{standalone: true}"
                                                 type="text"
                                                 class="form-control"
-                                                placeholder="Features"
-                                                formControlName="features">
+                                                placeholder="Features">
                                         <button type="button" class="btn btn-sm btn-default"
-                                                (click)="onAddNewFeature(newFeature.value)">+ Feature
+                                                (click)="onAddNewFeature(newFeature, 'en')">+ Feature
+                                        </button>
+                                    </fieldset>
+                                </div>
+
+                                <!--Thai Feature-->
+                                <div class="row" [class.hidden]="!thaiInput">
+                                    <div *ngFor="let feature of myFormThaiFeatures">
+                                        <pre>{{ feature }}</pre>
+                                        <button type="button" (click)="onDeleteFeature(feature, 'th')"
+                                                class="btn btn-danger btn-xs">Delete
+                                        </button>
+                                    </div>
+                                    <fieldset class="form-group">
+                                        <label>คุณสมบัติ</label>
+                                        <input
+                                                [(ngModel)]="newThaiFeature"
+                                                [ngModelOptions]="{standalone: true}"
+                                                type="text"
+                                                class="form-control"
+                                                placeholder="คุณสมบัติ">
+                                        <button type="button" class="btn btn-sm btn-default"
+                                                (click)="onAddNewFeature(newThaiFeature, 'th')">+ คุณสมบัติ
                                         </button>
                                     </fieldset>
                                 </div>

@@ -4,17 +4,17 @@
     <h1>{{title_category_name}}</h1>
     <div class="row">
         <div class="col-md-3">
-
             <div class="row">
-                <div class="col-md-12" *ngFor="let cat of categoriesTag">
-                    <div class="well well-catgory"
-                         [style.background-color]="getStyle(cat.id)"
-                         (click)="goToProductList(cat.id)">{{cat.name}}
-                    </div>
+            <div class="col-md-12" *ngFor="let cat of categoriesTag; let last = last;">
+                <div class="well well-catgory"
+                     [style.background-color]="getStyle(cat.id)"
+                     [style.margin-bottom]="last ? '30px' : '2px'"
+                     (click)="goToProductList(cat.id)">{{cat.name}}
                 </div>
             </div>
+                </div>
 
-            <div class="checkbox">
+            <div class="row">
                 <accordion *ngIf="!loading">
                     <h4 style="margin-left: 15px;">Filter by:</h4>
                     <accordion-group

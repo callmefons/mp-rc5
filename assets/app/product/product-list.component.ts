@@ -81,6 +81,10 @@ export class ProductListComponent implements OnInit, OnDestroy {
             //Reset all_tag when user click link navbar
             this.all_tag = [];
             this.temp_products = [];
+            this.languagesTag = [];
+            this.departmentsTag = [];
+            this.categoriesTag = [];
+            this.industriesTag = [];
             this.checkedFirst = false;
 
             this.getProductTags();
@@ -263,7 +267,7 @@ export class ProductListComponent implements OnInit, OnDestroy {
   }
 
   getStyle(categoryId:number){
-     return (this.service_id == categoryId) ? '#e1e1e1'  : '#f5f5f5';
+     return (this.service_id == categoryId) ? '#f5f5f5'  : '#ffffff';
   }
 
   goToProductList(productId: any) {
