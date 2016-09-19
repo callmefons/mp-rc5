@@ -26,12 +26,12 @@
                     <p>{{apps.description}}</p>
                 </div>
                 <div class="col-xs-12">
-                    <p>Industries:
+                    <p>{{'Industries' | translate}}:
                         <span class="label label-default" *ngFor="let opt of industriesTag">{{opt?.name}}</span>
                     </p>
                 </div>
                 <div class="col-xs-12">
-                    <p>Departments:</p>
+                    <p>{{'Departments'| translate}}:</p>
                             <span class="label label-default"
                                   *ngFor="let opt of departmentsTag; let index = index;">
                     {{opt?.name}}</span>
@@ -41,7 +41,7 @@
             </div>
 
             <!--Pricing-->
-            <h4>Pricing</h4>
+            <h4>{{'Pricing'| translate}}</h4>
             <div *ngFor="let pricing of products.pricingmodels">
                 <div *ngIf="pricing.id == 5">
                     <b>{{pricing.model}}</b> : {{pricing.other_model}}
@@ -51,7 +51,7 @@
                     {{pricing.currency}}
                 </div>
                 <div *ngIf="pricing.id == 1">
-                    <b>{{pricing.model}}</b> : {{pricing.day}} days
+                    <b>{{pricing.model}}</b> : {{pricing.day}} {{'days' | translate}}
                 </div>
             </div>
 
@@ -59,9 +59,9 @@
             <div class="row feature">
                 <div class="col-xs-12">
                     <ul class="nav nav-tabs">
-                        <li class="active"><a data-toggle="tab" href="#features">Features</a></li>
-                        <li><a data-toggle="tab" href="#minrequirement">Minimum Requirements</a></li>
-                        <li><a data-toggle="tab" href="#termsncond">Terms & Conditions</a></li>
+                        <li class="active"><a data-toggle="tab" href="#features">{{'Features'| translate}}</a></li>
+                        <li><a data-toggle="tab" href="#minrequirement">{{'Minimum Requirements'| translate}}</a></li>
+                        <li><a data-toggle="tab" href="#termsncond">{{'Terms & Conditions' | translate}}</a></li>
                     </ul>
 
                     <div class="tab-content">
@@ -88,7 +88,7 @@
             <!--Visit Website-->
             <div class="well">
                 <button class="btn btn-default" (click)="visitWebsite(apps.name)">
-                    <a target="_blank" href="{{apps?.purchase_link}}">Visit Website</a></button>
+                    <a target="_blank" href="{{apps?.purchase_link}}">{{'Visit Website'|translate}}</a></button>
             </div>
 
 
@@ -134,21 +134,21 @@
             <!--About-->
             <div class="row" *ngFor="let developer_organization of developer_organization">
                 <div class="well">
-                    <h4>About {{developer_organization?.companyname}}</h4>
-                    <p>Based in: {{developer_organization?.city}}{{developer_organization?.state}},
+                    <h4>{{'About'| translate}}: {{developer_organization?.companyname}}</h4>
+                    <p>{{'Based in'|translate}}: {{developer_organization?.city}}{{developer_organization?.state}},
                         {{developer_organization?.country}}</p>
-                    <p>Employees: {{developer_organization?.size}}</p>
-                    <p>Founded: {{developer_organization?.founded}}</p>
+                    <p>{{'Employees'|translate}}: {{developer_organization?.size}}</p>
+                    <p>{{'Founded'|translate}}: {{developer_organization?.founded}}</p>
                 </div>
             </div>
         </div>
     </div>
 
     <div class="col-md-6">
-        <h4>Leave a review</h4>
+        <h4>{{'Leave a review'| translate}}</h4>
         <div class="row" *ngFor="let review of reviews">
             <div class="well">
-                <a href="" class="pull-right">Date: {{review?.created_at}}</a>
+                <a href="" class="pull-right">{{'Date' | translate}}: {{review?.created_at}}</a>
                 <div class="pull-right">
                     <rating
                             class="rating"
@@ -166,8 +166,8 @@
         </div>
 
         <div class="row row--content" *ngIf="!_authService.isLoggedIn()">
-            <button class="btn btn-primary" (click)="goToRegister()">Create an Account</button>
-            to see more reviews
+            <button class="btn btn-primary" (click)="goToRegister()">{{'Create an Account'|translate}}</button>
+           {{'to see more reviews'| translate}}
         </div>
 
         <customer-review-service [productId]="apps.id" ngDefaultControl></customer-review-service>

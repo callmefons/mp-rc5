@@ -6,7 +6,7 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
-                <h4 class="modal-title">{{modal_signin_title}}</h4>
+                <h4 class="modal-title">{{modal_signin_title | translate}}</h4>
             </div>
             <div class="modal-body" *ngIf="!login">
                 <form [formGroup]="myForm"
@@ -14,41 +14,41 @@
                       autocomplete="off"
                       novalidate>
                     <div class="form-field">
-                        <label>Email address</label>
+                        <label>{{'Email' | translate}}</label>
                         <input
                                 formControlName="email"
                                 type="email" class="form-control"
                                 placeholder="Enter email"/>
                     </div>
                     <div class="form-field">
-                        <label>Password</label>
+                        <label>{{'Password'| translate}}</label>
                         <input formControlName="password"
                                type="password" class="form-control"
                                placeholder="Password"/>
                     </div>
                     <div class="checkbox">
                         <label>
-                            <input type="checkbox"/> Remember me
+                            <input type="checkbox"/> {{'Remember me'| translate}}
                         </label>
                     </div>
                     <button
-                            type="submit" class="btn btn-default">Sign in</button>
+                            type="submit" class="btn btn-default">{{'Sign in' | translate}}</button>
                 </form>
             </div>
 
             <div class="modal-body" *ngIf="login">
-                You have logged on successful
+               {{'You have logged on successful' | translate}}
             </div>
 
             <!-- Modal Footer -->
             <div class="modal-footer modal-footer-register" *ngIf="!login">
                 <p><a data-dismiss="modal"
                       (click)="goToRegister()">
-                    Create new account
+                   {{'Create new account'| translate}}
                 </a></p>
                 <p><a (click)="goToForgotPassword()"
                       data-dismiss="modal">
-                    Forgot password
+                    {{'Forgot password' | translate}}
                 </a></p>
             </div>
 
@@ -110,8 +110,8 @@
             </div>
 
             <ul class="nav navbar-nav navbar-right">
-                <li><a style="color:#337ab7" (click)="goToRegisterVendor()">List your service</a></li>
-                <li><a style="color:#337ab7" (click)="goToRegister()">Register</a></li>
+                <li><a style="color:#337ab7" (click)="goToRegisterVendor()">{{'List your service' | translate}}</a></li>
+                <li><a style="color:#337ab7" (click)="goToRegister()">{{'Register' | translate}}</a></li>
 
                 <li *ngIf="_authService.isLoggedIn() && checkRole() === 'vendor'"><a (click)="goToVendor()">{{'Vendor' | translate}}</a></li>
                 <li *ngIf="_authService.isLoggedIn() && checkRole() === 'admin'"><a (click)="goToAdmin()">{{'Admin' | translate}}</a></li>

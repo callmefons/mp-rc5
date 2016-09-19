@@ -14,7 +14,8 @@ import {VendorAddProductComponent} from "./vendor-add-product.component";
     imports: [
         VENDOR_ROUTES,
     ],
-    declarations: [VendorComponent,
+    declarations: [
+        VendorComponent,
         VendorProfileComponent,
         VendorDashboardComponent,
         VendorListingComponent,

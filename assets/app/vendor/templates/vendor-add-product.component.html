@@ -3,16 +3,16 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title">Create Your Service</h4>
+                <h4 class="modal-title">{{'Create Your Service' | translate}}</h4>
             </div>
             <div class="modal-body">
-                <p *ngIf="!added">Waiting for Add Service...</p>
-                <p *ngIf="added">Successfully Added</p>
+                <p *ngIf="!added">{{'Waiting for Add Service' | translate}}...</p>
+                <p *ngIf="added">{{'Successfully Added'| translate}}</p>
             </div>
             <div class="modal-footer">
                 <div *ngIf="added">
                     <button type="button" class="btn btn-primary" data-dismiss="modal"
-                            (click)="onCancle()">Back
+                            (click)="onCancle()">{{'Back' | translate}}
                     </button>
                 </div>
             </div>
@@ -28,9 +28,10 @@
     <!--</div>-->
     <div *ngIf="!loading">
         <div class="row">
-            <h1>Add Lisiting</h1>
+            <h1>{{'Add Listing'| translate}}</h1>
             <hr>
-            <p>Enter Content in
+            <p>
+                {{'Enter Content in'| translate}}
                 <button class="btn btn-default" (click)="onChangeLanguaeFrom('en')">English</button>
                 <button class="btn btn-default" (click)="onChangeLanguaeFrom('th')">Thai</button>
             </p>

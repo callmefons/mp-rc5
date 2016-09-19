@@ -57,13 +57,13 @@
 
         <div class="col-md-6">
 
-            <h2>Register for an account</h2>
+            <h2>{{'Register for an account'| translate}}</h2>
             <form [formGroup]="myForm" (ngSubmit)="myForm.valid && onSubmit(myForm.value)"
                   novalidate>
 
                 <fieldset class="form-group">
-                    <label for="personal_name"> Name</label>
-                    <input type="text" class="form-control" placeholder="Name"
+                    <label for="personal_name"> {{'Name' | translate}}</label>
+                    <input type="text" class="form-control" placeholder="{{'Name' | translate}}"
                            id="personal_name"
                            formControlName="personal_name">
                     <div class='validation-error' *ngIf='myForm.controls.personal_name.touched'>
@@ -72,7 +72,7 @@
                 </fieldset>
 
                 <fieldset class="form-group">
-                    <label for="email">Work E-mail</label>
+                    <label for="email">{{'Work E-mail' | translate}}</label>
                     <input type="email" class="form-control" placeholder="Mail"
                            id="email"
                            formControlName="email">
@@ -83,7 +83,7 @@
                 </fieldset>
 
                 <fieldset class="form-group">
-                    <label for="password">Password</label>
+                    <label for="password">{{'Password' | translate}}</label>
                     <input type="password" class="form-control" placeholder="Password at least 8 characters" minlength='8'
                            id="password"
                            formControlName="password">
@@ -99,7 +99,7 @@
                 </fieldset>
 
                 <fieldset class="form-group">
-                    <label for="password_confirmation">Confirm Password</label>
+                    <label for="password_confirmation">{{'Confirm Password' | translate}}</label>
                     <input type="password" class="form-control" placeholder="Confirm Password"
                            id="password_confirmation"
                            formControlName="password_confirmation">
@@ -111,7 +111,7 @@
                 </fieldset>
 
                 <fieldset class="form-group">
-                    <label for="company">Company Name</label>
+                    <label for="company">{{'Company Name' | translate}}</label>
                     <input type="text" class="form-control" placeholder="Company"
                            id="company"
                            formControlName="company_name">
@@ -122,7 +122,7 @@
                 </fieldset>
 
                 <fieldset class="form-group">
-                    <label for="country">Country</label>
+                    <label for="country">{{'Country' | translate}}</label>
                     <select class="form-control"
                             id="country"
                             formControlName="country"
@@ -136,7 +136,7 @@
 
                 <fieldset class="form-group">
                     <div *ngIf="!citytype" [class.hidden]="disabled">
-                        <label>City</label>
+                        <label>{{'City'|translate}}</label>
                         <select class="form-control"
                                 formControlName="city"
                         >
@@ -145,7 +145,7 @@
 
                     </div>
                     <div *ngIf="!statetype" [class.hidden]="disabled">
-                        <label>State</label>
+                        <label>{{'State'|translate}}</label>
                         <select class="form-control"
                                 formControlName="state"
                         >
@@ -156,7 +156,7 @@
 
                 <fieldset class="form-group">
                     <div *ngIf="citytype">
-                        <label>City</label>
+                        <label>{{'City' | translate}}</label>
                         <select class="form-control"
                                 formControlName="city"
                                 [disabled]="!countrySelected">
@@ -165,7 +165,7 @@
 
                     </div>
                     <div *ngIf="statetype">
-                        <label>State</label>
+                        <label>{{'State'| translate}}</label>
                         <select class="form-control"
                                 formControlName="state"
                                 [disabled]="!countrySelected">

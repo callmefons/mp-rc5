@@ -2,99 +2,133 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="faff2c17-11cb-4609-98dd-54203a84a7ed" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/admin/admin-dashboard.component.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/admin/admin-listing.component.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/admin/admin-product.component.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/admin/admin-setting.component.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/admin/admin-vendors.component.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/admin/admin.component.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/admin/admin.module.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/admin/admin.routing.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/admin/index.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/app.component.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/app.module.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/app.routing.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/auth/auth-forgot-password.component.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/auth/auth-register-vendor.component.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/auth/auth-register.component.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/auth/auth-reset-password.component.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/auth/auth.component.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/auth/auth.module.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/auth/auth.routing.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/auth/index.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/errors/error.component.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/errors/error.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/errors/error.service.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/home/home-list.component.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/home/home.component.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/home/home.module.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/home/home.routing.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/home/index.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/product/browse-page.component.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/product/index.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/product/product-detail.component.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/product/product-list.component.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/product/product.component.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/product/product.module.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/product/product.routing.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/shared/analytics/clicky-admin.component.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/shared/analytics/clicky.component.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/shared/analytics/clicky.service.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/shared/api-service/admin/account-management.service.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/shared/api-service/auth/auth-guard.service.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/shared/api-service/auth/auth.service.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/shared/api-service/auth/can-deactivate-guard.service.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/shared/api-service/auth/index.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/shared/api-service/product/product.service.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/shared/api-service/review.service.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/shared/api-service/vendor/all-vendor.service.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/shared/api-service/vendor/vendor.service.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/shared/config/api.config.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/shared/config/env.config.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/shared/helpers/request.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/shared/helpers/storage.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/shared/helpers/validators.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/shared/models/product-tag.model.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/shared/models/product.model.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/shared/models/review.model.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/shared/models/status-log.model.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/shared/models/user.model.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/shared/models/vendor-company.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/shared/models/vendor.model.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/shared/navbar-admin/navbar-admin.component.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/shared/navbar-vendor/navbar-vendor.component.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/shared/navbar/navbar.component.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/shared/ng2-service/ng2-country/city.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/shared/ng2-service/ng2-country/country.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/shared/ng2-service/ng2-country/country.service.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/shared/ng2-service/ng2-country/state.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/shared/ng2-service/ng2-country/state.service.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/shared/ng2-service/ng2-imageupload/index.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/shared/ng2-service/ng2-imageupload/src/image-upload.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/shared/ng2-service/ng2-imageupload/src/interfaces.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/shared/ng2-service/ng2-imageupload/src/utils.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/shared/pipes/searchaccout.pipe.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/shared/review/index.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/shared/review/review.component.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/shared/rxjs-operators.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/shared/shared.module.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/translate/index.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/translate/lang-en.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/translate/lnag-th.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/translate/tranlate.component.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/translate/translate.pipe.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/translate/translate.service.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/translate/translations.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/vendor/index.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/vendor/vendor-add-product.component.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/vendor/vendor-dashboard.component.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/vendor/vendor-edit-product.component.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/vendor/vendor-listing.component.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/vendor/vendor-profile.component.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/vendor/vendor.component.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/vendor/vendor.module.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/vendor/vendor.routing.js" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/admin/admin-dashboard.component.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/admin/admin-listing.component.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/admin/admin-product.component.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/admin/admin-setting.component.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/admin/admin-vendors.component.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/admin/admin.component.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/admin/admin.module.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/admin/admin.routing.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/admin/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/app.component.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/app.module.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/app.routing.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/auth/auth-forgot-password.component.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/auth/auth-register-vendor.component.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/auth/auth-register.component.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/auth/auth-reset-password.component.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/auth/auth.component.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/auth/auth.module.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/auth/auth.routing.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/auth/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/errors/error.component.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/errors/error.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/errors/error.service.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/home/home-list.component.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/home/home.component.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/home/home.module.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/home/home.routing.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/home/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/product/browse-page.component.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/product/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/product/product-detail.component.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/product/product-list.component.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/product/product.component.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/product/product.module.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/product/product.routing.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/shared/analytics/clicky-admin.component.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/shared/analytics/clicky.component.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/shared/analytics/clicky.service.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/shared/api-service/admin/account-management.service.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/shared/api-service/auth/auth-guard.service.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/shared/api-service/auth/auth.service.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/shared/api-service/auth/can-deactivate-guard.service.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/shared/api-service/auth/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/shared/api-service/product/product.service.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/shared/api-service/review.service.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/shared/api-service/vendor/all-vendor.service.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/shared/api-service/vendor/vendor.service.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/shared/config/api.config.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/shared/config/env.config.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/shared/helpers/request.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/shared/helpers/storage.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/shared/helpers/validators.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/shared/models/product-tag.model.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/shared/models/product.model.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/shared/models/review.model.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/shared/models/status-log.model.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/shared/models/user.model.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/shared/models/vendor-company.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/shared/models/vendor.model.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/shared/navbar-admin/navbar-admin.component.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/shared/navbar-vendor/navbar-vendor.component.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/shared/navbar/navbar.component.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/shared/ng2-service/ng2-country/city.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/shared/ng2-service/ng2-country/country.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/shared/ng2-service/ng2-country/country.service.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/shared/ng2-service/ng2-country/state.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/shared/ng2-service/ng2-country/state.service.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/shared/ng2-service/ng2-imageupload/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/shared/ng2-service/ng2-imageupload/src/image-upload.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/shared/ng2-service/ng2-imageupload/src/interfaces.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/shared/ng2-service/ng2-imageupload/src/utils.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/shared/pipes/searchaccout.pipe.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/shared/review/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/shared/review/review.component.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/shared/rxjs-operators.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/shared/shared.module.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/translate/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/translate/lang-en.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/translate/lnag-th.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/translate/tranlate.component.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/translate/translate.pipe.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/translate/translate.service.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/translate/translations.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/vendor/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/vendor/vendor-add-product.component.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/vendor/vendor-dashboard.component.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/vendor/vendor-edit-product.component.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/vendor/vendor-listing.component.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/vendor/vendor-profile.component.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/vendor/vendor.component.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/vendor/vendor.module.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/vendor/vendor.routing.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/admin/admin.module.ts" afterPath="$PROJECT_DIR$/assets/app/admin/admin.module.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/app.module.ts" afterPath="$PROJECT_DIR$/assets/app/app.module.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/auth/templates/auth-register-vendor.component.html" afterPath="$PROJECT_DIR$/assets/app/auth/templates/auth-register-vendor.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/auth/templates/auth-register.component.html" afterPath="$PROJECT_DIR$/assets/app/auth/templates/auth-register.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/product/product.module.ts" afterPath="$PROJECT_DIR$/assets/app/product/product.module.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/product/templates/browse-page.component.html" afterPath="$PROJECT_DIR$/assets/app/product/templates/browse-page.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/product/templates/product-detail.component.html" afterPath="$PROJECT_DIR$/assets/app/product/templates/product-detail.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/product/templates/product-list.component.html" afterPath="$PROJECT_DIR$/assets/app/product/templates/product-list.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/shared/analytics/templates/clicky.template.html" afterPath="$PROJECT_DIR$/assets/app/shared/analytics/templates/clicky.template.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/shared/api-service/auth/auth.service.ts" afterPath="$PROJECT_DIR$/assets/app/shared/api-service/auth/auth.service.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/shared/navbar-admin/navbar-admin.component.html" afterPath="$PROJECT_DIR$/assets/app/shared/navbar-admin/navbar-admin.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/shared/navbar-vendor/navbar-vendor.component.html" afterPath="$PROJECT_DIR$/assets/app/shared/navbar-vendor/navbar-vendor.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/shared/navbar/navbar.component.html" afterPath="$PROJECT_DIR$/assets/app/shared/navbar/navbar.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/translate/lang-en.ts" afterPath="$PROJECT_DIR$/assets/app/translate/lang-en.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/translate/lnag-th.ts" afterPath="$PROJECT_DIR$/assets/app/translate/lnag-th.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/vendor/templates/vendor-add-product.component.html" afterPath="$PROJECT_DIR$/assets/app/vendor/templates/vendor-add-product.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/vendor/templates/vendor-dashboard.component.html" afterPath="$PROJECT_DIR$/assets/app/vendor/templates/vendor-dashboard.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/vendor/templates/vendor-listing.component.html" afterPath="$PROJECT_DIR$/assets/app/vendor/templates/vendor-listing.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/vendor/templates/vendor-profile.component.html" afterPath="$PROJECT_DIR$/assets/app/vendor/templates/vendor-profile.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/vendor/vendor.module.ts" afterPath="$PROJECT_DIR$/assets/app/vendor/vendor.module.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/auth/templates/auth-register-vendor.component.html" afterPath="$PROJECT_DIR$/public/js/app/auth/templates/auth-register-vendor.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/auth/templates/auth-register.component.html" afterPath="$PROJECT_DIR$/public/js/app/auth/templates/auth-register.component.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/boot.js" afterPath="$PROJECT_DIR$/public/js/app/boot.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/product/templates/browse-page.component.html" afterPath="$PROJECT_DIR$/public/js/app/product/templates/browse-page.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/product/templates/product-detail.component.html" afterPath="$PROJECT_DIR$/public/js/app/product/templates/product-detail.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/product/templates/product-list.component.html" afterPath="$PROJECT_DIR$/public/js/app/product/templates/product-list.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/shared/analytics/templates/clicky.template.html" afterPath="$PROJECT_DIR$/public/js/app/shared/analytics/templates/clicky.template.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/shared/navbar-admin/navbar-admin.component.html" afterPath="$PROJECT_DIR$/public/js/app/shared/navbar-admin/navbar-admin.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/shared/navbar-vendor/navbar-vendor.component.html" afterPath="$PROJECT_DIR$/public/js/app/shared/navbar-vendor/navbar-vendor.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/shared/navbar/navbar.component.html" afterPath="$PROJECT_DIR$/public/js/app/shared/navbar/navbar.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/vendor/templates/vendor-add-product.component.html" afterPath="$PROJECT_DIR$/public/js/app/vendor/templates/vendor-add-product.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/vendor/templates/vendor-dashboard.component.html" afterPath="$PROJECT_DIR$/public/js/app/vendor/templates/vendor-dashboard.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/vendor/templates/vendor-listing.component.html" afterPath="$PROJECT_DIR$/public/js/app/vendor/templates/vendor-listing.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/vendor/templates/vendor-profile.component.html" afterPath="$PROJECT_DIR$/public/js/app/vendor/templates/vendor-profile.component.html" />
     </list>
     <ignored path="07 Errors.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -117,86 +151,46 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="vendor-add-product.component.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/app/vendor/vendor-add-product.component.ts">
+      <file leaf-file-name="lang-en.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/app/translate/lang-en.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1410">
-              <caret line="101" column="28" selection-start-line="101" selection-start-column="12" selection-end-line="101" selection-end-column="28" />
+            <state relative-caret-position="436">
+              <caret line="142" column="43" selection-start-line="137" selection-start-column="3" selection-end-line="142" selection-end-column="43" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="vendor-edit-product.component.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/app/vendor/templates/vendor-edit-product.component.html">
+      <file leaf-file-name="translate.service.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/app/translate/translate.service.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1785">
-              <caret line="119" column="76" selection-start-line="119" selection-start-column="76" selection-end-line="119" selection-end-column="76" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="navbar.component.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/app/shared/navbar/navbar.component.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="18" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="navbar.component.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/app/shared/navbar/navbar.component.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1140">
-              <caret line="76" column="41" selection-start-line="76" selection-start-column="10" selection-end-line="76" selection-end-column="41" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="navbar-admin.component.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/app/shared/navbar-admin/navbar-admin.component.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="29" column="33" selection-start-line="29" selection-start-column="33" selection-end-line="29" selection-end-column="33" />
+            <state relative-caret-position="60">
+              <caret line="8" column="56" selection-start-line="8" selection-start-column="56" selection-end-line="8" selection-end-column="56" />
               <folding>
-                <element signature="n#style#0;n#li#0;n#ul#1;n#div#1;n#nav#0;n#!!top" expanded="true" />
+                <element signature="e#0#49#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="package.json" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/package.json">
+      <file leaf-file-name="navbar.component.ts" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/assets/app/shared/navbar/navbar.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
+            <state relative-caret-position="1590">
+              <caret line="116" column="0" selection-start-line="116" selection-start-column="0" selection-end-line="118" selection-end-column="5" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="navbar-vendor.component.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/app/shared/navbar-vendor/navbar-vendor.component.html">
+      <file leaf-file-name="navbar-admin.component.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/app/shared/navbar-admin/navbar-admin.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="24" column="78" selection-start-line="24" selection-start-column="10" selection-end-line="24" selection-end-column="78" />
+            <state relative-caret-position="-347">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding>
-                <element signature="n#style#0;n#li#0;n#ul#1;n#div#1;n#nav#0;n#!!top" expanded="true" />
+                <element signature="e#0#40#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="vendor-edit-product.component.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/app/vendor/styles/vendor-edit-product.component.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="555">
-              <caret line="37" column="13" selection-start-line="37" selection-start-column="13" selection-end-line="37" selection-end-column="13" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -204,8 +198,8 @@
       <file leaf-file-name="vendor-add-product.component.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/app/vendor/templates/vendor-add-product.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1335">
-              <caret line="89" column="0" selection-start-line="89" selection-start-column="0" selection-end-line="133" selection-end-column="38" />
+            <state relative-caret-position="390">
+              <caret line="30" column="33" selection-start-line="30" selection-start-column="33" selection-end-line="30" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -219,57 +213,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/assets/app/shared/navbar-admin/navbar-vendor.component.css" />
-        <option value="$PROJECT_DIR$/assets/app/shared/navbar-vendor/navbar-vendor.component.css" />
-        <option value="$PROJECT_DIR$/assets/app/admin/styles/admin-setting.component.css" />
-        <option value="$PROJECT_DIR$/assets/app/shared/analytics/clicky.component.ts" />
-        <option value="$PROJECT_DIR$/assets/app/shared/analytics/clicky-admin.component.ts" />
-        <option value="$PROJECT_DIR$/public/js/analytic.js" />
-        <option value="$PROJECT_DIR$/views/index.hbs" />
-        <option value="$PROJECT_DIR$/assets/app/product/product-detail.component.ts" />
         <option value="$PROJECT_DIR$/assets/app/admin/admin-setting.component.ts" />
         <option value="$PROJECT_DIR$/assets/app/admin/templates/admin-setting.component.html" />
         <option value="$PROJECT_DIR$/assets/app/auth/templates/admin-register-vendor.component.html" />
         <option value="$PROJECT_DIR$/assets/app/auth/auth.routing.ts" />
         <option value="$PROJECT_DIR$/assets/app/shared/review/templates/review.component.html" />
         <option value="$PROJECT_DIR$/assets/app/shared/review/review.component.ts" />
-        <option value="$PROJECT_DIR$/assets/app/product/templates/product-detail.component.html" />
         <option value="$PROJECT_DIR$/assets/app/product/product.routing.ts" />
-        <option value="$PROJECT_DIR$/assets/app/app.module.ts" />
-        <option value="$PROJECT_DIR$/assets/app/product/product.module.ts" />
         <option value="$PROJECT_DIR$/assets/app/shared/navbar/navbar.component.css" />
         <option value="$PROJECT_DIR$/assets/app/shared/navbar/navbar.component.ts" />
         <option value="$PROJECT_DIR$/assets/app/product/styles/product.component.css" />
         <option value="$PROJECT_DIR$/assets/app/product/browse-page.component.ts" />
         <option value="$PROJECT_DIR$/public/stylesheets/style.css" />
-        <option value="$PROJECT_DIR$/assets/app/shared/api-service/auth/auth.service.ts" />
         <option value="$PROJECT_DIR$/assets/app/shared/api-service/admin/account-management.service.ts" />
         <option value="$PROJECT_DIR$/assets/app/admin/templates/admin-vendors.component.html" />
-        <option value="$PROJECT_DIR$/assets/app/auth/templates/auth-register.component.html" />
-        <option value="$PROJECT_DIR$/assets/app/auth/templates/auth-register-vendor.component.html" />
         <option value="$PROJECT_DIR$/assets/app/auth/auth-register-vendor.component.ts" />
         <option value="$PROJECT_DIR$/assets/app/auth/auth-register.component.ts" />
         <option value="$PROJECT_DIR$/assets/app/home/home-list.component.ts" />
-        <option value="$PROJECT_DIR$/assets/app/product/templates/browse-page.component.html" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/assets/app/admin/admin-vendors.component.ts" />
         <option value="$PROJECT_DIR$/assets/app/shared/analytics/clicky.service.ts" />
-        <option value="$PROJECT_DIR$/assets/app/shared/shared.module.ts" />
         <option value="$PROJECT_DIR$/assets/app/translate/tranlate.component.ts" />
-        <option value="$PROJECT_DIR$/assets/app/shared/navbar/navbar.component.html" />
-        <option value="$PROJECT_DIR$/assets/app/translate/lang-en.ts" />
-        <option value="$PROJECT_DIR$/assets/app/translate/lnag-th.ts" />
-        <option value="$PROJECT_DIR$/assets/app/vendor/templates/vendor-add-product.component.html" />
         <option value="$PROJECT_DIR$/assets/app/product/styles/product-list.component.css" />
-        <option value="$PROJECT_DIR$/assets/app/product/templates/product-list.component.html" />
         <option value="$PROJECT_DIR$/assets/app/product/product-list.component.ts" />
         <option value="$PROJECT_DIR$/assets/app/vendor/vendor-add-product.component.ts" />
         <option value="$PROJECT_DIR$/assets/app/shared/api-service/product/product.service.ts" />
         <option value="$PROJECT_DIR$/assets/app/vendor/vendor-edit-product.component.ts" />
         <option value="$PROJECT_DIR$/assets/app/vendor/styles/vendor-edit-product.component.css" />
         <option value="$PROJECT_DIR$/assets/app/vendor/templates/vendor-edit-product.component.html" />
-        <option value="$PROJECT_DIR$/assets/app/shared/navbar-vendor/navbar-vendor.component.html" />
         <option value="$PROJECT_DIR$/assets/app/shared/navbar-admin/navbar-admin.component.html" />
+        <option value="$PROJECT_DIR$/assets/app/shared/navbar/navbar.component.html" />
+        <option value="$PROJECT_DIR$/assets/app/auth/templates/auth-register-vendor.component.html" />
+        <option value="$PROJECT_DIR$/assets/app/auth/templates/auth-register.component.html" />
+        <option value="$PROJECT_DIR$/assets/app/product/templates/product-detail.component.html" />
+        <option value="$PROJECT_DIR$/assets/app/product/templates/product-list.component.html" />
+        <option value="$PROJECT_DIR$/assets/app/product/templates/browse-page.component.html" />
+        <option value="$PROJECT_DIR$/assets/app/product/product.module.ts" />
+        <option value="$PROJECT_DIR$/assets/app/admin/admin.module.ts" />
+        <option value="$PROJECT_DIR$/assets/app/app.module.ts" />
+        <option value="$PROJECT_DIR$/assets/app/shared/shared.module.ts" />
+        <option value="$PROJECT_DIR$/assets/app/vendor/vendor.module.ts" />
+        <option value="$PROJECT_DIR$/assets/app/vendor/templates/vendor-dashboard.component.html" />
+        <option value="$PROJECT_DIR$/assets/app/shared/navbar-vendor/navbar-vendor.component.html" />
+        <option value="$PROJECT_DIR$/assets/app/shared/analytics/templates/clicky.template.html" />
+        <option value="$PROJECT_DIR$/assets/app/vendor/templates/vendor-listing.component.html" />
+        <option value="$PROJECT_DIR$/assets/app/vendor/templates/vendor-profile.component.html" />
+        <option value="$PROJECT_DIR$/assets/app/translate/lang-en.ts" />
+        <option value="$PROJECT_DIR$/assets/app/vendor/templates/vendor-add-product.component.html" />
+        <option value="$PROJECT_DIR$/assets/app/translate/lnag-th.ts" />
+        <option value="$PROJECT_DIR$/assets/app/shared/helpers/storage.ts" />
+        <option value="$PROJECT_DIR$/assets/app/translate/translate.service.ts" />
+        <option value="$PROJECT_DIR$/assets/app/shared/api-service/auth/auth.service.ts" />
       </list>
     </option>
   </component>
@@ -337,6 +331,132 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="mp-rc5" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mp-rc5" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mp-rc5" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mp-rc5" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mp-rc5" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="shared" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mp-rc5" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mp-rc5" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="shared" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="api-service" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mp-rc5" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mp-rc5" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="shared" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="api-service" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="auth" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mp-rc5" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mp-rc5" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="shared" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="api-service" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -449,12 +569,12 @@
       <workItem from="1474254555482" duration="5980000" />
       <workItem from="1474261339232" duration="1826000" />
       <workItem from="1474264176841" duration="555000" />
-      <workItem from="1474269634490" duration="282000" />
+      <workItem from="1474269634490" duration="10436000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="151422000" />
+    <option name="totallyTimeSpent" value="161576000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="789" extended-state="6" />
@@ -466,36 +586,37 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24233577" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24940239" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32892805" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991204" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24233577" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24233577" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32828686" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32892805" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26004228" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991204" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24940239" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -525,171 +646,10 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/assets/app/admin/templates/admin-setting.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="46" column="57" selection-start-line="46" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/admin/admin-setting.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="103">
-          <caret line="155" column="12" selection-start-line="155" selection-start-column="4" selection-end-line="155" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/home/home.component.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="29" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/stylesheets/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="423">
-          <caret line="74" column="0" selection-start-line="74" selection-start-column="2" selection-end-line="84" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/product/browse-page.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1815">
-          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/shared/api-service/auth/auth.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="20" column="14" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/shared/api-service/admin/account-management.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="17" column="16" selection-start-line="17" selection-start-column="2" selection-end-line="17" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/admin/templates/admin-vendors.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="68" column="37" selection-start-line="68" selection-start-column="28" selection-end-line="68" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/auth/templates/auth-register.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="147" column="0" selection-start-line="147" selection-start-column="0" selection-end-line="151" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/auth/templates/auth-register-vendor.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="346">
-          <caret line="181" column="27" selection-start-line="181" selection-start-column="27" selection-end-line="181" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/auth/auth-register-vendor.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="75" column="57" selection-start-line="75" selection-start-column="57" selection-end-line="75" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/auth/auth-register.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="71" column="26" selection-start-line="71" selection-start-column="26" selection-end-line="71" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/product/templates/product-detail.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="29" column="29" selection-start-line="29" selection-start-column="25" selection-end-line="29" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/vendor/templates/vendor-listing.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="78" selection-start-line="10" selection-start-column="76" selection-end-line="10" selection-end-column="78" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/vendor/vendor-listing.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-351">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/product/product-detail.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="21" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/home/home-list.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="990">
-          <caret line="70" column="53" selection-start-line="70" selection-start-column="53" selection-end-line="70" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/product/templates/browse-page.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1695">
-          <caret line="113" column="22" selection-start-line="113" selection-start-column="22" selection-end-line="113" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/systemjs.config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
-          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/systemjs.builder.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="30" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/shared/analytics/clicky.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/app/admin/admin-vendors.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="59" selection-start-line="0" selection-start-column="59" selection-end-line="0" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/shared/navbar/navbar.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1590">
-          <caret line="116" column="0" selection-start-line="116" selection-start-column="0" selection-end-line="118" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -707,24 +667,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/translate/translate.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/app/translate/translations.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="20" selection-start-line="2" selection-start-column="9" selection-end-line="2" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/shared/shared.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="28" column="31" selection-start-line="28" selection-start-column="31" selection-end-line="28" selection-end-column="31" />
         </state>
       </provider>
     </entry>
@@ -749,20 +695,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/product/product-list.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="80" column="9" selection-start-line="80" selection-start-column="9" selection-end-line="80" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/product/templates/product-list.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1695">
-          <caret line="113" column="48" selection-start-line="113" selection-start-column="36" selection-end-line="113" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/app/product/styles/product-list.component.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="435">
@@ -774,20 +706,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="11" column="21" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/translate/lnag-th.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="17" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/translate/lang-en.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="17" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#42#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -805,54 +726,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/vendor/vendor-add-product.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1410">
-          <caret line="101" column="28" selection-start-line="101" selection-start-column="12" selection-end-line="101" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/vendor/styles/vendor-edit-product.component.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="37" column="13" selection-start-line="37" selection-start-column="13" selection-end-line="37" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/vendor/templates/vendor-add-product.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1335">
-          <caret line="89" column="0" selection-start-line="89" selection-start-column="0" selection-end-line="133" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/vendor/templates/vendor-edit-product.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1785">
-          <caret line="119" column="76" selection-start-line="119" selection-start-column="76" selection-end-line="119" selection-end-column="76" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/shared/navbar/navbar.component.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="18" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/shared/navbar/navbar.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1140">
-          <caret line="76" column="41" selection-start-line="76" selection-start-column="10" selection-end-line="76" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/app/shared/navbar-admin/navbar-admin.component.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -867,23 +740,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/shared/navbar-vendor/navbar-vendor.component.html">
+    <entry file="file://$PROJECT_DIR$/assets/app/shared/navbar/navbar.component.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="78" selection-start-line="24" selection-start-column="10" selection-end-line="24" selection-end-column="78" />
-          <folding>
-            <element signature="n#style#0;n#li#0;n#ul#1;n#div#1;n#nav#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/shared/navbar-admin/navbar-admin.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="29" column="33" selection-start-line="29" selection-start-column="33" selection-end-line="29" selection-end-column="33" />
-          <folding>
-            <element signature="n#style#0;n#li#0;n#ul#1;n#div#1;n#nav#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="255">
+          <caret line="17" column="18" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -891,6 +752,319 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/vendor/styles/vendor-edit-product.component.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="555">
+          <caret line="37" column="13" selection-start-line="37" selection-start-column="13" selection-end-line="37" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/shared/navbar-admin/navbar-admin.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="9" column="71" selection-start-line="9" selection-start-column="71" selection-end-line="9" selection-end-column="71" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/shared/navbar/navbar.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="116" column="114" selection-start-line="116" selection-start-column="109" selection-end-line="116" selection-end-column="114" />
+          <folding>
+            <element signature="n#style#0;n#a#0;n#li#0;n#ul#1;n#div#1;n#div#1;n#nav#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/auth/templates/auth-register.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2535">
+          <caret line="169" column="64" selection-start-line="169" selection-start-column="64" selection-end-line="169" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/auth/templates/auth-register-vendor.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-150">
+          <caret line="7" column="59" selection-start-line="7" selection-start-column="40" selection-end-line="7" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/product/product-list.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="355">
+          <caret line="124" column="42" selection-start-line="124" selection-start-column="23" selection-end-line="124" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/product/templates/product.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/product/templates/product-list.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="126" column="129" selection-start-line="126" selection-start-column="100" selection-end-line="126" selection-end-column="129" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/vendor/templates/vendor.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/product/templates/browse-page.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="110" column="129" selection-start-line="110" selection-start-column="129" selection-end-line="110" selection-end-column="129" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/product/templates/product-detail.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="660">
+          <caret line="44" column="32" selection-start-line="44" selection-start-column="29" selection-end-line="44" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/auth/auth.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#57#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/shared/shared.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="36" column="21" selection-start-line="36" selection-start-column="21" selection-end-line="36" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#96#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/vendor/vendor.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="8" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="8" />
+          <folding>
+            <element signature="e#0#63#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/app.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="373">
+          <caret line="64" column="32" selection-start-line="64" selection-start-column="32" selection-end-line="64" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/product/product.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="6" selection-start-line="15" selection-start-column="3" selection-end-line="20" selection-end-column="6" />
+          <folding>
+            <element signature="e#0#39#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/admin/admin.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="22" column="4" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/shared/navbar-vendor/navbar-vendor.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="20" column="64" selection-start-line="20" selection-start-column="57" selection-end-line="20" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/vendor/templates/vendor-dashboard.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="15" column="47" selection-start-line="15" selection-start-column="47" selection-end-line="15" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/vendor/templates/vendor-edit-product.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="334">
+          <caret line="119" column="76" selection-start-line="119" selection-start-column="76" selection-end-line="119" selection-end-column="76" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/vendor/vendor-add-product.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="613">
+          <caret line="101" column="28" selection-start-line="101" selection-start-column="12" selection-end-line="101" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/vendor/styles/vendor-add-product.component.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/shared/analytics/templates/clicky.template.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="48" column="44" selection-start-line="48" selection-start-column="44" selection-end-line="48" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/vendor/templates/vendor-listing.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="394">
+          <caret line="49" column="66" selection-start-line="49" selection-start-column="66" selection-end-line="49" selection-end-column="66" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/vendor/templates/vendor-profile.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="60" column="70" selection-start-line="60" selection-start-column="66" selection-end-line="60" selection-end-column="70" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/vendor/templates/vendor-add-product.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="30" column="33" selection-start-line="30" selection-start-column="33" selection-end-line="30" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/auth/auth-register.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-825">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#59#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/auth/auth-register-vendor.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="403">
+          <caret line="75" column="57" selection-start-line="75" selection-start-column="57" selection-end-line="75" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/auth/auth-reset-password.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#59#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/shared/helpers/storage.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="3" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/translate/lnag-th.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="448">
+          <caret line="139" column="40" selection-start-line="139" selection-start-column="40" selection-end-line="139" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/translate/lang-en.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="436">
+          <caret line="142" column="43" selection-start-line="137" selection-start-column="3" selection-end-line="142" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/translate/translate.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="8" column="56" selection-start-line="8" selection-start-column="56" selection-end-line="8" selection-end-column="56" />
+          <folding>
+            <element signature="e#0#49#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/shared/navbar-admin/navbar-admin.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-347">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/shared/api-service/auth/auth.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="35" column="16" selection-start-line="35" selection-start-column="16" selection-end-line="35" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+            <element signature="e#385#416#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/shared/navbar/navbar.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1590">
+          <caret line="116" column="0" selection-start-line="116" selection-start-column="0" selection-end-line="118" selection-end-column="5" />
           <folding />
         </state>
       </provider>

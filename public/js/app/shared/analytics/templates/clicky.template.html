@@ -4,17 +4,17 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Log</h4>
+                <h4 class="modal-title">{{'Log'| translate}}</h4>
             </div>
             <div class="modal-body" *ngFor="let log of logs; let i = index;">
-                <p><b>[{{i}}] {{log?.date}}</b>| Listing {{log?.action}} by {{log?.by}} from {{log?.companyname}}</p>
+                <p><b>[{{i}}] {{log?.date}}</b>| {{'Listing'| translate}} {{log?.action}} {{'by'| translate}} {{log?.by}} {{'from' | translate}} {{log?.companyname}}</p>
                 <br>
-                <p *ngIf="log?.action === 'moderated'"><b>Sent back for Review</b><br>
-                    Notes: {{log?.comment}}
+                <p *ngIf="log?.action === 'moderated'"><b>{{'Sent back for Review'| translate}}</b><br>
+                    {{'Notes'| translate}}: {{log?.comment}}
                 <hr>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="goToLogin()">OK</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="goToLogin()">{{'OK'| translate}}</button>
             </div>
         </div>
     </div>
@@ -46,11 +46,11 @@
                         data-target="#myModal" (click)="showLog(app.log)">
                     <i class="fa fa-file-code-o fx-5x"
                        aria-hidden="true"
-                    ></i> Note <span class="badge">
+                    ></i> {{'Note'|translate}} <span class="badge">
             {{app.review_count}}</span></button>
                 <button *ngIf="app.status !== 'pending'"
                         class="btn btn-primary"
-                        (click)="goToEditApp(app.id)">Edit Listing
+                        (click)="goToEditApp(app.id)">{{'Edit Listing'| translate}}
                 </button>
 
             </div>

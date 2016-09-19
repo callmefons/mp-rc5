@@ -7,6 +7,7 @@ import {AdminDashboardComponent} from "./admin-dashboard.component";
 import {AdminVendorsComponent} from "./admin-vendors.component";
 import {AdminLisitingComponent} from "./admin-listing.component";
 import {AdminProductComponent} from "./admin-product.component";
+import {AdminSettingComponent} from "./admin-setting.component";
 
 @NgModule({
   imports: [
@@ -18,7 +19,8 @@ import {AdminProductComponent} from "./admin-product.component";
     AdminDashboardComponent,
     AdminVendorsComponent,
     AdminLisitingComponent,
-    AdminProductComponent
+    AdminProductComponent,
+    AdminSettingComponent
   ],
 
   exports: [
@@ -27,6 +29,8 @@ import {AdminProductComponent} from "./admin-product.component";
     AdminVendorsComponent,
     AdminLisitingComponent,
     AdminProductComponent,
+    AdminSettingComponent,
+
     FormsModule,
     ReactiveFormsModule
   ],

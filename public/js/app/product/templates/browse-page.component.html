@@ -6,12 +6,12 @@
         <div class="col-md-3">
             <div class="checkbox">
                 <accordion *ngIf="!loading">
-                    <h4 style="margin-left: 15px;">Filter by:</h4>
+                    <h4 style="margin-left: 15px;">{{'Filter by' | translate}}:</h4>
                     <accordion-group
                             #group_industry
                             [isOpen]="status_type === 'industry'">
                         <div accordion-heading>
-                            Industry
+                            {{'Industry'| translate}}
                             <i class="pull-right glyphicon"
                                [ngClass]="{'glyphicon-chevron-down': group_industry?.isOpen, 'glyphicon-chevron-right': !group_industry?.isOpen}"></i>
                         </div>
@@ -19,7 +19,7 @@
                             <label>
                                 <input type="checkbox"
                                        (change)="onCheckAllIndustry($event)"
-                                >All Industry</label>
+                                >{{'All Industry' | translate}}</label>
                         </div>
                         <div class="checkbox" *ngFor="let opt of all_tag; let i = index">
                             <label *ngIf="opt.type === 'industry'">
@@ -33,7 +33,7 @@
                             #group_category
                             [isOpen]="status_type === 'category'">
                         <div accordion-heading>
-                            Category
+                            {{'Category'| translate}}
                             <i class="pull-right glyphicon"
                                [ngClass]="{'glyphicon-chevron-down': group_category?.isOpen, 'glyphicon-chevron-right': !group_category?.isOpen}"></i>
                         </div>
@@ -41,7 +41,7 @@
                             <label>
                                 <input type="checkbox"
                                        (change)="onCheckAllCategory($event)"
-                                >All Category</label>
+                                >{{'All Category'|translate}}</label>
                         </div>
                         <div class="checkbox" *ngFor="let opt of all_tag; let i = index">
                             <label *ngIf="opt.type === 'category'">
@@ -55,7 +55,7 @@
                             #group_language
                             [isOpen]="status_type === 'language'">
                         <div accordion-heading>
-                            Language
+                            {{'Language'| translate}}
                             <i class="pull-right glyphicon"
                                [ngClass]="{'glyphicon-chevron-down': group_language?.isOpen, 'glyphicon-chevron-right': !group_language?.isOpen}"></i>
                         </div>
@@ -63,7 +63,7 @@
                             <label>
                                 <input type="checkbox"
                                        (change)="onCheckAllLanguage($event)"
-                                >All Language</label>
+                                >{{'All Language'| translate}}</label>
                         </div>
                         <div class="checkbox" *ngFor="let opt of all_tag; let i = index">
                             <label *ngIf="opt.type === 'language'">
@@ -77,7 +77,7 @@
                             #group_department
                             [isOpen]="status_type === 'department'">
                         <div accordion-heading>
-                            Department
+                            {{'Department'| translate}}
                             <i class="pull-right glyphicon"
                                [ngClass]="{'glyphicon-chevron-down': group_department?.isOpen, 'glyphicon-chevron-right': !group_department?.isOpen}"></i>
                         </div>
@@ -85,7 +85,7 @@
                             <label>
                                 <input type="checkbox"
                                        (change)="onCheckAllDepartment($event)"
-                                >All Department</label>
+                                >{{'All Department' | translate}}</label>
                         </div>
                         <div class="checkbox" *ngFor="let opt of all_tag; let i = index">
                             <label *ngIf="opt.type === 'department'">
@@ -108,7 +108,7 @@
                         </div>
                         <div>
                             <h4>{{product.name}}</h4>
-                            <button class="btn btn-default" (click)="goToProductDetail(product.id)">More Details</button>
+                            <button class="btn btn-default" (click)="goToProductDetail(product.id)">{{'More Details'| translate}}</button>
                         </div>
                     </div>
                 </div>

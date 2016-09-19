@@ -3,13 +3,13 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title">Update Profile</h4>
+                <h4 class="modal-title">{{'Update Profile' | translate}}</h4>
             </div>
             <div class="modal-body">
-                <p>Successfully updated</p>
+                <p>{{'Successfully updated'| translate}}</p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">{{'OK' | translate}}</button>
             </div>
         </div>
     </div>
@@ -20,15 +20,15 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title">Update Profile</h4>
+                <h4 class="modal-title">{{'Update Profile'| translate}}</h4>
             </div>
             <div class="modal-body">
-                <p *ngIf="!resetPassword">Waiting...</p>
-                <p *ngIf="resetPassword">Successfully updated</p>
+                <p *ngIf="!resetPassword">{{'Waiting' | translate}}...</p>
+                <p *ngIf="resetPassword">{{'Successfully updated'| translate}}</p>
             </div>
             <div class="modal-footer">
                 <button *ngIf="resetPassword"
-                        type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+                        type="button" class="btn btn-primary" data-dismiss="modal">{{'OK'| translate}}</button>
             </div>
         </div>
     </div>
@@ -43,9 +43,9 @@
     <div class="row">
         <div class="col-xs-12">
             <ul class="nav nav-tabs" *ngIf="editMode">
-                <li class="active"><a data-toggle="tab" href="#profile">Profile</a></li>
-                <li><a data-toggle="tab" href="#companyInfo">Company Info</a></li>
-                <li><a data-toggle="tab" href="#account">Account</a></li>
+                <li class="active"><a data-toggle="tab" href="#profile">{{'Profile'| translate}}</a></li>
+                <li><a data-toggle="tab" href="#companyInfo">{{'Company Info' | translate}}</a></li>
+                <li><a data-toggle="tab" href="#account">{{'Account' | translate}}</a></li>
             </ul>
 
             <!--editMode-->
@@ -55,10 +55,10 @@
 
                     <div class="row" *ngIf="editMode">
                         <div class=".col-md-3 .col-md-offset-3 btn-group-save">
-                            <button type="button" class="btn btn-danger pull-right" (click)="Cancle()">Cancle</button>
+                            <button type="button" class="btn btn-danger pull-right" (click)="Cancle()">{{'Cancel'| translate}}</button>
                             <button class='btn btn-info pull-right btn-save' type='submit'
                                     data-toggle="modal"
-                                    data-target="#modalUpdate">Save
+                                    data-target="#modalUpdate">{{'Save' | translate}}
                             </button>
                         </div>
                     </div>
@@ -81,7 +81,7 @@
                                                        [resizeOptions]="resizeOptions"
                                                        formControlName="logo"
                                                 >
-                                                Add Logo
+                                                {{'Add Logo'| translate}}
                                             </label>
                                         </fieldset>
                                         <fieldset class="form-group">
@@ -92,38 +92,38 @@
                                                    [(ngModel)]="vendor.name">
                                         </fieldset>
 
-                                        <label>Email:</label>{{ vendor?.email }}<br>
+                                        <label>{{'Email'| translate}}:</label>{{ vendor?.email }}<br>
 
                                         <fieldset class="form-group">
-                                            <label>Position:</label>
+                                            <label>{{'Position' | translate}}:</label>
                                             <input type="text"
                                                    class="form-control"
                                                    formControlName="position"
                                                    [(ngModel)]="vendor.position">
                                         </fieldset>
                                         <fieldset class="form-group">
-                                            <label>Department:</label>
+                                            <label>{{'Department' | translate}}:</label>
                                             <input type="text"
                                                    class="form-control"
                                                    formControlName="department"
                                                    [(ngModel)]="vendor.department">
                                         </fieldset>
                                         <fieldset class="form-group">
-                                            <label>Phone:</label>
+                                            <label>{{'Phone' | translate}}:</label>
                                             <input type="text"
                                                    class="form-control"
                                                    formControlName="countrycode"
                                                    [(ngModel)]="vendor.countrycode">
                                         </fieldset>
                                         <fieldset class="form-group">
-                                            <label>Phone Number:</label>
+                                            <label>{{'Phone Number'| translate}}:</label>
                                             <input type="text"
                                                    class="form-control"
                                                    formControlName="phonenumber"
                                                    [(ngModel)]="vendor.phonenumber">
                                         </fieldset>
                                         <fieldset class="form-group">
-                                            <label>Linkedin:</label>
+                                            <label>{{'Linkedin'| translate}}:</label>
                                             <input type="text"
                                                    class="form-control"
                                                    formControlName="linkedin"
@@ -137,7 +137,7 @@
 
                                     <div class="col-md-6">
                                         <fieldset class="form-group">
-                                            <label>Organization Type</label>
+                                            <label>{{'Organization Type' | translate}}</label>
                                             <select class="form-control"
                                                     formControlName="organization_type"
                                                     [(ngModel)]="vendor.organization">
@@ -147,19 +147,19 @@
                                             </select>
                                         </fieldset>
                                         <fieldset class="form-group">
-                                            <label>Suite/Floor:</label>
+                                            <label>{{'Suite/Floor' | translate}}:</label>
                                             <input type="text" class="form-control" placeholder="Suite/Floor"
                                                    formControlName="suite"
                                                    [(ngModel)]="vendor.suite">
                                         </fieldset>
                                         <fieldset class="form-group">
-                                            <label>Number Street:</label>
+                                            <label>{{'Number Street'|translate}}:</label>
                                             <input type="text" class="form-control" placeholder="Number Street:"
                                                    formControlName="numberstreet"
                                                    [(ngModel)]="vendor.numberstreet">
                                         </fieldset>
                                         <fieldset class="form-group">
-                                            <label>Country</label>
+                                            <label>{{'Country'| translate}}</label>
                                             <select class="form-control"
                                                     formControlName="country"
                                                     [(ngModel)]="vendor.country"
@@ -172,7 +172,7 @@
 
                                         <fieldset class="form-group">
                                             <div *ngIf="!citytype" [class.hidden]="disabled">
-                                                <label>City</label>
+                                                <label>{{'City' | translate}}</label>
                                                 <select class="form-control"
                                                         formControlName="city"
                                                 >
@@ -183,7 +183,7 @@
 
                                             </div>
                                             <div *ngIf="!statetype" [class.hidden]="disabled">
-                                                <label>State</label>
+                                                <label>{{'State' | translate}}</label>
                                                 <select class="form-control"
                                                         formControlName="state"
                                                 >
@@ -196,7 +196,7 @@
 
                                         <fieldset class="form-group">
                                             <div *ngIf="citytype">
-                                                <label>City</label>
+                                                <label>{{'City' | translate}}</label>
                                                 <select class="form-control"
                                                         formControlName="city"
                                                         [(ngModel)]="vendor.city"
@@ -208,7 +208,7 @@
 
                                             </div>
                                             <div *ngIf="statetype">
-                                                <label>State</label>
+                                                <label>{{'State'| translate}}</label>
                                                 <select class="form-control"
                                                         formControlName="state"
                                                         [(ngModel)]="vendor.state"
@@ -220,55 +220,55 @@
                                             </div>
                                         </fieldset>
                                         <fieldset class="form-group">
-                                            <label>Zip/Postal Code:</label>
+                                            <label>{{'Zip/Postal Code' | translate}}:</label>
                                             <input type="text" class="form-control" placeholder="Zip/Postal Code:"
                                                    formControlName="zip"
                                                    [(ngModel)]="vendor.zip">
                                         </fieldset>
                                         <fieldset class="form-group">
-                                            <label>Company Phone:</label>
+                                            <label>{{'Company Phone'| translate}}:</label>
                                             <input type="text" class="form-control" placeholder="Company Phone:"
                                                    formControlName="companyphone"
                                                    [(ngModel)]="vendor.companyphone">
                                         </fieldset>
                                         <fieldset class="form-group">
-                                            <label>Tax Id:</label>
+                                            <label>{{'Tax Id'|translate}}:</label>
                                             <input type="text" class="form-control" placeholder="Tax Id:"
                                                    formControlName="taxid"
                                                    [(ngModel)]="vendor.taxid">
                                         </fieldset>
                                         <fieldset class="form-group">
-                                            <label>Facebook:</label>
+                                            <label>{{'Facebook' | translate}}:</label>
                                             <input type="text" class="form-control" placeholder="Facebook:"
                                                    formControlName="facebook"
                                                    [(ngModel)]="vendor.facebook">
                                         </fieldset>
                                         <fieldset class="form-group">
-                                            <label>Twitter:</label>
+                                            <label>{{'Twitter'| translate}}:</label>
                                             <input type="text" class="form-control" placeholder="Twitter:"
                                                    formControlName="twitter"
                                                    [(ngModel)]="vendor.twitter">
                                         </fieldset>
                                         <fieldset class="form-group">
-                                            <label>Line:</label>
+                                            <label>{{'Line' | translate}}:</label>
                                             <input type="text" class="form-control" placeholder="Line:"
                                                    formControlName="line"
                                                    [(ngModel)]="vendor.line">
                                         </fieldset>
                                         <fieldset class="form-group">
-                                            <label>Company Name:</label>
+                                            <label>{{'Company Name'| translate}}:</label>
                                             <input type="text" class="form-control" placeholder="Company Name:"
                                                    formControlName="company_name"
                                                    [(ngModel)]="vendor.companyname">
                                         </fieldset>
                                         <fieldset class="form-group">
-                                            <label>Url:</label>
+                                            <label>{{'Url'| translate}}:</label>
                                             <input type="text" class="form-control" placeholder="Url:"
                                                    formControlName="url"
                                                    [(ngModel)]="vendor.url">
                                         </fieldset>
                                         <fieldset class="form-group">
-                                            <label>Year Founded</label>
+                                            <label>{{'Year Founded' | translate}}</label>
                                             <select class="form-control"
                                                     formControlName="year"
                                                     [(ngModel)]="vendor.year">
@@ -277,27 +277,27 @@
                                             </select>
                                         </fieldset>
                                         <fieldset class="form-group">
-                                            <label>What is your company mission statement or tagline</label>
+                                            <label>{{'What is your company mission statement or tagline'| translate}}</label>
                                             <textarea class="form-control" rows="6"
                                                       formControlName="mission"
                                                       [(ngModel)]="vendor.mission">
                             </textarea>
                                         </fieldset>
                                         <fieldset class="form-group">
-                                            <label>How were you founded or started?:</label>
+                                            <label>{{'How were you founded or started'| translate}}?:</label>
                                             <textarea class="form-control" rows="6"
                                                       formControlName="founded"
                                                       [(ngModel)]="vendor.founded">
                             </textarea>
                                         </fieldset>
                                         <fieldset class="form-group">
-                                            <label>Team Size:</label>
+                                            <label>{{'Team Size'| translate}}:</label>
                                             <input type="text" class="form-control" placeholder="Team Size:"
                                                    formControlName="size"
                                                    [(ngModel)]="vendor.size">
                                         </fieldset>
                                         <fieldset class="form-group">
-                                            <label>Incubator Affiliation:</label>
+                                            <label>{{'Incubator Affiliation'| translate}}:</label>
                                             <input type="text" class="form-control" placeholder="Incubator Affiliation:"
                                                    formControlName="affiliation"
                                                    [(ngModel)]="vendor.affiliation">
@@ -313,29 +313,29 @@
             </div>
 
             <ul class="nav nav-tabs" *ngIf="!editMode">
-                <li class="active"><a data-toggle="tab" href="#profileEdit">Profile</a></li>
-                <li><a data-toggle="tab" href="#companyInfoEdit">Company Info</a></li>
-                <li><a data-toggle="tab" href="#accountEdit">Account</a></li>
+                <li class="active"><a data-toggle="tab" href="#profileEdit">{{'Profile' | translate}}</a></li>
+                <li><a data-toggle="tab" href="#companyInfoEdit">{{'Company Info' | translate}}</a></li>
+                <li><a data-toggle="tab" href="#accountEdit">{{'Account' | translate}}</a></li>
             </ul>
             <!--editMode-->
             <div class="tab-content" *ngIf="!editMode">
 
                 <div *ngIf="!editMode">
-                    <button class="btn btn-primary pull-right" (click)="onEdit()">Edit</button>
+                    <button class="btn btn-primary pull-right" (click)="onEdit()">{{'Edit' | translate}}</button>
                 </div>
 
                 <div id="profileEdit" class="tab-pane fade in active">
                     <div *ngIf="!loading_profile">
                         <div class="row row--tab-content" *ngFor="let vendor of vendor_profile">
                             <div class="col-md-6">
-                                <label>Name:</label>{{ vendor?.name }}<br>
-                                <label>Email:</label>{{ vendor?.email }}<br>
+                                <label>{{'Name'| translate}}:</label>{{ vendor?.name }}<br>
+                                <label>{{'Email'| translate}}:</label>{{ vendor?.email }}<br>
                             </div>
                             <div class="col-md-6">
-                                <label>Position:</label> {{ vendor?.position }}<br>
-                                <label>Department:</label> {{ vendor?.department }}<br>
-                                <label>Phone:</label> {{vendor?.countrycode}} - {{ vendor?.phonenumber }}<br>
-                                <label>Linkedin:</label> {{ vendor?.linkedin }}<br>
+                                <label>{{'Position'| translate}}:</label> {{ vendor?.position }}<br>
+                                <label>{{'Department' | translate}}:</label> {{ vendor?.department }}<br>
+                                <label>{{'Phone' | translate}}:</label> {{vendor?.countrycode}} - {{ vendor?.phonenumber }}<br>
+                                <label>{{'Linkedin' | translate}}:</label> {{ vendor?.linkedin }}<br>
                             </div>
 
                         </div>
@@ -347,20 +347,20 @@
                             <div class="col-md-12">
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <label>vendor:</label> {{ vendor?.vendor }}<br>
-                                        <label>Address</label>
+                                        <label>{{'Vendor'| translate}}:</label> {{ vendor?.vendor }}<br>
+                                        <label>{{'Address'| translate}}</label>
                                         <br>
-                                        <label>Suite:</label> {{ vendor?.suite }}<br>
-                                        <label>Number Street:</label> {{ vendor?.numberstreet }}<br>
-                                        <label>Country:</label> {{ vendor?.country }}<br>
-                                        <label>State:</label> {{ vendor?.state }}<br>
-                                        <label>City:</label> {{ vendor?.city }}<br>
-                                        <label>Zip/Postal Code:</label> {{ vendor?.zip }}<br>
-                                        <label>Company Phone:</label> {{ vendor?.companyphone }}<br>
-                                        <label>Tax Id:</label> {{ vendor?.taxid }}<br>
-                                        <label>Facebook:</label> {{ vendor?.facebook }}<br>
-                                        <label>Twitter:</label> {{ vendor?.twitter }}<br>
-                                        <label>Line:</label> {{ vendor?.line }}<br>
+                                        <label>{{'Suite'| translate}}:</label> {{ vendor?.suite }}<br>
+                                        <label>{{'Number Street'| translate}}:</label> {{ vendor?.numberstreet }}<br>
+                                        <label>{{'Country'| translate}}:</label> {{ vendor?.country }}<br>
+                                        <label>{{'State'| translate}}:</label> {{ vendor?.state }}<br>
+                                        <label>{{'City'| translate}}:</label> {{ vendor?.city }}<br>
+                                        <label>{{'Zip/Postal Code'| translate}}:</label> {{ vendor?.zip }}<br>
+                                        <label>{{'Company Phone'| translate}}:</label> {{ vendor?.companyphone }}<br>
+                                        <label>{{'Tax Id'| translate}}:</label> {{ vendor?.taxid }}<br>
+                                        <label>{{'Facebook'| translate}}:</label> {{ vendor?.facebook }}<br>
+                                        <label>{{'Twitter' | translate}}:</label> {{ vendor?.twitter }}<br>
+                                        <label>{{'Line' | translate}}:</label> {{ vendor?.line }}<br>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="row">
@@ -370,15 +370,15 @@
                                                 <!-- <img src="{{ vendor?.logo }}" class="img-responsive" alt="Company Image"> -->
                                             </div>
                                             <div class="col-md-6">
-                                                <label>Company Name:</label> {{ vendor?.companyname }}<br>
-                                                <label>Url:</label> {{ vendor?.url }}<br>
-                                                <label>Year:</label> {{ vendor?.year }}<br>
+                                                <label>{{'Company Name' | translate}}:</label> {{ vendor?.companyname }}<br>
+                                                <label>{{'Url'| translate}}:</label> {{ vendor?.url }}<br>
+                                                <label>{{'Year' | translate}}:</label> {{ vendor?.year }}<br>
                                             </div>
                                         </div>
-                                        <label>Mission:</label> {{ vendor?.mission }}<br>
-                                        <label>How were you founded or started?:</label> {{ vendor?.founded }}<br>
-                                        <label>Team Size:</label> {{ vendor?.size }}<br>
-                                        <label>Incubator Affiliation:</label> {{ vendor?.affiliation }}<br>
+                                        <label>{{'Mission'| translate}}:</label> {{ vendor?.mission }}<br>
+                                        <label>{{'How were you founded or started' | translate}}?:</label> {{ vendor?.founded }}<br>
+                                        <label>{{'Team Size' | translate}}:</label> {{ vendor?.size }}<br>
+                                        <label>{{'Incubator Affiliation'| translate}}:</label> {{ vendor?.affiliation }}<br>
                                     </div>
                                 </div>
                             </div>
@@ -396,24 +396,24 @@
                             onSubmitPassword(myPasswordForm.value)"
                                   novalidate>
 
-                                <h4>Reset Password</h4>
+                                <h4>{{'Reset Password'| translate}}</h4>
 
                                 <fieldset class="form-group">
-                                    <label>Current Password</label>
+                                    <label>{{'Current Password'| translate}}</label>
                                     <input type="password" class="form-control"
                                            placeholder="Current Password" minlength='8'
                                            formControlName="currentpassword">
                                 </fieldset>
 
                                 <fieldset class="form-group">
-                                    <label>New Password</label>
+                                    <label>{{'New Password'| translate}}</label>
                                     <input type="password" class="form-control"
                                            placeholder="New Password" minlength='8'
                                            formControlName="newpassword">
                                 </fieldset>
 
                                 <fieldset class="form-group">
-                                    <label>Confirm New Password</label>
+                                    <label>{{'Confirm New Password'| translate}}</label>
                                     <input type="password" class="form-control" placeholder="Confirm New Password"
                                            formControlName="newpassword_confirmation">
                                 </fieldset>
@@ -422,7 +422,7 @@
                                     <div class="col-md-12">
                                         <button data-toggle="modal"
                                                 data-target="#modalResetPassword"
-                                                class='btn btn-info' type='submit'>Reset
+                                                class='btn btn-info' type='submit'>{{'Reset'| translate}}
                                         </button>
                                     </div>
                                 </div>

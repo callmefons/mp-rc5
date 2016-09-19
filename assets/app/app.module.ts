@@ -36,13 +36,30 @@ import {AuthRegisterVendorComponent} from "./auth/auth-register-vendor.component
     declarations: [
         AppComponent,
         ErrorComponent,
-        AuthComponent,AuthForgotPasswordComponent,AuthRegisterComponent,
-        AuthResetPasswordComponent,AuthRegisterVendorComponent,
-        ProductComponent,ProductDetailComponent,ProductListComponent,BrowsePageComponent,
-        VendorComponent,VendorListingComponent,VendorAddProductComponent,VendorEditProductComponent,
-        VendorProfileComponent,VendorDashboardComponent,
-        AdminComponent,AdminDashboardComponent,AdminLisitingComponent,
-        AdminProductComponent,AdminVendorsComponent,AdminSettingComponent
+        AuthComponent,
+        AuthForgotPasswordComponent,
+        AuthRegisterComponent,
+        AuthResetPasswordComponent,
+        AuthRegisterVendorComponent,
+
+        ProductComponent,
+        ProductDetailComponent,
+        ProductListComponent,
+        BrowsePageComponent,
+
+        VendorComponent,
+        VendorListingComponent,
+        VendorAddProductComponent,
+        VendorEditProductComponent,
+        VendorProfileComponent,
+        VendorDashboardComponent,
+
+        AdminComponent,
+        AdminDashboardComponent,
+        AdminLisitingComponent,
+        AdminProductComponent,
+        AdminVendorsComponent,
+        AdminSettingComponent
     ],
     imports: [
         BrowserModule, ROUTING, RouterModule.forRoot(APP_ROUTES),
@@ -51,7 +68,8 @@ import {AuthRegisterVendorComponent} from "./auth/auth-register-vendor.component
         HomeModule
     ],
     bootstrap: [AppComponent],
-    providers: [ErrorService
+    providers: [
+        ErrorService
     ]
 })
 export class AppModule {

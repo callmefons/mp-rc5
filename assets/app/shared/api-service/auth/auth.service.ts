@@ -7,7 +7,9 @@ import { User } from '../../models/user.model';
 import { storage } from '../../helpers/storage';
 import { request } from '../../helpers/request';
 import config = require('../../config/api.config');
-import 'rxjs/add/operator/cache';
+
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/catch';
 
 @Injectable()
 export class AuthService {
@@ -18,7 +20,6 @@ export class AuthService {
   signup(user: Object) {
     const body = JSON.stringify(user);
     return this._http.post(`${config.apiUrl}register`, body, { headers: request.getJsonHeaders() })
-      .cache()
       .map(response => response.json())
       .catch(this.handleError);
   }
@@ -26,7 +27,6 @@ export class AuthService {
   login(user: User) {
     const body = JSON.stringify(user);
     return this._http.post(`${config.apiUrl}login`, body, { headers: request.getJsonHeaders() })
-      .cache()
       .map(this.extractData)
       .catch(this.handleError);
   }

@@ -13,22 +13,22 @@
                         <img class="img-responsive mp-company-logo" [src]="organization?.logo">
                     </div>
                     <div class="col-md-6">
-                        <h4>Name: {{organization?.companyname}}</h4>
-                        <h6>Link: <a href="{{organization?.url}}">{{organization?.url}}</a></h6>
+                        <h4>{{'Name'| translate}}: {{organization?.companyname}}</h4>
+                        <h6>{{'Link'| translate}}: <a href="{{organization?.url}}">{{organization?.url}}</a></h6>
                     </div>
                 </div>
             </div>
             <!--Right-->
             <div class="col-md-4">
-                <button class="btn btn-primary pull-right" (click)="goToEditProfile()">Edit Company Profile</button>
+                <button class="btn btn-primary pull-right" (click)="goToEditProfile()">{{'Edit Company Profile'| translate}}</button>
             </div>
         </div>
 
         <hr>
 
         <div class="row">
-            <button class="btn btn-default" (click)="goToAddService()">Add New Listing</button>
-            <button class="btn btn-default" (click)="goToViewAllListing()">All Listing</button>
+            <button class="btn btn-default" (click)="goToAddService()">{{'Add New Listing'| translate}}</button>
+            <button class="btn btn-default" (click)="goToViewAllListing()">{{'All Listing' | translate}}</button>
         </div>
 
 
