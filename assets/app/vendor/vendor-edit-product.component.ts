@@ -1,11 +1,12 @@
 import {Component, OnInit, OnDestroy} from '@angular/core';
 import {Router, ActivatedRoute} from "@angular/router";
 import {DomSanitizationService, SafeResourceUrl, SafeUrl} from '@angular/platform-browser';
-import {FormBuilder, FormGroup} from "@angular/forms";
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {ProductService} from "../shared/api-service/product/product.service";
 import {Product} from "../shared/models/product.model";
 import {Subscription} from "rxjs";
 import {ImageUpload, ImageResult, ResizeOptions} from '../shared/ng2-service/ng2-imageupload/index';
+
 
 
 declare var _: any;
@@ -24,6 +25,7 @@ export class VendorEditProductComponent implements OnInit, OnDestroy {
 
     errorMessage: string;
     apps: any[];
+    apps_th:any[];
 
 
     industriesTag: any[] = [];
@@ -74,10 +76,10 @@ export class VendorEditProductComponent implements OnInit, OnDestroy {
                 private router: Router,
                 public _sanitizer: DomSanitizationService) {
         this.myForm = this._fb.group({
-            name: [''],
+            name: ['', Validators.required],
             logo: [''],
-            description: [''],
-            shortdescription: [''],
+            description: ['', Validators.required],
+            shortdescription: ['', Validators.required],
             minrequirement: [''],
             termsncond: [''],
             youtube: [''],
@@ -93,8 +95,8 @@ export class VendorEditProductComponent implements OnInit, OnDestroy {
             price_end: [''],
             currency: [''],
             licensing_model: [''],
-            thai_description: [''],
-            thai_shortdescription: ['']
+            thai_description: ['', Validators.required],
+            thai_shortdescription: ['', Validators.required]
         });
     }
 
@@ -129,41 +131,52 @@ export class VendorEditProductComponent implements OnInit, OnDestroy {
                 this._productService.getProductId(id)
                     .subscribe(apps => {
                         if (apps) {
-                            this.apps = apps.data;
-                            this.myFormLogo = apps.data.logo;
+                            console.log(apps);
 
-                            this.embedYoutube(apps.data.youtube);
+                            this.apps = apps.data['en'];
+                            this.apps_th = apps.data['th'];
+
+                            this.myFormLogo = apps.data['en'].logo;
+
+                            this.embedYoutube(apps.data['en'].youtube);
 
                             //noinspection TypeScriptUnresolvedVariable
-                            for (let i = 0; i < apps.pricingmodels.length; i++) {
+                            for (let i = 0; i < apps.data['en'].pricingmodels.length; i++) {
                                 //noinspection TypeScriptUnresolvedVariable
-                                this.myFormPricingModel.push(apps.pricingmodels[i]);
+                                this.myFormPricingModel.push(apps.data['en'].pricingmodels[i]);
                                 this.onBindingPricingModel(this.myFormPricingModel[i]);
                             }
 
-                            for (let i = 0; i < apps.data.screenshots.length; i++) {
-                                this.myFormScreenshots.push(apps.data.screenshots[i].url);
+                            for (let i = 0; i < apps.data['en'].screenshots.length; i++) {
+                                this.myFormScreenshots.push(apps.data['en'].screenshots[i].url);
                             }
-                            for (let i = 0; i < apps.data.features.length; i++) {
-                                this.myFormFeatures.push(apps.data.features[i].text);
-                            }
-                            for (let i = 0; i < apps.industries.length; i++) {
-                                this.myFormIndustries.push(apps.industries[i].id);
-                            }
-                            for (let i = 0; i < apps.categories.length; i++) {
-                                this.myFormCategories.push(apps.categories[i].id);
 
+                            for (let i = 0; i < apps.data['en'].features.length; i++) {
+                                this.myFormFeatures.push(apps.data['en'].features[i].text);
                             }
-                            for (let i = 0; i < apps.languages.length; i++) {
-                                this.myFormLanguages.push(apps.languages[i].id);
-                            }
-                            for (let i = 0; i < apps.departments.length; i++) {
-                                this.myFormDepartments.push(apps.departments[i].id);
+
+                            for (let i = 0; i < apps.data['th'].features.length; i++) {
+                                this.myFormThaiFeatures.push(apps.data['th'].features[i].text);
                             }
 
 
-                            for (let i = 0; i < apps.extraservices.length; i++) {
-                                this.myFormExtraservices.push(apps.extraservices[i].id);
+                            for (let i = 0; i < apps.data['en'].industries.length; i++) {
+                                this.myFormIndustries.push(apps.data['en'].industries[i].id);
+                            }
+                            for (let i = 0; i < apps.data['en'].categories.length; i++) {
+                                this.myFormCategories.push(apps.data['en'].categories[i].id);
+
+                            }
+                            for (let i = 0; i < apps.data['en'].languages.length; i++) {
+                                this.myFormLanguages.push(apps.data['en'].languages[i].id);
+                            }
+                            for (let i = 0; i < apps.data['en'].departments.length; i++) {
+                                this.myFormDepartments.push(apps.data['en'].departments[i].id);
+                            }
+
+
+                            for (let i = 0; i < apps.data['en'].extraservices.length; i++) {
+                                this.myFormExtraservices.push(apps.data['en'].extraservices[i].id);
 
                             }
                             this.loading = false;
@@ -235,6 +248,8 @@ export class VendorEditProductComponent implements OnInit, OnDestroy {
             this.myFormPricingModel,
             this.myFormExtraservices
         );
+
+        // console.log(product_thai);
 
         this.updated = false;
 

@@ -87,8 +87,8 @@ export class VendorAddProductComponent implements OnInit, OnDestroy {
         this.myForm = this._fb.group({
             name: ['', Validators.required],
             logo: [''],
-            description: [''],
-            shortdescription: [''],
+            description: ['', Validators.required],
+            shortdescription: ['', Validators.required],
             minrequirement: [''],
             termsncond: [''],
             youtube: [''],
@@ -99,8 +99,8 @@ export class VendorAddProductComponent implements OnInit, OnDestroy {
             features: [''],
             screenshots: [''],
             purchase_link: [''],
-            thai_description: [''],
-            thai_shortdescription: ['']
+            thai_description: ['', Validators.required],
+            thai_shortdescription: ['', Validators.required]
         });
     }
 

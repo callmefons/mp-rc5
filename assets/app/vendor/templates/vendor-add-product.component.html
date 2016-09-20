@@ -75,7 +75,7 @@
                             <div class="col-md-4 content-center">
                                 <div class="row">
                                     <fieldset class="form-group">
-                                        <label>Name</label>
+                                        <label>{{'Name' | translate}}</label>
                                         <input type="text"
                                                class="form-control"
                                                placeholder="Name is Here"
@@ -97,6 +97,10 @@
                                                 class="form-control"
                                                 placeholder="Description"
                                                 formControlName="description"></textarea>
+                                        <div class='validation-error' *ngIf='myForm.controls.description.touched'>
+                                            <div *ngIf="myForm.controls.description.hasError('required')">Description is required
+                                            </div>
+                                        </div>
                                     </fieldset>
                                 </div>
 
@@ -107,6 +111,10 @@
                                                   class="form-control"
                                                   placeholder="Short Description"
                                                   formControlName="shortdescription"></textarea>
+                                        <div class='validation-error' *ngIf='myForm.controls.shortdescription.touched'>
+                                            <div *ngIf="myForm.controls.shortdescription.hasError('required')">Short Description is required
+                                            </div>
+                                        </div>
                                     </fieldset>
 
                                 </div>
@@ -120,6 +128,10 @@
                                                 class="form-control"
                                                 placeholder="รายละเอียด"
                                                 formControlName="thai_description"></textarea>
+                                        <div class='validation-error' *ngIf='myForm.controls.thai_description.touched'>
+                                            <div *ngIf="myForm.controls.thai_description.hasError('required')">Thai Description is required
+                                            </div>
+                                        </div>
                                     </fieldset>
                                 </div>
 
@@ -130,6 +142,10 @@
                                                   class="form-control"
                                                   placeholder="รายละเอียดแบบย่อ"
                                                   formControlName="thai_shortdescription"></textarea>
+                                        <div class='validation-error' *ngIf='myForm.controls.thai_shortdescription.touched'>
+                                            <div *ngIf="myForm.controls.thai_shortdescription.hasError('required')">Thai Short Description is required
+                                            </div>
+                                        </div>
                                     </fieldset>
 
                                 </div>

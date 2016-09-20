@@ -56,46 +56,58 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
 
   }
 
+  lang: string = 'en';
+
   ngOnInit() {
+    this.onRefresh();
+  }
+
+  SwitchLang(lang: string){
+    this.lang = lang;
+    this.onRefresh();
+  }
+
+  onRefresh(){
     this.sub = this.route
-      .params
-      .subscribe(params => {
-        let id = parseInt(this.route.snapshot.params['id']);
+        .params
+        .subscribe(params => {
+          let id = parseInt(this.route.snapshot.params['id']);
 
-        this._productService.getProductId(id).subscribe((products: any)=> {
-          this.products = products;
-          this.apps = products.data;
+          this._productService.getProductId(id).subscribe((products: any)=> {
+            console.log(products);
+            this.products = products.data[this.lang];
+            this.apps = products.data[this.lang];
 
-          for (let i = 0; i < this.products.languages.length; i++) {
-            this.languagesTag.push(this.products.languages[i]);
-          }
-          for (let i = 0; i < this.products.departments.length; i++) {
-            this.departmentsTag.push(this.products.departments[i]);
-          }
-          for (let i = 0; i < this.products.categories.length; i++) {
-            this.categoriesTag.push(this.products.categories[i]);
-          }
-          for (let i = 0; i < this.products.industries.length; i++) {
-            this.industriesTag.push(this.products.industries[i]);
-          }
+            for (let i = 0; i < this.products.languages.length; i++) {
+              this.languagesTag.push(this.products.languages[i]);
+            }
+            for (let i = 0; i < this.products.departments.length; i++) {
+              this.departmentsTag.push(this.products.departments[i]);
+            }
+            for (let i = 0; i < this.products.categories.length; i++) {
+              this.categoriesTag.push(this.products.categories[i]);
+            }
+            for (let i = 0; i < this.products.industries.length; i++) {
+              this.industriesTag.push(this.products.industries[i]);
+            }
 
-          for (let i = 0; i < this.products.data.features.length; i++) {
-            this.features.push(this.products.data.features[i]);
-          }
+            for (let i = 0; i < this.products.features.length; i++) {
+              this.features.push(this.products.features[i]);
+            }
 
 
-          for (let i = 0; i < this.products.data.screenshots.length; i++) {
-            this.screenshots.push(this.products.data.screenshots[i]);
-          }
-          this.setThumbnail();
-          this.selected = this.screenshots[0].url;
-          this.loading = false;
+            for (let i = 0; i < this.products.screenshots.length; i++) {
+              this.screenshots.push(this.products.screenshots[i]);
+            }
+            this.setThumbnail();
+            this.selected = this.screenshots[0].url;
+            this.loading = false;
+          });
+
+
+          this.getReview(id);
+
         });
-
-
-        this.getReview(id);
-
-      });
   }
 
 

@@ -96,6 +96,10 @@
                                        class="form-control"
                                        placeholder="Name is Here"
                                        formControlName="name">
+                                <div class='validation-error' *ngIf='myForm.controls.name.touched'>
+                                    <div *ngIf="myForm.controls.name.hasError('required')">Name is required
+                                    </div>
+                                </div>
                             </fieldset>
                         </div>
 
@@ -109,6 +113,10 @@
                                         [(ngModel)]="apps.description"
                                         placeholder="Description"
                                         formControlName="description"></textarea>
+                                <div class='validation-error' *ngIf='myForm.controls.description.touched'>
+                                    <div *ngIf="myForm.controls.description.hasError('required')">Description is required
+                                    </div>
+                                </div>
                             </fieldset>
                         </div>
 
@@ -120,6 +128,10 @@
                                           [(ngModel)]="apps.shortdescription"
                                           placeholder="Short Description"
                                           formControlName="shortdescription"></textarea>
+                                <div class='validation-error' *ngIf='myForm.controls.shortdescription.touched'>
+                                    <div *ngIf="myForm.controls.shortdescription.hasError('required')">Short Description is required
+                                    </div>
+                                </div>
                             </fieldset>
 
                         </div>
@@ -132,7 +144,12 @@
                                         type="text"
                                         class="form-control"
                                         placeholder="รายละเอียด"
+                                        [(ngModel)]="apps_th.description"
                                         formControlName="thai_description"></textarea>
+                                <div class='validation-error' *ngIf='myForm.controls.thai_description.touched'>
+                                    <div *ngIf="myForm.controls.thai_description.hasError('required')">Thai Description is required
+                                    </div>
+                                </div>
                             </fieldset>
                         </div>
 
@@ -141,8 +158,13 @@
                                 <label>รายละเอียดแบบย่อ</label>
                                 <textarea type="text"
                                           class="form-control"
+                                          [(ngModel)]="apps_th.shortdescription"
                                           placeholder="รายละเอียดแบบย่อ"
                                           formControlName="thai_shortdescription"></textarea>
+                                <div class='validation-error' *ngIf='myForm.controls.thai_shortdescription.touched'>
+                                    <div *ngIf="myForm.controls.thai_shortdescription.hasError('required')">Thai Short Description is required
+                                    </div>
+                                </div>
                             </fieldset>
 
                         </div>
@@ -580,7 +602,7 @@
                                 </iframe>
 
                             </div>
-                            <button type="button" class="btn btn-sm btn-danger"
+                            <button type="button" class="btn btn-sm btn-danger"  *ngIf="video"
                                     (click)="deleteVideo()">Delete
                             </button>
                         </div>
