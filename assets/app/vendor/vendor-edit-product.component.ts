@@ -131,7 +131,6 @@ export class VendorEditProductComponent implements OnInit, OnDestroy {
                 this._productService.getProductId(id)
                     .subscribe(apps => {
                         if (apps) {
-                            console.log(apps);
 
                             this.apps = apps.data['en'];
                             this.apps_th = apps.data['th'];

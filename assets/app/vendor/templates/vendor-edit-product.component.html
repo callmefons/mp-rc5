@@ -59,6 +59,7 @@
                     </div>
                     <button
                             class='btn btn-primary pull-right btn-save' type='submit'
+                            [disabled]='!myForm.valid'
                             data-toggle="modal" data-target="#myModal">Save
                     </button>
                     <button type="button"
