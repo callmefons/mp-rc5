@@ -74,7 +74,7 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
           let id = parseInt(this.route.snapshot.params['id']);
 
           this._productService.getProductId(id).subscribe((products: any)=> {
-            console.log(products);
+            //console.log(products);
             this.products = products.data[this.lang];
             this.apps = products.data[this.lang];
 
