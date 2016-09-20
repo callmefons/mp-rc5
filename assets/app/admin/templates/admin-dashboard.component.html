@@ -1,10 +1,10 @@
 <navbar-admin-component></navbar-admin-component>
 <div class="container">
-    <h1>Admin Dashboard</h1>
+    <h1>{{'Admin Dashboard' | translate}}</h1>
     <div class="row">
         <!--Moderate New Listings-->
         <div class="col-xs-12 col-md-6" style="margin-bottom: 45px">
-            <h2 style="margin-bottom: 15px">Moderate New Listings</h2>
+            <h2 style="margin-bottom: 15px">{{'Moderate New Listings' | translate}}</h2>
             <ul class="list-group">
                 <li class="list-group-item">
                     <div class="row row-table" *ngFor="let product of product">
@@ -29,7 +29,7 @@
                         </div>
                         <div class="col-xs-3">
                             <button type="button" class="btn-detail btn btn-default btn-sm"
-                                    (click)="goToProductDetail(product.id)">Moderate
+                                    (click)="goToProductDetail(product.id)">{{'Moderate' | translate}}
                             </button>
                         </div>
                     </div>
@@ -38,7 +38,7 @@
                         <div class="col-md-3 col-md-offset-9"
                         >
                             <button type="button" class="btn btn-primary"
-                                    (click)="goToListing()">View All
+                                    (click)="goToListing()">{{'View All'| translate}}
                             </button>
                         </div>
                     </div>
@@ -51,7 +51,7 @@
 
         <!--Moderate Vendors-->
         <div class="col-xs-12 col-md-6" style="margin-bottom: 45px">
-            <h2 style="margin-bottom: 15px">Moderate Vendors</h2>
+            <h2 style="margin-bottom: 15px">{{'Moderate Vendors'| translate}}</h2>
             <ul class="list-group">
                 <li class="list-group-item">
                     <div class="row row-table" *ngFor="let vendor of vendor">
@@ -67,7 +67,7 @@
                         </div>
                         <div class="col-xs-4">
                             <button type="button" class="btn-detail btn btn-default btn-sm"
-                                    (click)="goToVendorProfile(vendor.id)">View Profile
+                                    (click)="goToVendorProfile(vendor.id)">{{'View Profile' | translate}}
                             </button>
                         </div>
                     </div>
@@ -75,7 +75,7 @@
                     <div class="row">
                         <div class="col-md-3 col-md-offset-9"
                         >
-                            <button type="button" class="btn btn-primary">View All</button>
+                            <button type="button" class="btn btn-primary">{{'View All' | translate}}</button>
                         </div>
                     </div>
 

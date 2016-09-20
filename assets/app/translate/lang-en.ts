@@ -29,7 +29,6 @@ export const LANG_EN_TRANS = {
     'Name': 'Name',
     'Work E-mail': 'Work E-mail',
     'Confirm Password': 'Confirm Password',
-    'Company Name': 'Company Name',
     'Country': 'Country',
     'City': 'City',
     'State': 'State',
@@ -41,7 +40,6 @@ export const LANG_EN_TRANS = {
     /////////////////// Vendor ///////////////////
 
     //nav vendor
-    'Vendor': 'Vendor',
     'Directory': 'Directory',
     'Account': 'Account',
 
@@ -63,7 +61,6 @@ export const LANG_EN_TRANS = {
     'Pricing': 'Pricing',
     'days': 'days',
     'Minimum Requirements': 'Minimum Requirements',
-    'Terms & Conditions': 'Terms & Conditions',
     'About': 'About',
     'Based in': 'Based in',
     'Employees': 'Employees',
@@ -143,16 +140,10 @@ export const LANG_EN_TRANS = {
     'Enter Content in': 'Enter Content in',
 
 
-
-
-
-
-
     //////////////////////////////////////////////////////
 
     //navbar admin
     'Dashboard': 'Dashboard',
-    'Vendors': 'Vendors',
     'Customer': 'Customer',
     'Settings': 'Settings',
 
@@ -160,6 +151,65 @@ export const LANG_EN_TRANS = {
     'Description': 'Description',
     'Short Description' : 'Short Description',
     'Features': 'Features',
+
+
+    //Admin Dashboard
+    'Admin Dashboard': 'Admin Dashboard',
+    'Moderate New Listings': 'Moderate New Listings',
+    'Moderate': 'Moderate',
+    'View All': 'View All',
+    'Moderate Vendors': 'Moderate Vendors',
+    'View Profile': 'View Profile',
+
+    //Admin Listing
+    'All Listings': 'All Listings',
+    'New': 'New',
+    'Vendors Reviewing': 'Vendors Reviewing',
+    'All': 'All',
+    'Company': 'Company',
+    'Service Name': 'Service Name',
+    'Status' :'Status',
+    'View': 'View',
+
+
+    //Admin Product
+    'Approved product': 'Approved product',
+    'Listing Details': 'Listing Details',
+    'Details': 'Details',
+    'Content': 'Content',
+    'Media': 'Media',
+    'History': 'History',
+    'Statistics': 'Statistics',
+    'Wating update status': 'Wating update status',
+    'Joined': 'Joined',
+    'Purchase Link': 'Purchase Link',
+    'Payment and Pricing': 'Payment and Pricing',
+    'Terms & Conditions': 'Terms & Conditions',
+    'Screenshots': 'Screenshots',
+    'Title of Screenshot': 'Title of Screenshot',
+    'Video': 'Video',
+    'Title of Video': 'Title of Video',
+    'Sent back for': 'Sent back for',
+    'Review': 'Review',
+    'Comment': 'Comment',
+    'Approve': 'Approve',
+    'Needs Review': 'Needs Review',
+    'Add-Ons': 'Add-Ons',
+    'Languages': 'Languages',
+
+
+    //Admin Vendor
+    'Manage Vendors': 'Manage Vendors',
+    'User Name': 'User Name',
+    'activate': 'activate',
+    'archived': 'archived',
+    'Archive Account': 'Archive Account',
+    'Unarchive Account': 'Unarchive Account',
+    'Add': 'Add',
+    'Categories': 'Categories',
+    'Categoty': 'Categoty'
+
+
 
 
 

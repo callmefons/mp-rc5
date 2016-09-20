@@ -22,14 +22,14 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Approved product</h4>
+                <h4 class="modal-title">{{'Approved product' | translate}}</h4>
             </div>
             <div class="modal-body">
-                <p *ngIf="!updated">Waiting...</p>
-                <p *ngIf="updated">Success</p>
+                <p *ngIf="!updated">{{'Waiting'| translate}}...</p>
+                <p *ngIf="updated">{{'Success' | translate}}</p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary" data-dismiss="modal">OK
+                <button type="button" class="btn btn-primary" data-dismiss="modal">{{'OK' | translate}}
                 </button>
             </div>
         </div>
@@ -43,11 +43,11 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Review for Product</h4>
+                <h4 class="modal-title">{{'Review for Product' | translate}}</h4>
             </div>
             <div class="modal-body">
-                <p *ngIf="!updated">Waiting...</p>
-                <p *ngIf="updated">Success</p>
+                <p *ngIf="!updated">{{'Waiting' | translate}}...</p>
+                <p *ngIf="updated">{{'Success' | translate}}</p>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-primary" data-dismiss="modal">OK
@@ -60,23 +60,23 @@
 
 <navbar-admin-component></navbar-admin-component>
 <div class="container">
-    <a (click)="goToListing()">All Listing</a>
-    <h1>Listing Details</h1>
+    <a (click)="goToListing()">{{'All Listing' | translate}}</a>
+    <h1>{{'Listing Details' | translate}}</h1>
     <div class="row btn--delete">
         <button class="btn btn-danger pull-right"
                 data-toggle="modal"
-                data-target="#modalDelete">Delete
+                data-target="#modalDelete">{{'Delete' | translate}}
         </button>
     </div>
     <div class="row">
 
         <div class="col-xs-12">
             <ul class="nav nav-tabs">
-                <li class="active"><a data-toggle="tab" href="#details">Details</a></li>
-                <li><a data-toggle="tab" href="#content">Content </a></li>
-                <li><a data-toggle="tab" href="#media">Media</a></li>
-                <li><a data-toggle="tab" href="#history">History</a></li>
-                <li><a data-toggle="tab" href="#statistics">Statistics</a></li>
+                <li class="active"><a data-toggle="tab" href="#details">{{'Details' | translate}}</a></li>
+                <li><a data-toggle="tab" href="#content">{{'Content' | translate}} </a></li>
+                <li><a data-toggle="tab" href="#media">{{'Media' | translate}}</a></li>
+                <li><a data-toggle="tab" href="#history">{{'History' | translate}}</a></li>
+                <li><a data-toggle="tab" href="#statistics">{{'Statistics' | translate}}</a></li>
 
             </ul>
 
@@ -84,7 +84,7 @@
             <div class="tab-content">
 
                 <div class="row">
-                    <p *ngIf="update">Wating update status...</p>
+                    <p *ngIf="update">{{'Wating update status' | translate}}...</p>
                     <span class="label label-default label-status pull-right"
                           *ngIf="!update">{{apps.status}}</span>
                 </div>
@@ -97,9 +97,9 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <h5>{{apps.name}}</h5>
-                                        <p>Name: {{apps?.developername}}</p>
-                                        <p>Company name: {{apps?.companyname}}</p>
-                                        <p>Joined: {{apps?.joined}}</p>
+                                        <p>{{'Name' | translate}}: {{apps?.developername}}</p>
+                                        <p>{{'Company name' |translate}}: {{apps?.companyname}}</p>
+                                        <p>{{'Joined' | translate}}: {{apps?.joined}}</p>
                                     </div>
                                     <div class="col-md-6">
                                         <div *ngFor="let category of products.categories">
@@ -109,16 +109,22 @@
                                 </div>
 
                                 <div class="row">
-                                    <h5>Industries</h5>
-                                    <div *ngFor="let industry of products.industries">
-                                        <span class="label label-default label--float">{{industry.name}}</span>
+                                    <div class="col-md-12">
+                                        <h5>{{'Industries' | translate}}</h5>
+                                        <div *ngFor="let industry of products.industries">
+                                            <span class="label label-default label--float">{{industry.name}}</span>
+                                        </div>
                                     </div>
+
                                 </div>
 
                                 <div class="row">
-                                    <h5>Departments</h5>
-                                    <div *ngFor="let department of products.departments">
-                                        <span class="label label-default label--float">{{department.name}}</span>
+
+                                    <div class="col-md-12">
+                                        <h5>{{'Departments' | translate}}</h5>
+                                        <div *ngFor="let department of products.departments">
+                                            <span class="label label-default label--float">{{department.name}}</span>
+                                        </div>
                                     </div>
                                 </div>
 
@@ -128,13 +134,13 @@
 
                         <div class="col-md-6">
                             <div class="row">
-                                <h5>Purchase Link:</h5>
+                                <h5>{{'Purchase Link'| translate}}:</h5>
                                 <a href="">{{apps?.purchase_link}}</a>
                             </div>
 
                             <div class="row ">
 
-                                <h5>Payment and Pricing</h5>
+                                <h5>{{'Payment and Pricing' | translate}}</h5>
                                 <div *ngFor="let pricing of products.pricingmodels">
                                     <div *ngIf="pricing.id == 5">
                                         <b>{{pricing.model}}</b> : {{pricing.other_model}}
@@ -149,12 +155,12 @@
                                     </div>
                                 </div>
 
-                                <b>Add-Ons:</b>
+                                <b>{{'Add-Ons'| translate}}:</b>
                                 <span
                                         *ngFor="let extraservices of products.extraservices; let last = last;">
                {{extraservices.name}}<span *ngIf="!last">,</span>
            </span>
-                                products
+                                {{'products' | translate}}
                             </div>
 
                         </div>
@@ -167,8 +173,8 @@
                 <!--Content-->
                 <div id="content" class="tab-pane fade in">
                     <div class="row row--content">
-                        <button class="btn btn-default">English</button>
-                        <button class="btn btn-default">Thai</button>
+                        <button class="btn btn-default">{{'English' | translate}}</button>
+                        <button class="btn btn-default">{{'Thai' | translate}}</button>
                         <hr>
                         <div class="col-md-3">
 
@@ -180,11 +186,11 @@
                         </div>
                         <div class="col-md-3">
                             <div class="row">
-                                <h5>Description</h5>
+                                <h5>{{'Description' |translate}}</h5>
                                 <p>{{apps.description}}</p>
                             </div>
                             <div class="row">
-                                <h5>Features</h5>
+                                <h5>{{'Features'| translate}}</h5>
                                 <ul>
                                     <li *ngFor="let feature of features">{{feature.text}}</li>
                                 </ul>
@@ -193,11 +199,11 @@
 
                         <div class="col-md-3">
                             <div class="row">
-                                <h5>Short Description</h5>
+                                <h5>{{'Short Description'| translate}}</h5>
                                 <p>{{apps.language}}</p>
                             </div>
                             <div class="row">
-                                <h5>Languages</h5>
+                                <h5>{{'Languages' | translate}}</h5>
                                 <div *ngFor="let language of languagesTag">
                                     <span class="label label-default label--float">{{language.name}}</span>
                                 </div>
@@ -210,13 +216,13 @@
                     <div class="row row--content">
                         <div class="col-md-6">
                             <div class="row">
-                                <h5>Minimum Requirements</h5>
+                                <h5>{{'Minimum Requirements' |translate}}</h5>
                                 <p>{{apps.minrequirement}}</p>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="row">
-                                <h5>Terms & Conditions</h5>
+                                <h5>{{'Terms & Conditions' |translate}}</h5>
                                 <p>{{apps.termsncond}}</p>
                             </div>
                         </div>
@@ -231,7 +237,7 @@
                         <div class="col-md-6">
                             <!--screen shot-->
                             <div class="row">
-                                <h5>Screenshots</h5>
+                                <h5>{{'Screenshots' | translate}}</h5>
                                 <div class="col-md-1">
                                     <div (click)="onControl('minus')" class="btn_control">‹</div>
                                 </div>
@@ -245,7 +251,7 @@
 
                             <!--myCarousel-->
                             <div class="row">
-                                <h5>Title of Screenshot</h5>
+                                <h5>{{'Title of Screenshot' | translate}}</h5>
                                 <div id="myCarousel" class="carousel slide">
                                     <!-- Carousel items -->
                                     <div class="carousel-inner">
@@ -278,7 +284,7 @@
                         <div class="col-md-6">
                             <!--Video-->
                             <div class="row">
-                                <h4>Video</h4>
+                                <h4>{{'Video' | translate}}</h4>
                                 <div *ngIf="video">
                                     <iframe class="video" width="350" height="250"
                                             [src]="embedUrl">
@@ -288,7 +294,7 @@
                             </div>
                             <hr>
                             <div class="row">
-                                <h4>Title of Video</h4>
+                                <h4>{{'Title of Video' | translate}}</h4>
                                 <a href="{{apps.yourube}}">{{apps.youtube}}</a>
                             </div>
                         </div>
@@ -306,9 +312,9 @@
                                 <p *ngIf="" f="log.by !== 'admin'">from {{log?.companyname}}</p>
                                 <p *ngIf="log?.action === 'moderated'">
                                     <br>
-                                    Sent back for <b>Review</b>
+                                    {{'Sent back for' | translate}} <b>{{'Review' | translate}}</b>
                                     <br>
-                                    Notes: {{log?.comment}}</p>
+                                    {{'Notes' | translate}}: {{log?.comment}}</p>
                                 <hr>
                             </div>
                         </div>
@@ -329,7 +335,7 @@
 
             <div class="col-md-9">
                 <fieldset class="form-group">
-                    <label>Comment:</label>
+                    <label>{{'Comment' | translate}}:</label>
                     <textarea class="form-control" rows="5" formControlName="comment"></textarea>
                 </fieldset>
             </div>
@@ -338,12 +344,12 @@
                         type='submit'
                         data-toggle="modal"
                         data-target="#modalReviewAdmin"
-                        [disabled]='!myFormAdminReview.valid'>Needs Review
+                        [disabled]='!myFormAdminReview.valid'>{{'Needs Review' | translate}}
                 </button>
                 <button
                         data-toggle="modal"
                         data-target="#modalApprove"
-                        class="btn btn-primary" (click)="updateProductStatus(apps.id,'approve')">Approve
+                        class="btn btn-primary" (click)="updateProductStatus(apps.id,'approve')">{{'Approve' | translate}}
                 </button>
             </div>
         </form>

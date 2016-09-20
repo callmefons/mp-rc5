@@ -29,7 +29,6 @@ export const LANG_TH_TRANS = {
     'Name': 'ชื่อ',
     'Work E-mail': 'อีเมลล์ที่ทำงาน',
     'Confirm Password': 'ยืนยันรหัสผ่าน',
-    'Company Name': 'ชื่อที่ทำงาน',
     'Country': 'ประเทศ',
     'City': 'จังหวัด',
     'State': 'รัฐ',
@@ -41,7 +40,6 @@ export const LANG_TH_TRANS = {
     /////////////////// Vendor ///////////////////
 
     //nav vendor
-    'Vendor': 'ผู้ขาย',
     'Directory': 'รายการ',
     'Account': 'บัญชีผู้ใช้งาน',
 
@@ -62,7 +60,6 @@ export const LANG_TH_TRANS = {
     'Pricing': 'ราคา',
     'days': 'วัน',
     'Minimum Requirements': 'ความต้องการขั้นต่ำ',
-    'Terms & Conditions': 'ข้อตกลงและเงื่อนไข',
     'About': 'เกี่ยวกับ',
     'Based in': 'Based in',
     'Employees': 'พนักงาน',
@@ -115,7 +112,7 @@ export const LANG_TH_TRANS = {
     'Facebook': 'Facebook',
     'Twitter': 'Twitter',
     'Line': 'Line',
-    'Company Name': 'ชื่อบริษัท',
+
     'Url': 'Url',
     'Year Founded' : 'ปีที่ก่อตั้ง',
 
@@ -143,12 +140,65 @@ export const LANG_TH_TRANS = {
 
     //navbar admin
     'Dashboard': 'แผงควบคุม',
-    'Vendors': 'ผู้ขาย',
     'Customer': 'ลูกค้า',
     'Settings': 'การตั้งค่า',
 
     //Add Vendor Product
     'Description': 'รายละเอียด',
     'Short Description' : 'รายละเอียดแบบย่อ',
-    'Features': 'คุณสมบัติ'
+    'Features': 'คุณสมบัติ',
+
+    //Admin Dashboard
+    'Admin Dashboard': 'แผงควบคุมสำหรับผู้ดูแล',
+    'Moderate New Listings': 'อนุมัติรายการใหม่',
+    'Moderate': 'อนุมัติ',
+    'View All': 'ดูทั้งหมด',
+    'Moderate Vendors': 'อนุมัติผู้ขาย',
+    'View Profile': 'ดูข้อมูล',
+
+    //Admin Listing
+    'All Listings': 'รายการทั้งหมด',
+    'New': 'ใหม่',
+    'Vendors Reviewing': 'Vendors Reviewing',
+    'All': 'ทั้งหมด',
+    'Company': 'บริษัท',
+    'Service Name': 'บริการ',
+    'Status' :'สถานะ',
+    'View': 'เยี่ยมชม',
+
+    'Approved product': 'อนุมัติสินค้า',
+    'Listing Details': 'รายละเอียดสินค้า',
+    'Details': 'รายละเอียด',
+    'Content': 'ข้อมูล',
+    'Media': 'มีเเดีย',
+    'History': 'ประวัติ',
+    'Statistics': 'สถิติ',
+    'Wating update status': 'กำลังอัพเดตสถานะ',
+    'Joined': 'เข้าร่วม',
+    'Purchase Link': 'ลิ้งก์การสั่งซื้อ',
+    'Payment and Pricing': 'การชำระเงินและราคา',
+    'Terms & Conditions': 'ข้อตกลงและเงื่อนไข',
+    'Screenshots': 'ภาพหน้าจอ',
+    'Title of Screenshot': 'หัวข้อของภาพหน้าจอ',
+    'Video': 'วิดีโอ',
+    'Title of Video': 'หัวข้อของวิดีโอ',
+    'Sent back for': 'ส่งกลับไปสำหรับ',
+    'Review': 'ตรวจสอบ',
+    'Comment': 'คอมเมนต์',
+    'Approve': 'อนุมัติ',
+    'Needs Review': 'ตรวจสอบ',
+    'Add-Ons': 'เพิ่มเติม',
+    'Languages': 'ภาษา',
+
+    //Admin Vendor
+    'Manage Vendors': 'จัดการผู้ขาย',
+    'User Name': 'User Name',
+    'activate': 'activate',
+    'archived': 'archived',
+    'Archive Account': 'Archive Account',
+    'Unarchive Account': 'Unarchive Account',
+    'Add': 'เพิ่ม',
+    'Categories': 'หมวดหมู่ทั้งหมด',
+    'Categoty': 'หมวดหมู่'
+
 };

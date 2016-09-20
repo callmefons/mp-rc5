@@ -170,7 +170,9 @@
            {{'to see more reviews'| translate}}
         </div>
 
-        <customer-review-service [productId]="apps.id" ngDefaultControl></customer-review-service>
+        <customer-review-service
+                (success)="onSuccess($event)"
+                [productId]="apps.id" ngDefaultControl></customer-review-service>
 
     </div>
 

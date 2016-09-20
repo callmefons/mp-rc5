@@ -4,10 +4,10 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Log</h4>
+                <h4 class="modal-title">{{'Log'| translate}}</h4>
             </div>
             <div class="modal-body" *ngFor="let log of logs">
-                <p><b>{{log?.date}}</b>| Listing {{log?.action}} by {{log?.by}} from {{log?.companyname}}</p>
+                <p><b>{{log?.date}}</b>| {{'Listing' | translate}} {{log?.action}} {{'by'| translate}} {{log?.by}} {{'from'| translate}} {{log?.companyname}}</p>
                 <hr>
             </div>
             <div class="modal-footer">
@@ -19,13 +19,13 @@
 
 <navbar-admin-component></navbar-admin-component>
 <div class="container">
-    <a (click)="goToDashboard()">Dashboard</a>
-    <h1>Settings</h1>
+    <a (click)="goToDashboard()">{{'Dashboard' | translate}}</a>
+    <h1>{{'Settings'| translate}}</h1>
 
     <div class="row">
         <div class="col-xs-12">
             <ul class="nav nav-tabs">
-                <li class="active"><a data-toggle="tab" href="#category">Categories
+                <li class="active"><a data-toggle="tab" href="#category">{{'Categories' | translate}}
                     <span class="badge">{{product_new_length}}</span></a></li>
                 <li>
             </ul>
@@ -39,8 +39,8 @@
                         <!--Categoty-->
                         <div class="col-md-4">
                             <div class="title-tag">
-                            <h4>Categoty</h4>
-                            <button class="btn btn-danger btn-delete" (click)="deleteCategoryTag()">Delete</button>
+                            <h4>{{'Categoty'| translate}}</h4>
+                            <button class="btn btn-danger btn-delete" (click)="deleteCategoryTag()">{{'Delete' | translate}}</button>
                             </div>
                             <div class="row" *ngFor="let category of categoriesTag">
                                 <div class="well well-tag"
@@ -55,7 +55,7 @@
                                        #newCategoryTag>
                                 <span class="input-group-btn">
                                     <button class="btn btn-default" type="button"
-                                            (click)="onAddCategoryTag(newCategoryTag.value)">Add</button>
+                                            (click)="onAddCategoryTag(newCategoryTag.value)">{{'Add' | translate}}</button>
                                 </span>
                             </div>
                         </div>
@@ -63,8 +63,8 @@
                         <!--Department-->
                         <div class="col-md-4">
                             <div class="title-tag">
-                                <h4>Department</h4>
-                                <button class="btn btn-danger btn-delete" (click)="deleteDepartmentTag()">Delete</button>
+                                <h4>{{'Department' | translate}}</h4>
+                                <button class="btn btn-danger btn-delete" (click)="deleteDepartmentTag()">{{'Delete'| translate}}</button>
                             </div>
                             <div class="row" *ngFor="let department of departmentsTag">
                                 <div class="well well-tag"
@@ -78,7 +78,7 @@
                                        #newDepartmentTag>
                                 <span class="input-group-btn">
                                     <button class="btn btn-default" type="button"
-                                            (click)="onAddDepartmentTag(newDepartmentTag.value)">Add</button>
+                                            (click)="onAddDepartmentTag(newDepartmentTag.value)">{{'Add' | translate}}</button>
                                 </span>
                             </div>
                         </div>
@@ -86,8 +86,8 @@
                         <!--Industry-->
                         <div class="col-md-4">
                             <div class="title-tag">
-                                <h4>Industry</h4>
-                                <button class="btn btn-danger btn-delete" (click)="deleteIndustryTag()">Delete</button>
+                                <h4>{{'Industry'| translate}}</h4>
+                                <button class="btn btn-danger btn-delete" (click)="deleteIndustryTag()">{{'Delete' | translate}}</button>
                             </div>
                             <div class="row" *ngFor="let industry of industriesTag">
                                 <div class="well well-tag"
@@ -101,7 +101,7 @@
                                        #newIndustryTag>
                                 <span class="input-group-btn">
                                     <button class="btn btn-default" type="button"
-                                            (click)="onAddIndustryTag(newIndustryTag.value)">Add</button>
+                                            (click)="onAddIndustryTag(newIndustryTag.value)">{{'Add'| translate}}</button>
                                 </span>
                             </div>
                         </div>
