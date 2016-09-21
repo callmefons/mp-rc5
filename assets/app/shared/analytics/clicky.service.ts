@@ -17,7 +17,7 @@ export class ClickyService{
   loadVisitors(name: string) {
 
     //noinspection TypeScriptUnresolvedFunction
-    return this._http.get(this.viewEndpoint + name, request.getxhrHeaders())
+    return this._http.get(this.viewEndpoint + name)
       .map(response => {
         return response.json();
       })
@@ -26,7 +26,7 @@ export class ClickyService{
 
   loadEvents(name: string){
     //noinspection TypeScriptUnresolvedFunction
-    return this._http.get(this.eventEndPoint + name, request.getxhrHeaders())
+    return this._http.get(this.eventEndPoint + name)
       .map(response => {
         return response.json();
       })

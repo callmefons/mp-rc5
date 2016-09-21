@@ -194,7 +194,7 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
   }
 
 
-  visitWebsite(name: string){
+  visitWebsite(name: any){
     ClickyLog(name);
   }
 }

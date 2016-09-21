@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="faff2c17-11cb-4609-98dd-54203a84a7ed" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/product/browse-page.component.ts" afterPath="$PROJECT_DIR$/assets/app/product/browse-page.component.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/product/product-detail.component.ts" afterPath="$PROJECT_DIR$/assets/app/product/product-detail.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/shared/analytics/clicky.component.ts" afterPath="$PROJECT_DIR$/assets/app/shared/analytics/clicky.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/shared/review/review.component.ts" afterPath="$PROJECT_DIR$/assets/app/shared/review/review.component.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/product/templates/product-detail.component.html" afterPath="$PROJECT_DIR$/assets/app/product/templates/product-detail.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/shared/analytics/clicky.service.ts" afterPath="$PROJECT_DIR$/assets/app/shared/analytics/clicky.service.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/boot.js" afterPath="$PROJECT_DIR$/public/js/app/boot.js" />
     </list>
     <ignored path="07 Errors.iws" />
@@ -33,23 +31,35 @@
       <file leaf-file-name="product-detail.component.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/app/product/product-detail.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="167" column="22" selection-start-line="167" selection-start-column="22" selection-end-line="167" selection-end-column="22" />
+            <state relative-caret-position="480">
+              <caret line="196" column="24" selection-start-line="196" selection-start-column="24" selection-end-line="196" selection-end-column="24" />
               <folding>
                 <element signature="e#0#59#0" expanded="true" />
-                <marker date="1474448695000" expanded="true" signature="4738:4801" ph="{...}" />
+                <marker date="1474449647000" expanded="true" signature="4738:4801" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="review.component.ts" pinned="false" current-in-tab="true">
+      <file leaf-file-name="review.component.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/app/shared/review/review.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="462">
-              <caret line="103" column="21" selection-start-line="103" selection-start-column="21" selection-end-line="103" selection-end-column="21" />
+            <state relative-caret-position="492">
+              <caret line="105" column="57" selection-start-line="105" selection-start-column="57" selection-end-line="105" selection-end-column="57" />
               <folding>
                 <element signature="e#0#62#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="clicky.service.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/app/shared/analytics/clicky.service.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="570">
+              <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#43#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -65,10 +75,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="clicky.component.ts" pinned="false" current-in-tab="false">
+      <file leaf-file-name="clicky.component.ts" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/app/shared/analytics/clicky.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-930">
+            <state relative-caret-position="495">
               <caret line="54" column="25" selection-start-line="54" selection-start-column="25" selection-end-line="54" selection-end-column="25" />
               <folding>
                 <element signature="e#0#48#0" expanded="true" />
@@ -102,37 +112,25 @@
       <file leaf-file-name="product-detail.component.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/app/product/templates/product-detail.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="244">
-              <caret line="155" column="54" selection-start-line="155" selection-start-column="47" selection-end-line="155" selection-end-column="54" />
+            <state relative-caret-position="167">
+              <caret line="92" column="30" selection-start-line="92" selection-start-column="30" selection-end-line="92" selection-end-column="30" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/package.json">
+      <file leaf-file-name="clicky.template.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/app/shared/analytics/templates/clicky.template.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="30" column="29" selection-start-line="30" selection-start-column="29" selection-end-line="30" selection-end-column="29" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="browse-page.component.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/app/product/browse-page.component.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="376">
-              <caret line="257" column="13" selection-start-line="257" selection-start-column="13" selection-end-line="257" selection-end-column="13" />
-              <folding>
-                <element signature="e#0#59#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/app/product/index.ts">
+      <file leaf-file-name="clicky-admin.template.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/app/shared/analytics/templates/clicky-admin.template.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -165,9 +163,7 @@
         <option value="$PROJECT_DIR$/assets/app/admin/templates/admin-vendors.component.html" />
         <option value="$PROJECT_DIR$/assets/app/admin/templates/admin-setting.component.html" />
         <option value="$PROJECT_DIR$/assets/app/shared/api-service/auth/auth.service.ts" />
-        <option value="$PROJECT_DIR$/assets/app/shared/analytics/clicky.service.ts" />
         <option value="$PROJECT_DIR$/assets/app/shared/analytics/templates/clicky.template.html" />
-        <option value="$PROJECT_DIR$/assets/app/product/templates/product-detail.component.html" />
         <option value="$PROJECT_DIR$/assets/app/vendor/vendor-add-product.component.ts" />
         <option value="$PROJECT_DIR$/assets/app/vendor/vendor-edit-product.component.ts" />
         <option value="$PROJECT_DIR$/assets/app/customer/customer-dashboard.component.ts" />
@@ -198,8 +194,10 @@
         <option value="$PROJECT_DIR$/assets/app/shared/navbar-admin/navbar-admin.component.html" />
         <option value="$PROJECT_DIR$/assets/app/product/browse-page.component.ts" />
         <option value="$PROJECT_DIR$/assets/app/shared/analytics/clicky.component.ts" />
-        <option value="$PROJECT_DIR$/assets/app/product/product-detail.component.ts" />
         <option value="$PROJECT_DIR$/assets/app/shared/review/review.component.ts" />
+        <option value="$PROJECT_DIR$/assets/app/shared/analytics/clicky.service.ts" />
+        <option value="$PROJECT_DIR$/assets/app/product/product-detail.component.ts" />
+        <option value="$PROJECT_DIR$/assets/app/product/templates/product-detail.component.html" />
       </list>
     </option>
   </component>
@@ -332,7 +330,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="review" />
+              <option name="myItemId" value="analytics" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -358,11 +356,33 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="review" />
+              <option name="myItemId" value="analytics" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mp-rc5" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mp-rc5" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="product" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -489,7 +509,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="186312000" />
+    <option name="totallyTimeSpent" value="186851000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="4" y="23" width="1276" height="777" extended-state="6" />
@@ -561,27 +581,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/assets/app/customer/customer-list.coomponent.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/customer/styles/customer-dashboard.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/customer/styles/customer.component.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/app/customer/templates/customer-list.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -910,40 +909,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/product/templates/product-detail.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="155" column="54" selection-start-line="155" selection-start-column="47" selection-end-line="155" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/shared/analytics/clicky.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-930">
-          <caret line="54" column="25" selection-start-line="54" selection-start-column="25" selection-end-line="54" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#48#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/app/product/product.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/product/product-detail.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="167" column="22" selection-start-line="167" selection-start-column="22" selection-end-line="167" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#59#0" expanded="true" />
-            <marker date="1474448695000" expanded="true" signature="4738:4801" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -957,10 +927,65 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/app/shared/review/review.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="103" column="21" selection-start-line="103" selection-start-column="21" selection-end-line="103" selection-end-column="21" />
+        <state relative-caret-position="492">
+          <caret line="105" column="57" selection-start-line="105" selection-start-column="57" selection-end-line="105" selection-end-column="57" />
           <folding>
             <element signature="e#0#62#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/shared/analytics/clicky.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/product/product-detail.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="196" column="24" selection-start-line="196" selection-start-column="24" selection-end-line="196" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#59#0" expanded="true" />
+            <marker date="1474449647000" expanded="true" signature="4738:4801" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/product/templates/product-detail.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="167">
+          <caret line="92" column="30" selection-start-line="92" selection-start-column="30" selection-end-line="92" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/shared/analytics/templates/clicky.template.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/shared/analytics/templates/clicky-admin.template.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/shared/analytics/clicky.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="54" column="25" selection-start-line="54" selection-start-column="25" selection-end-line="54" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#48#0" expanded="true" />
           </folding>
         </state>
       </provider>
