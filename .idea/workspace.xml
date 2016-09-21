@@ -2,10 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="faff2c17-11cb-4609-98dd-54203a84a7ed" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/boot.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/shared/analytics/styles/clicky.template.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/shared/review/styles/review.component.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/vendor/styles/vendor-dashboard.component.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/vendor/styles/vendor-edit-product.component.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/vendor/styles/vendor-listing.component.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/vendor/styles/vendor-profile.component.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app/vendor/styles/vendor.component.css" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/shared/analytics/clicky.component.ts" afterPath="$PROJECT_DIR$/assets/app/shared/analytics/clicky.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/analytic.js" afterPath="$PROJECT_DIR$/public/js/analytic.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/boot.js" afterPath="$PROJECT_DIR$/public/js/app/boot.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/product/templates/product-detail.component.html" afterPath="$PROJECT_DIR$/assets/app/product/templates/product-detail.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/product/templates/product-detail.component.html" afterPath="$PROJECT_DIR$/public/js/app/product/templates/product-detail.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/ng2-bootstrap/components/pagination.js" afterPath="$PROJECT_DIR$/public/js/vendor/ng2-bootstrap/components/pagination.js" />
     </list>
     <ignored path="07 Errors.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -31,7 +39,7 @@
       <file leaf-file-name="product-detail.component.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/app/product/product-detail.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="481">
+            <state relative-caret-position="2865">
               <caret line="197" column="13" selection-start-line="197" selection-start-column="4" selection-end-line="197" selection-end-column="13" />
               <folding />
             </state>
@@ -63,7 +71,7 @@
       <file leaf-file-name="clicky.template.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/app/shared/analytics/templates/clicky.template.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="94">
+            <state relative-caret-position="814">
               <caret line="59" column="4" selection-start-line="59" selection-start-column="4" selection-end-line="88" selection-end-column="10" />
               <folding>
                 <element signature="n#style#0;n#h5#0;n#div#0;n#div#2;n#div#2;n#!!top" expanded="true" />
@@ -76,7 +84,7 @@
         <entry file="file://$PROJECT_DIR$/public/js/analytic.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="30">
-              <caret line="2" column="35" selection-start-line="2" selection-start-column="35" selection-end-line="2" selection-end-column="35" />
+              <caret line="2" column="30" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -97,8 +105,8 @@
       <file leaf-file-name="product-detail.component.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/app/product/templates/product-detail.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="197">
-              <caret line="96" column="69" selection-start-line="96" selection-start-column="57" selection-end-line="96" selection-end-column="69" />
+            <state relative-caret-position="452">
+              <caret line="94" column="32" selection-start-line="94" selection-start-column="32" selection-end-line="94" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -156,12 +164,12 @@
         <option value="$PROJECT_DIR$/assets/app/product/browse-page.component.ts" />
         <option value="$PROJECT_DIR$/assets/app/shared/review/review.component.ts" />
         <option value="$PROJECT_DIR$/assets/app/product/product-detail.component.ts" />
-        <option value="$PROJECT_DIR$/assets/app/product/templates/product-detail.component.html" />
         <option value="$PROJECT_DIR$/assets/app/shared/analytics/clicky.service.ts" />
         <option value="$PROJECT_DIR$/assets/app/shared/analytics/templates/clicky.template.html" />
         <option value="$PROJECT_DIR$/assets/app/shared/analytics/clicky-admin.component.ts" />
         <option value="$PROJECT_DIR$/assets/app/shared/analytics/templates/clicky-admin.template.html" />
         <option value="$PROJECT_DIR$/assets/app/shared/analytics/clicky.component.ts" />
+        <option value="$PROJECT_DIR$/assets/app/product/templates/product-detail.component.html" />
         <option value="$PROJECT_DIR$/public/js/analytic.js" />
       </list>
     </option>
@@ -242,25 +250,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mp-rc5" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mp-rc5" />
+              <option name="myItemId" value="assets" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
+              <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -275,6 +269,40 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="product" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mp-rc5" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mp-rc5" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="product" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -397,12 +425,12 @@
       <workItem from="1474367903599" duration="900000" />
       <workItem from="1474428627743" duration="97000" />
       <workItem from="1474428728342" duration="9875000" />
-      <workItem from="1474457495264" duration="2627000" />
+      <workItem from="1474457495264" duration="3056000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="190146000" />
+    <option name="totallyTimeSpent" value="190575000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="789" extended-state="6" />
@@ -795,14 +823,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/shared/analytics/clicky.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/app/shared/analytics/templates/clicky-admin.template.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="435">
@@ -813,9 +833,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/shared/analytics/clicky-admin.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1485">
+          <caret line="110" column="29" selection-start-line="110" selection-start-column="29" selection-end-line="110" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#48#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/assets/app/shared/analytics/templates/clicky.template.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="94">
+        <state relative-caret-position="814">
           <caret line="59" column="4" selection-start-line="59" selection-start-column="4" selection-end-line="88" selection-end-column="10" />
           <folding>
             <element signature="n#style#0;n#h5#0;n#div#0;n#div#2;n#div#2;n#!!top" expanded="true" />
@@ -823,13 +853,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/shared/analytics/clicky-admin.component.ts">
+    <entry file="file://$PROJECT_DIR$/assets/app/product/product-detail.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1485">
-          <caret line="110" column="29" selection-start-line="110" selection-start-column="29" selection-end-line="110" selection-end-column="29" />
-          <folding>
-            <element signature="e#0#48#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="2865">
+          <caret line="197" column="13" selection-start-line="197" selection-start-column="4" selection-end-line="197" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/product/templates/product-detail.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="452">
+          <caret line="94" column="32" selection-start-line="94" selection-start-column="32" selection-end-line="94" selection-end-column="32" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -843,18 +879,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/product/templates/product-detail.component.html">
+    <entry file="file://$PROJECT_DIR$/assets/app/shared/analytics/clicky.service.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="96" column="69" selection-start-line="96" selection-start-column="57" selection-end-line="96" selection-end-column="69" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/product/product-detail.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="481">
-          <caret line="197" column="13" selection-start-line="197" selection-start-column="4" selection-end-line="197" selection-end-column="13" />
+        <state relative-caret-position="60">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -862,7 +890,7 @@
     <entry file="file://$PROJECT_DIR$/public/js/analytic.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
-          <caret line="2" column="35" selection-start-line="2" selection-start-column="35" selection-end-line="2" selection-end-column="35" />
+          <caret line="2" column="30" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="30" />
           <folding />
         </state>
       </provider>
