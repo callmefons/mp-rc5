@@ -31,6 +31,9 @@ import {AdminVendorsComponent} from "./admin/admin-vendors.component";
 import {BrowsePageComponent} from "./product/browse-page.component";
 import {AdminSettingComponent} from "./admin/admin-setting.component";
 import {AuthRegisterVendorComponent} from "./auth/auth-register-vendor.component";
+import {CustomerModule} from "./customer/customer.module";
+import {CustomerComponent} from "./customer/customer.component";
+import {CustomerDashboardComponent} from "./customer/customer-dashboard.component";
 
 @NgModule({
     declarations: [
@@ -46,6 +49,9 @@ import {AuthRegisterVendorComponent} from "./auth/auth-register-vendor.component
         ProductDetailComponent,
         ProductListComponent,
         BrowsePageComponent,
+
+        CustomerComponent,
+        CustomerDashboardComponent,
 
         VendorComponent,
         VendorListingComponent,

@@ -91,7 +91,7 @@
                         <!--Name-->
                         <div class="row">
                             <fieldset class="form-group">
-                                <label>Name</label>
+                                <label>* Name</label>
                                 <input type="text"
                                        [(ngModel)]="apps.name"
                                        class="form-control"
@@ -107,7 +107,7 @@
                         <!--Description-->
                         <div class="row" [class.hidden]="thaiInput">
                             <fieldset class="form-group">
-                                <label>Description</label>
+                                <label>* Description</label>
                                 <textarea
                                         type="text"
                                         class="form-control"
@@ -123,7 +123,7 @@
 
                         <div class="row" [class.hidden]="thaiInput">
                             <fieldset class="form-group">
-                                <label>Short Description</label>
+                                <label>* Short Description</label>
                                 <textarea type="text"
                                           class="form-control"
                                           [(ngModel)]="apps.shortdescription"
@@ -140,7 +140,7 @@
                         <!-- Thai Description-->
                         <div class="row" [class.hidden]="!thaiInput">
                             <fieldset class="form-group">
-                                <label>รายละเอียด</label>
+                                <label>* รายละเอียด</label>
                                 <textarea
                                         type="text"
                                         class="form-control"
@@ -156,7 +156,7 @@
 
                         <div class="row" [class.hidden]="!thaiInput">
                             <fieldset class="form-group">
-                                <label>รายละเอียดแบบย่อ</label>
+                                <label>* รายละเอียดแบบย่อ</label>
                                 <textarea type="text"
                                           class="form-control"
                                           [(ngModel)]="apps_th.shortdescription"

@@ -122,6 +122,10 @@ export class NavbarComponent {
         this._router.navigate([`/product/browse-page/${productId}`]);
     }
 
+    goToCustomer(){
+        this._router.navigate([`customer/dashboard`]);
+    }
+
     goToVendor() {
         this._router.navigate([`vendor/dashboard`]);
     }
@@ -139,6 +143,7 @@ export class NavbarComponent {
         // this.hideChildModal();
         this._router.navigate([`auth/register-vendor`]);
     }
+
 
     goToForgotPassword() {
         // this.hideChildModal();

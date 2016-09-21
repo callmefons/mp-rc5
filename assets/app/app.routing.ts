@@ -9,6 +9,8 @@ import {VENDOR_ROUTES} from "./vendor/vendor.routing";
 import {VendorComponent} from "./vendor/vendor.component";
 import {AdminComponent} from "./admin/admin.component";
 import {ADMIN_ROUTES} from "./admin/admin.routing";
+import {CUSTOMER_ROUTES} from "./customer/customer.routing";
+import {CustomerComponent} from "./customer/customer.component";
 
 export const APP_ROUTES: Routes = [
     {path: '', redirectTo: '', pathMatch: 'full'},
@@ -19,6 +21,11 @@ export const APP_ROUTES: Routes = [
     {
         path: 'product', component: ProductComponent,
         children: [...PRODUCT_ROUTE]
+    },
+    {
+        path: 'customer',
+        component: CustomerComponent,
+        children: [...CUSTOMER_ROUTES]
     },
     {
         path: 'vendor',

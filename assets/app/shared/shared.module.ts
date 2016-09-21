@@ -27,6 +27,7 @@ import {TranslatePipe} from "../translate/translate.pipe";
 import {TRANSLATION_PROVIDERS} from "../translate/translations";
 import {TranslateService} from "../translate/translate.service";
 import {provide, PLATFORM_PIPES} from "@angular/core";
+import {NavbarCustomerComponent} from "./navbar-customer/navbar-customer.component";
 
 /**
  * Do not specify providers for modules that might be imported by a lazy loaded module.
@@ -44,6 +45,7 @@ import {provide, PLATFORM_PIPES} from "@angular/core";
         Search,
         ReviewComponent,
         NavbarComponent,
+        NavbarCustomerComponent,
         NavbarVendorComponent,
         NavbarAdminComponent,
         ClickyComponent,
@@ -60,6 +62,7 @@ import {provide, PLATFORM_PIPES} from "@angular/core";
         RouterModule,
         ReactiveFormsModule, FormsModule,
         NavbarComponent,
+        NavbarCustomerComponent,
         NavbarVendorComponent,
         NavbarAdminComponent,
         ClickyComponent,

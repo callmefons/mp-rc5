@@ -156,6 +156,7 @@ export const LANG_EN_TRANS = {
     //Admin Dashboard
     'Admin Dashboard': 'Admin Dashboard',
     'Moderate New Listings': 'Moderate New Listings',
+    'No New Listings': 'No New Listings',
     'Moderate': 'Moderate',
     'View All': 'View All',
     'Moderate Vendors': 'Moderate Vendors',
@@ -207,8 +208,17 @@ export const LANG_EN_TRANS = {
     'Unarchive Account': 'Unarchive Account',
     'Add': 'Add',
     'Categories': 'Categories',
-    'Categoty': 'Categoty'
+    'Categoty': 'Categoty',
 
+    ////////////////////// customer ////////////////////////////////
+
+    'New Services': 'New Services',
+    'Featured Service': 'Featured Service',
+    'My Services': 'My Services',
+    'Wishlist': 'Wishlist',
+    'Review a Service': 'Review a Service',
+    'Find Services': 'Find Services',
+    'Edit Profile': 'Edit Profile',
 
 
 

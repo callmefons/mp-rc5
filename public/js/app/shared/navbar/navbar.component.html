@@ -112,7 +112,7 @@
             <ul class="nav navbar-nav navbar-right">
                 <li><a style="color:#337ab7" (click)="goToRegisterVendor()">{{'List your service' | translate}}</a></li>
                 <li><a style="color:#337ab7" (click)="goToRegister()">{{'Register' | translate}}</a></li>
-
+                <li *ngIf="_authService.isLoggedIn() && checkRole() === 'customer'"><a (click)="goToCustomer()">{{'Customer' | translate}}</a></li>
                 <li *ngIf="_authService.isLoggedIn() && checkRole() === 'vendor'"><a (click)="goToVendor()">{{'Vendor' | translate}}</a></li>
                 <li *ngIf="_authService.isLoggedIn() && checkRole() === 'admin'"><a (click)="goToAdmin()">{{'Admin' | translate}}</a></li>
                 <li *ngIf="_authService.isLoggedIn()"><a><i class="fa fa-user" aria-hidden="true"></i>

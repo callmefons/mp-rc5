@@ -56,6 +56,7 @@ export class AdminDashboardComponent implements OnInit, OnDestroy {
     this.product$ = this._productService.getProductStatus('all');
     this.sub_product = this.product$.subscribe((product:any)=> {
       this.product = product.data.slice(1,5);
+      this.checkProduct();
       this.loading_product = false;
     });
   }
@@ -65,6 +66,12 @@ export class AdminDashboardComponent implements OnInit, OnDestroy {
     this.sub_vendor = this.vendor$.subscribe((vendor:any)=>{
       this.vendor = vendor;
     });
+  }
+
+  listing: string = 'Moderate New Listings';
+
+  checkProduct(){
+    this.product.length > 0 ?  this.listing = 'Moderate New Listings' :  this.listing = 'No New Listings';
   }
 
   goToListing(){

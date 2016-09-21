@@ -151,6 +151,7 @@ export const LANG_TH_TRANS = {
     //Admin Dashboard
     'Admin Dashboard': 'แผงควบคุมสำหรับผู้ดูแล',
     'Moderate New Listings': 'อนุมัติรายการใหม่',
+    'No New Listings': 'ไม่มีรายการใหม่',
     'Moderate': 'อนุมัติ',
     'View All': 'ดูทั้งหมด',
     'Moderate Vendors': 'อนุมัติผู้ขาย',
@@ -199,6 +200,17 @@ export const LANG_TH_TRANS = {
     'Unarchive Account': 'Unarchive Account',
     'Add': 'เพิ่ม',
     'Categories': 'หมวดหมู่ทั้งหมด',
-    'Categoty': 'หมวดหมู่'
+    'Categoty': 'หมวดหมู่',
+
+
+    ////////////////////// customer ////////////////////////////////
+
+    'New Services': 'เซอร์วิสใหม่',
+    'Featured Service': 'เซอร์วิสแนะนำ',
+    'My Services': 'เซอร์วิสของฉัน',
+    'Wishlist': 'Wishlist',
+    'Review a Service': 'รีวิวเซอร์วิส',
+    'Find Services': 'ค้นหาเซอร์วิส',
+    'Edit Profile': 'แก้ไขข้อมูล',
 
 };
