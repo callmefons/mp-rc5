@@ -173,8 +173,8 @@
                 <!--Content-->
                 <div id="content" class="tab-pane fade in">
                     <div class="row row--content">
-                        <button class="btn btn-default">{{'English' | translate}}</button>
-                        <button class="btn btn-default">{{'Thai' | translate}}</button>
+                        <button class="btn btn-default" (click)="onChangeLanguaeFrom('en')">{{'English' | translate}}</button>
+                        <button class="btn btn-default" (click)="onChangeLanguaeFrom('th')">{{'Thai' | translate}}</button>
                         <hr>
                         <div class="col-md-3">
 
@@ -187,12 +187,19 @@
                         <div class="col-md-3">
                             <div class="row">
                                 <h5>{{'Description' |translate}}</h5>
-                                <p>{{apps.description}}</p>
+                                <p [class.hidden]="thaiInput">{{apps.description}}</p>
+                                <p [class.hidden]="!thaiInput">{{apps_th.description}}</p>
                             </div>
-                            <div class="row">
+                            <div class="row" [class.hidden]="thaiInput">
                                 <h5>{{'Features'| translate}}</h5>
                                 <ul>
                                     <li *ngFor="let feature of features">{{feature.text}}</li>
+                                </ul>
+                            </div>
+                            <div class="row" [class.hidden]="!thaiInput">
+                                <h5>{{'Features'| translate}}</h5>
+                                <ul>
+                                    <li *ngFor="let feature of features_th">{{feature.text}}</li>
                                 </ul>
                             </div>
                         </div>
@@ -200,7 +207,8 @@
                         <div class="col-md-3">
                             <div class="row">
                                 <h5>{{'Short Description'| translate}}</h5>
-                                <p>{{apps.language}}</p>
+                                <p [class.hidden]="thaiInput">{{apps.shortdescription}}</p>
+                                <p [class.hidden]="!thaiInput">{{apps_th.shortdescription}}</p>
                             </div>
                             <div class="row">
                                 <h5>{{'Languages' | translate}}</h5>

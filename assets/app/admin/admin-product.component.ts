@@ -29,13 +29,17 @@ export class AdminProductComponent implements OnInit, OnDestroy {
     errorMessage: string;
 
     products: any = [];
+
     apps: any = [];
+    apps_th :any = [];
+
     languagesTag: any = [];
     categoriesTag: any = [];
     departmentsTag: any = [];
     industriesTag: any = [];
 
     features: any = [];
+    features_th:any = [];
 
 
     myFormAdminReview: FormGroup;
@@ -88,14 +92,22 @@ export class AdminProductComponent implements OnInit, OnDestroy {
         if (this.sub_delete){this.sub_delete.unsubscribe();}
     }
 
+    lang: string = 'en';
+
+    switchLang(lang: string){
+        this.lang = lang;
+        this.getProductId()
+    }
+
     getProductId() {
         this.sub = this.route.params.subscribe((params: any) => {
             this.id = +params['id'];
             this._productService.getProductId(this.id)
                 .subscribe((products: any) => {
 
-                    this.products = products;
-                    this.apps = products.data;
+                    this.products = products.data['en'];
+                    this.apps = products.data['en'];
+                    this.apps_th = products.data['th'];
 
                     this.embedYoutube(this.apps.youtube);
 
@@ -112,12 +124,16 @@ export class AdminProductComponent implements OnInit, OnDestroy {
                         this.industriesTag.push(this.products.industries[i]);
                     }
 
-
-                    for (let i = 0; i < this.products.data.features.length; i++) {
-                        this.features.push(this.products.data.features[i]);
+                    for (let i = 0; i < this.products.features.length; i++) {
+                        this.features.push(this.products.features[i]);
                     }
-                    for (let i = 0; i < this.products.data.screenshots.length; i++) {
-                        this.screenshots.push(this.products.data.screenshots[i]);
+
+                    for(let i = 0; i < this.apps_th.features.length; i++){
+                        this.features_th.push(this.apps_th.features[i])
+                    }
+
+                    for (let i = 0; i < this.products.screenshots.length; i++) {
+                        this.screenshots.push(this.products.screenshots[i]);
                     }
                     this.setThumbnail();
                     this.selected = this.screenshots[0].url;
@@ -251,5 +267,23 @@ export class AdminProductComponent implements OnInit, OnDestroy {
             this._router.navigate([`admin/listing`]);
         });
     }
+
+    thaiInput: boolean = false;
+
+    onChangeLanguaeFrom(lang: string) {
+
+        switch (lang) {
+            case 'th':
+                this.thaiInput = true;
+                break;
+            case 'en':
+                this.thaiInput = false;
+                break;
+            default:
+                this.thaiInput = false;
+        }
+
+    }
+
 }
 
