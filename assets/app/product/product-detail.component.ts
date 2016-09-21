@@ -62,7 +62,7 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
     this.onRefresh();
   }
 
-  SwitchLang(lang: string){
+  SwitthischLang(lang: string){
     this.lang = lang;
     this.onRefresh();
   }

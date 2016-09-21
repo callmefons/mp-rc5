@@ -256,7 +256,7 @@ export class BrowsePageComponent implements OnInit, OnDestroy {
                 }
 
             }
-        
+
         this.product_length = this.products_filter.length;
     }
 

@@ -55,7 +55,7 @@ export class ClickyComponent {
     this.apps$ = this._productService.getProductOfDeveloper();
     this.sub = this.apps$.subscribe((apps:any) => {
       this.apps = apps;
-      this.getAnalytics(apps[0].name);
+      this.getAnalytics(apps[0].id);
     });
   }
 

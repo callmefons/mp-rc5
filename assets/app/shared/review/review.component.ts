@@ -1,4 +1,4 @@
-import {Component, OnInit,EventEmitter} from '@angular/core';
+import {Component, OnInit, EventEmitter} from '@angular/core';
 import {Observable, Subscription} from "rxjs/Rx";
 import {Location} from '@angular/common';
 
@@ -8,93 +8,103 @@ import {Product} from "../models/product.model";
 import {FormGroup, FormBuilder} from "@angular/forms";
 import {ReviewService} from "../api-service/review.service";
 import {ActivatedRoute, Router} from "@angular/router";
-import {Input,Output} from "@angular/core";
+import {Input, Output} from "@angular/core";
 
 @Component({
-  moduleId: module.id,
-  selector: 'customer-review-service',
-  templateUrl: 'templates/review.component.html',
-  styleUrls: ['styles/review.component.css'],
+    moduleId: module.id,
+    selector: 'customer-review-service',
+    templateUrl: 'templates/review.component.html',
+    styleUrls: ['styles/review.component.css'],
 
 })
 
 export class ReviewComponent implements OnInit {
 
 
-  //Input Form Product Detail
-  @Input()
-  productId: any;
+    //Input Form Product Detail
+    @Input()
+    productId: any;
 
-  @Output()
-  success: EventEmitter<any> = new EventEmitter();
+    @Output()
+    success: EventEmitter<any> = new EventEmitter();
 
-  title:string = 'Review a Service';
-  errorMessage:string;
-  review:Review[] = [];
+    title: string = 'Review a Service';
+    errorMessage: string;
+    review: Review[] = [];
 
-  products:Product[] = [];
-  products$:Observable<any>;
-  loading = true;
-  sub:Subscription;
+    products: Product[] = [];
+    products$: Observable<any>;
+    loading = true;
+    sub: Subscription;
 
-  product:string;
-
-
-  sub_review : Subscription;
-  review$:Observable<any>;
-  rating:number = 1;
-
-  disabled:boolean = true;
-
-  myForm:FormGroup;
-
-  constructor(private _location:Location,
-              private _fb:FormBuilder,
-              public _reviewService:ReviewService,
-              public _productService:ProductService,
-              private _router:Router,
-            private route: ActivatedRoute) {
+    product: string;
 
 
-    this.myForm = this._fb.group({
-      reviewcomment: [''],
-      reviewscore: [''],
-      productid: ['']
-    });
-  }
+    sub_review: Subscription;
+    review$: Observable<any>;
+    rating: number = 1;
 
-  ngOnInit() {
-    this.getProducts();
-  }
+    disabled: boolean = true;
 
-  ngOnDestroy() {
-    if(this.sub)this.sub.unsubscribe();
-    if(this.sub_review)this.sub_review.unsubscribe();
-  }
+    myForm: FormGroup;
 
-  id:any;
-  getProducts() {
-    this.products$ = this._productService.getProduct();
-    this.sub = this.products$.subscribe((products:any)=> {
-      this.products = products;
-      this.loading = false;
-    });
-  }
+    constructor(private _location: Location,
+                private _fb: FormBuilder,
+                public _reviewService: ReviewService,
+                public _productService: ProductService,
+                private _router: Router,
+                private route: ActivatedRoute) {
 
 
-  onSubmit(value:Object) {
-    const review = new Review(
-      this.myForm.value.reviewcomment,
-      this.rating,
-      this.productId
-    );
+        this.myForm = this._fb.group({
+            reviewcomment: [''],
+            reviewscore: [''],
+            productid: ['']
+        });
+    }
 
-    this.review$ = this._reviewService.onReview(review);
-      this.sub_review = this.review$.subscribe((res:any) => {
-        this.success.emit('success');
-        this.myForm.reset();
-        },
-        error => this.errorMessage = <any>error);
-  }
+    ngOnInit() {
+        this.getProducts();
+    }
+
+    ngOnDestroy() {
+        if (this.sub)this.sub.unsubscribe();
+        if (this.sub_review)this.sub_review.unsubscribe();
+    }
+
+    id: any;
+
+    getProducts() {
+        this.products$ = this._productService.getProduct();
+        this.sub = this.products$.subscribe((products: any)=> {
+            this.products = products;
+            this.loading = false;
+        });
+    }
+
+    count: number = 0;
+    reset: boolean = false;
+
+    onSubmit(value: Object) {
+        this.count += 1;
+        const review = new Review(
+            this.myForm.value.reviewcomment,
+            this.rating,
+            this.productId
+        );
+
+        if (this.count == 1) {
+            this.review$ = this._reviewService.onReview(review);
+            this.sub_review = this.review$.subscribe((res: any) => {
+                    this.success.emit('success');
+                    this.myForm.reset();
+                    this.reset = true;
+                    if (this.reset) {
+                        this.count = 0;
+                    }
+                },
+                error => this.errorMessage = <any>error);
+        }
+    }
 
 }
