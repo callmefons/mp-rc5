@@ -59,7 +59,7 @@ export class ClickyComponent {
     });
   }
 
-  getAnalytics(name:string) {
+  getAnalytics(name:any) {
 
     this.selected = name;
 
@@ -85,6 +85,8 @@ export class ClickyComponent {
       this._clickyService.loadVisitors(name)
         .subscribe(
           data => {
+
+            console.log(data);
 
             this.data = data[0].dates;
 

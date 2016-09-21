@@ -7,14 +7,14 @@ import { request } from '../../shared/helpers/request'
 
 @Injectable()
 export class ClickyService{
+  viewEndpoint: string = 'http://52.221.240.34/api/v1/visitors/';
+  eventEndPoint: string = 'http://52.221.240.34/api/v1/events/';
 
-  viewEndpoint: string = 'http://52.221.240.34/api/v1/events/';
-  eventEndPoint: string = 'http://52.221.240.34/api/v1/visitors/';
 
 
   constructor(private _http : Http){}
 
-  loadVisitors(name: string) {
+  loadVisitors(name: any) {
 
     //noinspection TypeScriptUnresolvedFunction
     return this._http.get(this.viewEndpoint + name)
@@ -24,7 +24,7 @@ export class ClickyService{
       .catch(error => Observable.throw(error.json()));
   }
 
-  loadEvents(name: string){
+  loadEvents(name: any){
     //noinspection TypeScriptUnresolvedFunction
     return this._http.get(this.eventEndPoint + name)
       .map(response => {
