@@ -101,7 +101,6 @@ export class BrowsePageComponent implements OnInit, OnDestroy {
         this._productService.getProductTags()
             .subscribe(
                 product_tags => {
-                    console.log(product_tags);
 
                     this.languagesTag = product_tags.languages;
                     this.departmentsTag = product_tags.departments;
@@ -120,7 +119,6 @@ export class BrowsePageComponent implements OnInit, OnDestroy {
                            this.status_type = this.all_tag[i].type;
                        }
                     }
-                    console.log(this.status_type);
 
                 }),
             (error: any) => this.errorMessage = <any>error
@@ -258,9 +256,7 @@ export class BrowsePageComponent implements OnInit, OnDestroy {
                 }
 
             }
-
-            console.log(this.products_filter);
-
+        
         this.product_length = this.products_filter.length;
     }
 
