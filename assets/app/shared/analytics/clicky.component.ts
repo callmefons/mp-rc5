@@ -55,13 +55,12 @@ export class ClickyComponent {
     this.apps$ = this._productService.getProductOfDeveloper();
     this.sub = this.apps$.subscribe((apps:any) => {
       this.apps = apps;
+      console.log(apps[0].name);
       this.getAnalytics(apps[0].id);
     });
   }
 
   getAnalytics(name:any) {
-
-    this.selected = name;
 
     if (this.onLoad) {
 
@@ -105,10 +104,6 @@ export class ClickyComponent {
 
             }
             this.update();
-
-            // console.log(this.items);
-            // console.log(this.views);
-            // console.log(this.dates);
 
             this.onLoad = true;
           },

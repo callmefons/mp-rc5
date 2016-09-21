@@ -1,27 +1,30 @@
-
-    <div class="row">
-        <div class="col-md-6">
-            <base-chart class="chart"
-                        [datasets]="lineChartData"
-                        [labels]="lineChartLabels"
-                        [options]="lineChartOptions"
-                        [colors]="lineChartColours"
-                        [legend]="lineChartLegend"
-                        [chartType]="lineChartType"
-                        (chartHover)="chartHovered($event)"
-                        (chartClick)="chartClicked($event)"></base-chart>
-        </div>
-
-        <div class="col-md-6">
-            <base-chart class="chart"
-                        [datasets]="lineChartData__2"
-                        [labels]="lineChartLabels__2"
-                        [options]="lineChartOptions__2"
-                        [colors]="lineChartColours__2"
-                        [legend]="lineChartLegend__2"
-                        [chartType]="lineChartType__2"
-                        (chartHover)="chartHovered($event)"
-                        (chartClick)="chartClicked($event)"></base-chart>
-        </div>
+<div class="row" *ngIf="onLoad">
+    <div class="col-md-6">
+        <base-chart class="chart"
+                    [datasets]="lineChartData"
+                    [labels]="lineChartLabels"
+                    [options]="lineChartOptions"
+                    [colors]="lineChartColours"
+                    [legend]="lineChartLegend"
+                    [chartType]="lineChartType"
+                    (chartHover)="chartHovered($event)"
+                    (chartClick)="chartClicked($event)"></base-chart>
     </div>
 
+    <div class="col-md-6">
+        <base-chart class="chart"
+                    [datasets]="lineChartData__2"
+                    [labels]="lineChartLabels__2"
+                    [options]="lineChartOptions__2"
+                    [colors]="lineChartColours__2"
+                    [legend]="lineChartLegend__2"
+                    [chartType]="lineChartType__2"
+                    (chartHover)="chartHovered($event)"
+                    (chartClick)="chartClicked($event)"></base-chart>
+    </div>
+</div>
+<div class="row" *ngIf="!onLoad">
+    <div class="col-md-12">
+        <h5  style="margin: 0 auto; text-align: center; margin-top: 100px; margin-bottom: 100px; color: #818a91">Loading...</h5>
+    </div>
+</div>

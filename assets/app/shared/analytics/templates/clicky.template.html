@@ -25,9 +25,8 @@
     <div class="analytic">
         <!-- Nav tabs -->
         <ul class="nav nav-tabs">
-            <li class="{{app.name === selected ? 'active': ''}}" *ngFor="let app of apps"
-                (click)="getAnalytics(app.name)">
-                <a>{{app.name}}</a>
+            <li class="{{app.id === selected ? 'active': ''}}" *ngFor="let app of apps">
+                <a (click)="getAnalytics(app.id)">{{app.name}}</a>
             </li>
         </ul>
     </div>
@@ -58,7 +57,7 @@
         </div>
     </div>
     <br>
-    <div class="row">
+    <div class="row" *ngIf="onLoad">
         <div class="col-md-6">
             <base-chart class="chart"
                         [datasets]="lineChartData"
@@ -82,6 +81,10 @@
                         (chartHover)="chartHovered($event)"
                         (chartClick)="chartClicked($event)"></base-chart>
         </div>
-
+    </div>
+    <div class="row" *ngIf="!onLoad">
+        <div class="col-md-12">
+                <h5  style="margin: 0 auto; text-align: center; margin-top: 100px; margin-bottom: 100px; color: #818a91">Loading...</h5>
+        </div>
     </div>
 </div>

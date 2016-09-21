@@ -7,9 +7,9 @@ import { request } from '../../shared/helpers/request'
 
 @Injectable()
 export class ClickyService{
+
   viewEndpoint: string = 'http://52.221.240.34/api/v1/visitors/';
   eventEndPoint: string = 'http://52.221.240.34/api/v1/events/';
-
 
 
   constructor(private _http : Http){}

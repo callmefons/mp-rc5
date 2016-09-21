@@ -54,13 +54,11 @@ export class ClickyAdminComponent {
         this.apps$ = this._productService.getProductOfDeveloper();
         this.sub = this.apps$.subscribe((apps:any) => {
             this.apps = apps;
-            this.getAnalytics(apps[0].name);
+            this.getAnalytics(apps[0].id);
         });
     }
 
-    getAnalytics(name:string) {
-
-        this.selected = name;
+    getAnalytics(name:any) {
 
         if (this.onLoad) {
 
@@ -102,10 +100,6 @@ export class ClickyAdminComponent {
 
                         }
                         this.update();
-
-                        // console.log(this.items);
-                        // console.log(this.views);
-                        // console.log(this.dates);
 
                         this.onLoad = true;
                     },
