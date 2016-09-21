@@ -34,7 +34,7 @@
 
 <div class="row--tab--content">
     <div class="row" *ngFor="let app of apps">
-        <div *ngIf="app.name === selected">
+        <div *ngIf="app.id === selected">
             <div class="button-group pull-right">
 
                 <div class="row">
@@ -57,7 +57,7 @@
         </div>
     </div>
     <br>
-    <div class="row" *ngIf="onLoad">
+    <div class="row" *ngIf="onLoad" style="padding: 2px">
         <div class="col-md-6">
             <base-chart class="chart"
                         [datasets]="lineChartData"

@@ -149,6 +149,16 @@ export class ClickyComponent {
       yAxes: [{
         ticks: {
           beginAtZero:true
+        },
+        scaleLabel: {
+          display: true,
+          labelString: 'views'
+        }
+      }],
+      xAxes: [{
+        scaleLabel: {
+          display: true,
+          labelString: 'days'
         }
       }]
     }
@@ -179,6 +189,16 @@ export class ClickyComponent {
       yAxes: [{
         ticks: {
           beginAtZero:true
+        },
+        scaleLabel: {
+          display: true,
+          labelString: 'clicks'
+        }
+      }],
+      xAxes: [{
+        scaleLabel: {
+          display: true,
+          labelString: 'days'
         }
       }]
     }
