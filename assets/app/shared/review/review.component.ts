@@ -92,6 +92,7 @@ export class ReviewComponent implements OnInit {
     this.review$ = this._reviewService.onReview(review);
       this.sub_review = this.review$.subscribe((res:any) => {
         this.success.emit('success');
+        this.myForm.reset();
         },
         error => this.errorMessage = <any>error);
   }
