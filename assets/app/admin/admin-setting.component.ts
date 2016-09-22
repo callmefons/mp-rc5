@@ -30,6 +30,11 @@ export class AdminSettingComponent implements OnInit, OnDestroy {
     industriesTag: any[] = [];
     categoriesTag: any[] = [];
 
+    tempArrCategory: any[] = [];
+    tempArrDepartment: any[] = [];
+    tempArrIndustry: any[] = [];
+    tempAllTag:any [] =[];
+
     constructor(private _fb:FormBuilder,
                 private _router: Router,
                 private _productService: ProductService) {
@@ -38,6 +43,18 @@ export class AdminSettingComponent implements OnInit, OnDestroy {
 
     ngOnInit() {
         this.getProductTags();
+    }
+
+    onRefresh(){
+        this.getProductTags();
+        this.languagesTag = [];
+        this.departmentsTag  = [];
+        this.industriesTag  = [];
+        this.categoriesTag = [];
+        this.tempArrCategory  = [];
+        this.tempArrDepartment = [];
+        this.tempArrIndustry = [];
+        this.tempAllTag =[];
     }
 
     ngOnDestroy() {
@@ -75,7 +92,7 @@ export class AdminSettingComponent implements OnInit, OnDestroy {
         }
     }
 
-    tempArrCategory: any[] = [];
+
 
     onSelectedCategoryTag(item: any) {
         if (this.tempArrCategory.indexOf(item) == -1) {
@@ -114,7 +131,6 @@ export class AdminSettingComponent implements OnInit, OnDestroy {
         }
     }
 
-    tempArrDepartment: any[] = [];
 
     onSelectedDepartmentTag(item: any) {
         if (this.tempArrDepartment.indexOf(item) == -1) {
@@ -153,7 +169,7 @@ export class AdminSettingComponent implements OnInit, OnDestroy {
         }
     }
 
-    tempArrIndustry: any[] = [];
+
 
     onSelectedIndustryTag(item: any) {
         if (this.tempArrIndustry.indexOf(item) == -1) {
@@ -201,7 +217,7 @@ export class AdminSettingComponent implements OnInit, OnDestroy {
         }
     }
 
-    tempAllTag:any [] =[];
+
 
     //Todo Re-Array
     onSave(){
@@ -213,7 +229,7 @@ export class AdminSettingComponent implements OnInit, OnDestroy {
 
         this._productService.updateTagProducts(this.tempAllTag)
             .subscribe((res) => {
-                this.tempAllTag = [];
+                this.onRefresh();
             });
 
     }
