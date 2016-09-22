@@ -101,7 +101,9 @@ export class AdminVendorsComponent implements OnInit, OnDestroy {
             this.viewProfile(this.detail_vendor.id);
 
             if(res.status == 'success'){
-                this.archive_success = true ? (status === 'archive') : this.unarchive_success = true;
+
+                if(status === 'archive') this.archive_success = true
+                if(status === 'unarchive') this.unarchive_success = true;
             }
 
         });
