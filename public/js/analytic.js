@@ -9,7 +9,6 @@ clicky_site_ids.push(100980200);
 })();
 
 function ClickyLog(app) {
-    var app_id = app.toString();
-    clicky.log(app_id, app_id);
-    console.log(app_id);
+    clicky.log(app.toString(), app.toString());
+    console.log(app.toString());
 }
