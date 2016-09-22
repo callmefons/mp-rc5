@@ -84,7 +84,15 @@ export class AdminProductComponent implements OnInit, OnDestroy {
 
     onRefresh() {
         this.logs = [];
-        this.getLogProduct();
+        this.languagesTag = [];
+        this.departmentsTag = [];
+        this.categoriesTag = [];
+        this.industriesTag = [];
+        this.features = [];
+        this.features_th = [];
+        this.screenshots = [];
+
+        this.getProductId();
     }
 
     ngOnDestroy() {

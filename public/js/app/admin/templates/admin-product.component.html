@@ -355,6 +355,7 @@
                         [disabled]='!myFormAdminReview.valid'>{{'Needs Review' | translate}}
                 </button>
                 <button
+                        type="button"
                         data-toggle="modal"
                         data-target="#modalApprove"
                         class="btn btn-primary" (click)="updateProductStatus(apps.id,'approve')">{{'Approve' | translate}}
