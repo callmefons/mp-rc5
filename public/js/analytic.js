@@ -1,8 +1,3 @@
-// function ClickyLog(name) {
-//     console.log(name);
-//     clicky.log(name.toString(),name.toString());
-// }
-
 var clicky_site_ids = clicky_site_ids || [];
 clicky_site_ids.push(100980200);
 (function() {
@@ -14,8 +9,7 @@ clicky_site_ids.push(100980200);
 })();
 
 function ClickyLog(app) {
-    console.log("click", app);
-    clicky.log(app, app);
+    var app_id = app.toString();
+    clicky.log(app_id, app_id);
+    console.log(app_id);
 }
-
-
