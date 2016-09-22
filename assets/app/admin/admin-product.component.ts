@@ -83,20 +83,14 @@ export class AdminProductComponent implements OnInit, OnDestroy {
     }
 
     onRefresh() {
-        this.getProductId();
+        this.logs = [];
+        this.getLogProduct();
     }
 
     ngOnDestroy() {
         if (this.sub_updateStatus){this.sub_updateStatus.unsubscribe();}
         if (this.sub){this.sub.unsubscribe();}
         if (this.sub_delete){this.sub_delete.unsubscribe();}
-    }
-
-    lang: string = 'en';
-
-    switchLang(lang: string){
-        this.lang = lang;
-        this.getProductId()
     }
 
     getProductId() {
