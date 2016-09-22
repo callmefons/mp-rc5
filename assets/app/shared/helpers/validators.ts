@@ -24,6 +24,14 @@ export function phoneValidator(control: FormControl):{[key:string]:any}{
     return {invalidPhone: true};
   }
 }
+
+export function englishValidator(control: FormControl): {[key: string]: any} {
+  var emailRegexp = /^[A-Za-z]+$/i;
+  if (control.value && !emailRegexp.test(control.value)) {
+    return {invalidEnglish: true};
+  }
+}
+
 //
 // //CONTROL GROUP VALIDATORS
 // export function matchingPasswords(passwordKey: string, confirmPasswordKey: string) {

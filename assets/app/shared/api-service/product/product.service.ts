@@ -73,7 +73,6 @@ export class ProductService {
 
   addProduct(product: any) {
     const body = JSON.stringify(product);
-      console.log(body)
     return this._http.post(`${config.apiUrl}product?token=${storage.getAuthToken()}`,
       body, { headers: request.getJsonHeaders() }).cache()
       .map(this.extractData)
@@ -125,6 +124,15 @@ export class ProductService {
       })
       .catch(this.handleError);
   }
+
+  //UpdateTagProduct
+    updateTagProducts(value:any){
+        const body = JSON.stringify(value);
+        return this._http.post(`${config.apiUrl}tag?token=${storage.getAuthToken()}`,
+            body, { headers: request.getJsonHeaders() }).cache()
+            .map(this.extractData)
+            .catch(this.handleError);
+    }
 
 
   private extractData(res: Response) {

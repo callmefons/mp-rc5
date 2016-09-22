@@ -7,7 +7,8 @@
                 <h4 class="modal-title">{{'Log'| translate}}</h4>
             </div>
             <div class="modal-body" *ngFor="let log of logs">
-                <p><b>{{log?.date}}</b>| {{'Listing' | translate}} {{log?.action}} {{'by'| translate}} {{log?.by}} {{'from'| translate}} {{log?.companyname}}</p>
+                <p><b>{{log?.date}}</b>| {{'Listing' | translate}} {{log?.action}} {{'by'| translate}} {{log?.by}}
+                    {{'from'| translate}} {{log?.companyname}}</p>
                 <hr>
             </div>
             <div class="modal-footer">
@@ -33,77 +34,140 @@
             <!--editMode-->
             <div class="tab-content">
 
-                <div id="category" class="tab-pane fade in active">
+                <div class="row">
+                    <button type="button" class="btn btn-primary pull-right btn-save" (click)="onSave()">Save</button>
+                </div>
+
                     <div class="row">
+                        <div id="category" class="tab-pane fade in active">
 
                         <!--Categoty-->
                         <div class="col-md-4">
                             <div class="title-tag">
-                            <h4>{{'Categoty'| translate}}</h4>
-                            <button class="btn btn-danger btn-delete" (click)="deleteCategoryTag()">{{'Delete' | translate}}</button>
+                                <h4>{{'Categoty'| translate}}</h4>
+                                <button class="btn btn-danger btn-delete" (click)="deleteCategoryTag()">{{'Delete' |
+                                    translate}}
+                                </button>
                             </div>
-                            <div class="row" *ngFor="let category of categoriesTag">
-                                <div class="well well-tag"
-                                     [style.background-color]="getStyle(category.name,'category')"
-                                     (click)="onSelectedCategoryTag(category.name)">
+                            <div class="row well well-tag"
+                                 [style.background-color]="getStyle(category.name,'category')"
+                                 (click)="onSelectedCategoryTag(category.name)"
+                                 *ngFor="let category of categoriesTag">
+                                <div class="col-md-6">
                                     {{category.name}}
                                 </div>
+                                <div class="col-md-6">
+                                    {{category.name_th}}
+                                </div>
                             </div>
-                            <div class="input-group title-tag">
-                                <input type="text" class="form-control"
-                                       [(ngModel)]="valueCategory"
-                                       #newCategoryTag>
-                                <span class="input-group-btn">
+
+
+                            <div class="row row_button">
+                                <div class="col-md-5 button_tag">
+                                    <input type="text"
+                                           class="form-control"
+                                           placeholder="English Category"
+                                           [(ngModel)]="valueCategory">
+                                </div>
+                                <div class="col-md-5 button_tag">
+                                    <input type="text" class="form-control"
+                                           placeholder="Thai Category"
+                                           [(ngModel)]="valueCategory_th">
+                                </div>
+                                <div class="col-md-2 button_tag">
                                     <button class="btn btn-default" type="button"
-                                            (click)="onAddCategoryTag(newCategoryTag.value)">{{'Add' | translate}}</button>
-                                </span>
+                                            (click)="onAddCategoryTag(valueCategory,valueCategory_th)">
+                                        {{'Add' | translate}}
+                                    </button>
+                                </div>
                             </div>
+
                         </div>
 
                         <!--Department-->
                         <div class="col-md-4">
                             <div class="title-tag">
                                 <h4>{{'Department' | translate}}</h4>
-                                <button class="btn btn-danger btn-delete" (click)="deleteDepartmentTag()">{{'Delete'| translate}}</button>
+                                <button class="btn btn-danger btn-delete" (click)="deleteDepartmentTag()">{{'Delete'|
+                                    translate}}
+                                </button>
                             </div>
-                            <div class="row" *ngFor="let department of departmentsTag">
-                                <div class="well well-tag"
-                                     [style.background-color]="getStyle(department.name,'department')"
-                                     (click)="onSelectedDepartmentTag(department.name)"
-                                >{{department.name}}</div>
+                            <div class="row well well-tag"
+                                 [style.background-color]="getStyle(department.name,'department')"
+                                 (click)="onSelectedDepartmentTag(department.name)"
+                                 *ngFor="let department of departmentsTag">
+                                <div class="col-md-6">
+                                    {{department.name}}
+                                </div>
+                                <div class="col-md-6">
+                                    {{department.name_th}}
+                                </div>
                             </div>
-                            <div class="input-group title-tag">
-                                <input type="text" class="form-control"
-                                       [(ngModel)]="valueDepartment"
-                                       #newDepartmentTag>
-                                <span class="input-group-btn">
+
+
+                            <div class="row row_button">
+                                <div class="col-md-5 button_tag">
+                                    <input type="text"
+                                           class="form-control"
+                                           placeholder="English Department"
+                                           [(ngModel)]="valueDepartment">
+                                </div>
+                                <div class="col-md-5 button_tag">
+                                    <input type="text" class="form-control"
+                                           placeholder="Thai Department"
+                                           [(ngModel)]="valueDepartment_th">
+                                </div>
+                                <div class="col-md-2 button_tag">
                                     <button class="btn btn-default" type="button"
-                                            (click)="onAddDepartmentTag(newDepartmentTag.value)">{{'Add' | translate}}</button>
-                                </span>
+                                            (click)="onAddDepartmentTag(valueDepartment,valueDepartment_th)">
+                                        {{'Add' | translate}}
+                                    </button>
+                                </div>
                             </div>
+
                         </div>
 
                         <!--Industry-->
                         <div class="col-md-4">
                             <div class="title-tag">
                                 <h4>{{'Industry'| translate}}</h4>
-                                <button class="btn btn-danger btn-delete" (click)="deleteIndustryTag()">{{'Delete' | translate}}</button>
+                                <button class="btn btn-danger btn-delete" (click)="deleteIndustryTag()">{{'Delete' |
+                                    translate}}
+                                </button>
                             </div>
-                            <div class="row" *ngFor="let industry of industriesTag">
-                                <div class="well well-tag"
-                                     [style.background-color]="getStyle(industry.name,'industry')"
-                                     (click)="onSelectedIndustryTag(industry.name)"
-                                >{{industry.name}}</div>
+                            <div class="row well well-tag"
+                                 [style.background-color]="getStyle(industry.name,'industry')"
+                                 (click)="onSelectedIndustryTag(industry.name)"
+                                 *ngFor="let industry of industriesTag">
+                                <div class="col-md-6">
+                                    {{industry.name}}
+                                </div>
+                                <div class="col-md-6">
+                                    {{industry.name_th}}
+                                </div>
                             </div>
-                            <div class="input-group title-tag">
-                                <input type="text" class="form-control"
-                                       [(ngModel)]="valueIndustry"
-                                       #newIndustryTag>
-                                <span class="input-group-btn">
+
+
+                            <div class="row row_button">
+                                <div class="col-md-5 button_tag">
+                                    <input type="text"
+                                           class="form-control"
+                                           placeholder="English Industry"
+                                           [(ngModel)]="valueIndustry">
+                                </div>
+                                <div class="col-md-5 button_tag">
+                                    <input type="text" class="form-control"
+                                           placeholder="Thai Industry"
+                                           [(ngModel)]="valueIndustry_th">
+                                </div>
+                                <div class="col-md-2 button_tag">
                                     <button class="btn btn-default" type="button"
-                                            (click)="onAddIndustryTag(newIndustryTag.value)">{{'Add'| translate}}</button>
-                                </span>
+                                            (click)="onAddIndustryTag(valueIndustry,valueIndustry_th)">
+                                        {{'Add' | translate}}
+                                    </button>
+                                </div>
                             </div>
+
                         </div>
 
                     </div>

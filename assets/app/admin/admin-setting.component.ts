@@ -4,6 +4,8 @@ import {storage} from "../shared/helpers/storage";
 import {Router} from "@angular/router";
 import {ProductTags} from "../shared/models/product-tag.model";
 import {ProductService} from "../shared/api-service/product/product.service";
+import {Validators, FormGroup, FormBuilder} from "@angular/forms";
+import {englishValidator, emailValidator} from "../shared/helpers/validators";
 
 
 declare var _: any;
@@ -22,13 +24,16 @@ export class AdminSettingComponent implements OnInit, OnDestroy {
     sub: Subscription;
     all_tag$: Observable<any>;
 
+
     languagesTag: any[] = [];
     departmentsTag: any[] = [];
     industriesTag: any[] = [];
     categoriesTag: any[] = [];
 
-    constructor(private _router: Router,
+    constructor(private _fb:FormBuilder,
+                private _router: Router,
                 private _productService: ProductService) {
+
     }
 
     ngOnInit() {
@@ -55,12 +60,16 @@ export class AdminSettingComponent implements OnInit, OnDestroy {
     }
 
     valueCategory: string = '';
+    valueCategory_th:string = '';
 
-    onAddCategoryTag(item: any) {
-        if (item.trim().length > 0) {
+    onAddCategoryTag(valueCategory: any,valueCategory_th:any) {
+        if (valueCategory.trim().length > 0 && valueCategory_th.trim().length > 0) {
             this.valueCategory = '';
+            this.valueCategory_th = '';
             this.categoriesTag.push({
-                'name': item
+                'name': valueCategory,
+                'name_th':valueCategory_th,
+                'type':'category'
             });
 
         }
@@ -89,12 +98,17 @@ export class AdminSettingComponent implements OnInit, OnDestroy {
 
 
     valueDepartment: string = '';
+    valueDepartment_th: string = '';
 
-    onAddDepartmentTag(item: any) {
-        if (item.trim().length > 0) {
+    onAddDepartmentTag(valueDepartment: any, valueDepartment_th:any) {
+        if (valueDepartment.trim().length > 0 && valueDepartment_th.trim().length > 0) {
             this.valueDepartment = '';
+            this.valueDepartment_th = '';
+
             this.departmentsTag.push({
-                'name': item
+                'name': valueDepartment,
+                'name_th':valueDepartment_th,
+                'type':'department'
             });
 
         }
@@ -122,12 +136,18 @@ export class AdminSettingComponent implements OnInit, OnDestroy {
 
 
     valueIndustry: string = '';
+    valueIndustry_th: string = '';
 
-    onAddIndustryTag(item: any) {
-        if (item.trim().length > 0) {
+    onAddIndustryTag(valueIndustry: any, valueIndustry_th:any) {
+        if (valueIndustry.trim().length > 0 && valueIndustry_th.trim().length > 0) {
+
             this.valueIndustry = '';
+            this.valueIndustry_th = '';
+
             this.industriesTag.push({
-                'name': item
+                'name': valueIndustry,
+                'name_th': valueIndustry_th,
+                'type': 'industry'
             });
 
         }
@@ -179,6 +199,23 @@ export class AdminSettingComponent implements OnInit, OnDestroy {
                 break;
 
         }
+    }
+
+    tempAllTag:any [] =[];
+
+    //Todo Re-Array
+    onSave(){
+        this.tempAllTag.push(
+            this.categoriesTag,
+            this.departmentsTag,
+            this.industriesTag
+        );
+
+        this._productService.updateTagProducts(this.tempArrCategory)
+            .subscribe((res) => {
+                this.tempAllTag = [];
+            });
 
     }
+
 }
