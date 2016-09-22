@@ -211,7 +211,7 @@ export class AdminSettingComponent implements OnInit, OnDestroy {
             this.industriesTag
         );
 
-        this._productService.updateTagProducts(this.tempArrCategory)
+        this._productService.updateTagProducts(this.tempAllTag)
             .subscribe((res) => {
                 this.tempAllTag = [];
             });
