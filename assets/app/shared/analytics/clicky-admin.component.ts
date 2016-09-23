@@ -42,8 +42,8 @@ export class ClickyAdminComponent {
     }
 
     ngOnInit() {
-        this.getAnalytics("ADA");
-        // this.getProductOfDeveloper();
+        //this.getAnalytics("ADA");
+         this.getProductOfDeveloper();
     }
 
     ngOnDestroy() {
