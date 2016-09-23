@@ -22,8 +22,8 @@
                         </div>
                         <div class="col-xs-3">
 
-                            <div class="row" *ngFor="let category of product.category">
-                                <p>
+                            <div class="row" *ngFor="let category of product.category; let index = index;">
+                                <p *ngIf="index == 0">
                                     <small>{{category}}</small>
                                 </p>
                             </div>

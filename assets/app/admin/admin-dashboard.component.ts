@@ -51,11 +51,10 @@ export class AdminDashboardComponent implements OnInit, OnDestroy {
     if(this.sub_vendor)this.sub_vendor.unsubscribe();
   }
 
-
   private getProductStatus() {
     this.product$ = this._productService.getProductStatus('pending');
     this.sub_product = this.product$.subscribe((product:any)=> {
-      this.product = product.data.slice(1,5);
+      this.product = product.data.slice(0,5);
       this.checkProduct();
       this.loading_product = false;
     });
