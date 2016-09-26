@@ -28,6 +28,7 @@ import {TRANSLATION_PROVIDERS} from "../translate/translations";
 import {TranslateService} from "../translate/translate.service";
 import {provide, PLATFORM_PIPES} from "@angular/core";
 import {NavbarCustomerComponent} from "./navbar-customer/navbar-customer.component";
+import {ConfirmModal} from "./confirm-modal/confirm-modal";
 
 /**
  * Do not specify providers for modules that might be imported by a lazy loaded module.
@@ -55,7 +56,8 @@ import {NavbarCustomerComponent} from "./navbar-customer/navbar-customer.compone
         RatingComponent,
         BaseChartComponent,
         TranslateComponent,
-        TranslatePipe
+        TranslatePipe,
+        ConfirmModal
     ],
     exports: [
         CommonModule,
@@ -74,7 +76,8 @@ import {NavbarCustomerComponent} from "./navbar-customer/navbar-customer.compone
         ReviewComponent,
         AccordionModule,
         TranslateComponent,
-        TranslatePipe
+        TranslatePipe,
+        ConfirmModal
     ]
 })
 export class SharedModule {

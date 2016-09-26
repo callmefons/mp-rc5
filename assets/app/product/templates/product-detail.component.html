@@ -1,22 +1,13 @@
 <navbar-component></navbar-component>
 <div class="container" *ngIf="!loading">
 
-    <!--<div class="row" style="margin-bottom: 15px">-->
-        <!--<div class="col-md-6">-->
-            <!--<button class="btn btn-default" (click)="SwitchLang()">Thai</button>-->
-            <!--<button class="btn btn-default" (click)="SwitchLang()">English</button>-->
-        <!--</div>-->
-    <!--</div>-->
-
     <div class="row">
         <div class="col-md-6">
 
             <!--Logo-->
             <div class="row">
                 <div class="col-md-3">
-                    <img
-                            *ngIf="apps.logo" [src]="apps.logo"
-                            class="img-responsive img-responsive--logo" alt="apps.name">
+                    <img *ngIf="apps.logo" [src]="apps.logo" class="img-responsive img-responsive--logo" alt="apps.name">
                 </div>
                 <div class="col-md-9">
                     <h3>{{apps.name}}</h3>

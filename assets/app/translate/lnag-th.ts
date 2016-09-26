@@ -95,6 +95,7 @@ export const LANG_TH_TRANS = {
     'Add Logo': 'เพิ่มโลโก้',
     'Update Profile': 'แก้ไขข้อมูลส่วนตัว',
     'Successfully updated': 'แก้ไขข้อมูลเรียบร้อย',
+    'Success': 'เรียบร้อย',
     'Waiting': 'รอสักครู่',
     'Company Info': 'ข้อมูลบริษัท',
     'Save': 'บันทึก',
@@ -146,6 +147,9 @@ export const LANG_TH_TRANS = {
     'Trial Length': 'ระยะเวลา',
     'Single Price': 'Single Price',
     'Price range': 'Price range',
+
+    //Review
+    'Review Again': 'รีวิวอีกครั้ง',
 
 
     //////////////////////////////////////////////////////

@@ -430,16 +430,38 @@ export class VendorEditProductComponent implements OnInit, OnDestroy {
         }
     }
 
-    updateProductStatus(id: any, status: any) {
-        if (status === 'pending') {
-            this._productService.updateProductStatus(id, status).subscribe(() => {
-                this.onCancle();
-            });
-        }
 
-        this._productService.updateProductStatus(id, status).subscribe(() => {
-            this.onRefresh();
-        });
+    ///////////// Alert /////////////
+    alerted: boolean = false;
+    messageAlert: string = '';
+    typeAlert: string = 'success';
+
+    onAlert(msg: string){
+        this.messageAlert = msg;
+        this.alerted = true;
+        setTimeout(()=> {
+            this.alerted = false;
+            this.messageAlert = '';
+        }, 3000);
+    }
+
+    updateProductStatus(id: any, status: any) {
+
+        this.onAlert(status);
+
+        setTimeout(() => {
+            if (status === 'pending') {
+                this._productService.updateProductStatus(id, status).subscribe(() => {
+                    this.onCancle();
+                });
+            }
+
+            this._productService.updateProductStatus(id, status).subscribe(() => {
+                this.onRefresh();
+            });
+        }, 3000);
+
+
     }
 
     showMonthly: boolean = false;

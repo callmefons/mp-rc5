@@ -6,12 +6,13 @@
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                 <h4 class="modal-title">{{'Log'| translate}}</h4>
             </div>
-            <div class="modal-body" *ngFor="let log of logs; let i = index;">
-                <p><b>[{{i}}] {{log?.date}}</b>| {{'Listing'| translate}} {{log?.action}} {{'by'| translate}} {{log?.by}} {{'from' | translate}} {{log?.companyname}}</p>
-                <br>
-                <p *ngIf="log?.action === 'moderated'"><b>{{'Sent back for Review'| translate}}</b><br>
-                    {{'Notes'| translate}}: {{log?.comment}}
-                <hr>
+            <div class="modal-body">
+
+                <div *ngFor="let log of logs; let i = index;" style="border-bottom: 1px solid #cccccc">
+                    <p><b>[{{i}}] {{log?.date}}</b> | {{'Listing'| translate}} {{log?.action}} {{'by'| translate}} {{log?.by}} {{'from' | translate}} {{log?.companyname}}</p>
+                    <p *ngIf="log?.action === 'moderated'"><b>{{'Sent back for Review'| translate}}</b><br>
+                        {{'Notes'| translate}}: {{log?.comment}}
+                </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="goToLogin()">{{'OK'| translate}}</button>
@@ -19,6 +20,7 @@
         </div>
     </div>
 </div>
+
 
 
 <div class="row row--tab">
@@ -84,7 +86,7 @@
     </div>
     <div class="row" *ngIf="!onLoad">
         <div class="col-md-12">
-                <h5  style="margin: 0 auto; text-align: center; margin-top: 100px; margin-bottom: 100px; color: #818a91">Loading...</h5>
+                <h5  style="margin: 0 auto; text-align: center; margin-top: 100px; margin-bottom: 100px; color: #818a91">{{'Loading'| translate}}...</h5>
         </div>
     </div>
 </div>

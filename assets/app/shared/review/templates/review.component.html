@@ -11,33 +11,18 @@
         <p>Your Review has been Published</p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-dismiss="modal">Review Again
-        </button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal">{{'Review Again' | translate}}</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">{{'Cancel' | translate}}</button>
       </div>
     </div>
   </div>
 </div>
 
-<!--<div *ngIf="loading">-->
-  <!--<loader-template></loader-template>-->
-<!--</div>-->
 
 <div class="row row--review">
   <div class="" *ngIf="!loading">
     <!--<h1>{{title}}</h1>-->
     <form [formGroup]="myForm" (ngSubmit)="myForm.valid && onSubmit(myForm.value)" novalidate>
-
-      <!--<div class="row">-->
-        <!--<fieldset class="form-group">-->
-          <!--<label>Services</label>-->
-          <!--<select class="form-control"-->
-                  <!--[(ngModel)]="productId"-->
-                  <!--formControlName="productid"-->
-                  <!--ngDefaultControl>-->
-            <!--<option *ngFor="let opt of products" [value]="opt.id">{{opt.name}}</option>-->
-          <!--</select>-->
-        <!--</fieldset>-->
-      <!--</div>-->
 
       <div class="row">
         <rating

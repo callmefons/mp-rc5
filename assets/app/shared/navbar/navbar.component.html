@@ -3,7 +3,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" #close>
                     <span aria-hidden="true">&times;</span>
                 </button>
                 <h4 class="modal-title">{{modal_signin_title | translate}}</h4>
@@ -31,25 +31,24 @@
                             <input type="checkbox"/> {{'Remember me'| translate}}
                         </label>
                     </div>
-                    <button
-                            type="submit" class="btn btn-default">{{'Sign in' | translate}}</button>
                 </form>
             </div>
 
-            <div class="modal-body" *ngIf="login">
-               {{'You have logged on successful' | translate}}
+            <div class="modal-footer" *ngIf="!login">
+                <p>
+                    <a data-dismiss="modal" (click)="goToRegister()" style="margin-right: 5px;"> {{'Create new account'| translate}}</a> | <a (click)="goToForgotPassword()" data-dismiss="modal"> {{'Forgot password' | translate}}</a>
+                </p>
+
+                <button type="submit" (click)="onSubmit(myForm.value)"  class="btn btn-primary">{{'Sign in' | translate}}</button>
+                <button type="button" class="btn btn-default"  (click)="close.click()">{{'Cancel' | translate}}</button>
             </div>
 
-            <!-- Modal Footer -->
-            <div class="modal-footer modal-footer-register" *ngIf="!login">
-                <p><a data-dismiss="modal"
-                      (click)="goToRegister()">
-                   {{'Create new account'| translate}}
-                </a></p>
-                <p><a (click)="goToForgotPassword()"
-                      data-dismiss="modal">
-                    {{'Forgot password' | translate}}
-                </a></p>
+            <div class="modal-body" *ngIf="login">
+                {{'You have logged on successful' | translate}}
+            </div>
+
+            <div class="modal-footer" *ngIf="login">
+                <button type="button" class="btn btn-default"  (click)="close.click()">{{'OK' | translate}}</button>
             </div>
 
         </div>

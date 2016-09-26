@@ -11,8 +11,7 @@
             </div>
             <div class="modal-footer">
                 <div *ngIf="updated">
-                    <button type="button" class="btn btn-primary" data-dismiss="modal"
-                            (click)="onCancle()">Back
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="onCancle()">Back
                     </button>
                 </div>
             </div>
@@ -31,6 +30,11 @@
                 <button class="btn  {{selectedLang == 'en' ? 'btn-primary': 'btn-default'}}" (click)="onChangeLanguaeFrom('en')">{{'English'| translate}}</button>
                 <button class="btn {{selectedLang == 'th' ? 'btn-primary': 'btn-default'}}" (click)="onChangeLanguaeFrom('th')">{{'Thai' | translate}}</button>
             </p>
+
+            <alert *ngIf="alerted === true"
+                    [type]="typeAlert" dismissible="true">
+                <strong>{{'Success' | translate}}</strong>  {{messageAlert}}
+            </alert>
             <hr>
         </div>
         <!--Edit Service -->
@@ -59,7 +63,7 @@
                     <button
                             class='btn btn-primary pull-right btn-save' type='submit'
                             [disabled]='!myForm.valid'
-                            data-toggle="modal" data-target="#myModal">{{'Save' | translate}}
+                            data-toggle="modal" data-target="#myModal" (click)="onAlert('Service Updated')">{{'Save' | translate}}
                     </button>
                     <button type="button"
                             class="btn btn-danger pull-right btn-cancle" data-dismiss="modal"

@@ -97,6 +97,7 @@ export const LANG_EN_TRANS = {
     'Add Logo': 'Add Logo',
     'Update Profile': 'Update Profile',
     'Successfully updated': 'Successfully updated',
+    'Success': 'Success',
     'Waiting': 'Waiting',
     'Company Info': 'Company Info',
     'Save': 'Save',
@@ -150,8 +151,8 @@ export const LANG_EN_TRANS = {
     'Price range': 'Price range',
 
 
-
-
+    //Review
+    'Review Again': 'Review Again',
 
     //////////////////////////////////////////////////////
 
