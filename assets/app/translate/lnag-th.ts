@@ -136,6 +136,18 @@ export const LANG_TH_TRANS = {
     'Add Listing': 'เพิ่มรายการ',
     'Enter Content in': 'เพิ่มข้อมูลภาษา',
 
+    'Add Screenshots': 'เพิ่มรูป',
+    'Extra Services you offer': 'เซอร์วิสพิเศษ',
+    'Manage': 'จัดการ',
+    'Actions': 'สถานะ',
+    'Publish': 'เผยแพร่',
+    'Archive': 'ซ่อน',
+    'Freemium Version': 'ฟรีเวอร์ชั่น',
+    'Trial Length': 'ระยะเวลา',
+    'Single Price': 'Single Price',
+    'Price range': 'Price range',
+
+
     //////////////////////////////////////////////////////
 
     //navbar admin

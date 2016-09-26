@@ -73,8 +73,8 @@ export class ClickyAdminComponent implements OnChanges{
                 .subscribe(
                     data => {
 
-                        console.log(data);
                         this.data = data[0].dates;
+                        this.data.reverse();
 
                         for (let i = 0; i < this.data.length; i++) {
 
@@ -101,7 +101,7 @@ export class ClickyAdminComponent implements OnChanges{
                 .subscribe(
                     data => {
                         this.data__2 = data[0].dates;
-
+                        this.data__2.reverse();
                         for (let i = 0; i < this.data__2.length; i++) {
 
                             //Date

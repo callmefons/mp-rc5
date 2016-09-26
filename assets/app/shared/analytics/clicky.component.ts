@@ -43,7 +43,6 @@ export class ClickyComponent {
   }
 
   ngOnInit() {
-    // this.getAnalytics("ADA");
     this.getProductOfDeveloper();
   }
 
@@ -55,7 +54,6 @@ export class ClickyComponent {
     this.apps$ = this._productService.getProductOfDeveloper();
     this.sub = this.apps$.subscribe((apps:any) => {
       this.apps = apps;
-      //sconsole.log(apps[0].name);
       this.getAnalytics(apps[0].id);
     });
   }
@@ -79,15 +77,14 @@ export class ClickyComponent {
       this.clicks = 0;
       this.dates__2 = [];
 
-      //console.log(`name of app ${name}, path ${path}`);
 
       this._clickyService.loadVisitors(name)
         .subscribe(
           data => {
 
-            //console.log(data);
-
             this.data = data[0].dates;
+            this.data.reverse();
+
 
             for (let i = 0; i < this.data.length; i++) {
 
@@ -113,7 +110,9 @@ export class ClickyComponent {
       this._clickyService.loadEvents(name)
         .subscribe(
           data => {
+
             this.data__2 = data[0].dates;
+            this.data__2.reverse();
 
             for (let i = 0; i < this.data__2.length; i++) {
 

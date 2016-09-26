@@ -25,14 +25,13 @@
 <div class="container">
     <div *ngIf="!loading">
         <div class="row">
-            <h1>Manage {{apps.name}}</h1>
+            <h1>{{'Manage' | translate}} {{apps.name}}</h1>
             <hr>
-            <p>Enter Content in
-                <button class="btn btn-default" (click)="onChangeLanguaeFrom('en')">English</button>
-                <button class="btn btn-default" (click)="onChangeLanguaeFrom('th')">Thai</button>
+            <p>{{'Enter Content in' | translate}}
+                <button class="btn  {{selectedLang == 'en' ? 'btn-primary': 'btn-default'}}" (click)="onChangeLanguaeFrom('en')">{{'English'| translate}}</button>
+                <button class="btn {{selectedLang == 'th' ? 'btn-primary': 'btn-default'}}" (click)="onChangeLanguaeFrom('th')">{{'Thai' | translate}}</button>
             </p>
             <hr>
-            <!--<h4 class="pull-right"><span class="label label-default">{{apps.status}}</span></h4>-->
         </div>
         <!--Edit Service -->
 
@@ -45,26 +44,26 @@
                         <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
                                 aria-haspopup="true"
                                 aria-expanded="false">
-                            Actions<span class="caret"></span>
+                            {{'Actions' | translate}}<span class="caret"></span>
                         </button>
                         <ul class="dropdown-menu">
                             <li *ngIf="apps.status === 'draft' || apps.status === 'review'">
-                                <a (click)="updateProductStatus(apps.id,'pending')">Send for Review</a></li>
+                                <a (click)="updateProductStatus(apps.id,'pending')">{{'Sent back for Review' | translate}}</a></li>
                             <li *ngIf="apps.status === 'approved' || apps.status === 'archived'">
-                                <a (click)="updateProductStatus(apps.id,'publish')">Publish</a></li>
+                                <a (click)="updateProductStatus(apps.id,'publish')">{{'Publish' | translate}}</a></li>
                             <li *ngIf="apps.status === 'published'">
-                                <a (click)="updateProductStatus(apps.id,'archive')">Archive</a></li>
+                                <a (click)="updateProductStatus(apps.id,'archive')">{{'Archive' | translate}}</a></li>
                         </ul>
                         <span class="label label-default label-status">{{apps.status}}</span>
                     </div>
                     <button
                             class='btn btn-primary pull-right btn-save' type='submit'
                             [disabled]='!myForm.valid'
-                            data-toggle="modal" data-target="#myModal">Save
+                            data-toggle="modal" data-target="#myModal">{{'Save' | translate}}
                     </button>
                     <button type="button"
                             class="btn btn-danger pull-right btn-cancle" data-dismiss="modal"
-                            (click)="onCancle()">Cancel
+                            (click)="onCancle()">{{'Cancel' | translate}}
                     </button>
 
                 </div>
@@ -82,7 +81,7 @@
                                        (imageSelected)="fileChangeLogo($event)"
                                        [resizeOptions]="resizeOptions"
                                        formControlName="logo">
-                                Add Logo
+                                {{'Add Logo' | translate}}
                             </label>
                         </fieldset>
 
@@ -91,11 +90,11 @@
                         <!--Name-->
                         <div class="row">
                             <fieldset class="form-group">
-                                <label>* Name</label>
+                                <label>* {{'Name' | translate}}</label>
                                 <input type="text"
                                        [(ngModel)]="apps.name"
                                        class="form-control"
-                                       placeholder="Name is Here"
+                                       placeholder="{{'Name' | translate}}"
                                        formControlName="name">
                                 <div class='validation-error' *ngIf='myForm.controls.name.touched'>
                                     <div *ngIf="myForm.controls.name.hasError('required')">Name is required
@@ -107,12 +106,12 @@
                         <!--Description-->
                         <div class="row" [class.hidden]="thaiInput">
                             <fieldset class="form-group">
-                                <label>* Description</label>
+                                <label>* {{'Description' | translate}}</label>
                                 <textarea
                                         type="text"
                                         class="form-control"
                                         [(ngModel)]="apps.description"
-                                        placeholder="Description"
+                                        placeholder="{{'Description' | translate}}"
                                         formControlName="description"></textarea>
                                 <div class='validation-error' *ngIf='myForm.controls.description.touched'>
                                     <div *ngIf="myForm.controls.description.hasError('required')">Description is required
@@ -123,11 +122,11 @@
 
                         <div class="row" [class.hidden]="thaiInput">
                             <fieldset class="form-group">
-                                <label>* Short Description</label>
+                                <label>* {{'Short Description' | translate}}</label>
                                 <textarea type="text"
                                           class="form-control"
                                           [(ngModel)]="apps.shortdescription"
-                                          placeholder="Short Description"
+                                          placeholder="{{'Short Description' | translate}}"
                                           formControlName="shortdescription"></textarea>
                                 <div class='validation-error' *ngIf='myForm.controls.shortdescription.touched'>
                                     <div *ngIf="myForm.controls.shortdescription.hasError('required')">Short Description is required
@@ -140,11 +139,11 @@
                         <!-- Thai Description-->
                         <div class="row" [class.hidden]="!thaiInput">
                             <fieldset class="form-group">
-                                <label>* รายละเอียด</label>
+                                <label>* {{'Description' | translate}}</label>
                                 <textarea
                                         type="text"
                                         class="form-control"
-                                        placeholder="รายละเอียด"
+                                        placeholder="{{'Description' | translate}}"
                                         [(ngModel)]="apps_th.description"
                                         formControlName="thai_description"></textarea>
                                 <div class='validation-error' *ngIf='myForm.controls.thai_description.touched'>
@@ -156,11 +155,11 @@
 
                         <div class="row" [class.hidden]="!thaiInput">
                             <fieldset class="form-group">
-                                <label>* รายละเอียดแบบย่อ</label>
+                                <label>* {{'Short Description' | translate}}</label>
                                 <textarea type="text"
                                           class="form-control"
                                           [(ngModel)]="apps_th.shortdescription"
-                                          placeholder="รายละเอียดแบบย่อ"
+                                          placeholder="{{'Short Description' | translate}}"
                                           formControlName="thai_shortdescription"></textarea>
                                 <div class='validation-error' *ngIf='myForm.controls.thai_shortdescription.touched'>
                                     <div *ngIf="myForm.controls.thai_shortdescription.hasError('required')">Thai Short Description is required
@@ -179,15 +178,15 @@
                                 </button>
                             </div>
                             <fieldset class="form-group">
-                                <label>Features</label>
+                                <label>{{'Features' | translate}}</label>
                                 <input
                                         [(ngModel)]="newFeature"
                                         [ngModelOptions]="{standalone: true}"
                                         type="text"
                                         class="form-control"
-                                        placeholder="Features">
+                                        placeholder="{{'Features' | translate}}">
                                 <button type="button" class="btn btn-sm btn-default"
-                                        (click)="onAddNewFeature(newFeature, 'en')">+ Feature
+                                        (click)="onAddNewFeature(newFeature, 'en')">+ {{'Feature' | translate}}
                                 </button>
                             </fieldset>
                         </div>
@@ -201,15 +200,15 @@
                                 </button>
                             </div>
                             <fieldset class="form-group">
-                                <label>คุณสมบัติ</label>
+                                <label>{{'Feature' | translate}}</label>
                                 <input
                                         [(ngModel)]="newThaiFeature"
                                         [ngModelOptions]="{standalone: true}"
                                         type="text"
                                         class="form-control"
-                                        placeholder="คุณสมบัติ">
+                                        placeholder="{{'Feature' | translate}}">
                                 <button type="button" class="btn btn-sm btn-default"
-                                        (click)="onAddNewFeature(newThaiFeature, 'th')">+ คุณสมบัติ
+                                        (click)="onAddNewFeature(newThaiFeature, 'th')">+ {{'Feature' | translate}}
                                 </button>
                             </fieldset>
                         </div>
@@ -219,19 +218,19 @@
                     <div class="col-md-5">
                         <!--Purchase Link-->
                         <div class="row">
-                            <h4>Purchase Link</h4>
+                            <h4>{{'Purchase Link' | translate}}</h4>
                             <fieldset class="form-group">
                                 <input
                                         type="text"
                                         class="form-control"
-                                        placeholder="URL where users can purchase"
+                                        placeholder="{{'Purchase Link' | translate}}"
                                         [(ngModel)]="apps.purchase_link"
                                         formControlName="purchase_link">
                             </fieldset>
                         </div>
 
                         <div class="row">
-                            <h4>Payment and Pricing</h4>
+                            <h4>{{'Payment and Pricing' | translate}}</h4>
 
                             <form class="form-horizontal">
 
@@ -254,14 +253,14 @@
                                         <div *ngIf="showFreeService && opt.name === 'Freemium Version'">
                                             <form class="form-inline">
                                                 <div class="form-group">
-                                                    <label>Trial Length</label>
+                                                    <label>{{'Trial Length' | translate}}</label>
                                                     <input class="form-control"
                                                            type="number"
                                                            [(ngModel)]="dayModel"
                                                            [ngModelOptions]="{standalone: true}"
                                                            #day
                                                            (change)="onInputDay(opt.dbid,day.value)">
-                                                    <label>days</label>
+                                                    <label>{{'days' | translate}}</label>
                                                 </div>
 
                                             </form>
@@ -271,7 +270,7 @@
 
                                             <div class="row">
                                                 <div class="col-xs-3">
-                                                    Single Price
+                                                    {{'Single Price' | translate}}
                                                     <input
                                                             type="radio"
                                                             name="plan"
@@ -308,7 +307,7 @@
 
                                             <div class="row">
                                                 <div class="col-xs-3">
-                                                    Price range
+                                                   {{'Price range'| translate}}
                                                     <input type="radio" name="plan"
                                                            [checked]="pricerangeMonthly"
                                                            (change)="onSelectPricingPlan('Price range',opt.dbid, opt.name)">
@@ -352,7 +351,7 @@
 
                                             <div class="row">
                                                 <div class="col-xs-3">
-                                                    Single Price
+                                                   {{'Single Price' | translate}}
                                                     <input
                                                             type="radio"
                                                             name="plan"
@@ -389,7 +388,7 @@
 
                                             <div class="row">
                                                 <div class="col-xs-3">
-                                                    Price range
+                                                   {{'Price range' | translate }}
                                                     <input type="radio" name="plan"
                                                            [checked]="pricerangeYearly"
                                                            (change)="onSelectPricingPlan('Price range',opt.dbid, opt.name)">
@@ -433,7 +432,7 @@
 
                                             <div class="row">
                                                 <div class="col-xs-3">
-                                                    Single Price
+                                                    {{'Single Price' | translate}}
                                                     <input
                                                             type="radio"
                                                             name="plan"
@@ -470,7 +469,7 @@
 
                                             <div class="row">
                                                 <div class="col-xs-3">
-                                                    Price range
+                                                    {{'Price range' | translate}}
                                                     <input type="radio" name="plan"
                                                            [checked]="pricerangeLifetime"
                                                            (change)="onSelectPricingPlan('Price range',opt.dbid, opt.name)">
@@ -516,7 +515,7 @@
                                         <div *ngIf="showOther && opt.name === 'Other'">
                                             <form class="form-inline">
                                                 <div class="form-group">
-                                                    <label>Other Model</label>
+                                                    <label>{{'Other Model'| translate}}</label>
                                                     <input class="form-control"
                                                            [(ngModel)]="otherModel"
                                                            [ngModelOptions]="{standalone: true}"
@@ -538,7 +537,7 @@
 
                         <!--Extra Services you offer-->
                         <div class="row">
-                            <h4>Extra Services you offer</h4>
+                            <h4>{{'Extra Services you offer'| translate}}</h4>
                             <div *ngFor="let opt of extraservicesTag; let i = index">
                                 <div class="checkbox">
                                     <label><input #{{opt.dbid}} type="checkbox"
@@ -555,7 +554,7 @@
                 <!--Screenshots-->
                 <div class="row">
                     <div class="col-md-12">
-                        <h4>Screenshots</h4>
+                        <h4>{{'Screenshots' | translate}}</h4>
                         <fieldset class="form-group">
                             <p *ngIf="!screenshotsChosen">No file chosen</p>
                             <label class="custom-file-upload">
@@ -566,14 +565,14 @@
                                        [resizeOptions]="resizeOptions"
                                        #screenshots
                                        formControlName="screenshots">
-                                Add Screenshots
+                                {{'Add Screenshots' | translate}}
                             </label>
                         </fieldset>
 
 
                         <div class="col-md-2" *ngFor="let src of myFormScreenshots">
                             <img [src]="src" class="img-responsive" alt="Image">
-                            <button type="button" class="btn btn-danger" (click)="onDeleteScreenshot(src)">Delete
+                            <button type="button" class="btn btn-danger" (click)="onDeleteScreenshot(src)">{{'Delete'| translate}}
                             </button>
                         </div>
                     </div>
@@ -582,7 +581,7 @@
                 <!--Video-->
                 <div class="row">
                     <div class="col-md-4">
-                        <h4>Video</h4>
+                        <h4>{{'Video' | translate}}</h4>
                             <fieldset class="form-group">
                                 <input
                                         #myVideo
@@ -604,7 +603,7 @@
 
                             </div>
                             <button type="button" class="btn btn-sm btn-danger"  *ngIf="video"
-                                    (click)="deleteVideo()">Delete
+                                    (click)="deleteVideo()">{{'Delete'| translate}}
                             </button>
                         </div>
                     </div>
@@ -612,7 +611,7 @@
                 <!--Minimum Requirements-->
                 <div class="row">
                     <div class="col-md-6">
-                        <h4>Minimum Requirements</h4>
+                        <h4>{{'Minimum Requirements' | translate}}</h4>
                         <fieldset class="form-group">
                     <textarea type="text"
                               class="form-control"
@@ -623,11 +622,11 @@
                     </div>
 
                     <div class="col-md-6">
-                        <h4>Terms Conditions</h4>
+                        <h4>{{'Terms & Conditions'| translate}}</h4>
                         <fieldset class="form-group">
                     <textarea type="text"
                               class="form-control"
-                              placeholder="Terms Conditions"
+                              placeholder="{{'Terms & Conditions'| translate}}"
                               [(ngModel)]="apps.termsncond"
                               formControlName="termsncond"></textarea>
                         </fieldset>
@@ -638,7 +637,7 @@
                 <!--ALL TAG-->
                 <div class="row">
                 <div class="col-md-3">
-                    <h4>Language</h4>
+                    <h4>{{'Language'| translate}}</h4>
                     <form class="form-horizontal">
                         <div *ngFor="let opt of languagesTag; let i = index">
                             <div class="checkbox">
@@ -651,8 +650,8 @@
                     </form>
                 </div>
                 <div class="col-md-3">
-                    <h4>Category</h4>
-                    <p>What type of service is this</p>
+                    <h4>{{'Category'| translate}}</h4>
+                    <p>{{'What type of service is this'| translate}}</p>
                     <form class="form-horizontal">
                         <div *ngFor="let opt of categoriesTag">
                             <div class="checkbox">
@@ -668,8 +667,8 @@
                     </form>
                 </div>
                 <div class="col-md-3">
-                    <h4>Department</h4>
-                    <p>What departments does this Service best apply to</p>
+                    <h4>{{'Department'| translate}}</h4>
+                    <p>{{'What departments does this Service best apply to' | translate}}</p>
                     <form class="form-horizontal">
                         <div *ngFor="let opt of departmentsTag">
                             <div class="checkbox">
@@ -683,8 +682,8 @@
                     </form>
                 </div>
                 <div class="col-md-3">
-                    <h4>Industry</h4>
-                    <p>What Industry is this Service designed for</p>
+                    <h4>{{'Industry' | translate}}</h4>
+                    <p>{{'What Industry is this Service designed for' | translate}}</p>
                     <form class="form-horizontal">
                         <div *ngFor="let opt of industriesTag">
                             <div class="checkbox">

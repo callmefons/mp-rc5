@@ -139,6 +139,19 @@ export const LANG_EN_TRANS = {
     'Add Listing': 'Add Listing',
     'Enter Content in': 'Enter Content in',
 
+    'Add Screenshots': 'Add Screenshots',
+    'Extra Services you offer': 'Extra Services you offer',
+    'Manage': 'Manage',
+    'Actions': 'Actions',
+    'Publish': 'Publish',
+    'Archive': 'Archive',
+    'Trial Length': 'Trial Length',
+    'Single Price': 'Single Price',
+    'Price range': 'Price range',
+
+
+
+
 
     //////////////////////////////////////////////////////
 
