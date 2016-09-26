@@ -1,4 +1,4 @@
-import {Component, OnInit} from "@angular/core";
+import {Component, OnChanges, Input} from "@angular/core";
 import {Observable, Subscription} from "rxjs/Rx";
 import { Router } from '@angular/router';
 
@@ -7,7 +7,6 @@ import {ProductService} from "../api-service/product/product.service";
 
 
 declare var Chart:any;
-// import '../../../../node_modules/chart.js/dist/Chart.bundle.js';
 
 @Component({
     moduleId: module.id,
@@ -16,7 +15,7 @@ declare var Chart:any;
     styleUrls: ['styles/clicky.template.css'],
 })
 
-export class ClickyAdminComponent {
+export class ClickyAdminComponent implements OnChanges{
 
     views:number = 0;
     items:any = [];
@@ -32,30 +31,21 @@ export class ClickyAdminComponent {
     onLoad:boolean = true;
     selected:string = '';
 
-    sub:Subscription;
-    apps$:Observable<any>;
-    apps:any[] = [];
+    @Input()
+    apps:any;
 
     constructor(private _clickyService:ClickyService,
                 private _productService:ProductService,
                 private _router:Router) {
+
     }
 
-    ngOnInit() {
-        //this.getAnalytics("ADA");
-         this.getProductOfDeveloper();
-    }
+    ngOnChanges(){
 
-    ngOnDestroy() {
-        // this.sub.unsubscribe();
-    }
+        if(this.apps.id != null){
+            this.getAnalytics(this.apps.id)
+        }
 
-    getProductOfDeveloper() {
-        this.apps$ = this._productService.getProductOfDeveloper();
-        this.sub = this.apps$.subscribe((apps:any) => {
-            this.apps = apps;
-            this.getAnalytics(apps[0].id);
-        });
     }
 
     getAnalytics(name:any) {
@@ -83,6 +73,7 @@ export class ClickyAdminComponent {
                 .subscribe(
                     data => {
 
+                        console.log(data);
                         this.data = data[0].dates;
 
                         for (let i = 0; i < this.data.length; i++) {

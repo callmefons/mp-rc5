@@ -30,10 +30,9 @@
         <div class="row">
             <h1>{{'Add Listing'| translate}}</h1>
             <hr>
-            <p>
-                {{'Enter Content in'| translate}}
-                <button class="btn btn-default" (click)="onChangeLanguaeFrom('en')">English</button>
-                <button class="btn btn-default" (click)="onChangeLanguaeFrom('th')">Thai</button>
+            <p>{{'Enter Content in' | translate}}
+                <button class="btn  {{selectedLang == 'en' ? 'btn-primary': 'btn-default'}}" (click)="onChangeLanguaeFrom('en')">{{'English'| translate}}</button>
+                <button class="btn {{selectedLang == 'th' ? 'btn-primary': 'btn-default'}}" (click)="onChangeLanguaeFrom('th')">{{'Thai' | translate}}</button>
             </p>
             <hr>
             <div>
@@ -45,13 +44,13 @@
                             <div class=".col-md-3 .col-md-offset-3">
                                 <button type="button"
                                         class="btn btn-danger pull-right"
-                                        (click)="onCancle()">Cancel
+                                        (click)="onCancle()">{{'Cancel' | translate}}
                                 </button>
                                 <button [disabled]='!myForm.valid'
                                         class="btn btn-primary pull-right btn-save"
                                         type='submit' data-toggle="modal"
                                         data-target="#myModal">
-                                    Save
+                                    {{'Save' | translate}}
                                 </button>
                             </div>
                         </div>
@@ -68,7 +67,7 @@
                                                [resizeOptions]="resizeOptions"
                                                formControlName="logo"
                                         >
-                                        Add Logo
+                                        {{'Add Logo' | translate}}
                                     </label>
                                 </fieldset>
                             </div>
@@ -78,7 +77,7 @@
                                         <label>* {{'Name' | translate}}</label>
                                         <input type="text"
                                                class="form-control"
-                                               placeholder="Name is Here"
+                                               placeholder="{{'Name' | translate}}"
                                                formControlName="name"
                                         >
                                         <div class='validation-error' *ngIf='myForm.controls.name.touched'>
@@ -91,11 +90,11 @@
                                 <!--Description-->
                                 <div class="row" [class.hidden]="thaiInput">
                                     <fieldset class="form-group">
-                                        <label>* Description</label>
+                                        <label>* {{'Description' | translate}}</label>
                                         <textarea
                                                 type="text"
                                                 class="form-control"
-                                                placeholder="Description"
+                                                placeholder="{{'Description' | translate}}"
                                                 formControlName="description"></textarea>
                                         <div class='validation-error' *ngIf='myForm.controls.description.touched'>
                                             <div *ngIf="myForm.controls.description.hasError('required')">Description is required
@@ -106,10 +105,10 @@
 
                                 <div class="row" [class.hidden]="thaiInput">
                                     <fieldset class="form-group">
-                                        <label>* Short Description</label>
+                                        <label>* {{'Short Description' | translate}}</label>
                                         <textarea type="text"
                                                   class="form-control"
-                                                  placeholder="Short Description"
+                                                  placeholder="{{'Short Description' | translate}}"
                                                   formControlName="shortdescription"></textarea>
                                         <div class='validation-error' *ngIf='myForm.controls.shortdescription.touched'>
                                             <div *ngIf="myForm.controls.shortdescription.hasError('required')">Short Description is required
@@ -122,11 +121,11 @@
                                 <!-- Thai Description-->
                                 <div class="row" [class.hidden]="!thaiInput">
                                     <fieldset class="form-group">
-                                        <label>* รายละเอียด</label>
+                                        <label>* {{'Description' | translate}}</label>
                                         <textarea
                                                 type="text"
                                                 class="form-control"
-                                                placeholder="รายละเอียด"
+                                                placeholder="{{'Description' | translate}}"
                                                 formControlName="thai_description"></textarea>
                                         <div class='validation-error' *ngIf='myForm.controls.thai_description.touched'>
                                             <div *ngIf="myForm.controls.thai_description.hasError('required')">Thai Description is required
@@ -137,10 +136,10 @@
 
                                 <div class="row" [class.hidden]="!thaiInput">
                                     <fieldset class="form-group">
-                                        <label>* รายละเอียดแบบย่อ</label>
+                                        <label>* {{'Short Description' | translate}}</label>
                                         <textarea type="text"
                                                   class="form-control"
-                                                  placeholder="รายละเอียดแบบย่อ"
+                                                  placeholder="{{'Short Description' | translate}}"
                                                   formControlName="thai_shortdescription"></textarea>
                                         <div class='validation-error' *ngIf='myForm.controls.thai_shortdescription.touched'>
                                             <div *ngIf="myForm.controls.thai_shortdescription.hasError('required')">Thai Short Description is required
@@ -156,19 +155,19 @@
                                     <div *ngFor="let feature of myFormFeatures">
                                         <pre>{{ feature }}</pre>
                                         <button type="button" (click)="onDeleteFeature(feature, 'en')"
-                                                class="btn btn-danger btn-xs">Delete
+                                                class="btn btn-danger btn-xs">{{'Delete' | translate}}
                                         </button>
                                     </div>
                                     <fieldset class="form-group">
-                                        <label>Features</label>
+                                        <label>{{'Features' | translate}}</label>
                                         <input
                                                 [(ngModel)]="newFeature"
                                                 [ngModelOptions]="{standalone: true}"
                                                 type="text"
                                                 class="form-control"
-                                                placeholder="Features">
+                                                placeholder="{{'Features' | translate}}">
                                         <button type="button" class="btn btn-sm btn-default"
-                                                (click)="onAddNewFeature(newFeature, 'en')">+ Feature
+                                                (click)="onAddNewFeature(newFeature, 'en')">+ {{'Features' | translate}}
                                         </button>
                                     </fieldset>
                                 </div>
@@ -178,19 +177,19 @@
                                     <div *ngFor="let feature of myFormThaiFeatures">
                                         <pre>{{ feature }}</pre>
                                         <button type="button" (click)="onDeleteFeature(feature, 'th')"
-                                                class="btn btn-danger btn-xs">Delete
+                                                class="btn btn-danger btn-xs">{{'Delete' | translate}}
                                         </button>
                                     </div>
                                     <fieldset class="form-group">
-                                        <label>คุณสมบัติ</label>
+                                        <label>{{'Features' | translate}}</label>
                                         <input
                                                 [(ngModel)]="newThaiFeature"
                                                 [ngModelOptions]="{standalone: true}"
                                                 type="text"
                                                 class="form-control"
-                                                placeholder="คุณสมบัติ">
+                                                placeholder="{{'Features' | translate}}">
                                         <button type="button" class="btn btn-sm btn-default"
-                                                (click)="onAddNewFeature(newThaiFeature, 'th')">+ คุณสมบัติ
+                                                (click)="onAddNewFeature(newThaiFeature, 'th')">+ {{'Features' | translate}}
                                         </button>
                                     </fieldset>
                                 </div>
@@ -199,7 +198,7 @@
                             </div>
                             <div class="col-md-5">
                                 <div class="row">
-                                    <h4>Purchase Link</h4>
+                                    <h4>{{'Purchase Link' | translate}}</h4>
                                     <fieldset class="form-group">
                                         <input
                                                 type="text"
@@ -210,7 +209,7 @@
                                 </div>
 
                                 <div class="row">
-                                    <h4>Payment and Pricing</h4>
+                                    <h4>{{'Payment and Pricing' | translate}}</h4>
 
                                     <form class="form-horizontal">
 
@@ -234,12 +233,12 @@
                                                 <div *ngIf="showFreeService && opt.name === 'Freemium Version'">
                                                     <form class="form-inline">
                                                         <div class="form-group">
-                                                            <label>Trial Length</label>
+                                                            <label>{{'Trial Length' | translate}}</label>
                                                             <input class="form-control"
                                                                    type="number"
                                                                    #day
                                                                    (change)="onInputDay(opt.id,day.value)">
-                                                            <label>days</label>
+                                                            <label>{{'days' | translate}}</label>
                                                         </div>
 
                                                     </form>
@@ -502,7 +501,7 @@
                         <!--Screenshots-->
                         <div class="row">
                             <div class="col-md-12">
-                                <h4>Screenshots</h4>
+                                <h4>{{'Screenshots' | translate}}</h4>
                                 <fieldset class="form-group">
                                     <p *ngIf="!screenshotsChosen">No file chosen</p>
                                     <label class="custom-file-upload">
@@ -513,7 +512,7 @@
                                                [resizeOptions]="resizeOptions"
                                                #screenshots
                                                formControlName="screenshots">
-                                        Add Screenshots
+                                        {{'Add Screenshots' | translate}}
                                     </label>
 
                                 </fieldset>
@@ -521,7 +520,7 @@
                                     <img id="myFormScreenshots" [src]="src" [hidden]="!src" class="img-responsive"
                                          alt="Screenshots">
                                     <button type="button" class="btn btn-danger" (click)="onDeleteScreenshot(src)">
-                                        Delete
+                                        {{'Delete' | translate}}
                                     </button>
                                     <hr>
                                 </div>
@@ -531,7 +530,7 @@
 
                         <div class="row">
                             <div class="col-md-4">
-                                <h4>Video</h4>
+                                <h4>{{'Video' | translate}}</h4>
                                 <fieldset class="form-group">
                                     <input
                                             #myVideo
@@ -554,7 +553,7 @@
                                 <button type="button"
                                         class="btn btn-sm btn-danger"
                                         (click)="deleteVideo()"
-                                        *ngIf="video">Delete
+                                        *ngIf="video">{{'Delete' | translate}}
                                 </button>
                             </div>
                         </div>
@@ -563,7 +562,7 @@
                         <div class="row">
 
                             <div class="col-md-6">
-                                <h4>Minimum Requirements</h4>
+                                <h4>{{'Minimum Requirements' | translate}}</h4>
                                 <fieldset class="form-group">
 				        <textarea type="text"
                                   class="form-control"
@@ -573,11 +572,11 @@
                             </div>
 
                             <div class="col-md-6">
-                                <h4>Terms Conditions</h4>
+                                <h4>{{'Terms & Conditions'| translate}}</h4>
                                 <fieldset class="form-group">
 				<textarea type="text"
                           class="form-control"
-                          placeholder="Terms Conditions"
+                          placeholder="{{'Terms & Conditions'| translate}}"
                           formControlName="termsncond"></textarea>
                                 </fieldset>
                             </div>
@@ -589,7 +588,7 @@
                         <div class="row">
 
                             <div class="col-md-3">
-                                <h4 for="languages">Language</h4>
+                                <h4 for="languages">{{'Language' | translate}}</h4>
                                 <form class="form-horizontal">
                                     <div class="checkbox" *ngFor="let opt of languagesTag">
                                         <label>
@@ -601,7 +600,7 @@
                             </div>
 
                             <div class="col-md-3">
-                                <h4>Category</h4>
+                                <h4>{{'Category' | translate}}</h4>
                                 <p>What type of service is this</p>
                                 <form class="form-horizontal">
                                     <div class="checkbox" *ngFor="let opt of categoriesTag">
@@ -614,7 +613,7 @@
                             </div>
 
                             <div class="col-md-3">
-                                <h4>Department</h4>
+                                <h4>{{'Department' | translate}}</h4>
                                 <p>What departments does this Service best apply to</p>
                                 <form class="form-horizontal">
                                     <div class="checkbox" *ngFor="let opt of departmentsTag">
@@ -627,7 +626,7 @@
                             </div>
 
                             <div class="col-md-3">
-                                <h4>Industry</h4>
+                                <h4>{{'Industry' | translate}}</h4>
                                 <p>What Industry is this Service designed for</p>
                                 <form class="form-horizontal">
                                     <div class="checkbox" *ngFor="let opt of industriesTag">

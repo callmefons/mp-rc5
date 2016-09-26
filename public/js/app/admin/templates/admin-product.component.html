@@ -330,8 +330,8 @@
 
                 </div>
 
-                <div id="statistics" class="tab-pane fade in">
-                    <mp-clicky-admin-component></mp-clicky-admin-component>
+                <div id="statistics" class="tab-pane fade in" *ngIf="apps != null">
+                    <mp-clicky-admin-component [apps]="apps"></mp-clicky-admin-component>
                 </div>
 
 

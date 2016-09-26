@@ -78,6 +78,7 @@ export class VendorAddProductComponent implements OnInit, OnDestroy {
     //Callback after added product
     added: boolean = false;
 
+    selectedLang: string = 'en';
 
     constructor(private _fb: FormBuilder,
                 private _productService: ProductService,
@@ -541,7 +542,7 @@ export class VendorAddProductComponent implements OnInit, OnDestroy {
     thaiInput: boolean = false;
 
     onChangeLanguaeFrom(lang: string) {
-
+        this.selectedLang = lang;
         switch (lang) {
             case 'th':
                 this.thaiInput = true;
