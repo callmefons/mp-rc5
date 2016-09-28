@@ -5,31 +5,24 @@
         <!--<loader-template></loader-template>-->
     </div>
     <div *ngIf="!loading" class="row--content">
-        <div class="row" *ngFor="let organization of vendor_organization">
+        <div class="row">
             <!--Left-->
             <div class="col-md-8">
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-6" *ngFor="let organization of vendor_organization">
                         <img class="img-responsive mp-company-logo" [src]="organization?.logo">
                     </div>
                     <div class="col-md-6">
-                        <h4>{{'Name'| translate}}: {{organization?.companyname}}</h4>
-                        <h6>{{'Link'| translate}}: <a href="{{organization?.url}}">{{organization?.url}}</a></h6>
+                        <h4 *ngFor="let organization of vendor_organization">Company Name: {{organization?.companyname}}</h4>
+                        <h4 *ngFor="let organization of vendor_profile">Name: {{organization?.name}}</h4>
+                        <a (click)="goToEditProfile()">{{'Edit Company Profile'| translate}}</a>
                     </div>
                 </div>
-            </div>
-            <!--Right-->
-            <div class="col-md-4">
-                <button class="btn btn-primary pull-right" (click)="goToEditProfile()">{{'Edit Company Profile'| translate}}</button>
             </div>
         </div>
 
         <hr>
 
-        <div class="row">
-            <button class="btn btn-default" (click)="goToAddService()">{{'Add New Listing'| translate}}</button>
-            <button class="btn btn-default" (click)="goToViewAllListing()">{{'All Listing' | translate}}</button>
-        </div>
 
 
         <mp-clicky-component></mp-clicky-component>

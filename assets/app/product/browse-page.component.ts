@@ -20,19 +20,19 @@ declare var _: any;
 export class BrowsePageComponent implements OnInit, OnDestroy {
 
 
-    public status:Object = {
+    public status: Object = {
         isFirstOpen: true,
         isFirstDisabled: false,
-        category:false
+        category: false
     };
 
 
-    status_type:string;
+    status_type: string;
 
 
     errorMessage: any;
     loading: boolean = true;
-    readonly : boolean = true;
+    readonly: boolean = true;
 
     sub: Subscription;
 
@@ -60,7 +60,7 @@ export class BrowsePageComponent implements OnInit, OnDestroy {
     enable: boolean = false;
 
     constructor(private route: ActivatedRoute,
-                private _router:Router,
+                private _router: Router,
                 private _productService: ProductService) {
 
     }
@@ -114,10 +114,10 @@ export class BrowsePageComponent implements OnInit, OnDestroy {
                     }
 
                     //Service Id Plus 1 because service_id start index at 0 but alltag start 1
-                    for(let i = 0; i < this.all_tag.length; i ++){
-                       if(this.all_tag[i].id === this.service_id){
-                           this.status_type = this.all_tag[i].type;
-                       }
+                    for (let i = 0; i < this.all_tag.length; i++) {
+                        if (this.all_tag[i].id === this.service_id) {
+                            this.status_type = this.all_tag[i].type;
+                        }
                     }
 
                 }),
@@ -129,7 +129,7 @@ export class BrowsePageComponent implements OnInit, OnDestroy {
             this.options[i] = [];
             for (let j = 0; j < this.products.length; j++) {
                 for (let k = 0; k < this.products[j].tag.length; k++) {
-                    if (this.products[j].tag[k] == this.all_tag[i].name) {
+                    if (this.products[j].tag[k].name == this.all_tag[i].name) {
                         this.options[i].push({
                             optionId: i,
                             id: this.products[j].id,
@@ -145,38 +145,39 @@ export class BrowsePageComponent implements OnInit, OnDestroy {
 
     all_industry: boolean = false;
 
-    onCheckAllIndustry(event:any){
+    onCheckAllIndustry(event: any) {
 
         this.service_id = null;
 
-         if(event.currentTarget.checked == true){
-             this.all_industry = true;
-         }else{
-             this.all_industry = false;
-         }
+        if (event.currentTarget.checked == true) {
+            this.all_industry = true;
+        } else {
+            this.all_industry = false;
+        }
 
-       for(let i =0; i < this.all_tag.length; i++){
-           if(this.all_tag[i].type === 'industry'){
-                this.onCheckboxFilterTag(this.all_tag[i].id,event);
-           }
-       }
+        for (let i = 0; i < this.all_tag.length; i++) {
+            if (this.all_tag[i].type === 'industry') {
+                this.onCheckboxFilterTag(this.all_tag[i].id, event);
+            }
+        }
 
     }
+
     all_category: boolean = false;
 
-    onCheckAllCategory(event:any){
+    onCheckAllCategory(event: any) {
 
         this.service_id = null;
 
-        if(event.currentTarget.checked == true){
+        if (event.currentTarget.checked == true) {
             this.all_category = true;
-        }else{
+        } else {
             this.all_category = false;
         }
 
-        for(let i =0; i < this.all_tag.length; i++){
-            if(this.all_tag[i].type === 'category'){
-                this.onCheckboxFilterTag(this.all_tag[i].id,event);
+        for (let i = 0; i < this.all_tag.length; i++) {
+            if (this.all_tag[i].type === 'category') {
+                this.onCheckboxFilterTag(this.all_tag[i].id, event);
             }
         }
 
@@ -184,19 +185,19 @@ export class BrowsePageComponent implements OnInit, OnDestroy {
 
     all_language: boolean = false;
 
-    onCheckAllLanguage(event:any){
+    onCheckAllLanguage(event: any) {
 
         this.service_id = null;
 
-        if(event.currentTarget.checked == true){
+        if (event.currentTarget.checked == true) {
             this.all_language = true;
-        }else{
+        } else {
             this.all_language = false;
         }
 
-        for(let i =0; i < this.all_tag.length; i++){
-            if(this.all_tag[i].type === 'language'){
-                this.onCheckboxFilterTag(this.all_tag[i].id,event);
+        for (let i = 0; i < this.all_tag.length; i++) {
+            if (this.all_tag[i].type === 'language') {
+                this.onCheckboxFilterTag(this.all_tag[i].id, event);
             }
         }
 
@@ -204,19 +205,19 @@ export class BrowsePageComponent implements OnInit, OnDestroy {
 
     all_department: boolean = false;
 
-    onCheckAllDepartment(event:any){
+    onCheckAllDepartment(event: any) {
 
         this.service_id = null;
 
-        if(event.currentTarget.checked == true){
+        if (event.currentTarget.checked == true) {
             this.all_department = true;
-        }else{
+        } else {
             this.all_department = false;
         }
 
-        for(let i =0; i < this.all_tag.length; i++){
-            if(this.all_tag[i].type === 'department'){
-                this.onCheckboxFilterTag(this.all_tag[i].id,event);
+        for (let i = 0; i < this.all_tag.length; i++) {
+            if (this.all_tag[i].type === 'department') {
+                this.onCheckboxFilterTag(this.all_tag[i].id, event);
             }
         }
 
@@ -236,31 +237,31 @@ export class BrowsePageComponent implements OnInit, OnDestroy {
 
     onCheckboxFilterTag(value: any, event: any) {
 
-            if (event.currentTarget.checked == true) {
-                for (let i = 0; i < this.options.length; i++) {
-                    if ((value - 1) == i) {
-                        this.temp_products.push(...this.options[i]);
-                    }
+        if (event.currentTarget.checked == true) {
+            for (let i = 0; i < this.options.length; i++) {
+                if ((value - 1) == i) {
+                    this.temp_products.push(...this.options[i]);
                 }
+            }
+            this.products_filter = _.uniqBy(this.temp_products, 'name');
+        }
+
+        if (event.currentTarget.checked == false) {
+            this.temp_products = _.filter(this.temp_products, (temp_products: any) => {
+                return temp_products.optionId !== (value - 1)
+            });
+            if (_.isEmpty(this.temp_products)) {
+                this.products_filter = this.products;
+            } else {
                 this.products_filter = _.uniqBy(this.temp_products, 'name');
             }
 
-            if (event.currentTarget.checked == false) {
-                this.temp_products = _.filter(this.temp_products, (temp_products: any) => {
-                    return temp_products.optionId !== (value - 1)
-                });
-                if (_.isEmpty(this.temp_products)) {
-                    this.products_filter = this.products;
-                } else {
-                    this.products_filter = _.uniqBy(this.temp_products, 'name');
-                }
-
-            }
+        }
 
         this.product_length = this.products_filter.length;
     }
 
-    goToProductDetail(productId:number){
+    goToProductDetail(productId: number) {
         this._router.navigate([`product/${productId}/detail`]);
     }
 

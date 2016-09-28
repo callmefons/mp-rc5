@@ -8,6 +8,7 @@ import {request} from '../../helpers/request';
 import config = require('../../config/api.config');
 import 'rxjs/add/operator/cache';
 import {Vendor} from "../../models/vendor.model";
+import {VendorCompany} from "../../models/vendor-company.model";
 
 @Injectable()
 export class VendorService {
@@ -48,6 +49,16 @@ export class VendorService {
             .map(this.extractData)
             .catch(this.handleError);
     }
+
+    updateVendorCompany(vendor_company: VendorCompany) {
+        const body = JSON.stringify(vendor_company);
+        return this._http.put(`${config.apiUrl}developer/organization/profile?token=${storage.getAuthToken()}`,
+            body, {headers: request.getJsonHeaders()}).cache()
+            .map(this.extractData)
+            .catch(this.handleError);
+    }
+
+
 
     resetPasswordAccount(value: any) {
         const body = JSON.stringify(value);

@@ -245,8 +245,10 @@ export class VendorAddProductComponent implements OnInit, OnDestroy {
         }
 
     }
-    newFeature:string;
-    newThaiFeature:string;
+
+    newFeature: string;
+    newThaiFeature: string;
+
     onAddNewFeature(newFeature: string, lang: string) {
 
         switch (lang) {
@@ -268,7 +270,7 @@ export class VendorAddProductComponent implements OnInit, OnDestroy {
 
     onDeleteFeature(feature: string, lang: string) {
 
-        switch (lang){
+        switch (lang) {
             case 'th':
                 let i = this.myFormThaiFeatures.indexOf(feature);
                 if (i != -1) {

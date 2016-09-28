@@ -19,6 +19,7 @@
 <navbar-vendor-component></navbar-vendor-component>
 
 <div class="container">
+    <a (click)="goToVendorDashboard()">Back to Dashboard</a>
     <h1>{{'All Listing' | translate}}</h1>
     <hr>
     <div class="row row--product" *ngFor="let app of apps">

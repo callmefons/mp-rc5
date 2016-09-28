@@ -25,9 +25,12 @@ export class VendorDashboardComponent implements OnInit, OnDestroy {
 
   username:string = '';
 
-  sub_vendorService:Subscription;
+  sub_vendor_organization:Subscription;
+  sub_vendor_profile:Subscription;
   vendor_organization$:Observable<any>;
   vendor_organization:Vendor;
+  vendor_profile$:Observable<any>;
+  vendor_profile:Vendor;
 
   constructor(
     private _router:Router,
@@ -39,30 +42,31 @@ export class VendorDashboardComponent implements OnInit, OnDestroy {
 
   ngOnInit(){
     this.getOrganizationProfile();
+    this.getVendorProfile();
   }
 
   ngOnDestroy(){
-    if(this.sub_vendorService)this.sub_vendorService.unsubscribe();
+    if(this.sub_vendor_organization)this.sub_vendor_organization.unsubscribe();
+    if(this.sub_vendor_profile)this.sub_vendor_profile.unsubscribe();
   }
 
   private getOrganizationProfile() {
     this.vendor_organization$ = this._vendorService.getOrganizationProfile();
-    this.sub_vendorService = this.vendor_organization$.subscribe((vendor:any)=>{
+    this.sub_vendor_organization = this.vendor_organization$.subscribe((vendor:any)=>{
       this.vendor_organization = vendor;
       this.loading = false;
     });
-  }
-
-  goToAddService(){
-    this._router.navigate([`vendor/add`]);
-  }
-
-  goToViewAllListing(){
-    this._router.navigate([`vendor/listing`]);
   }
 
   goToEditProfile(){
     this._router.navigate([`vendor/profile`]);
   }
 
+  private getVendorProfile() {
+    this.vendor_profile$ = this._vendorService.getVendorProfile();
+    this.sub_vendor_profile = this.vendor_profile$.subscribe((vendor:any)=>{
+      this.vendor_profile = vendor;
+      //this.loading = false;
+    });
+  }
 }

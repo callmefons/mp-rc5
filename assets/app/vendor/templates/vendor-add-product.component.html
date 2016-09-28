@@ -11,7 +11,9 @@
             </div>
             <div class="modal-footer">
                 <div *ngIf="added">
-                    <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="onCancle()">{{'OK' | translate}}</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="onCancle()">{{'OK' |
+                        translate}}
+                    </button>
                 </div>
             </div>
         </div>
@@ -24,13 +26,18 @@
     <!--<div *ngIf="loading">-->
     <!--<loader-template></loader-template>-->
     <!--</div>-->
+    <a><p (click)="onCancle()">Back</p></a>
     <div *ngIf="!loading">
         <div class="row">
             <h1>{{'Add Listing'| translate}}</h1>
             <hr>
             <p>{{'Enter Content in' | translate}}
-                <button class="btn  {{selectedLang == 'en' ? 'btn-primary': 'btn-default'}}" (click)="onChangeLanguaeFrom('en')">{{'English'| translate}}</button>
-                <button class="btn {{selectedLang == 'th' ? 'btn-primary': 'btn-default'}}" (click)="onChangeLanguaeFrom('th')">{{'Thai' | translate}}</button>
+                <button class="btn  {{selectedLang == 'en' ? 'btn-primary': 'btn-default'}}"
+                        (click)="onChangeLanguaeFrom('en')">{{'English'| translate}}
+                </button>
+                <button class="btn {{selectedLang == 'th' ? 'btn-primary': 'btn-default'}}"
+                        (click)="onChangeLanguaeFrom('th')">{{'Thai' | translate}}
+                </button>
             </p>
             <hr>
             <div>
@@ -95,7 +102,8 @@
                                                 placeholder="{{'Description' | translate}}"
                                                 formControlName="description"></textarea>
                                         <div class='validation-error' *ngIf='myForm.controls.description.touched'>
-                                            <div *ngIf="myForm.controls.description.hasError('required')">Description is required
+                                            <div *ngIf="myForm.controls.description.hasError('required')">Description is
+                                                required
                                             </div>
                                         </div>
                                     </fieldset>
@@ -109,7 +117,8 @@
                                                   placeholder="{{'Short Description' | translate}}"
                                                   formControlName="shortdescription"></textarea>
                                         <div class='validation-error' *ngIf='myForm.controls.shortdescription.touched'>
-                                            <div *ngIf="myForm.controls.shortdescription.hasError('required')">Short Description is required
+                                            <div *ngIf="myForm.controls.shortdescription.hasError('required')">Short
+                                                Description is required
                                             </div>
                                         </div>
                                     </fieldset>
@@ -126,7 +135,8 @@
                                                 placeholder="{{'Description' | translate}}"
                                                 formControlName="thai_description"></textarea>
                                         <div class='validation-error' *ngIf='myForm.controls.thai_description.touched'>
-                                            <div *ngIf="myForm.controls.thai_description.hasError('required')">Thai Description is required
+                                            <div *ngIf="myForm.controls.thai_description.hasError('required')">Thai
+                                                Description is required
                                             </div>
                                         </div>
                                     </fieldset>
@@ -139,8 +149,10 @@
                                                   class="form-control"
                                                   placeholder="{{'Short Description' | translate}}"
                                                   formControlName="thai_shortdescription"></textarea>
-                                        <div class='validation-error' *ngIf='myForm.controls.thai_shortdescription.touched'>
-                                            <div *ngIf="myForm.controls.thai_shortdescription.hasError('required')">Thai Short Description is required
+                                        <div class='validation-error'
+                                             *ngIf='myForm.controls.thai_shortdescription.touched'>
+                                            <div *ngIf="myForm.controls.thai_shortdescription.hasError('required')">Thai
+                                                Short Description is required
                                             </div>
                                         </div>
                                     </fieldset>
@@ -187,7 +199,8 @@
                                                 class="form-control"
                                                 placeholder="{{'Features' | translate}}">
                                         <button type="button" class="btn btn-sm btn-default"
-                                                (click)="onAddNewFeature(newThaiFeature, 'th')">+ {{'Features' | translate}}
+                                                (click)="onAddNewFeature(newThaiFeature, 'th')">+ {{'Features' |
+                                            translate}}
                                         </button>
                                     </fieldset>
                                 </div>
@@ -211,13 +224,13 @@
 
                                     <form class="form-horizontal">
 
-                                        <div class="checkbox">
-                                            <label>
-                                                <input type="checkbox"
-                                                       [checked]="checkAll"
-                                                       (change)="onCheckboxPricingModel(0,$event)"> All
-                                            </label>
-                                        </div>
+                                        <!--<div class="checkbox">-->
+                                        <!--<label>-->
+                                        <!--<input type="checkbox"-->
+                                        <!--[checked]="checkAll"-->
+                                        <!--(change)="onCheckboxPricingModel(0,$event)"> All-->
+                                        <!--</label>-->
+                                        <!--</div>-->
 
                                         <div class="checkbox" *ngFor="let opt of options.pricing_model">
                                             <label>

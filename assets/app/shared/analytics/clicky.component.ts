@@ -36,6 +36,7 @@ export class ClickyComponent {
   sub:Subscription;
   apps$:Observable<any>;
   apps:any[] = [];
+  loading:boolean = true;
 
   constructor(private _clickyService:ClickyService,
               private _productService:ProductService,
@@ -51,10 +52,15 @@ export class ClickyComponent {
   }
 
   getProductOfDeveloper() {
+    this.loading = true;
     this.apps$ = this._productService.getProductOfDeveloper();
     this.sub = this.apps$.subscribe((apps:any) => {
       this.apps = apps;
-      this.getAnalytics(apps[0].id);
+      if(this.apps.length > 0){
+        this.getAnalytics(this.apps[0].id);
+        this.loading = false;
+      }
+
     });
   }
 
@@ -267,6 +273,14 @@ export class ClickyComponent {
     // console.log('log',product_log)
     this.logs = product_log;
 
+  }
+
+  goToAddService(){
+    this._router.navigate([`vendor/add`]);
+  }
+
+  goToViewAllListing(){
+    this._router.navigate([`vendor/listing`]);
   }
 
   goToEditApp(appId:number){

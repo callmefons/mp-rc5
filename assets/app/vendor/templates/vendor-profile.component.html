@@ -28,7 +28,8 @@
             </div>
             <div class="modal-footer">
                 <button *ngIf="resetPassword"
-                        type="button" class="btn btn-primary" data-dismiss="modal">{{'OK'| translate}}</button>
+                        type="button" class="btn btn-primary" data-dismiss="modal">{{'OK'| translate}}
+                </button>
             </div>
         </div>
     </div>
@@ -42,361 +43,16 @@
     <h1>Profile</h1>
     <div class="row">
         <div class="col-xs-12">
-            <ul class="nav nav-tabs" *ngIf="editMode">
-                <li class="active"><a data-toggle="tab" href="#profile">{{'Profile'| translate}}</a></li>
-                <li><a data-toggle="tab" href="#companyInfo">{{'Company Info' | translate}}</a></li>
-                <li><a data-toggle="tab" href="#account">{{'Account' | translate}}</a></li>
-            </ul>
-
-            <!--editMode-->
-            <div class="tab-content" *ngIf="editMode">
-
-                <form [formGroup]="myForm" (ngSubmit)="myForm.valid && onSubmit(myForm.value)" novalidate>
-
-                    <div class="row" *ngIf="editMode">
-                        <div class=".col-md-3 .col-md-offset-3 btn-group-save">
-                            <button type="button" class="btn btn-danger pull-right" (click)="Cancle()">{{'Cancel'| translate}}</button>
-                            <button class='btn btn-info pull-right btn-save' type='submit'
-                                    data-toggle="modal"
-                                    data-target="#modalUpdate">{{'Save' | translate}}
-                            </button>
-                        </div>
-                    </div>
 
 
-                    <div id="profile" class="tab-pane fade in active">
-                        <div *ngIf="!loading_profile">
-                            <div class="row row--tab-content">
-
-                                <div *ngFor="let vendor of vendor_profile">
-                                    <div class="col-md-6">
-                                        <img [src]="myFormLogo" [hidden]="!src" class="img-responsive previewLogo"
-                                             alt="Logo">
-                                        <fieldset class="form-group">
-                                            <p *ngIf="!fileChosen">No file chosen</p>
-                                            <label class="custom-file-upload">
-                                                <input type="file"
-                                                       image-upload
-                                                       (imageSelected)="fileChangeLogo($event)"
-                                                       [resizeOptions]="resizeOptions"
-                                                       formControlName="logo"
-                                                >
-                                                {{'Add Logo'| translate}}
-                                            </label>
-                                        </fieldset>
-                                        <fieldset class="form-group">
-                                            <label>Name:</label>
-                                            <input type="text"
-                                                   class="form-control"
-                                                   formControlName="name"
-                                                   [(ngModel)]="vendor.name">
-                                        </fieldset>
-
-                                        <label>{{'Email'| translate}}:</label>{{ vendor?.email }}<br>
-
-                                        <fieldset class="form-group">
-                                            <label>{{'Position' | translate}}:</label>
-                                            <input type="text"
-                                                   class="form-control"
-                                                   formControlName="position"
-                                                   [(ngModel)]="vendor.position">
-                                        </fieldset>
-                                        <fieldset class="form-group">
-                                            <label>{{'Department' | translate}}:</label>
-                                            <input type="text"
-                                                   class="form-control"
-                                                   formControlName="department"
-                                                   [(ngModel)]="vendor.department">
-                                        </fieldset>
-                                        <fieldset class="form-group">
-                                            <label>{{'Phone' | translate}}:</label>
-                                            <input type="text"
-                                                   class="form-control"
-                                                   formControlName="countrycode"
-                                                   [(ngModel)]="vendor.countrycode">
-                                        </fieldset>
-                                        <fieldset class="form-group">
-                                            <label>{{'Phone Number'| translate}}:</label>
-                                            <input type="text"
-                                                   class="form-control"
-                                                   formControlName="phonenumber"
-                                                   [(ngModel)]="vendor.phonenumber">
-                                        </fieldset>
-                                        <fieldset class="form-group">
-                                            <label>{{'Linkedin'| translate}}:</label>
-                                            <input type="text"
-                                                   class="form-control"
-                                                   formControlName="linkedin"
-                                                   [(ngModel)]="vendor.linkedin">
-                                        </fieldset>
-
-                                    </div>
-                                </div>
-
-                                <div *ngFor="let vendor of vendor_organization">
-
-                                    <div class="col-md-6">
-                                        <fieldset class="form-group">
-                                            <label>{{'Organization Type' | translate}}</label>
-                                            <select class="form-control"
-                                                    formControlName="organization_type"
-                                                    [(ngModel)]="vendor.organization">
-                                                <option *ngFor="let opt of options.organizations" [value]="opt">
-                                                    {{opt}}
-                                                </option>
-                                            </select>
-                                        </fieldset>
-                                        <fieldset class="form-group">
-                                            <label>{{'Suite/Floor' | translate}}:</label>
-                                            <input type="text" class="form-control" placeholder="Suite/Floor"
-                                                   formControlName="suite"
-                                                   [(ngModel)]="vendor.suite">
-                                        </fieldset>
-                                        <fieldset class="form-group">
-                                            <label>{{'Number Street'|translate}}:</label>
-                                            <input type="text" class="form-control" placeholder="Number Street:"
-                                                   formControlName="numberstreet"
-                                                   [(ngModel)]="vendor.numberstreet">
-                                        </fieldset>
-                                        <fieldset class="form-group">
-                                            <label>{{'Country'| translate}}</label>
-                                            <select class="form-control"
-                                                    formControlName="country"
-                                                    [(ngModel)]="vendor.country"
-                                                    (change)="onSelectCountry($event.target.value)">
-                                                <option *ngFor="let country of countries" [value]="country.name">
-                                                    {{country.name}}
-                                                </option>
-                                            </select>
-                                        </fieldset>
-
-                                        <fieldset class="form-group">
-                                            <div *ngIf="!citytype" [class.hidden]="disabled">
-                                                <label>{{'City' | translate}}</label>
-                                                <select class="form-control"
-                                                        formControlName="city"
-                                                >
-                                                    <option *ngFor="let city of citys" [value]="city?.name">
-                                                        {{city.name}}
-                                                    </option>
-                                                </select>
-
-                                            </div>
-                                            <div *ngIf="!statetype" [class.hidden]="disabled">
-                                                <label>{{'State' | translate}}</label>
-                                                <select class="form-control"
-                                                        formControlName="state"
-                                                >
-                                                    <option *ngFor="let state of states" [value]="state?.name">
-                                                        {{state.name}}
-                                                    </option>
-                                                </select>
-                                            </div>
-                                        </fieldset>
-
-                                        <fieldset class="form-group">
-                                            <div *ngIf="citytype">
-                                                <label>{{'City' | translate}}</label>
-                                                <select class="form-control"
-                                                        formControlName="city"
-                                                        [(ngModel)]="vendor.city"
-                                                >
-                                                    <option *ngFor="let city of citys" [value]="city?.name">
-                                                        {{city.name}}
-                                                    </option>
-                                                </select>
-
-                                            </div>
-                                            <div *ngIf="statetype">
-                                                <label>{{'State'| translate}}</label>
-                                                <select class="form-control"
-                                                        formControlName="state"
-                                                        [(ngModel)]="vendor.state"
-                                                >
-                                                    <option *ngFor="let state of states" [value]="state?.name">
-                                                        {{state.name}}
-                                                    </option>
-                                                </select>
-                                            </div>
-                                        </fieldset>
-                                        <fieldset class="form-group">
-                                            <label>{{'Zip/Postal Code' | translate}}:</label>
-                                            <input type="text" class="form-control" placeholder="Zip/Postal Code:"
-                                                   formControlName="zip"
-                                                   [(ngModel)]="vendor.zip">
-                                        </fieldset>
-                                        <fieldset class="form-group">
-                                            <label>{{'Company Phone'| translate}}:</label>
-                                            <input type="text" class="form-control" placeholder="Company Phone:"
-                                                   formControlName="companyphone"
-                                                   [(ngModel)]="vendor.companyphone">
-                                        </fieldset>
-                                        <fieldset class="form-group">
-                                            <label>{{'Tax Id'|translate}}:</label>
-                                            <input type="text" class="form-control" placeholder="Tax Id:"
-                                                   formControlName="taxid"
-                                                   [(ngModel)]="vendor.taxid">
-                                        </fieldset>
-                                        <fieldset class="form-group">
-                                            <label>{{'Facebook' | translate}}:</label>
-                                            <input type="text" class="form-control" placeholder="Facebook:"
-                                                   formControlName="facebook"
-                                                   [(ngModel)]="vendor.facebook">
-                                        </fieldset>
-                                        <fieldset class="form-group">
-                                            <label>{{'Twitter'| translate}}:</label>
-                                            <input type="text" class="form-control" placeholder="Twitter:"
-                                                   formControlName="twitter"
-                                                   [(ngModel)]="vendor.twitter">
-                                        </fieldset>
-                                        <fieldset class="form-group">
-                                            <label>{{'Line' | translate}}:</label>
-                                            <input type="text" class="form-control" placeholder="Line:"
-                                                   formControlName="line"
-                                                   [(ngModel)]="vendor.line">
-                                        </fieldset>
-                                        <fieldset class="form-group">
-                                            <label>{{'Company Name'| translate}}:</label>
-                                            <input type="text" class="form-control" placeholder="Company Name:"
-                                                   formControlName="company_name"
-                                                   [(ngModel)]="vendor.companyname">
-                                        </fieldset>
-                                        <fieldset class="form-group">
-                                            <label>{{'Url'| translate}}:</label>
-                                            <input type="text" class="form-control" placeholder="Url:"
-                                                   formControlName="url"
-                                                   [(ngModel)]="vendor.url">
-                                        </fieldset>
-                                        <fieldset class="form-group">
-                                            <label>{{'Year Founded' | translate}}</label>
-                                            <select class="form-control"
-                                                    formControlName="year"
-                                                    [(ngModel)]="vendor.year">
-                                                <option *ngFor="let opt of options.year_founded" [value]="opt">{{opt}}
-                                                </option>
-                                            </select>
-                                        </fieldset>
-                                        <fieldset class="form-group">
-                                            <label>{{'What is your company mission statement or tagline'| translate}}</label>
-                                            <textarea class="form-control" rows="6"
-                                                      formControlName="mission"
-                                                      [(ngModel)]="vendor.mission">
-                            </textarea>
-                                        </fieldset>
-                                        <fieldset class="form-group">
-                                            <label>{{'How were you founded or started'| translate}}?:</label>
-                                            <textarea class="form-control" rows="6"
-                                                      formControlName="founded"
-                                                      [(ngModel)]="vendor.founded">
-                            </textarea>
-                                        </fieldset>
-                                        <fieldset class="form-group">
-                                            <label>{{'Team Size'| translate}}:</label>
-                                            <input type="text" class="form-control" placeholder="Team Size:"
-                                                   formControlName="size"
-                                                   [(ngModel)]="vendor.size">
-                                        </fieldset>
-                                        <fieldset class="form-group">
-                                            <label>{{'Incubator Affiliation'| translate}}:</label>
-                                            <input type="text" class="form-control" placeholder="Incubator Affiliation:"
-                                                   formControlName="affiliation"
-                                                   [(ngModel)]="vendor.affiliation">
-                                        </fieldset>
-                                    </div>
-                                </div>
-
-
-                            </div>
-                        </div>
-                    </div>
-                </form>
-            </div>
-
-            <ul class="nav nav-tabs" *ngIf="!editMode">
-                <li class="active"><a data-toggle="tab" href="#profileEdit">{{'Profile' | translate}}</a></li>
-                <li><a data-toggle="tab" href="#companyInfoEdit">{{'Company Info' | translate}}</a></li>
-                <li><a data-toggle="tab" href="#accountEdit">{{'Account' | translate}}</a></li>
-            </ul>
-            <!--editMode-->
-            <div class="tab-content" *ngIf="!editMode">
-
-                <div *ngIf="!editMode">
-                    <button class="btn btn-primary pull-right" (click)="onEdit()">{{'Edit' | translate}}</button>
-                </div>
-
-                <div id="profileEdit" class="tab-pane fade in active">
-                    <div *ngIf="!loading_profile">
-                        <div class="row row--tab-content" *ngFor="let vendor of vendor_profile">
-                            <div class="col-md-6">
-                                <label>{{'Name'| translate}}:</label>{{ vendor?.name }}<br>
-                                <label>{{'Email'| translate}}:</label>{{ vendor?.email }}<br>
-                            </div>
-                            <div class="col-md-6">
-                                <label>{{'Position'| translate}}:</label> {{ vendor?.position }}<br>
-                                <label>{{'Department' | translate}}:</label> {{ vendor?.department }}<br>
-                                <label>{{'Phone' | translate}}:</label> {{vendor?.countrycode}} - {{ vendor?.phonenumber }}<br>
-                                <label>{{'Linkedin' | translate}}:</label> {{ vendor?.linkedin }}<br>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-                <div id="companyInfoEdit" class="tab-pane fade">
-                    <div *ngIf="!loading_organization">
-                        <div class="row row--tab-content" *ngFor="let vendor of vendor_organization">
-                            <div class="col-md-12">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <label>{{'Vendor'| translate}}:</label> {{ vendor?.vendor }}<br>
-                                        <label>{{'Address'| translate}}</label>
-                                        <br>
-                                        <label>{{'Suite'| translate}}:</label> {{ vendor?.suite }}<br>
-                                        <label>{{'Number Street'| translate}}:</label> {{ vendor?.numberstreet }}<br>
-                                        <label>{{'Country'| translate}}:</label> {{ vendor?.country }}<br>
-                                        <label>{{'State'| translate}}:</label> {{ vendor?.state }}<br>
-                                        <label>{{'City'| translate}}:</label> {{ vendor?.city }}<br>
-                                        <label>{{'Zip/Postal Code'| translate}}:</label> {{ vendor?.zip }}<br>
-                                        <label>{{'Company Phone'| translate}}:</label> {{ vendor?.companyphone }}<br>
-                                        <label>{{'Tax Id'| translate}}:</label> {{ vendor?.taxid }}<br>
-                                        <label>{{'Facebook'| translate}}:</label> {{ vendor?.facebook }}<br>
-                                        <label>{{'Twitter' | translate}}:</label> {{ vendor?.twitter }}<br>
-                                        <label>{{'Line' | translate}}:</label> {{ vendor?.line }}<br>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <img class="img-responsive" [src]="vendor?.logo">
-
-                                                <!-- <img src="{{ vendor?.logo }}" class="img-responsive" alt="Company Image"> -->
-                                            </div>
-                                            <div class="col-md-6">
-                                                <label>{{'Company Name' | translate}}:</label> {{ vendor?.companyname }}<br>
-                                                <label>{{'Url'| translate}}:</label> {{ vendor?.url }}<br>
-                                                <label>{{'Year' | translate}}:</label> {{ vendor?.year }}<br>
-                                            </div>
-                                        </div>
-                                        <label>{{'Mission'| translate}}:</label> {{ vendor?.mission }}<br>
-                                        <label>{{'How were you founded or started' | translate}}?:</label> {{ vendor?.founded }}<br>
-                                        <label>{{'Team Size' | translate}}:</label> {{ vendor?.size }}<br>
-                                        <label>{{'Incubator Affiliation'| translate}}:</label> {{ vendor?.affiliation }}<br>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div id="accountEdit" class="tab-pane fade">
-
+            <tabset [justified]="true">
+                <!--Account Tab-->
+                <tab heading="Account" [disabled]="disabled">
                     <div class="row">
                         <div class="col-md-6">
+                            <form [formGroup]="myPasswordForm" novalidate>
 
-                            <form [formGroup]="myPasswordForm" (ngSubmit)="myPasswordForm.valid &&
-                            onSubmitPassword(myPasswordForm.value)"
-                                  novalidate>
-
-                                <h4>{{'Reset Password'| translate}}</h4>
+                                <!--<h4>{{'Reset Password'| translate}}</h4>-->
 
                                 <fieldset class="form-group">
                                     <label>{{'Current Password'| translate}}</label>
@@ -422,19 +78,365 @@
                                     <div class="col-md-12">
                                         <button data-toggle="modal"
                                                 data-target="#modalResetPassword"
-                                                class='btn btn-info' type='submit'>{{'Reset'| translate}}
+                                                class='btn btn-info' type='button'
+                                        (click)="onSubmitPassword(myPasswordForm.value)">{{'Reset'| translate}}
                                         </button>
                                     </div>
                                 </div>
 
                             </form>
+                        </div>
+                    </div>
+                </tab>
+
+                <tab heading="Personal Profile" [disabled]="disabled">
+                    <div *ngIf="!editMode">
+
+                        <button class="btn btn-primary pull-right" (click)="onEdit()">{{'Edit' | translate}}</button>
+
+
+                        <div class="row" *ngFor="let vendor of vendor_profile">
+                            <div class="col-md-6">
+                                <label>{{'Name'| translate}}:</label>{{ vendor?.name }}<br>
+                                <label>{{'Email'| translate}}:</label>{{ vendor?.email }}<br>
+                            </div>
+                            <div class="col-md-6">
+                                <label>{{'Position'| translate}}:</label> {{ vendor?.position }}<br>
+                                <label>{{'Department' | translate}}:</label> {{ vendor?.department }}<br>
+                                <label>{{'Phone' | translate}}:</label> {{vendor?.countrycode}} - {{
+                                vendor?.phonenumber}}<br>
+                                <label>{{'Linkedin' | translate}}:</label> {{ vendor?.linkedin }}<br>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div *ngIf="editMode">
+                        <button class='btn btn-info pull-right btn-save'
+                                type='button' (click)="onSubmitVendorProfile(myFormVendorProfile.value)">Save
+                        </button>
+                        <button type="button" class="btn btn-danger pull-right" (click)="Cancle()">
+                            {{'Cancel'|translate}}
+                        </button>
+                        <form [formGroup]="myFormVendorProfile" novalidate>
+
+                            <div *ngFor="let vendor of vendor_profile">
+                                <div class="col-md-6">
+                                    <fieldset class="form-group">
+                                        <label>{{'Name'| translate}}:</label>
+                                        <input type="text"
+                                               class="form-control"
+                                               formControlName="name"
+                                               [(ngModel)]="vendor.name">
+                                    </fieldset>
+                                    <fieldset class="form-group">
+                                        <label>{{'Email'| translate}}:</label>{{ vendor?.email }}<br>
+                                    </fieldset>
+                                </div>
+                                <div class="col-md-6">
+                                    <fieldset class="form-group">
+                                        <label>{{'Position'| translate}}:</label>
+                                        <input type="text"
+                                               class="form-control"
+                                               formControlName="position"
+                                               [(ngModel)]="vendor.position">
+                                    </fieldset>
+
+                                    <fieldset class="form-group">
+                                        <label>{{'Department' | translate}}:</label>
+                                        <input type="text"
+                                               class="form-control"
+                                               formControlName="department"
+                                               [(ngModel)]="vendor.department">
+                                    </fieldset>
+                                    <fieldset class="form-group">
+                                        <label>{{'Phone' | translate}}:</label>
+                                        <input type="text"
+                                               class="form-control"
+                                               formControlName="countrycode"
+                                               [(ngModel)]="vendor.countrycode">
+                                    </fieldset>
+                                    <fieldset class="form-group">
+                                        <label>{{'Phone Number'| translate}}:</label>
+                                        <input type="text"
+                                               class="form-control"
+                                               formControlName="phonenumber"
+                                               [(ngModel)]="vendor.phonenumber">
+                                    </fieldset>
+                                    <fieldset class="form-group">
+                                        <label>{{'Linkedin'| translate}}:</label>
+                                        <input type="text"
+                                               class="form-control"
+                                               formControlName="linkedin"
+                                               [(ngModel)]="vendor.linkedin">
+                                    </fieldset>
+
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </tab>
+
+
+                <tab heading="Company Profile" [disabled]="disabled">
+
+                    <div *ngIf="!editMode">
+                        <button class="btn btn-primary pull-right" (click)="onEdit()">{{'Edit' | translate}}</button>
+
+                        <div class="row" *ngFor="let vendor of vendor_organization">
+
+
+                            <div class="col-md-6">
+                                <img class="img-responsive" [src]="vendor?.logo">
+
+                                <label>{{'Company Name' | translate}}:</label> {{ vendor?.companyname }}<br>
+                                <label>{{'Url'| translate}}:</label> {{ vendor?.url }}<br>
+                                <label>{{'Year' | translate}}:</label> {{ vendor?.year }}<br>
+
+
+                                <label>{{'Mission'| translate}}:</label> {{ vendor?.mission }}<br>
+                                <label>{{'How were you founded or started' | translate}}?:</label> {{
+                                vendor?.founded }}<br>
+                                <label>{{'Team Size' | translate}}:</label> {{ vendor?.size }}<br>
+                                <label>{{'Incubator Affiliation'| translate}}:</label> {{ vendor?.affiliation }}<br>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label>{{'Vendor'| translate}}</label> {{ vendor?.vendor }}<br>
+                                <label>{{'Address'| translate}}</label>
+                                <br>
+                                <label>{{'Suite'| translate}}:</label> {{ vendor?.suite }}<br>
+                                <label>{{'Number Street'| translate}}:</label> {{ vendor?.numberstreet }}<br>
+                                <label>{{'Country'| translate}}:</label> {{ vendor?.country }}<br>
+                                <label>{{'State'| translate}}:</label> {{ vendor?.state }}<br>
+                                <label>{{'City'| translate}}:</label> {{ vendor?.city }}<br>
+                                <label>{{'Zip/Postal Code'| translate}}:</label> {{ vendor?.zip }}<br>
+                                <label>{{'Company Phone'| translate}}:</label> {{ vendor?.companyphone }}<br>
+                                <label>{{'Tax Id'| translate}}:</label> {{ vendor?.taxid }}<br>
+                                <label>{{'Facebook'| translate}}:</label> {{ vendor?.facebook }}<br>
+                                <label>{{'Twitter' | translate}}:</label> {{ vendor?.twitter }}<br>
+                                <label>{{'Line' | translate}}:</label> {{ vendor?.line }}<br>
+                            </div>
 
                         </div>
                     </div>
-                </div>
-            </div>
 
+
+                    <div *ngIf="editMode">
+                        <button class='btn btn-info pull-right btn-save' type='button'
+                                (click)="onSubmitCompanyProfile(myFormCompanyProfile.value)"
+                                data-toggle="modal"
+                                data-target="#modalUpdate">{{'Save' | translate}}
+                        </button>
+                        <button type="button" class="btn btn-danger pull-right" (click)="Cancle()">
+                            {{'Cancel'|translate}}
+                        </button>
+                        <form [formGroup]="myFormCompanyProfile" novalidate>
+
+                            <div *ngFor="let vendor of vendor_organization">
+
+                                <div class="col-md-6">
+                                    <img [src]="myFormLogo" [hidden]="!src" class="img-responsive previewLogo"
+                                         alt="Logo">
+                                    <fieldset class="form-group">
+                                        <p *ngIf="!fileChosen">No file chosen</p>
+                                        <label class="custom-file-upload">
+                                            <input type="file"
+                                                   image-upload
+                                                   (imageSelected)="fileChangeLogo($event)"
+                                                   [resizeOptions]="resizeOptions"
+                                                   formControlName="logo"
+                                            >
+                                            {{'Add Logo'| translate}}
+                                        </label>
+                                    </fieldset>
+
+                                    <fieldset class="form-group">
+                                        <label>{{'Company Name'| translate}}:</label>
+                                        <input type="text" class="form-control" placeholder="Company Name:"
+                                               formControlName="company_name"
+                                               [(ngModel)]="vendor.companyname">
+                                    </fieldset>
+                                    <fieldset class="form-group">
+                                        <label>{{'Url'| translate}}:</label>
+                                        <input type="text" class="form-control" placeholder="Url:"
+                                               formControlName="url"
+                                               [(ngModel)]="vendor.url">
+                                    </fieldset>
+                                    <fieldset class="form-group">
+                                        <label>{{'Year Founded' | translate}}</label>
+                                        <select class="form-control"
+                                                formControlName="year"
+                                                [(ngModel)]="vendor.year">
+                                            <option *ngFor="let opt of options.year_founded" [value]="opt">{{opt}}
+                                            </option>
+                                        </select>
+                                    </fieldset>
+                                    <fieldset class="form-group">
+                                        <label>{{'What is your company mission statement or tagline'|
+                                            translate}}</label>
+                                        <textarea class="form-control" rows="6"
+                                                  formControlName="mission"
+                                                  [(ngModel)]="vendor.mission">
+        </textarea>
+                                    </fieldset>
+                                    <fieldset class="form-group">
+                                        <label>{{'How were you founded or started'| translate}}?:</label>
+                                        <textarea class="form-control" rows="6"
+                                                  formControlName="founded"
+                                                  [(ngModel)]="vendor.founded">
+        </textarea>
+                                    </fieldset>
+                                    <fieldset class="form-group">
+                                        <label>{{'Team Size'| translate}}:</label>
+                                        <input type="text" class="form-control" placeholder="Team Size:"
+                                               formControlName="size"
+                                               [(ngModel)]="vendor.size">
+                                    </fieldset>
+                                    <fieldset class="form-group">
+                                        <label>{{'Incubator Affiliation'| translate}}:</label>
+                                        <input type="text" class="form-control" placeholder="Incubator Affiliation:"
+                                               formControlName="affiliation"
+                                               [(ngModel)]="vendor.affiliation">
+                                    </fieldset>
+                                </div>
+
+
+                                <div class="col-md-6">
+                                    <fieldset class="form-group">
+                                        <label>{{'Organization Type' | translate}}</label>
+                                        <select class="form-control"
+                                                formControlName="organization_type"
+                                                [(ngModel)]="vendor.organization">
+                                            <option *ngFor="let opt of options.organizations" [value]="opt">
+                                                {{opt}}
+                                            </option>
+                                        </select>
+                                    </fieldset>
+                                    <fieldset class="form-group">
+                                        <label>{{'Suite/Floor' | translate}}:</label>
+                                        <input type="text" class="form-control" placeholder="Suite/Floor"
+                                               formControlName="suite"
+                                               [(ngModel)]="vendor.suite">
+                                    </fieldset>
+                                    <fieldset class="form-group">
+                                        <label>{{'Number Street'|translate}}:</label>
+                                        <input type="text" class="form-control" placeholder="Number Street:"
+                                               formControlName="numberstreet"
+                                               [(ngModel)]="vendor.numberstreet">
+                                    </fieldset>
+                                    <fieldset class="form-group">
+                                        <label>{{'Country'| translate}}</label>
+                                        <select class="form-control"
+                                                formControlName="country"
+                                                [(ngModel)]="vendor.country"
+                                                (change)="onSelectCountry($event.target.value)">
+                                            <option *ngFor="let country of countries" [value]="country.name">
+                                                {{country.name}}
+                                            </option>
+                                        </select>
+                                    </fieldset>
+
+                                    <fieldset class="form-group">
+                                        <div *ngIf="!citytype" [class.hidden]="disabled_country">
+                                            <label>{{'City' | translate}}</label>
+                                            <select class="form-control"
+                                                    formControlName="city"
+                                            >
+                                                <option *ngFor="let city of citys" [value]="city?.name">
+                                                    {{city.name}}
+                                                </option>
+                                            </select>
+
+                                        </div>
+                                        <div *ngIf="!statetype" [class.hidden]="disabled_country">
+                                            <label>{{'State' | translate}}</label>
+                                            <select class="form-control"
+                                                    formControlName="state"
+                                            >
+                                                <option *ngFor="let state of states" [value]="state?.name">
+                                                    {{state.name}}
+                                                </option>
+                                            </select>
+                                        </div>
+                                    </fieldset>
+
+                                    <fieldset class="form-group">
+                                        <div *ngIf="citytype">
+                                            <label>{{'City' | translate}}</label>
+                                            <select class="form-control"
+                                                    formControlName="city"
+                                                    [(ngModel)]="vendor.city"
+                                            >
+                                                <option *ngFor="let city of citys" [value]="city?.name">
+                                                    {{city.name}}
+                                                </option>
+                                            </select>
+
+                                        </div>
+                                        <div *ngIf="statetype">
+                                            <label>{{'State'| translate}}</label>
+                                            <select class="form-control"
+                                                    formControlName="state"
+                                                    [(ngModel)]="vendor.state"
+                                            >
+                                                <option *ngFor="let state of states" [value]="state?.name">
+                                                    {{state.name}}
+                                                </option>
+                                            </select>
+                                        </div>
+                                    </fieldset>
+                                    <fieldset class="form-group">
+                                        <label>{{'Zip/Postal Code' | translate}}:</label>
+                                        <input type="text" class="form-control" placeholder="Zip/Postal Code:"
+                                               formControlName="zip"
+                                               [(ngModel)]="vendor.zip">
+                                    </fieldset>
+                                    <fieldset class="form-group">
+                                        <label>{{'Company Phone'| translate}}:</label>
+                                        <input type="text" class="form-control" placeholder="Company Phone:"
+                                               formControlName="companyphone"
+                                               [(ngModel)]="vendor.companyphone">
+                                    </fieldset>
+                                    <fieldset class="form-group">
+                                        <label>{{'Tax Id'|translate}}:</label>
+                                        <input type="text" class="form-control" placeholder="Tax Id:"
+                                               formControlName="taxid"
+                                               [(ngModel)]="vendor.taxid">
+                                    </fieldset>
+                                    <fieldset class="form-group">
+                                        <label>{{'Facebook' | translate}}:</label>
+                                        <input type="text" class="form-control" placeholder="Facebook:"
+                                               formControlName="facebook"
+                                               [(ngModel)]="vendor.facebook">
+                                    </fieldset>
+                                    <fieldset class="form-group">
+                                        <label>{{'Twitter'| translate}}:</label>
+                                        <input type="text" class="form-control" placeholder="Twitter:"
+                                               formControlName="twitter"
+                                               [(ngModel)]="vendor.twitter">
+                                    </fieldset>
+                                    <fieldset class="form-group">
+                                        <label>{{'Line' | translate}}:</label>
+                                        <input type="text" class="form-control" placeholder="Line:"
+                                               formControlName="line"
+                                               [(ngModel)]="vendor.line">
+                                    </fieldset>
+
+                                </div>
+                            </div>
+
+
+                        </form>
+
+
+                    </div>
+
+                </tab>
+
+
+            </tabset>
 
         </div>
+
     </div>
 </div>

@@ -73,6 +73,10 @@ export class VendorListingComponent implements OnInit, OnDestroy {
     this._router.navigate([`vendor/edit/${appId}`]);
   }
 
+  goToVendorDashboard(){
+    this._router.navigate([`vendor/dashboard`]);
+  }
+
   deleteProduct(id:any) {
 
     this._productService.deleteProduct(id).subscribe((res) => {

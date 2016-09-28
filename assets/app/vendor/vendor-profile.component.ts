@@ -1,5 +1,7 @@
-import {Component, OnInit, OnDestroy} from '@angular/core';
+import {Component, ChangeDetectionStrategy, OnInit, OnDestroy} from '@angular/core';
 import {Vendor} from "../shared/models/vendor.model";
+import {VendorCompany} from "../shared/models/vendor-company.model";
+
 import {Observable, Subscription} from "rxjs";
 import {VendorService} from "../shared/api-service/vendor/vendor.service";
 import {DataCountryService} from '../shared/ng2-service/ng2-country/country.service';
@@ -9,13 +11,15 @@ import {State} from '../shared/ng2-service/ng2-country/state';
 import {Router} from "@angular/router";
 import {FormBuilder, FormGroup} from "@angular/forms";
 import {ImageUpload, ImageResult, ResizeOptions} from '../shared/ng2-service/ng2-imageupload/index';
-
+import {TabsetComponent} from 'ng2-bootstrap/ng2-bootstrap'
 
 @Component({
     moduleId: module.id,
     selector: 'sd-vendor',
+    changeDetection: ChangeDetectionStrategy.OnPush,
     templateUrl: 'templates/vendor-profile.component.html',
     styleUrls: ['styles/vendor-profile.component.css'],
+    providers: [TabsetComponent]
 })
 
 export class VendorProfileComponent implements OnInit, OnDestroy {
@@ -34,6 +38,8 @@ export class VendorProfileComponent implements OnInit, OnDestroy {
     loading_organization: boolean = false;
 
     myForm: FormGroup;
+    myFormVendorProfile: FormGroup;
+    myFormCompanyProfile: FormGroup;
 
     countries: Country[];
     states: State[];
@@ -43,7 +49,8 @@ export class VendorProfileComponent implements OnInit, OnDestroy {
     citytype: boolean = false;
     statetype: boolean = false;
     empty: string;
-    disabled: boolean = true;
+    disabled_country :boolean = true;
+    disabled: boolean = false;
 
     src: string = "";
     resizeOptions: ResizeOptions = {
@@ -51,8 +58,8 @@ export class VendorProfileComponent implements OnInit, OnDestroy {
         resizeMaxWidth: 160
     };
 
-    myFormLogo:string = '';
-    fileChosen:boolean = true;
+    myFormLogo: string = '';
+    fileChosen: boolean = true;
 
 
     public options: any = {
@@ -60,11 +67,47 @@ export class VendorProfileComponent implements OnInit, OnDestroy {
         year_founded: []
     };
 
+    public tabs: Array<any> = [
+        {title: 'Account', content: 'Dynamic content 1', active: true, disabled: false}
+    ];
+
     constructor(private router: Router,
                 private _fb: FormBuilder,
                 private _vendorService: VendorService,
                 private _countryService: DataCountryService,
                 private _stateService: DataStateService) {
+
+        this.myFormVendorProfile = this._fb.group({
+            name: [''],
+            position: [''],
+            department: [''],
+            countrycode: [''],
+            phonenumber: [''],
+            linkedin: ['']
+        });
+
+        this.myFormCompanyProfile = this._fb.group({
+            organization_type: [''],
+            suite: [''],
+            numberstreet: [''],
+            city: [''],
+            state: [''],
+            country: [''],
+            zip: [''],
+            company_name: [''],
+            url: [''],
+            logo: [''],
+            year: [''],
+            mission: [''],
+            founded: [''],
+            size: [''],
+            affiliation: [''],
+            companyphone: [''],
+            taxid: [''],
+            facebook: [''],
+            twitter: [''],
+            line: ['']
+        });
 
         this.myForm = this._fb.group({
             name: [''],
@@ -96,10 +139,10 @@ export class VendorProfileComponent implements OnInit, OnDestroy {
         });
 
 
-        this.myPasswordForm= this._fb.group({
-            currentpassword:[''],
-            newpassword:[''],
-            newpassword_confirmation:['']
+        this.myPasswordForm = this._fb.group({
+            currentpassword: [''],
+            newpassword: [''],
+            newpassword_confirmation: ['']
         });
 
         this.countries = this._countryService.getCountries();
@@ -169,43 +212,59 @@ export class VendorProfileComponent implements OnInit, OnDestroy {
 
     }
 
+    onSubmitCompanyProfile(value:Object){
 
-    onSubmit(value: Object) {
-        const vendor = new Vendor(
-            this.myForm.value.name,
-            this.myForm.value.position,
-            this.myForm.value.department,
-            this.myForm.value.countrycode,
-            this.myForm.value.phonenumber,
-            this.myForm.value.linkedin,
-            this.myForm.value.organization_type,
-            this.myForm.value.suite,
-            this.myForm.value.numberstreet,
-            this.myForm.value.city,
-            this.myForm.value.state,
-            this.myForm.value.country,
-            this.myForm.value.zip,
-            this.myForm.value.company_name,
-            this.myForm.value.url,
+        const vendor_company = new VendorCompany(
+
+            this.myFormCompanyProfile.value.organization_type,
+            this.myFormCompanyProfile.value.suite,
+            this.myFormCompanyProfile.value.numberstreet,
+            this.myFormCompanyProfile.value.city,
+            this.myFormCompanyProfile.value.state,
+            this.myFormCompanyProfile.value.country,
+            this.myFormCompanyProfile.value.zip,
+            this.myFormCompanyProfile.value.company_name,
+            this.myFormCompanyProfile.value.url,
             this.myFormLogo,
-            this.myForm.value.year,
-            this.myForm.value.mission,
-            this.myForm.value.founded,
-            this.myForm.value.size,
-            this.myForm.value.affiliation,
-            this.myForm.value.companyphone,
-            this.myForm.value.taxid,
-            this.myForm.value.facebook,
-            this.myForm.value.twitter,
-            this.myForm.value.line
+            this.myFormCompanyProfile.value.year,
+            this.myFormCompanyProfile.value.mission,
+            this.myFormCompanyProfile.value.founded,
+            this.myFormCompanyProfile.value.size,
+            this.myFormCompanyProfile.value.affiliation,
+            this.myFormCompanyProfile.value.companyphone,
+            this.myFormCompanyProfile.value.taxid,
+            this.myFormCompanyProfile.value.facebook,
+            this.myFormCompanyProfile.value.twitter,
+            this.myFormCompanyProfile.value.line
         );
 
+        console.log(vendor_company);
+
+        this._vendorService.updateVendorCompany(vendor_company)
+            .subscribe((res) => {
+                console.log(res)
+                },
+                error => this.errorMessage = <any>error);
+
+
+    }
+
+    onSubmitVendorProfile(value:Object){
+        const vendor = new Vendor(
+            this.myFormVendorProfile.value.name,
+            this.myFormVendorProfile.value.position,
+            this.myFormVendorProfile.value.department,
+            this.myFormVendorProfile.value.countrycode,
+            this.myFormVendorProfile.value.phonenumber,
+            this.myFormVendorProfile.value.linkedin
+        );
         this._vendorService.updateVendorProfile(vendor)
             .subscribe((res) => {
-                    this.editMode = false;
+                console.log(res);
                 },
                 error => this.errorMessage = <any>error);
     }
+
 
     fileChangeLogo(imageResult: ImageResult) {
         this.myFormLogo = imageResult.resized.dataURL;
@@ -214,13 +273,17 @@ export class VendorProfileComponent implements OnInit, OnDestroy {
 
     //Reset Password
     myPasswordForm: FormGroup;
-    resetPassword:boolean = false;
+    resetPassword: boolean = false;
+
     onSubmitPassword(value: Object) {
+        console.log(value);
 
         this.resetPassword = false;
+        this.myPasswordForm.reset();
 
         this._vendorService.resetPasswordAccount(value)
             .subscribe((res) => {
+                console.log(res)
                     this.resetPassword = true;
                 },
                 error => this.errorMessage = <any>error);
@@ -231,10 +294,14 @@ export class VendorProfileComponent implements OnInit, OnDestroy {
 
     onEdit() {
         this.editMode = true;
+        this.disabled = true;
     }
 
     Cancle() {
         this.editMode = false;
+
+            this.disabled = false;
+
     }
 
 

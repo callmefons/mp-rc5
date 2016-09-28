@@ -22,6 +22,7 @@
 <navbar-vendor-component></navbar-vendor-component>
 
 <div class="container">
+    <a><p (click)="onCancle()">Back</p></a>
     <div *ngIf="!loading">
         <div class="row">
             <h1>{{'Manage' | translate}} {{apps.name}}</h1>
@@ -238,12 +239,12 @@
 
                             <form class="form-horizontal">
 
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox"
-                                               (change)="onCheckboxPricingModelAll(0,$event)"> All
-                                    </label>
-                                </div>
+                                <!--<div class="checkbox">-->
+                                    <!--<label>-->
+                                        <!--<input type="checkbox"-->
+                                               <!--(change)="onCheckboxPricingModelAll(0,$event)"> All-->
+                                    <!--</label>-->
+                                <!--</div>-->
 
                                 <div class="checkbox" *ngFor="let opt of pricingmodelsTag; let i = index;">
                                     <label>

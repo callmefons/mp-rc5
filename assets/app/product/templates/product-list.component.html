@@ -35,7 +35,7 @@
                             <label *ngIf="opt.type === 'industry'">
                                 <input #{{i}} type="checkbox"
                                        [checked]="opt.id == service_id || all_industry"
-                                       (change)="onCheckboxFilterTag(opt.id,$event)"
+                                       (change)="onCheckboxFilterTag(opt.dbid,opt.type,$event)"
                                 >{{opt.name}} ({{opt.count}})</label>
                         </div>
                     </accordion-group>
@@ -58,7 +58,7 @@
                             <label *ngIf="opt.type === 'category'">
                                 <input #{{i}} type="checkbox"
                                        [checked]="opt.id == service_id || all_category"
-                                       (change)="onCheckboxFilterTag(opt.id,$event)"
+                                       (change)="onCheckboxFilterTag(opt.dbid,opt.type,$event)"
                                 >{{opt.name}} ({{opt.count}})</label>
                         </div>
                     </accordion-group>
@@ -80,7 +80,7 @@
                             <label *ngIf="opt.type === 'language'">
                                 <input #{{i}} type="checkbox"
                                        [checked]="opt.id == service_id || all_language"
-                                       (change)="onCheckboxFilterTag(opt.id,$event)"
+                                       (change)="onCheckboxFilterTag(opt.dbid,opt.type,$event)"
                                 >{{opt.name}} ({{opt.count}})</label>
                         </div>
                     </accordion-group>
@@ -102,7 +102,7 @@
                             <label *ngIf="opt.type === 'department'">
                                 <input #{{i}} type="checkbox"
                                        [checked]="opt.id == service_id || all_department"
-                                       (change)="onCheckboxFilterTag(opt.id,$event)"
+                                       (change)="onCheckboxFilterTag(opt.dbid,opt.type,$event)"
                                 >{{opt.name}} ({{opt.count}})</label>
                         </div>
                     </accordion-group>

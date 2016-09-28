@@ -72,8 +72,8 @@ export const LANG_EN_TRANS = {
 
     //Vendor Dashboard
     'Edit Company Profile': 'Edit Company Profile',
-    'Add New Listing': 'Add New Listing',
-    'All Listing': 'All Listing',
+    'Add New Listing': '+ Add New Listing',
+    'All Listings': 'All Listings',
     'Link': 'Link',
 
     //Vendor Analytics
@@ -177,7 +177,7 @@ export const LANG_EN_TRANS = {
     'View Profile': 'View Profile',
 
     //Admin Listing
-    'All Listings': 'All Listings',
+    // 'All Listings': 'All Listings',
     'New': 'New',
     'Vendors Reviewing': 'Vendors Reviewing',
     'All': 'All',

@@ -18,7 +18,7 @@ import {Search} from "./pipes/searchaccout.pipe";
 import {NavbarAdminComponent} from "./navbar-admin/navbar-admin.component";
 import {ClickyComponent} from "./analytics/clicky.component";
 import {ClickyService} from "./analytics/clicky.service";
-import {AlertComponent, RatingComponent,AccordionModule} from "ng2-bootstrap/ng2-bootstrap";
+import {AlertComponent, RatingComponent,AccordionModule,TabsModule} from "ng2-bootstrap/ng2-bootstrap";
 import {ReviewComponent} from "./review/review.component";
 import {BaseChartComponent} from "ng2-charts/ng2-charts";
 import {ClickyAdminComponent} from "./analytics/clicky-admin.component";
@@ -40,7 +40,8 @@ import {ConfirmModal} from "./confirm-modal/confirm-modal";
         RouterModule,
         ReactiveFormsModule,
         FormsModule,
-        AccordionModule
+        AccordionModule,
+        TabsModule
     ],
     declarations: [
         Search,
@@ -75,6 +76,7 @@ import {ConfirmModal} from "./confirm-modal/confirm-modal";
         RatingComponent,
         ReviewComponent,
         AccordionModule,
+        TabsModule,
         TranslateComponent,
         TranslatePipe,
         ConfirmModal

@@ -39,8 +39,8 @@
                     <a data-dismiss="modal" (click)="goToRegister()" style="margin-right: 5px;"> {{'Create new account'| translate}}</a> | <a (click)="goToForgotPassword()" data-dismiss="modal"> {{'Forgot password' | translate}}</a>
                 </p>
 
-                <button type="submit" (click)="onSubmit(myForm.value)"  class="btn btn-primary">{{'Sign in' | translate}}</button>
-                <button type="button" class="btn btn-default"  (click)="close.click()">{{'Cancel' | translate}}</button>
+                <button data-dismiss="modal" type="submit" (click)="onSubmit(myForm.value)"  class="btn btn-primary">{{'Sign in' | translate}}</button>
+                <button data-dismiss="modal" type="button" class="btn btn-default"  (click)="close.click()">{{'Cancel' | translate}}</button>
             </div>
 
             <div class="modal-body" *ngIf="login">

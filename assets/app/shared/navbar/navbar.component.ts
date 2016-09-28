@@ -80,6 +80,16 @@ export class NavbarComponent {
                     storage.setNameToken(res.data['name']);
                     localStorage.setItem('id', res.data['id']);
                     this.login = true;
+
+                    switch(res.data['role']) {
+                        case 'admin':
+                            this.goToAdmin();
+                            break;
+                        case 'vendor':
+                            this.goToVendor();
+                            break;
+                    }
+
                 }
 
             }, error => this.errorMessage = <any>error);
