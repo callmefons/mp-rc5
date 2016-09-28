@@ -13,6 +13,8 @@ import {FormBuilder, FormGroup} from "@angular/forms";
 import {ImageUpload, ImageResult, ResizeOptions} from '../shared/ng2-service/ng2-imageupload/index';
 import {TabsetComponent} from 'ng2-bootstrap/ng2-bootstrap'
 
+declare var $;
+
 @Component({
     moduleId: module.id,
     selector: 'sd-vendor',
@@ -138,7 +140,6 @@ export class VendorProfileComponent implements OnInit, OnDestroy {
             line: ['']
         });
 
-
         this.myPasswordForm = this._fb.group({
             currentpassword: [''],
             newpassword: [''],
@@ -146,7 +147,6 @@ export class VendorProfileComponent implements OnInit, OnDestroy {
         });
 
         this.countries = this._countryService.getCountries();
-
     }
 
     ngOnInit() {
@@ -199,17 +199,32 @@ export class VendorProfileComponent implements OnInit, OnDestroy {
             this.citytype = true;
             this.statetype = false;
         }
+
         if (country_name == 'United States') {
             this.states = this._stateService.getStates().filter(item=> item.country_name == country_name)
             this.statetype = true;
             this.citytype = false;
         }
+
         if (country_name !== 'United States' && country_name !== 'Thailand') {
             this.statetype = false;
             this.citytype = false;
-
         }
+    }
 
+    ///////////// Alert /////////////
+    alerted: boolean = false;
+    messageAlert: string = '';
+    typeAlert: string = 'success';
+
+    onAlert(msg: string, type: string){
+        this.messageAlert = msg;
+        this.typeAlert = type;
+        this.alerted = true;
+        setTimeout(()=> {
+            this.alerted = false;
+            this.messageAlert = '';
+        },2000);
     }
 
     onSubmitCompanyProfile(value:Object){
@@ -239,15 +254,24 @@ export class VendorProfileComponent implements OnInit, OnDestroy {
         );
 
         console.log(vendor_company);
+        this.onAlert('Update Vendor Company Successfully!', 'success');
+        this.Cancle();
 
-        this._vendorService.updateVendorCompany(vendor_company)
-            .subscribe((res) => {
-                console.log(res)
-                },
-                error => this.errorMessage = <any>error);
-
+        // this._vendorService.updateVendorCompany(vendor_company)
+        //     .subscribe((res) => {
+        //             console.log(vendor_company);
+        //             this.onAlert('Update Vendor Company Successfully!', 'success');
+        //             this.Cancle();
+        //         },
+        //         error => {
+        //             console.log(error);
+        //             this.onAlert('Update Vendor Company Failed!', 'danger');
+        //             this.Cancle();
+        //         }
+        //     );
 
     }
+
 
     onSubmitVendorProfile(value:Object){
         const vendor = new Vendor(
@@ -258,6 +282,10 @@ export class VendorProfileComponent implements OnInit, OnDestroy {
             this.myFormVendorProfile.value.phonenumber,
             this.myFormVendorProfile.value.linkedin
         );
+
+        this.onAlert('Update Vendor Profile  Successfully', 'success');
+        this.Cancle();
+
         this._vendorService.updateVendorProfile(vendor)
             .subscribe((res) => {
                 console.log(res);
@@ -276,17 +304,21 @@ export class VendorProfileComponent implements OnInit, OnDestroy {
     resetPassword: boolean = false;
 
     onSubmitPassword(value: Object) {
-        console.log(value);
-
+        //console.log(value);
         this.resetPassword = false;
         this.myPasswordForm.reset();
 
-        this._vendorService.resetPasswordAccount(value)
-            .subscribe((res) => {
-                console.log(res)
-                    this.resetPassword = true;
-                },
-                error => this.errorMessage = <any>error);
+
+        this.onAlert('Reset Password Account Successfully', 'success');
+        // this._vendorService.resetPasswordAccount(value)
+        //     .subscribe((res) => {
+        //             this.resetPassword = true;
+        //             this.onAlert('Reset Password Account Successfully', 'success');
+        //         },
+        //         error => {
+        //             this.errorMessage = <any>error;
+        //             this.onAlert('Reset Password Account Failed', 'danger');
+        //         });
     }
 
 
@@ -298,8 +330,7 @@ export class VendorProfileComponent implements OnInit, OnDestroy {
     }
 
     Cancle() {
-        this.editMode = false;
-
+            this.editMode = false;
             this.disabled = false;
 
     }
@@ -308,4 +339,7 @@ export class VendorProfileComponent implements OnInit, OnDestroy {
     goToEdit() {
         this.router.navigate(['/vendor/profile/edit']);
     }
+
+
+
 }

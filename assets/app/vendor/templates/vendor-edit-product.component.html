@@ -22,10 +22,12 @@
 <navbar-vendor-component></navbar-vendor-component>
 
 <div class="container">
-    <a><p (click)="onCancle()">Back</p></a>
+    <div class="row">
+        <a (click)="onCancle()">< {{'Back' | translate}}</a>
+    </div>
     <div *ngIf="!loading">
         <div class="row">
-            <h1>{{'Manage' | translate}} {{apps.name}}</h1>
+            <h1> {{'Manage' | translate}} {{apps.name}}</h1>
             <hr>
             <p>{{'Enter Content in' | translate}}
                 <button class="btn  {{selectedLang == 'en' ? 'btn-primary': 'btn-default'}}" (click)="onChangeLanguaeFrom('en')">{{'English'| translate}}</button>
@@ -34,7 +36,7 @@
 
             <alert *ngIf="alerted === true"
                     [type]="typeAlert" dismissible="true">
-                <strong>{{'Success' | translate}}</strong>  {{messageAlert}}
+              {{messageAlert}}
             </alert>
             <hr>
         </div>
@@ -63,8 +65,7 @@
                     </div>
                     <button
                             class='btn btn-primary pull-right btn-save' type='submit'
-                            [disabled]='!myForm.valid'
-                            data-toggle="modal" data-target="#myModal" (click)="onAlert('Service Updated')">{{'Save' | translate}}
+                            [disabled]='!myForm.valid'>{{'Save' | translate}}
                     </button>
                     <button type="button"
                             class="btn btn-danger pull-right btn-cancle" data-dismiss="modal"

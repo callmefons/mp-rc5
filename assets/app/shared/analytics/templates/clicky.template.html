@@ -36,8 +36,10 @@
 <div *ngIf="apps.length > 0 && !loading">
 
     <div class="row">
-        <button class="btn btn-primary pull-right" (click)="goToAddService()">{{'Add New Listing'| translate}}</button>
-        <button class="btn btn-primary pull-right" (click)="goToViewAllListing()">{{'All Listings' | translate}}</button>
+        <div class="pull-right">
+            <button class="btn btn-primary" (click)="goToAddService()"  style="margin-right: 15px;">{{'Add New Listing'| translate}}</button>
+            <button class="btn btn-primary" (click)="goToViewAllListing()">{{'All Listings' | translate}}</button>
+        </div>
     </div>
 
     <div class="row row--tab">

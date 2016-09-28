@@ -7,8 +7,6 @@ import {Product} from "../shared/models/product.model";
 import {Subscription} from "rxjs";
 import {ImageUpload, ImageResult, ResizeOptions} from '../shared/ng2-service/ng2-imageupload/index';
 
-
-
 declare var _: any;
 
 @Component({
@@ -197,7 +195,7 @@ export class VendorEditProductComponent implements OnInit, OnDestroy {
                 this._productService.getProductId(id)
                     .subscribe(apps => {
                         if (apps) {
-
+                            this.loading = false;
                             this.apps = apps.data;
                         }
                     });
@@ -262,8 +260,14 @@ export class VendorEditProductComponent implements OnInit, OnDestroy {
         this._productService.updateProduct(appId, tempProduct)
             .subscribe((res) => {
                     this.updated = true;
+                    this.onAlert('Successfully Updated', 'success');
                 },
-                error => this.errorMessage = <any>error);
+                error => {
+                    this.onAlert('Successfully Failed', 'danger');
+                    this.errorMessage = <any>error;
+
+                }
+            );
     }
 
     onCheckboxIndustries(value: any, event: any) {
@@ -436,9 +440,11 @@ export class VendorEditProductComponent implements OnInit, OnDestroy {
     messageAlert: string = '';
     typeAlert: string = 'success';
 
-    onAlert(msg: string){
+    onAlert(msg: string, type: string){
         this.messageAlert = msg;
+        this.typeAlert = type;
         this.alerted = true;
+
         setTimeout(()=> {
             this.alerted = false;
             this.messageAlert = '';
@@ -446,23 +452,19 @@ export class VendorEditProductComponent implements OnInit, OnDestroy {
     }
 
     updateProductStatus(id: any, status: any) {
+        this._productService.updateProductStatus(id, status).subscribe(() => {
+            this.onAlert('Updated Successfully', 'success')
+            status == 'pending' ? this.onCancle(): this.onRefresh();
+        },
+        error => {
+            this.errorMessage = <any>error;
+            this.onAlert('Updated Failed', 'danger');
+        });
 
-        this.onAlert(status);
-
-        setTimeout(() => {
-            if (status === 'pending') {
-                this._productService.updateProductStatus(id, status).subscribe(() => {
-                    this.onCancle();
-                });
-            }
-
-            this._productService.updateProductStatus(id, status).subscribe(() => {
-                this.onRefresh();
-            });
-        }, 3000);
-
+        //location.reload();
 
     }
+
 
     showMonthly: boolean = false;
     showYearly: boolean = false;
