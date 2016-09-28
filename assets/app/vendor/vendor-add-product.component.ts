@@ -86,13 +86,13 @@ export class VendorAddProductComponent implements OnInit, OnDestroy {
                 private _sanitizer: DomSanitizationService) {
 
         this.myForm = this._fb.group({
-            name: ['', Validators.required],
+            name: ['', Validators.compose([Validators.required, Validators.maxLength(10)])],
             logo: [''],
-            description: ['', Validators.required],
-            shortdescription: ['', Validators.required],
-            minrequirement: [''],
-            termsncond: [''],
-            youtube: [''],
+            description: ['', Validators.compose([Validators.required, Validators.maxLength(100)])],
+            shortdescription: ['', Validators.compose([Validators.required, Validators.maxLength(50)])],
+            minrequirement: ['', Validators.compose([Validators.required, Validators.maxLength(100)])],
+            termsncond: ['',Validators.compose([Validators.required, Validators.maxLength(100)])],
+            youtube: ['',Validators.required],
             industries: [''],
             languages: [''],
             departments: [''],
@@ -100,8 +100,8 @@ export class VendorAddProductComponent implements OnInit, OnDestroy {
             features: [''],
             screenshots: [''],
             purchase_link: [''],
-            thai_description: ['', Validators.required],
-            thai_shortdescription: ['', Validators.required]
+            thai_description: ['', Validators.compose([Validators.required, Validators.maxLength(100)])],
+            thai_shortdescription: ['',Validators.compose([Validators.required, Validators.maxLength(50)])]
         });
     }
 
@@ -249,19 +249,22 @@ export class VendorAddProductComponent implements OnInit, OnDestroy {
     newFeature: string;
     newThaiFeature: string;
 
+    MAX_SIZE_FEATURE:number = 5;
+
     onAddNewFeature(newFeature: string, lang: string) {
 
         switch (lang) {
             case 'th':
-                if (newFeature) {
+                if (newFeature && this.myFormThaiFeatures.length < this.MAX_SIZE_FEATURE) {
                     this.myFormThaiFeatures.push(newFeature);
                     this.newThaiFeature = '';
                 }
                 break;
             case 'en':
-                if (newFeature) {
+                if (newFeature && this.myFormFeatures.length < this.MAX_SIZE_FEATURE) {
                     this.myFormFeatures.push(newFeature);
                     this.newFeature = '';
+
                 }
                 break;
 
@@ -522,17 +525,36 @@ export class VendorAddProductComponent implements OnInit, OnDestroy {
     }
 
 
-    video: boolean = false;
+    videoType:boolean=false;
+    embedVideo:boolean=false;
+
+    myUrl : string = '';
 
     embedYoutube(url: any) {
-        this.video = true;
-        let id = url.split('=', 2)[1];
-        this.myFormUrl = url;
-        this.embedUrl = this._sanitizer.bypassSecurityTrustResourceUrl('https://www.youtube.com/embed/' + id);
+
+        this.myUrl = '';
+        this.embedVideo = true;
+        if (this.youtubeParser(url) != false) {
+            this.videoType = true;
+            let id = url.split('=', 2)[1];
+            this.myFormUrl = url;
+            this.embedUrl = this._sanitizer.bypassSecurityTrustResourceUrl('https://www.youtube.com/embed/' + id);
+        } else {
+            this.videoType = false;
+        }
+
+    }
+
+    youtubeParser(url) {
+        var regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#\&\?]*).*/;
+        var match = url.match(regExp);
+        return (match && match[7].length == 11) ? match[7] : false;
     }
 
     deleteVideo() {
-        this.video = false;
+        this.videoType = false;
+        this.embedVideo = false;
+        
         this.myFormUrl = '';
         this.embedUrl = null;
     }

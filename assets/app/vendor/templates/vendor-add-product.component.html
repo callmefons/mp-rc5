@@ -88,6 +88,8 @@
                                         <div class='validation-error' *ngIf='myForm.controls.name.touched'>
                                             <div *ngIf="myForm.controls.name.hasError('required')">Name is required
                                             </div>
+                                            <div *ngIf="myForm.controls.name.hasError('maxlength')">Value must be less than or equal to 10
+                                            </div>
                                         </div>
                                     </fieldset>
                                 </div>
@@ -545,7 +547,7 @@
                                 <fieldset class="form-group">
                                     <input
                                             #myVideo
-                                            [(ngModel)]="myFormUrl"
+                                            [(ngModel)]="myUrl"
                                             [ngModelOptions]="{standalone: true}"
                                             type="text"
                                             class="form-control"
@@ -556,15 +558,15 @@
                                     </button>
                                 </fieldset>
                             </div>
-
                             <div class="col-md-8">
-                                <div *ngIf="video">
+                                <div *ngIf="!videoType && embedVideo"><h1>Not type youtube</h1></div>
+                                <div *ngIf="videoType">
                                     <iframe class="video" width="350" height="250" [src]="embedUrl"></iframe>
                                 </div>
                                 <button type="button"
                                         class="btn btn-sm btn-danger"
                                         (click)="deleteVideo()"
-                                        *ngIf="video">{{'Delete' | translate}}
+                                        *ngIf="videoType">{{'Delete' | translate}}
                                 </button>
                             </div>
                         </div>

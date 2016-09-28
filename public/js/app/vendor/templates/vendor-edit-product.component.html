@@ -588,31 +588,32 @@
                 <div class="row">
                     <div class="col-md-4">
                         <h4>{{'Video' | translate}}</h4>
-                            <fieldset class="form-group">
-                                <input
-                                        #myVideo
-                                        type="text"
-                                        class="form-control"
-                                        placeholder="Video"
-                                >
-                                <button type="button" class="btn btn-sm btn-default"
-                                        (click)="embedYoutube(myVideo.value)">Embed
-                                </button>
-                            </fieldset>
-                        </div>
-
-                        <div class="col-md-8">
-                            <div *ngIf="video">
-                                <iframe class="video" width="350" height="250"
-                                        [src]="embedUrl">
-                                </iframe>
-
-                            </div>
-                            <button type="button" class="btn btn-sm btn-danger"  *ngIf="video"
-                                    (click)="deleteVideo()">{{'Delete'| translate}}
+                        <fieldset class="form-group">
+                            <input
+                                    #myVideo
+                                    [(ngModel)]="myUrl"
+                                    [ngModelOptions]="{standalone: true}"
+                                    type="text"
+                                    class="form-control"
+                                    placeholder="Video"
+                            >
+                            <button type="button" class="btn btn-sm btn-default"
+                                    (click)="embedYoutube(myVideo.value)">Embed
                             </button>
-                        </div>
+                        </fieldset>
                     </div>
+                    <div class="col-md-8">
+                        <div *ngIf="!videoType && embedVideo"><h1>Not type youtube</h1></div>
+                        <div *ngIf="videoType">
+                            <iframe class="video" width="350" height="250" [src]="embedUrl"></iframe>
+                        </div>
+                        <button type="button"
+                                class="btn btn-sm btn-danger"
+                                (click)="deleteVideo()"
+                                *ngIf="videoType">{{'Delete' | translate}}
+                        </button>
+                    </div>
+                </div>
 
                 <!--Minimum Requirements-->
                 <div class="row">

@@ -77,13 +77,13 @@ export class VendorEditProductComponent implements OnInit, OnDestroy {
                 private router: Router,
                 public _sanitizer: DomSanitizationService) {
         this.myForm = this._fb.group({
-            name: ['', Validators.required],
+            name: ['', Validators.compose([Validators.required, Validators.maxLength(10)])],
             logo: [''],
-            description: ['', Validators.required],
-            shortdescription: ['', Validators.required],
-            minrequirement: [''],
-            termsncond: [''],
-            youtube: [''],
+            description: ['', Validators.compose([Validators.required, Validators.maxLength(100)])],
+            shortdescription: ['', Validators.compose([Validators.required, Validators.maxLength(50)])],
+            minrequirement: ['',Validators.compose([Validators.required, Validators.maxLength(100)])],
+            termsncond: ['',Validators.compose([Validators.required, Validators.maxLength(100)])],
+            youtube: ['',Validators.required],
             industries: [''],
             languages: [''],
             departments: [''],
@@ -96,8 +96,8 @@ export class VendorEditProductComponent implements OnInit, OnDestroy {
             price_end: [''],
             currency: [''],
             licensing_model: [''],
-            thai_description: ['', Validators.required],
-            thai_shortdescription: ['', Validators.required]
+            thai_description: ['', Validators.compose([Validators.required, Validators.maxLength(100)])],
+            thai_shortdescription: ['', Validators.compose([Validators.required, Validators.maxLength(50)])]
         });
     }
 
@@ -802,21 +802,37 @@ export class VendorEditProductComponent implements OnInit, OnDestroy {
     }
 
 
-    video: boolean = false;
+    videoType:boolean=false;
+    embedVideo:boolean=false;
+
+    myUrl : string = '';
 
     embedYoutube(url: any) {
-
+        this.myUrl = '';
+        this.embedVideo = true;
         if (url !== null) {
-            this.video = true;
-            let id = url.split('=', 2)[1];
-            this.myFormUrl = url;
-            this.embedUrl = this._sanitizer.bypassSecurityTrustResourceUrl(`https://www.youtube.com/embed/${id}`);
+            if (this.youtubeParser(url) != false) {
+                this.videoType = true;
+                let id = url.split('=', 2)[1];
+                this.myFormUrl = url;
+                this.embedUrl = this._sanitizer.bypassSecurityTrustResourceUrl('https://www.youtube.com/embed/' + id);
+            } else {
+                this.videoType = false;
+            }
 
         }
+
+    }
+
+    youtubeParser(url) {
+        var regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#\&\?]*).*/;
+        var match = url.match(regExp);
+        return (match && match[7].length == 11) ? match[7] : false;
     }
 
     deleteVideo() {
-        this.video = false;
+        this.videoType = false;
+        this.embedVideo = false;
         this.myFormUrl = '';
         this.embedUrl = null;
     }
