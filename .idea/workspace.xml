@@ -2,19 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="faff2c17-11cb-4609-98dd-54203a84a7ed" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/app/shared/validation/control-message.component.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/app/shared/validation/validation.service.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/shared/shared.module.ts" afterPath="$PROJECT_DIR$/assets/app/shared/shared.module.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/shared/validation/validation.service.ts" afterPath="$PROJECT_DIR$/assets/app/shared/validation/validation.service.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/vendor/templates/vendor-add-product.component.html" afterPath="$PROJECT_DIR$/assets/app/vendor/templates/vendor-add-product.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/vendor/templates/vendor-edit-product.component.html" afterPath="$PROJECT_DIR$/assets/app/vendor/templates/vendor-edit-product.component.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/vendor/vendor-add-product.component.ts" afterPath="$PROJECT_DIR$/assets/app/vendor/vendor-add-product.component.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/vendor/vendor-edit-product.component.ts" afterPath="$PROJECT_DIR$/assets/app/vendor/vendor-edit-product.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/shared/shared.module.js" afterPath="$PROJECT_DIR$/public/js/app/shared/shared.module.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/boot.js" afterPath="$PROJECT_DIR$/public/js/app/boot.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/vendor/templates/vendor-add-product.component.html" afterPath="$PROJECT_DIR$/public/js/app/vendor/templates/vendor-add-product.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/vendor/templates/vendor-edit-product.component.html" afterPath="$PROJECT_DIR$/public/js/app/vendor/templates/vendor-edit-product.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/vendor/vendor-add-product.component.js" afterPath="$PROJECT_DIR$/public/js/app/vendor/vendor-add-product.component.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/vendor/vendor-edit-product.component.js" afterPath="$PROJECT_DIR$/public/js/app/vendor/vendor-edit-product.component.js" />
     </list>
     <ignored path="07 Errors.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -40,18 +34,40 @@
       <file leaf-file-name="vendor-add-product.component.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/app/vendor/vendor-add-product.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="441">
-              <caret line="552" column="9" selection-start-line="552" selection-start-column="9" selection-end-line="552" selection-end-column="9" />
+            <state relative-caret-position="315">
+              <caret line="579" column="47" selection-start-line="579" selection-start-column="16" selection-end-line="579" selection-end-column="47" />
+              <folding>
+                <element signature="e#0#59#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="vendor-edit-product.component.ts" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/assets/app/vendor/vendor-edit-product.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="8580">
+              <caret line="647" column="24" selection-start-line="647" selection-start-column="24" selection-end-line="647" selection-end-column="24" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="vendor-edit-product.component.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/app/vendor/vendor-edit-product.component.ts">
+      <file leaf-file-name="validation.service.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/app/shared/validation/validation.service.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="411">
-              <caret line="829" column="9" selection-start-line="811" selection-start-column="8" selection-end-line="829" selection-end-column="9" />
+            <state relative-caret-position="418">
+              <caret line="55" column="11" selection-start-line="55" selection-start-column="11" selection-end-line="55" selection-end-column="11" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="product-list.component.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/app/product/product-list.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="88">
+              <caret line="293" column="1" selection-start-line="293" selection-start-column="1" selection-end-line="293" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -60,22 +76,10 @@
       <file leaf-file-name="vendor-add-product.component.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/app/vendor/templates/vendor-add-product.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="203">
-              <caret line="534" column="58" selection-start-line="534" selection-start-column="52" selection-end-line="534" selection-end-column="58" />
+            <state relative-caret-position="362">
+              <caret line="64" column="32" selection-start-line="64" selection-start-column="32" selection-end-line="64" selection-end-column="32" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#1;n#div#3;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="vendor-edit-product.component.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/assets/app/vendor/templates/vendor-edit-product.component.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="173">
-              <caret line="597" column="50" selection-start-line="597" selection-start-column="50" selection-end-line="597" selection-end-column="50" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#div#1;n#div#3;n#form#0;n#div#1;n#div#1;n#div#1;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -135,11 +139,11 @@
         <option value="$PROJECT_DIR$/assets/app/vendor/templates/vendor-profile.component.html" />
         <option value="$PROJECT_DIR$/assets/app/shared/validation/control-message.component.ts" />
         <option value="$PROJECT_DIR$/assets/app/shared/shared.module.ts" />
-        <option value="$PROJECT_DIR$/assets/app/shared/validation/validation.service.ts" />
-        <option value="$PROJECT_DIR$/assets/app/vendor/vendor-edit-product.component.ts" />
-        <option value="$PROJECT_DIR$/assets/app/vendor/vendor-add-product.component.ts" />
-        <option value="$PROJECT_DIR$/assets/app/vendor/templates/vendor-add-product.component.html" />
         <option value="$PROJECT_DIR$/assets/app/vendor/templates/vendor-edit-product.component.html" />
+        <option value="$PROJECT_DIR$/assets/app/vendor/templates/vendor-add-product.component.html" />
+        <option value="$PROJECT_DIR$/assets/app/shared/validation/validation.service.ts" />
+        <option value="$PROJECT_DIR$/assets/app/vendor/vendor-add-product.component.ts" />
+        <option value="$PROJECT_DIR$/assets/app/vendor/vendor-edit-product.component.ts" />
       </list>
     </option>
   </component>
@@ -161,9 +165,9 @@
     <handled-path value="$PROJECT_DIR$/public/js/vendor/ng2-charts/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="8" />
+    <option name="x" value="-10" />
     <option name="y" value="23" />
-    <option name="width" value="1434" />
+    <option name="width" value="1276" />
     <option name="height" value="777" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -246,54 +250,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="vendor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mp-rc5" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mp-rc5" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vendor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mp-rc5" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mp-rc5" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="shared" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -445,18 +401,19 @@
       <workItem from="1475052609867" duration="2043000" />
       <workItem from="1475055736918" duration="1762000" />
       <workItem from="1475115253053" duration="3043000" />
+      <workItem from="1475120465979" duration="5023000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="288998000" />
+    <option name="totallyTimeSpent" value="294021000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="8" y="23" width="1434" height="777" extended-state="0" />
+    <frame x="-10" y="23" width="1276" height="777" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23637651" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23585658" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24152543" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -521,13 +478,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/assets/app/shared/models/user.model.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/app/shared/review/index.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -696,13 +646,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/shared/api-service/vendor/vendor.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="64" column="56" selection-start-line="64" selection-start-column="56" selection-end-line="64" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/app/vendor/vendor-dashboard.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="627">
@@ -760,13 +703,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" column="10" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/product/product-list.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4125">
-          <caret line="332" column="0" selection-start-line="332" selection-start-column="0" selection-end-line="332" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -841,10 +777,7 @@
         <state relative-caret-position="360">
           <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
           <folding>
-            <element signature="e#0#49#0" expanded="true" />
-            <marker date="1475115813000" expanded="true" signature="268:305" ph="..." />
-            <marker date="1475115813000" expanded="true" signature="306:399" ph="..." />
-            <marker date="1475115813000" expanded="true" signature="338:352" ph="..." />
+            <element signature="e#0#49#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -859,47 +792,75 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/shared/validation/validation.service.ts">
+    <entry file="file://$PROJECT_DIR$/assets/app/vendor/templates/vendor-edit-product.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="73" selection-start-line="8" selection-start-column="67" selection-end-line="8" selection-end-column="73" />
-          <folding />
+        <state relative-caret-position="173">
+          <caret line="597" column="50" selection-start-line="597" selection-start-column="50" selection-end-line="597" selection-end-column="50" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#3;n#form#0;n#div#1;n#div#1;n#div#1;n#!!top" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/vendor/vendor-add-product.component.ts">
+    <entry file="file://$PROJECT_DIR$/assets/app/shared/ng2-service/ng2-imageupload/src/image-upload.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="552" column="9" selection-start-line="552" selection-start-column="9" selection-end-line="552" selection-end-column="9" />
-          <folding />
+        <state relative-caret-position="780">
+          <caret line="52" column="39" selection-start-line="52" selection-start-column="8" selection-end-line="52" selection-end-column="39" />
+          <folding>
+            <element signature="e#0#99#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/vendor/vendor-edit-product.component.ts">
+    <entry file="file://$PROJECT_DIR$/assets/app/shared/api-service/vendor/vendor.service.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="411">
-          <caret line="829" column="9" selection-start-line="811" selection-start-column="8" selection-end-line="829" selection-end-column="9" />
+        <state relative-caret-position="240">
+          <caret line="53" column="4" selection-start-line="53" selection-start-column="4" selection-end-line="53" selection-end-column="4" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/app/vendor/templates/vendor-add-product.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="534" column="58" selection-start-line="534" selection-start-column="52" selection-end-line="534" selection-end-column="58" />
+        <state relative-caret-position="362">
+          <caret line="64" column="32" selection-start-line="64" selection-start-column="32" selection-end-line="64" selection-end-column="32" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#1;n#div#3;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/vendor/templates/vendor-edit-product.component.html">
+    <entry file="file://$PROJECT_DIR$/assets/app/product/product-list.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="597" column="50" selection-start-line="597" selection-start-column="50" selection-end-line="597" selection-end-column="50" />
+        <state relative-caret-position="88">
+          <caret line="293" column="1" selection-start-line="293" selection-start-column="1" selection-end-line="293" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/shared/validation/validation.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="55" column="11" selection-start-line="55" selection-start-column="11" selection-end-line="55" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/vendor/vendor-add-product.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="579" column="47" selection-start-line="579" selection-start-column="16" selection-end-line="579" selection-end-column="47" />
           <folding>
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#3;n#form#0;n#div#1;n#div#1;n#div#1;n#!!top" expanded="true" />
+            <element signature="e#0#59#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/vendor/vendor-edit-product.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8580">
+          <caret line="647" column="24" selection-start-line="647" selection-start-column="24" selection-end-line="647" selection-end-column="24" />
+          <folding />
         </state>
       </provider>
     </entry>

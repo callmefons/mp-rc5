@@ -62,7 +62,7 @@
 
                         <div class="row">
                             <div class="col-md-3">
-                                <img [src]="myFormLogo" [hidden]="!src" class="img-responsive previewLogo" alt="Logo">
+                                <img [src]="myFormLogo.dataURL" [hidden]="!src" class="img-responsive previewLogo" alt="Logo">
                                 <fieldset class="form-group">
                                     <p *ngIf="!fileChosen">No file chosen</p>
                                     <label class="custom-file-upload">
@@ -483,6 +483,8 @@
                             </div>
                         </div>
 
+
+
                         <!--Screenshots-->
                         <div class="row">
                             <div class="col-md-12">
@@ -501,7 +503,7 @@
                                     </label>
 
                                 </fieldset>
-                                <div *ngFor="let src of myFormScreenshots" class="col-md-2">
+                                <div *ngFor="let src of screenshotsRender" class="col-md-2">
                                     <img id="myFormScreenshots" [src]="src" [hidden]="!src" class="img-responsive"
                                          alt="Screenshots">
                                     <button type="button" class="btn btn-default" (click)="onDeleteScreenshot(src)">

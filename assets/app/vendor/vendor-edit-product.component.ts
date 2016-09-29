@@ -6,6 +6,7 @@ import {ProductService} from "../shared/api-service/product/product.service";
 import {Product} from "../shared/models/product.model";
 import {Subscription} from "rxjs";
 import {ImageUpload, ImageResult, ResizeOptions} from '../shared/ng2-service/ng2-imageupload/index';
+import {ValidationService} from "../shared/validation/validation.service";
 
 declare var _: any;
 
@@ -814,7 +815,7 @@ export class VendorEditProductComponent implements OnInit, OnDestroy {
         this.videoType = true;
 
         if (url !== null) {
-            if (this.youtubeParser(url) != false) {
+            if (ValidationService.youtubeParser(url) != false) {
                 this.videoType = true;
                 let id = url.split('=', 2)[1];
                 this.myFormUrl = url;
@@ -831,11 +832,6 @@ export class VendorEditProductComponent implements OnInit, OnDestroy {
 
     }
 
-    youtubeParser(url) {
-        var regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#\&\?]*).*/;
-        var match = url.match(regExp);
-        return (match && match[7].length == 11) ? match[7] : false;
-    }
 
     deleteVideo() {
         this.videoType = false;

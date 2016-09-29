@@ -6,7 +6,7 @@ import {ProductService} from "../shared/api-service/product/product.service";
 import {Product} from "../shared/models/product.model";
 import {Subscription, Observable} from "rxjs";
 import {ImageUpload, ImageResult, ResizeOptions} from '../shared/ng2-service/ng2-imageupload/index';
-
+import {ValidationService} from '../shared/validation/validation.service';
 
 declare var _: any;
 
@@ -46,7 +46,7 @@ export class VendorAddProductComponent implements OnInit, OnDestroy {
     myFormThaiFeatures: any[] = [];
 
 
-    myFormLogo: string = '';
+    myFormLogo: any;
     fileChosen: boolean = false;
 
     myFormScreenshots: any[] = [];
@@ -91,7 +91,7 @@ export class VendorAddProductComponent implements OnInit, OnDestroy {
             description: ['', Validators.compose([Validators.required, Validators.maxLength(100)])],
             shortdescription: ['', Validators.compose([Validators.required, Validators.maxLength(50)])],
             minrequirement: ['', Validators.maxLength(100)],
-            termsncond: ['',Validators.maxLength(100)],
+            termsncond: ['', Validators.maxLength(100)],
             youtube: [''],
             industries: [''],
             languages: [''],
@@ -101,7 +101,7 @@ export class VendorAddProductComponent implements OnInit, OnDestroy {
             screenshots: [''],
             purchase_link: [''],
             thai_description: ['', Validators.compose([Validators.required, Validators.maxLength(100)])],
-            thai_shortdescription: ['',Validators.compose([Validators.required, Validators.maxLength(50)])]
+            thai_shortdescription: ['', Validators.compose([Validators.required, Validators.maxLength(50)])]
         });
     }
 
@@ -130,10 +130,14 @@ export class VendorAddProductComponent implements OnInit, OnDestroy {
 
     onSubmit(value: any) {
 
+        //Selected type file only
+        this.changeToTypeFile(this.myFormLogo, 'single');
+        this.changeToTypeFile(this.myFormScreenshots, 'multiple');
+
         const product = new Product(
             null,
             this.myForm.value.name,
-            this.myFormLogo,
+            this.myFormLogoResult,
             this.myForm.value.description,
             this.myForm.value.shortdescription,
             this.myForm.value.minrequirement,
@@ -144,7 +148,7 @@ export class VendorAddProductComponent implements OnInit, OnDestroy {
             this.myFormDepartments,
             this.myFormCategories,
             this.myFormFeatures,
-            this.myFormScreenshots,
+            this.myFormScreenshotsResult,
             this.myForm.value.purchase_link,
             this.myFormPricingModel,
             this.myFormExtraservices
@@ -152,27 +156,28 @@ export class VendorAddProductComponent implements OnInit, OnDestroy {
 
         const product_thai = new Product(
             null,
-            this.myForm.value.name,
-            this.myFormLogo,
+            null,
+            null,
             this.myForm.value.thai_description,
             this.myForm.value.thai_shortdescription,
-            this.myForm.value.minrequirement,
-            this.myForm.value.termsncond,
-            this.myFormUrl,
-            this.myFormIndustries,
-            this.myFormLanguages,
-            this.myFormDepartments,
-            this.myFormCategories,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
             this.myFormThaiFeatures,
-            this.myFormScreenshots,
-            this.myForm.value.purchase_link,
-            this.myFormPricingModel,
-            this.myFormExtraservices
+            null,
+            null,
+            null,
+            null
         );
 
 
         let tempProduct: any[] = [];
         tempProduct.push(product, product_thai);
+        console.log(tempProduct);
 
         this._productService.addProduct(tempProduct)
             .subscribe((res: any) => {
@@ -249,7 +254,7 @@ export class VendorAddProductComponent implements OnInit, OnDestroy {
     newFeature: string;
     newThaiFeature: string;
 
-    MAX_SIZE_FEATURE:number = 5;
+    MAX_SIZE_FEATURE: number = 5;
 
     onAddNewFeature(newFeature: string, lang: string) {
 
@@ -289,26 +294,61 @@ export class VendorAddProductComponent implements OnInit, OnDestroy {
         }
     }
 
+    screenshotsRender: any[] = [];
 
     fileChangeScreenshots(imageResult: ImageResult) {
-        this.myFormScreenshots.push(imageResult.resized.dataURL);
+
+        this.myFormScreenshots.push(imageResult);
+
+        for (let i = 0; i < this.myFormScreenshots.length; i++) {
+            this.screenshotsRender[i] = this.myFormScreenshots[i].dataURL;
+        }
+
         this.screenshotsChosen = true;
+        // console.log(this.screenshotsRender)
+        // console.log(this.myFormScreenshots)
     }
 
 
     onDeleteScreenshot(src: any) {
+        let j = _.findIndex(this.myFormScreenshots, {'dataURL': src});
         let i = this.myFormScreenshots.indexOf(src);
-        if (i != -1) {
-            this.myFormScreenshots.splice(i, 1);
+
+        if (j != -1) {
+            this.myFormScreenshots.splice(j, 1);
+            this.screenshotsRender.splice(j, 1);
         } else {
             this.screenshotsChosen = false;
         }
+
+        // console.log(this.screenshotsRender);
+        // console.log(this.myFormScreenshots);
     }
 
     fileChangeLogo(imageResult: ImageResult) {
-        this.myFormLogo = imageResult.resized.dataURL;
+        this.myFormLogo = imageResult;
         this.fileChosen = true;
     }
+
+    myFormLogoResult: any;
+    myFormScreenshotsResult: any [] = [];
+
+    private changeToTypeFile(data: any, type: string) {
+
+        switch (type) {
+            case 'single':
+                this.myFormLogoResult = data.file;
+                break;
+            case'multiple':
+                for (let i = 0; i < data.length; i++) {
+                    this.myFormScreenshotsResult[i] = data[i].file;
+                }
+                break;
+        }
+
+    }
+
+    //Pricing model
 
     showMonthly: boolean = false;
     showYearly: boolean = false;
@@ -525,10 +565,10 @@ export class VendorAddProductComponent implements OnInit, OnDestroy {
     }
 
 
-    videoType:boolean=false;
-    embedVideo:boolean=false;
+    videoType: boolean = false;
+    embedVideo: boolean = false;
     onYoutube: boolean = false;
-    myUrl : string = '';
+    myUrl: string = '';
 
     embedYoutube(url: any) {
 
@@ -537,7 +577,7 @@ export class VendorAddProductComponent implements OnInit, OnDestroy {
         this.videoType = true;
 
         if (url !== null) {
-            if (this.youtubeParser(url) != false) {
+            if (ValidationService.youtubeParser(url) != false) {
                 this.videoType = true;
                 let id = url.split('=', 2)[1];
                 this.myFormUrl = url;
@@ -547,22 +587,16 @@ export class VendorAddProductComponent implements OnInit, OnDestroy {
                 this.onYoutube = true;
                 setTimeout(() => {
                     this.onYoutube = false;
-                },3000)
+                }, 3000)
             }
 
         }
     }
 
-    youtubeParser(url) {
-        var regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#\&\?]*).*/;
-        var match = url.match(regExp);
-        return (match && match[7].length == 11) ? match[7] : false;
-    }
-
     deleteVideo() {
         this.videoType = false;
         this.embedVideo = false;
-        
+
         this.myFormUrl = '';
         this.embedUrl = null;
     }
@@ -587,6 +621,5 @@ export class VendorAddProductComponent implements OnInit, OnDestroy {
         }
 
     }
-
 
 }
