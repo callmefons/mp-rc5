@@ -81,8 +81,8 @@ export class VendorEditProductComponent implements OnInit, OnDestroy {
             logo: [''],
             description: ['', Validators.compose([Validators.required, Validators.maxLength(100)])],
             shortdescription: ['', Validators.compose([Validators.required, Validators.maxLength(50)])],
-            minrequirement: ['',Validators.compose([Validators.required, Validators.maxLength(100)])],
-            termsncond: ['',Validators.compose([Validators.required, Validators.maxLength(100)])],
+            minrequirement: ['',Validators.maxLength(100)],
+            termsncond: ['',Validators.maxLength(100)],
             youtube: ['',Validators.required],
             industries: [''],
             languages: [''],
@@ -804,12 +804,15 @@ export class VendorEditProductComponent implements OnInit, OnDestroy {
 
     videoType:boolean=false;
     embedVideo:boolean=false;
-
+    onYoutube: boolean = false;
     myUrl : string = '';
 
     embedYoutube(url: any) {
+
         this.myUrl = '';
         this.embedVideo = true;
+        this.videoType = true;
+
         if (url !== null) {
             if (this.youtubeParser(url) != false) {
                 this.videoType = true;
@@ -818,6 +821,10 @@ export class VendorEditProductComponent implements OnInit, OnDestroy {
                 this.embedUrl = this._sanitizer.bypassSecurityTrustResourceUrl('https://www.youtube.com/embed/' + id);
             } else {
                 this.videoType = false;
+                this.onYoutube = true;
+                setTimeout(() => {
+                   this.onYoutube = false;
+                },3000)
             }
 
         }

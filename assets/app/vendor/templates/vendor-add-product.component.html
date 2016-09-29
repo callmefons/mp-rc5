@@ -48,7 +48,7 @@
                         <div class="row">
                             <div class=".col-md-3 .col-md-offset-3">
                                 <button type="button"
-                                        class="btn btn-danger pull-right"
+                                        class="btn btn-default pull-right"
                                         (click)="onCancle()">{{'Cancel' | translate}}
                                 </button>
                                 <button [disabled]='!myForm.valid'
@@ -85,12 +85,7 @@
                                                placeholder="{{'Name' | translate}}"
                                                formControlName="name"
                                         >
-                                        <div class='validation-error' *ngIf='myForm.controls.name.touched'>
-                                            <div *ngIf="myForm.controls.name.hasError('required')">Name is required
-                                            </div>
-                                            <div *ngIf="myForm.controls.name.hasError('maxlength')">Value must be less than or equal to 10
-                                            </div>
-                                        </div>
+                                        <control-messages [control]="myForm.controls.name"></control-messages>
                                     </fieldset>
                                 </div>
 
@@ -103,11 +98,7 @@
                                                 class="form-control"
                                                 placeholder="{{'Description' | translate}}"
                                                 formControlName="description"></textarea>
-                                        <div class='validation-error' *ngIf='myForm.controls.description.touched'>
-                                            <div *ngIf="myForm.controls.description.hasError('required')">Description is
-                                                required
-                                            </div>
-                                        </div>
+                                        <control-messages [control]="myForm.controls.description"></control-messages>
                                     </fieldset>
                                 </div>
 
@@ -118,11 +109,7 @@
                                                   class="form-control"
                                                   placeholder="{{'Short Description' | translate}}"
                                                   formControlName="shortdescription"></textarea>
-                                        <div class='validation-error' *ngIf='myForm.controls.shortdescription.touched'>
-                                            <div *ngIf="myForm.controls.shortdescription.hasError('required')">Short
-                                                Description is required
-                                            </div>
-                                        </div>
+                                        <control-messages [control]="myForm.controls.shortdescription"></control-messages>
                                     </fieldset>
 
                                 </div>
@@ -136,11 +123,7 @@
                                                 class="form-control"
                                                 placeholder="{{'Description' | translate}}"
                                                 formControlName="thai_description"></textarea>
-                                        <div class='validation-error' *ngIf='myForm.controls.thai_description.touched'>
-                                            <div *ngIf="myForm.controls.thai_description.hasError('required')">Thai
-                                                Description is required
-                                            </div>
-                                        </div>
+                                        <control-messages [control]="myForm.controls.thai_description"></control-messages>
                                     </fieldset>
                                 </div>
 
@@ -151,12 +134,7 @@
                                                   class="form-control"
                                                   placeholder="{{'Short Description' | translate}}"
                                                   formControlName="thai_shortdescription"></textarea>
-                                        <div class='validation-error'
-                                             *ngIf='myForm.controls.thai_shortdescription.touched'>
-                                            <div *ngIf="myForm.controls.thai_shortdescription.hasError('required')">Thai
-                                                Short Description is required
-                                            </div>
-                                        </div>
+                                        <control-messages [control]="myForm.controls.thai_shortdescription"></control-messages>
                                     </fieldset>
 
                                 </div>
@@ -164,10 +142,11 @@
 
                                 <!--Feature-->
                                 <div class="row" [class.hidden]="thaiInput">
+                                    <p>* The maximum feature length is 5 length.</p>
                                     <div *ngFor="let feature of myFormFeatures">
                                         <pre>{{ feature }}</pre>
                                         <button type="button" (click)="onDeleteFeature(feature, 'en')"
-                                                class="btn btn-danger btn-xs">{{'Delete' | translate}}
+                                                class="btn btn-default btn-xs">{{'Delete' | translate}}
                                         </button>
                                     </div>
                                     <fieldset class="form-group">
@@ -178,9 +157,10 @@
                                                 type="text"
                                                 class="form-control"
                                                 placeholder="{{'Features' | translate}}">
-                                        <button type="button" class="btn btn-sm btn-default"
+                                        <button type="button" class="btn btn-sm btn-primary"
                                                 (click)="onAddNewFeature(newFeature, 'en')">+ {{'Features' | translate}}
                                         </button>
+
                                     </fieldset>
                                 </div>
 
@@ -189,7 +169,7 @@
                                     <div *ngFor="let feature of myFormThaiFeatures">
                                         <pre>{{ feature }}</pre>
                                         <button type="button" (click)="onDeleteFeature(feature, 'th')"
-                                                class="btn btn-danger btn-xs">{{'Delete' | translate}}
+                                                class="btn btn-default btn-xs">{{'Delete' | translate}}
                                         </button>
                                     </div>
                                     <fieldset class="form-group">
@@ -225,14 +205,6 @@
                                     <h4>{{'Payment and Pricing' | translate}}</h4>
 
                                     <form class="form-horizontal">
-
-                                        <!--<div class="checkbox">-->
-                                        <!--<label>-->
-                                        <!--<input type="checkbox"-->
-                                        <!--[checked]="checkAll"-->
-                                        <!--(change)="onCheckboxPricingModel(0,$event)"> All-->
-                                        <!--</label>-->
-                                        <!--</div>-->
 
                                         <div class="checkbox" *ngFor="let opt of options.pricing_model">
                                             <label>
@@ -532,7 +504,7 @@
                                 <div *ngFor="let src of myFormScreenshots" class="col-md-2">
                                     <img id="myFormScreenshots" [src]="src" [hidden]="!src" class="img-responsive"
                                          alt="Screenshots">
-                                    <button type="button" class="btn btn-danger" (click)="onDeleteScreenshot(src)">
+                                    <button type="button" class="btn btn-default" (click)="onDeleteScreenshot(src)">
                                         {{'Delete' | translate}}
                                     </button>
                                     <hr>
@@ -553,18 +525,22 @@
                                             class="form-control"
                                             placeholder="Video"
                                     >
-                                    <button type="button" class="btn btn-sm btn-default"
+                                    <button type="button" class="btn btn-sm btn-primary"
                                             (click)="embedYoutube(myVideo.value)">Embed
                                     </button>
                                 </fieldset>
                             </div>
                             <div class="col-md-8">
-                                <div *ngIf="!videoType && embedVideo"><h1>Not type youtube</h1></div>
+                                <div *ngIf="!videoType && embedVideo" style="margin-top: 30px;">
+                                    <alert [type]="'danger'" dismissible="true" *ngIf="onYoutube">
+                                        Please make sure you are uploading a supported youtube file type.
+                                    </alert>
+                                </div>
                                 <div *ngIf="videoType">
                                     <iframe class="video" width="350" height="250" [src]="embedUrl"></iframe>
                                 </div>
                                 <button type="button"
-                                        class="btn btn-sm btn-danger"
+                                        class="btn btn-sm btn-default"
                                         (click)="deleteVideo()"
                                         *ngIf="videoType">{{'Delete' | translate}}
                                 </button>
@@ -582,6 +558,8 @@
                                   placeholder="Minimum Requirements"
                                   formControlName="minrequirement"></textarea>
                                 </fieldset>
+                                <control-messages [control]="myForm.controls.minrequirement"></control-messages>
+
                             </div>
 
                             <div class="col-md-6">
@@ -592,6 +570,8 @@
                           placeholder="{{'Terms & Conditions'| translate}}"
                           formControlName="termsncond"></textarea>
                                 </fieldset>
+                                <control-messages [control]="myForm.controls.termsncond"></control-messages>
+
                             </div>
 
                         </div>

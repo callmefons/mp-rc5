@@ -29,6 +29,8 @@ import {TranslateService} from "../translate/translate.service";
 import {provide, PLATFORM_PIPES} from "@angular/core";
 import {NavbarCustomerComponent} from "./navbar-customer/navbar-customer.component";
 import {ConfirmModal} from "./confirm-modal/confirm-modal";
+import {ControlMessagesComponent} from "./validation/control-message.component";
+import {ValidationService} from "./validation/validation.service";
 
 /**
  * Do not specify providers for modules that might be imported by a lazy loaded module.
@@ -58,7 +60,8 @@ import {ConfirmModal} from "./confirm-modal/confirm-modal";
         BaseChartComponent,
         TranslateComponent,
         TranslatePipe,
-        ConfirmModal
+        ConfirmModal,
+        ControlMessagesComponent
     ],
     exports: [
         CommonModule,
@@ -79,7 +82,8 @@ import {ConfirmModal} from "./confirm-modal/confirm-modal";
         TabsModule,
         TranslateComponent,
         TranslatePipe,
-        ConfirmModal
+        ConfirmModal,
+        ControlMessagesComponent
     ]
 })
 export class SharedModule {
@@ -97,6 +101,7 @@ export class SharedModule {
                 AllVendorService,
                 AccountManagementService,
                 ClickyService,
+                ValidationService,
                 TRANSLATION_PROVIDERS,
                 TranslateService,
                 provide(PLATFORM_PIPES, {useValue: [TranslatePipe], multi: true})
