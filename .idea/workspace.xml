@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="faff2c17-11cb-4609-98dd-54203a84a7ed" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/app/product/product-search.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/shared/api-service/product/product.service.ts" afterPath="$PROJECT_DIR$/assets/app/shared/api-service/product/product.service.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/vendor/vendor-add-product.component.ts" afterPath="$PROJECT_DIR$/assets/app/vendor/vendor-add-product.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/vendor/vendor-edit-product.component.ts" afterPath="$PROJECT_DIR$/assets/app/vendor/vendor-edit-product.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/boot.js" afterPath="$PROJECT_DIR$/public/js/app/boot.js" />
-    </list>
+    <list default="true" id="faff2c17-11cb-4609-98dd-54203a84a7ed" name="Default" comment="" />
     <ignored path="07 Errors.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -30,7 +23,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="vendor-add-product.component.ts" pinned="false" current-in-tab="true">
+      <file leaf-file-name="vendor-add-product.component.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/app/vendor/vendor-add-product.component.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="450">
@@ -70,7 +63,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
+      <file leaf-file-name="package.json" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="150">
@@ -532,12 +525,12 @@
       <workItem from="1475115253053" duration="3043000" />
       <workItem from="1475120465979" duration="14246000" />
       <workItem from="1475202743870" duration="2527000" />
-      <workItem from="1475223144118" duration="2757000" />
+      <workItem from="1475223144118" duration="2780000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="308528000" />
+    <option name="totallyTimeSpent" value="308551000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-3" y="23" width="1276" height="777" extended-state="6" />
@@ -941,14 +934,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="82" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="82" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/app/product/product-list.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-18">
@@ -985,6 +970,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
           <caret line="180" column="10" selection-start-line="180" selection-start-column="10" selection-end-line="180" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="82" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="82" />
           <folding />
         </state>
       </provider>
