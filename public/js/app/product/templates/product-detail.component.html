@@ -7,7 +7,8 @@
             <!--Logo-->
             <div class="row">
                 <div class="col-md-3">
-                    <img *ngIf="apps.logo" [src]="apps.logo" class="img-responsive img-responsive--logo" alt="apps.name">
+                    <img *ngIf="apps.logo" [src]="apps.logo" class="img-responsive img-responsive--logo"
+                         alt="apps.name">
                 </div>
                 <div class="col-md-9">
                     <h3>{{apps.name}}</h3>
@@ -30,8 +31,8 @@
                 </div>
                 <div class="col-xs-12">
                     <p>{{'Departments'| translate}}:</p>
-                            <span class="label label-default"
-                                  *ngFor="let opt of departmentsTag; let index = index;">
+                    <span class="label label-default"
+                          *ngFor="let opt of departmentsTag; let index = index;">
                     {{opt?.name}}</span>
 
                 </div>
@@ -144,28 +145,30 @@
 
     <div class="col-md-6">
         <h4>{{'Leave a review'| translate}}</h4>
-        <div class="row" *ngFor="let review of reviews">
-            <div class="well">
-                <a href="" class="pull-right">{{'Date' | translate}}: {{review?.created_at}}</a>
-                <div class="pull-right">
-                    <rating
-                            class="rating"
-                            [readonly]="true"
-                            [(ngModel)]="review.rating"
-                            [ngModelOptions]="{standalone: true}"
-                            max="5"
-                            stateOn="glyphicon-star"
-                            stateOff="glyphicon-star-empty"
-                            ngDefaultControl>
-                    </rating>
+        <div *ngIf="reviews.length > 0">
+            <div class="row" *ngFor="let review of reviews">
+                <div class="well">
+                    <a href="" class="pull-right">{{'Date' | translate}}: {{review?.created_at}}</a>
+                    <div class="pull-right">
+                        <rating
+                                class="rating"
+                                [readonly]="true"
+                                [(ngModel)]="review.rating"
+                                [ngModelOptions]="{standalone: true}"
+                                max="5"
+                                stateOn="glyphicon-star"
+                                stateOff="glyphicon-star-empty"
+                                ngDefaultControl>
+                        </rating>
+                    </div>
+                    {{review?.comment}}
                 </div>
-                {{review?.comment}}
             </div>
         </div>
 
         <div class="row row--content" *ngIf="!_authService.isLoggedIn()">
             <button class="btn btn-primary" (click)="goToRegister()">{{'Create an Account'|translate}}</button>
-           {{'to see more reviews'| translate}}
+            {{'to see more reviews'| translate}}
         </div>
 
         <customer-review-service

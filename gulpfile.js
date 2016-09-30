@@ -58,6 +58,10 @@ gulp.task('vendor', function() {
     gulp.src('node_modules/ng2-charts/**')
         .pipe(gulp.dest(vendor + '/ng2-charts/'));
 
+    //ng2-charts
+    gulp.src('node_modules/ng2-validation/**')
+        .pipe(gulp.dest(vendor + '/ng2-validation/'));
+
 
     //zonejs
     return gulp.src('node_modules/zone.js/**')

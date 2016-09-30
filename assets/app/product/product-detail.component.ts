@@ -173,13 +173,15 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
           for (let i = 0; i < reviews.data.length; i++) {
             this.reviews.push(reviews.data[i]);
           }
-        });
+        })
+
     } else {
       this._reviewService.getReviewById(id)
         .subscribe((reviews: any) => {
           this.reviews.push(reviews.data[0]);
         });
     }
+
   }
 
   goToRegister() {

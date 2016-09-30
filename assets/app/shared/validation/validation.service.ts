@@ -1,3 +1,5 @@
+import { ValidatorFn, AbstractControl, Validators, FormGroup } from '@angular/forms';
+
 export class ValidationService {
     static getValidatorErrorMessage(validatorName: string, validatorValue?: any) {
         let config = {
@@ -58,6 +60,7 @@ export class ValidationService {
         var match = url.match(regExp);
         return (match && match[7].length == 11) ? match[7] : false;
     }
+
 
 }
 

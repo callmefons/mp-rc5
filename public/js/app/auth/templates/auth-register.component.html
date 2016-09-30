@@ -46,10 +46,7 @@
                     <input type="email" class="form-control" placeholder="Mail"
                            id="email"
                            formControlName="email">
-                    <div class='validation-error' *ngIf="myForm.controls.email.touched">
-                        <div *ngIf="myForm.controls.email.hasError('required')">email is required</div>
-                        <div *ngIf="myForm.controls.email.hasError('invalidEmail')">email is invalid</div>
-                    </div>
+                    <control-messages [control]="myForm.controls.email"></control-messages>
                 </fieldset>
 
                 <fieldset class="form-group">
@@ -58,15 +55,7 @@
                            minlength='8'
                            id="password"
                            formControlName="password">
-                    <div class='validation-error' *ngIf="myForm.controls.password.touched">
-                        <div *ngIf="myForm.controls.password.hasError('required')">Password is required</div>
-                        <div *ngIf="myForm.controls.password.hasError('minlength')">Password isn't long enough
-                            (Minimum 8 in length)
-                        </div>
-                        <div *ngIf="myForm.controls.password.hasError('invalidPassword')">Password is invalid (At
-                            least 1 Uppercase Alphabet, 1 Lowercase Alphabet, 1 Number and 1 Special Character)
-                        </div>
-                    </div>
+                    <control-messages [control]="myForm.controls.password"></control-messages>
                 </fieldset>
 
                 <fieldset class="form-group">
@@ -74,11 +63,7 @@
                     <input type="password" class="form-control" placeholder="Confirm Password"
                            id="password_confirmation"
                            formControlName="password_confirmation">
-                    <div class='validation-error' *ngIf="myForm.controls.password_confirmation.touched">
-                        <div *ngIf="myForm.controls.password_confirmation.hasError('mismatchedPasswords')">
-                            Passwords do not match
-                        </div>
-                    </div>
+                    <control-messages [control]="myForm.controls.password_confirmation"></control-messages>
                 </fieldset>
 
                 <fieldset class="form-group">

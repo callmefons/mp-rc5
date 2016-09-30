@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {FormGroup, FormBuilder} from '@angular/forms';
+import {FormGroup, FormBuilder, Validators} from '@angular/forms';
 import {Subscription} from "rxjs/Subscription";
 import {Observable} from "rxjs/Observable";
 
@@ -9,6 +9,7 @@ import {ProductTags} from '../models/product-tag.model';
 import {storage} from '../helpers/storage';
 import {ProductService} from "../api-service/product/product.service";
 import {Router} from "@angular/router";
+import {ValidationService} from "../validation/validation.service";
 
 
 @Component({
@@ -46,8 +47,8 @@ export class NavbarComponent {
                 private _productService: ProductService) {
 
         this.myForm = fb.group({
-            email: [''],
-            password: ['']
+            email: ['',Validators.compose([Validators.required,ValidationService.emailValidator])],
+            password: ['',Validators.compose([Validators.required,ValidationService.passwordValidator])]
         });
     }
 
@@ -83,10 +84,10 @@ export class NavbarComponent {
 
                     switch(res.data['role']) {
                         case 'admin':
-                            this.goToAdmin();
+                            this.onRouterNavigate('admin/dashboard');
                             break;
                         case 'vendor':
-                            this.goToVendor();
+                            this.onRouterNavigate('vendor/dashboard');
                             break;
                     }
 
@@ -120,10 +121,6 @@ export class NavbarComponent {
         });
     }
 
-    goToHome() {
-        this._router.navigate([``]);
-    }
-
     goToProductList(productId: any) {
         this._router.navigate([`/product/${productId}`]);
     }
@@ -132,32 +129,8 @@ export class NavbarComponent {
         this._router.navigate([`/product/browse-page/${productId}`]);
     }
 
-    goToCustomer(){
-        this._router.navigate([`customer/dashboard`]);
-    }
-
-    goToVendor() {
-        this._router.navigate([`vendor/dashboard`]);
-    }
-
-    goToAdmin() {
-        this._router.navigate(([`admin/dashboard`]));
-    }
-
-    goToRegister() {
-        // this.hideChildModal();
-        this._router.navigate([`auth/register`]);
-    }
-
-    goToRegisterVendor() {
-        // this.hideChildModal();
-        this._router.navigate([`auth/register-vendor`]);
-    }
-
-
-    goToForgotPassword() {
-        // this.hideChildModal();
-        this._router.navigate([`auth/forgot-password`]);
+    onRouterNavigate(path:string){
+        this._router.navigate([`${path}`]);
     }
 
 }

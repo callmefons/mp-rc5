@@ -1,7 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="faff2c17-11cb-4609-98dd-54203a84a7ed" name="Default" comment="" />
+    <list default="true" id="faff2c17-11cb-4609-98dd-54203a84a7ed" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/npm-debug.log" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/npm-debug.log.2303409435" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/npm-debug.log.2615812688" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/npm-debug.log.3456124752" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/npm-debug.log.4269896492" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/npm-debug.log.456712799" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/npm-debug.log.584104480" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/auth/auth-register-vendor.component.ts" afterPath="$PROJECT_DIR$/assets/app/auth/auth-register-vendor.component.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/auth/auth-register.component.ts" afterPath="$PROJECT_DIR$/assets/app/auth/auth-register.component.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/auth/templates/auth-register-vendor.component.html" afterPath="$PROJECT_DIR$/assets/app/auth/templates/auth-register-vendor.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/auth/templates/auth-register.component.html" afterPath="$PROJECT_DIR$/assets/app/auth/templates/auth-register.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/product/product-detail.component.ts" afterPath="$PROJECT_DIR$/assets/app/product/product-detail.component.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/product/templates/product-detail.component.html" afterPath="$PROJECT_DIR$/assets/app/product/templates/product-detail.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/shared/navbar/navbar.component.html" afterPath="$PROJECT_DIR$/assets/app/shared/navbar/navbar.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/shared/navbar/navbar.component.ts" afterPath="$PROJECT_DIR$/assets/app/shared/navbar/navbar.component.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/shared/shared.module.ts" afterPath="$PROJECT_DIR$/assets/app/shared/shared.module.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/shared/validation/control-message.component.ts" afterPath="$PROJECT_DIR$/assets/app/shared/validation/control-message.component.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/shared/validation/validation.service.ts" afterPath="$PROJECT_DIR$/assets/app/shared/validation/validation.service.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gulpfile.js" afterPath="$PROJECT_DIR$/gulpfile.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/auth/templates/auth-register-vendor.component.html" afterPath="$PROJECT_DIR$/public/js/app/auth/templates/auth-register-vendor.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/auth/templates/auth-register.component.html" afterPath="$PROJECT_DIR$/public/js/app/auth/templates/auth-register.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/boot.js" afterPath="$PROJECT_DIR$/public/js/app/boot.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/shared/navbar/navbar.component.html" afterPath="$PROJECT_DIR$/public/js/app/shared/navbar/navbar.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/systemjs.config.js" afterPath="$PROJECT_DIR$/public/systemjs.config.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/typings/globals/core-js/index.d.ts" afterPath="$PROJECT_DIR$/typings/globals/core-js/index.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/typings/globals/jasmine/index.d.ts" afterPath="$PROJECT_DIR$/typings/globals/jasmine/index.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/typings/globals/node/index.d.ts" afterPath="$PROJECT_DIR$/typings/globals/node/index.d.ts" />
+    </list>
     <ignored path="07 Errors.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -23,66 +53,76 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="vendor-add-product.component.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/app/vendor/vendor-add-product.component.ts">
+      <file leaf-file-name="navbar.component.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/app/shared/navbar/navbar.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="579" column="47" selection-start-line="579" selection-start-column="16" selection-end-line="579" selection-end-column="47" />
+            <state relative-caret-position="510">
+              <caret line="134" column="0" selection-start-line="134" selection-start-column="0" selection-end-line="134" selection-end-column="0" />
               <folding>
-                <element signature="e#0#59#0" expanded="true" />
+                <element signature="e#0#40#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="vendor-edit-product.component.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/app/vendor/vendor-edit-product.component.ts">
+      <file leaf-file-name="product-detail.component.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/app/product/product-detail.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="8580">
-              <caret line="647" column="24" selection-start-line="647" selection-start-column="24" selection-end-line="647" selection-end-column="24" />
+            <state relative-caret-position="285">
+              <caret line="182" column="5" selection-start-line="182" selection-start-column="5" selection-end-line="182" selection-end-column="5" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="package.json" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/package.json">
+      <file leaf-file-name="review.model.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/app/shared/models/review.model.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="82" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="82" />
+            <state relative-caret-position="45">
+              <caret line="3" column="22" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="22" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="validation.service.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/app/shared/validation/validation.service.ts">
+      <file leaf-file-name="product-detail.component.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/assets/app/product/templates/product-detail.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
-              <caret line="55" column="11" selection-start-line="55" selection-start-column="11" selection-end-line="55" selection-end-column="11" />
+            <state relative-caret-position="513">
+              <caret line="167" column="0" selection-start-line="167" selection-start-column="0" selection-end-line="167" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="product-list.component.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/app/product/product-list.component.ts">
+      <file leaf-file-name="review.component.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/app/shared/review/review.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="88">
-              <caret line="293" column="1" selection-start-line="293" selection-start-column="1" selection-end-line="293" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="vendor-add-product.component.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/app/vendor/templates/vendor-add-product.component.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="362">
-              <caret line="64" column="32" selection-start-line="64" selection-start-column="32" selection-end-line="64" selection-end-column="32" />
+            <state relative-caret-position="735">
+              <caret line="91" column="23" selection-start-line="91" selection-start-column="17" selection-end-line="91" selection-end-column="23" />
               <folding>
-                <element signature="n#style#0;n#div#0;n#div#1;n#div#3;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="e#0#62#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="review.component.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/app/shared/review/templates/review.component.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="29" column="29" selection-start-line="29" selection-start-column="23" selection-end-line="29" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="navbar.component.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/app/shared/navbar/navbar.component.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="197">
+              <caret line="113" column="70" selection-start-line="113" selection-start-column="54" selection-end-line="113" selection-end-column="70" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -95,13 +135,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/assets/app/product/product-detail.component.ts" />
-        <option value="$PROJECT_DIR$/assets/app/shared/analytics/clicky.service.ts" />
-        <option value="$PROJECT_DIR$/assets/app/shared/analytics/templates/clicky-admin.template.html" />
-        <option value="$PROJECT_DIR$/public/js/analytic.js" />
-        <option value="$PROJECT_DIR$/assets/app/admin/admin-product.component.ts" />
-        <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/assets/app/shared/helpers/validators.ts" />
         <option value="$PROJECT_DIR$/assets/app/admin/admin-vendors.component.ts" />
         <option value="$PROJECT_DIR$/assets/app/admin/styles/admin-setting.component.css" />
         <option value="$PROJECT_DIR$/assets/app/admin/admin-setting.component.ts" />
@@ -114,9 +147,7 @@
         <option value="$PROJECT_DIR$/assets/app/shared/confirm-modal.ts" />
         <option value="$PROJECT_DIR$/assets/app/shared/confirm-modal/confirm-modal.ts" />
         <option value="$PROJECT_DIR$/assets/app/shared/confirm-modal/confirm-modal.html" />
-        <option value="$PROJECT_DIR$/assets/app/auth/templates/auth-register.component.html" />
         <option value="$PROJECT_DIR$/assets/app/auth/templates/auth-forgot-password.component.html" />
-        <option value="$PROJECT_DIR$/assets/app/product/templates/product-detail.component.html" />
         <option value="$PROJECT_DIR$/assets/app/shared/review/templates/review.component.html" />
         <option value="$PROJECT_DIR$/assets/app/translate/lnag-th.ts" />
         <option value="$PROJECT_DIR$/assets/app/auth/auth-forgot-password.component.ts" />
@@ -130,8 +161,6 @@
         <option value="$PROJECT_DIR$/assets/app/shared/models/vendor.model.ts" />
         <option value="$PROJECT_DIR$/assets/app/shared/models/vendor-company.ts" />
         <option value="$PROJECT_DIR$/assets/app/shared/api-service/vendor/vendor.service.ts" />
-        <option value="$PROJECT_DIR$/assets/app/shared/navbar/navbar.component.ts" />
-        <option value="$PROJECT_DIR$/assets/app/shared/navbar/navbar.component.html" />
         <option value="$PROJECT_DIR$/assets/app/product/product-list.component.ts" />
         <option value="$PROJECT_DIR$/assets/app/translate/lang-en.ts" />
         <option value="$PROJECT_DIR$/assets/app/shared/analytics/templates/clicky.template.html" />
@@ -140,12 +169,23 @@
         <option value="$PROJECT_DIR$/assets/app/vendor/styles/vendor-profile.component.css" />
         <option value="$PROJECT_DIR$/assets/app/vendor/templates/vendor-profile.component.html" />
         <option value="$PROJECT_DIR$/assets/app/shared/validation/control-message.component.ts" />
-        <option value="$PROJECT_DIR$/assets/app/shared/shared.module.ts" />
         <option value="$PROJECT_DIR$/assets/app/vendor/templates/vendor-edit-product.component.html" />
         <option value="$PROJECT_DIR$/assets/app/vendor/templates/vendor-add-product.component.html" />
-        <option value="$PROJECT_DIR$/assets/app/shared/validation/validation.service.ts" />
         <option value="$PROJECT_DIR$/assets/app/vendor/vendor-add-product.component.ts" />
         <option value="$PROJECT_DIR$/assets/app/vendor/vendor-edit-product.component.ts" />
+        <option value="$PROJECT_DIR$/assets/app/shared/validation/validation.service.ts" />
+        <option value="$PROJECT_DIR$/gulpfile.js" />
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/assets/app/auth/templates/auth-register.component.html" />
+        <option value="$PROJECT_DIR$/public/systemjs.config.js" />
+        <option value="$PROJECT_DIR$/assets/app/shared/shared.module.ts" />
+        <option value="$PROJECT_DIR$/assets/app/auth/auth-register-vendor.component.ts" />
+        <option value="$PROJECT_DIR$/assets/app/auth/auth-register.component.ts" />
+        <option value="$PROJECT_DIR$/assets/app/auth/templates/auth-register-vendor.component.html" />
+        <option value="$PROJECT_DIR$/assets/app/shared/navbar/navbar.component.html" />
+        <option value="$PROJECT_DIR$/assets/app/shared/navbar/navbar.component.ts" />
+        <option value="$PROJECT_DIR$/assets/app/product/product-detail.component.ts" />
+        <option value="$PROJECT_DIR$/assets/app/product/templates/product-detail.component.html" />
       </list>
     </option>
   </component>
@@ -167,8 +207,8 @@
     <handled-path value="$PROJECT_DIR$/public/js/vendor/ng2-charts/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-10" />
-    <option name="y" value="23" />
+    <option name="x" value="37" />
+    <option name="y" value="116" />
     <option name="width" value="1276" />
     <option name="height" value="777" />
   </component>
@@ -251,7 +291,33 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="vendor" />
+              <option name="myItemId" value="shared" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mp-rc5" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mp-rc5" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="shared" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="models" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -403,19 +469,19 @@
       <workItem from="1475052609867" duration="2043000" />
       <workItem from="1475055736918" duration="1762000" />
       <workItem from="1475115253053" duration="3043000" />
-      <workItem from="1475120465979" duration="5131000" />
+      <workItem from="1475120465979" duration="14246000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="294129000" />
+    <option name="totallyTimeSpent" value="303244000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-10" y="23" width="1276" height="777" extended-state="0" />
+    <frame x="37" y="116" width="1276" height="777" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23585658" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2501992" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24152543" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -480,90 +546,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/assets/app/shared/review/review.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="20" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/shared/confirm-modal/confirm-modal.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/auth/templates/auth-forgot-password.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="40" column="45" selection-start-line="40" selection-start-column="40" selection-end-line="40" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/auth/templates/auth.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/auth/auth-register.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="52" column="75" selection-start-line="52" selection-start-column="18" selection-end-line="52" selection-end-column="75" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/auth/templates/auth-register.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="116" selection-start-line="13" selection-start-column="116" selection-end-line="13" selection-end-column="116" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/shared/confirm-modal/confirm-modal.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="25" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/shared/confirm-modal/confirm-modal.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="47" selection-start-line="11" selection-start-column="47" selection-end-line="11" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/shared/review/templates/review.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="90" selection-start-line="13" selection-start-column="78" selection-end-line="13" selection-end-column="90" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/product/templates/product-detail.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="42" column="59" selection-start-line="42" selection-start-column="56" selection-end-line="42" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/vendor/templates/vendor.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/auth/auth-forgot-password.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/app/product/browse-page.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3555">
@@ -575,13 +557,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1455">
           <caret line="97" column="16" selection-start-line="97" selection-start-column="16" selection-end-line="97" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/product/product-detail.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -687,20 +662,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/shared/navbar/navbar.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1185">
-          <caret line="99" column="5" selection-start-line="99" selection-start-column="5" selection-end-line="99" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/shared/navbar/navbar.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="10" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/app/shared/analytics/templates/clicky.template.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
@@ -777,32 +738,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/shared/shared.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="77" column="23" selection-start-line="77" selection-start-column="23" selection-end-line="77" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#96#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/vendor/templates/vendor-edit-product.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="597" column="50" selection-start-line="597" selection-start-column="50" selection-end-line="597" selection-end-column="50" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#3;n#form#0;n#div#1;n#div#1;n#div#1;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/app/shared/ng2-service/ng2-imageupload/src/image-upload.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="780">
           <caret line="52" column="39" selection-start-line="52" selection-start-column="8" selection-end-line="52" selection-end-column="39" />
           <folding>
-            <element signature="e#0#99#0" expanded="true" />
+            <element signature="e#0#99#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -820,7 +761,7 @@
         <state relative-caret-position="362">
           <caret line="64" column="32" selection-start-line="64" selection-start-column="32" selection-end-line="64" selection-end-column="32" />
           <folding>
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#3;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#3;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -833,36 +774,182 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/shared/validation/validation.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="55" column="11" selection-start-line="55" selection-start-column="11" selection-end-line="55" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/app/vendor/vendor-add-product.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
           <caret line="579" column="47" selection-start-line="579" selection-start-column="16" selection-end-line="579" selection-end-column="47" />
           <folding>
-            <element signature="e#0#59#0" expanded="true" />
+            <element signature="e#0#59#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/shared/navbar-admin/navbar-admin.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="37" column="20" selection-start-line="37" selection-start-column="20" selection-end-line="37" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#40#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/shared/validation/validation.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="27" column="25" selection-start-line="27" selection-start-column="11" selection-end-line="27" selection-end-column="25" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/app/vendor/vendor-edit-product.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8580">
+        <state relative-caret-position="3357">
           <caret line="647" column="24" selection-start-line="647" selection-start-column="24" selection-end-line="647" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/vendor/templates/vendor-edit-product.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="104" column="102" selection-start-line="104" selection-start-column="32" selection-end-line="104" selection-end-column="102" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/vendor/ng2-validation/dist/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="17" column="25" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gulpfile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="41" column="10" selection-start-line="41" selection-start-column="10" selection-end-line="41" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/systemjs.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="42" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/shared/shared.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
-          <caret line="10" column="82" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="82" />
+          <caret line="46" column="18" selection-start-line="46" selection-start-column="18" selection-end-line="46" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#96#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/auth/auth-register-vendor.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-90">
+          <caret line="5" column="18" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/auth/auth-register.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="59" column="61" selection-start-line="59" selection-start-column="8" selection-end-line="59" selection-end-column="61" />
+          <folding>
+            <element signature="e#0#59#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/auth/templates/auth-register.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="167">
+          <caret line="48" column="91" selection-start-line="48" selection-start-column="20" selection-end-line="48" selection-end-column="91" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/auth/templates/auth-register-vendor.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="347">
+          <caret line="97" column="45" selection-start-line="97" selection-start-column="45" selection-end-line="97" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/shared/navbar/navbar.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="113" column="70" selection-start-line="113" selection-start-column="54" selection-end-line="113" selection-end-column="70" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/shared/review/review.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="735">
+          <caret line="91" column="23" selection-start-line="91" selection-start-column="17" selection-end-line="91" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#62#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/shared/review/templates/review.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="29" column="29" selection-start-line="29" selection-start-column="23" selection-end-line="29" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/shared/navbar/navbar.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="134" column="0" selection-start-line="134" selection-start-column="0" selection-end-line="134" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/shared/models/review.model.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="22" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/product/product-detail.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="182" column="5" selection-start-line="182" selection-start-column="5" selection-end-line="182" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/product/templates/product-detail.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="513">
+          <caret line="167" column="0" selection-start-line="167" selection-start-column="0" selection-end-line="167" selection-end-column="0" />
           <folding />
         </state>
       </provider>

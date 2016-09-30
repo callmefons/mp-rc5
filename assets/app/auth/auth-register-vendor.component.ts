@@ -10,6 +10,7 @@ import {emailValidator, passwordValidator} from "../shared/helpers/validators";
 import {Subscription, Observable} from "rxjs";
 import {DataCountryService} from "../shared/ng2-service/ng2-country/country.service";
 import {DataStateService} from "../shared/ng2-service/ng2-country/state.service";
+import {ValidationService} from "../shared/validation/validation.service";
 
 
 @Component({
@@ -50,9 +51,9 @@ export class AuthRegisterVendorComponent implements OnInit, OnDestroy {
         this.getCountry();
         this.myForm = this._fb.group({
             personal_name: ['', Validators.required],
-            email: ['', Validators.compose([Validators.required, emailValidator])],
-            password: ['', Validators.compose([Validators.required, passwordValidator])],
-            password_confirmation: ['', Validators.required],
+            email: ['', Validators.compose([Validators.required, ValidationService.emailValidator])],
+            password: ['', Validators.compose([Validators.required, ValidationService.passwordValidator])],
+            password_confirmation: ['',Validators.compose([Validators.required, ValidationService.passwordValidator])],
             company_name: ['', Validators.required],
             country: [this.countries[0].name, Validators.required],
             state: [''],

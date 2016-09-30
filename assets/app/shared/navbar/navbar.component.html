@@ -19,12 +19,14 @@
                                 formControlName="email"
                                 type="email" class="form-control"
                                 placeholder="Enter email"/>
+                        <control-messages [control]="myForm.controls.email"></control-messages>
                     </div>
                     <div class="form-field">
                         <label>{{'Password'| translate}}</label>
                         <input formControlName="password"
                                type="password" class="form-control"
                                placeholder="Password"/>
+                        <control-messages [control]="myForm.controls.password"></control-messages>
                     </div>
                     <div class="checkbox">
                         <label>
@@ -36,7 +38,7 @@
 
             <div class="modal-footer" *ngIf="!login">
                 <p>
-                    <a data-dismiss="modal" (click)="goToRegister()" style="margin-right: 5px;"> {{'Create new account'| translate}}</a> | <a (click)="goToForgotPassword()" data-dismiss="modal"> {{'Forgot password' | translate}}</a>
+                    <a data-dismiss="modal" (click)="onRouterNavigate('auth/register')" style="margin-right: 5px;"> {{'Create new account'| translate}}</a> | <a (click)="onRouterNavigate('auth/forgot-password')" data-dismiss="modal"> {{'Forgot password' | translate}}</a>
                 </p>
 
                 <button data-dismiss="modal" type="submit" (click)="onSubmit(myForm.value)"  class="btn btn-primary">{{'Sign in' | translate}}</button>
@@ -109,11 +111,11 @@
             </div>
 
             <ul class="nav navbar-nav navbar-right">
-                <li><a style="color:#337ab7" (click)="goToRegisterVendor()">{{'List your service' | translate}}</a></li>
-                <li><a style="color:#337ab7" (click)="goToRegister()">{{'Register' | translate}}</a></li>
-                <li *ngIf="_authService.isLoggedIn() && checkRole() === 'customer'"><a (click)="goToCustomer()">{{'Customer' | translate}}</a></li>
-                <li *ngIf="_authService.isLoggedIn() && checkRole() === 'vendor'"><a (click)="goToVendor()">{{'Vendor' | translate}}</a></li>
-                <li *ngIf="_authService.isLoggedIn() && checkRole() === 'admin'"><a (click)="goToAdmin()">{{'Admin' | translate}}</a></li>
+                <li><a style="color:#337ab7" (click)="onRouterNavigate('auth/register-vendor')">{{'List your service' | translate}}</a></li>
+                <li><a style="color:#337ab7" (click)="onRouterNavigate('auth/register')">{{'Register' | translate}}</a></li>
+                <li *ngIf="_authService.isLoggedIn() && checkRole() === 'customer'"><a (click)="onRouterNavigate('customer/dashboard')">{{'Customer' | translate}}</a></li>
+                <li *ngIf="_authService.isLoggedIn() && checkRole() === 'vendor'"><a (click)="onRouterNavigate('vendor/dashboard')">{{'Vendor' | translate}}</a></li>
+                <li *ngIf="_authService.isLoggedIn() && checkRole() === 'admin'"><a (click)="onRouterNavigate('admin/dashboard')">{{'Admin' | translate}}</a></li>
                 <li *ngIf="_authService.isLoggedIn()"><a><i class="fa fa-user" aria-hidden="true"></i>
                     {{username}}</a>
                 </li>

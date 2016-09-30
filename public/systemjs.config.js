@@ -7,7 +7,8 @@
         '@angular':                   'js/vendor/@angular',
         'ng2-bootstrap': 'js/vendor/ng2-bootstrap',
         'moment': 'js/vendor/moment/moment.js',
-        'ng2-charts':'js/vendor/ng2-charts'
+        'ng2-charts':'js/vendor/ng2-charts',
+        'ng2-validation':'js/vendor/ng2-validation/dist'
 
     };
 
@@ -16,7 +17,8 @@
         'app':                        { main: 'boot.js',  defaultExtension: 'js' },
         'rxjs':                       { defaultExtension: 'js' },
         'ng2-bootstrap': { defaultExtension: 'js' },
-        'ng2-charts': { main: 'ng2-charts.js', defaultExtension: 'js' }
+        'ng2-charts': { main: 'ng2-charts.js', defaultExtension: 'js' },
+        'ng2-validation':{defaultExtension: 'js'}
 
     };
 

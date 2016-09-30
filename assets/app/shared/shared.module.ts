@@ -31,6 +31,7 @@ import {NavbarCustomerComponent} from "./navbar-customer/navbar-customer.compone
 import {ConfirmModal} from "./confirm-modal/confirm-modal";
 import {ControlMessagesComponent} from "./validation/control-message.component";
 import {ValidationService} from "./validation/validation.service";
+// import { CustomFormsModule } from 'ng2-validation'
 
 /**
  * Do not specify providers for modules that might be imported by a lazy loaded module.

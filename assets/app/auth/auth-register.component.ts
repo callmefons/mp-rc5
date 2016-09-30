@@ -3,14 +3,14 @@ import {AuthService} from "../shared/api-service/auth/auth.service";
 import {storage} from "../shared/helpers/storage";
 import {Router} from "@angular/router";
 import {User} from "../shared/models/user.model";
-import {Validators, FormGroup, FormBuilder} from "@angular/forms";
+import {Validators, FormGroup, FormBuilder,FormControl} from "@angular/forms";
 import {Country} from "../shared/ng2-service/ng2-country/country";
 import {State} from "../shared/ng2-service/ng2-country/state";
 import {emailValidator, passwordValidator} from "../shared/helpers/validators";
 import {Subscription, Observable} from "rxjs";
 import {DataCountryService} from "../shared/ng2-service/ng2-country/country.service";
 import {DataStateService} from "../shared/ng2-service/ng2-country/state.service";
-
+import {ValidationService} from '../shared/validation/validation.service';
 
 @Component({
   moduleId: module.id,
@@ -47,12 +47,15 @@ export class AuthRegisterComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
+
+    // let password = new FormControl('');
+
     this.getCountry();
     this.myForm = this._fb.group({
       personal_name: ['', Validators.required],
-      email: ['', Validators.compose([Validators.required, emailValidator])],
-      password: ['', Validators.compose([Validators.required, passwordValidator])],
-      password_confirmation: ['', Validators.required],
+      email: ['', Validators.compose([Validators.required, ValidationService.emailValidator])],
+      password: ['', Validators.compose([Validators.required, ValidationService.passwordValidator])],
+      password_confirmation: ['',Validators.compose([Validators.required, ValidationService.passwordValidator])],
       company_name: ['', Validators.required],
       country: [this.countries[0].name, Validators.required],
       state: [''],
