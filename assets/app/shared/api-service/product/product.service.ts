@@ -72,9 +72,10 @@ export class ProductService {
   }
 
   addProduct(product: any) {
-    const body = JSON.stringify(product);
+    //const body = JSON.stringify(product);
+      //console.log(product);
     return this._http.post(`${config.apiUrl}product?token=${storage.getAuthToken()}`,
-      body, { headers: request.getJsonHeaders() }).cache()
+        product, { headers: request.getJsonHeaders() }).cache()
       .map(this.extractData)
       .catch(this.handleError);
   }

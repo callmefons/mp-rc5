@@ -264,7 +264,7 @@ export class VendorEditProductComponent implements OnInit, OnDestroy {
                     this.onAlert('Successfully Updated', 'success');
                 },
                 error => {
-                    this.onAlert('Successfully Failed', 'danger');
+                    this.onAlert('Failed', 'danger');
                     this.errorMessage = <any>error;
 
                 }
@@ -416,8 +416,10 @@ export class VendorEditProductComponent implements OnInit, OnDestroy {
         }
     }
 
+
     fileChangeLogo(imageResult: ImageResult) {
         this.myFormLogo = imageResult.resized.dataURL;
+
         this.fileChosen = true;
     }
 
