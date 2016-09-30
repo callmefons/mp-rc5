@@ -177,7 +177,6 @@ export class VendorAddProductComponent implements OnInit, OnDestroy {
 
         let tempProduct: any[] = [];
         tempProduct.push(product, product_thai);
-        console.log(tempProduct);
 
         this._productService.addProduct(tempProduct)
             .subscribe((res: any) => {
@@ -327,9 +326,11 @@ export class VendorAddProductComponent implements OnInit, OnDestroy {
 
     fileChangeLogo(imageResult: ImageResult) {
         this.myFormLogo = imageResult;
+        this.myFormLogoRender = this.myFormLogo.dataURL;
         this.fileChosen = true;
     }
 
+    myFormLogoRender:any;
     myFormLogoResult: any;
     myFormScreenshotsResult: any [] = [];
 

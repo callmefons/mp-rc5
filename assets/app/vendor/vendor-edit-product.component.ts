@@ -78,13 +78,13 @@ export class VendorEditProductComponent implements OnInit, OnDestroy {
                 private router: Router,
                 public _sanitizer: DomSanitizationService) {
         this.myForm = this._fb.group({
-            name: ['', Validators.compose([Validators.required, Validators.maxLength(10)])],
+            name: ['', Validators.compose([Validators.required, Validators.maxLength(50)])],
             logo: [''],
-            description: ['', Validators.compose([Validators.required, Validators.maxLength(100)])],
-            shortdescription: ['', Validators.compose([Validators.required, Validators.maxLength(50)])],
-            minrequirement: ['',Validators.maxLength(100)],
-            termsncond: ['',Validators.maxLength(100)],
-            youtube: ['',Validators.required],
+            description: ['', Validators.compose([Validators.required, Validators.maxLength(1000)])],
+            shortdescription: ['', Validators.compose([Validators.required, Validators.maxLength(500)])],
+            minrequirement: ['',Validators.maxLength(1000)],
+            termsncond: ['',Validators.maxLength(1000)],
+            youtube: [''],
             industries: [''],
             languages: [''],
             departments: [''],
@@ -97,8 +97,8 @@ export class VendorEditProductComponent implements OnInit, OnDestroy {
             price_end: [''],
             currency: [''],
             licensing_model: [''],
-            thai_description: ['', Validators.compose([Validators.required, Validators.maxLength(100)])],
-            thai_shortdescription: ['', Validators.compose([Validators.required, Validators.maxLength(50)])]
+            thai_description: ['', Validators.compose([Validators.required, Validators.maxLength(1000)])],
+            thai_shortdescription: ['', Validators.compose([Validators.required, Validators.maxLength(500)])]
         });
     }
 
