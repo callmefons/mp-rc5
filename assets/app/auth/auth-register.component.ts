@@ -1,16 +1,16 @@
 import {Component, OnInit, OnDestroy} from '@angular/core';
 import {AuthService} from "../shared/api-service/auth/auth.service";
-import {storage} from "../shared/helpers/storage";
 import {Router} from "@angular/router";
 import {User} from "../shared/models/user.model";
 import {Validators, FormGroup, FormBuilder,FormControl} from "@angular/forms";
 import {Country} from "../shared/ng2-service/ng2-country/country";
 import {State} from "../shared/ng2-service/ng2-country/state";
-import {emailValidator, passwordValidator} from "../shared/helpers/validators";
 import {Subscription, Observable} from "rxjs";
 import {DataCountryService} from "../shared/ng2-service/ng2-country/country.service";
 import {DataStateService} from "../shared/ng2-service/ng2-country/state.service";
 import {ValidationService} from '../shared/validation/validation.service';
+
+declare  var $: any;
 
 @Component({
   moduleId: module.id,
@@ -37,6 +37,13 @@ export class AuthRegisterComponent implements OnInit, OnDestroy {
   countrySelected:boolean = false;
   citytype:boolean = false;
   statetype:boolean = false;
+
+  //Modal
+  regisStatus: boolean = false;
+  showModal: boolean = false;
+  modalTitle: string = '';
+  modalBody: string = '';
+
 
   constructor(private _fb:FormBuilder,
               private _countryService:DataCountryService,
@@ -72,9 +79,21 @@ export class AuthRegisterComponent implements OnInit, OnDestroy {
     this.countries = this._countryService.getCountries();
   }
 
-  onSubmit(value:Object) {
+    onSubmit(value:Object) {
     this.auth$ = this._authService.signup(value);
     this.sub = this.auth$.subscribe((res) => {
+
+      //console.log(res);
+
+            this.modalTitle = res.status;
+            $("#modalSignup").modal();
+            if(res.status == 'success'){
+                this.regisStatus = true;
+                this.modalBody = 'Please check your email for a link to complete your registration, and join our marketplace';
+            }else {
+                this.modalBody = res.errormessage;
+            }
+
         },
         error => this.errorMessage = <any>error);
   }
@@ -100,7 +119,7 @@ export class AuthRegisterComponent implements OnInit, OnDestroy {
   }
 
   goToLogin() {
-    this._router.navigate(['']);
+      this.regisStatus == true ? this._router.navigate(['']): this._router.navigate(['/auth/register']);
   }
 
 

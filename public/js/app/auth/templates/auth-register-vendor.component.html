@@ -5,10 +5,10 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">You're almost there</h4>
+                <h4 class="modal-title">{{modalTitle | uppercase}}</h4>
             </div>
             <div class="modal-body">
-                <p>Please check your email for a link to complete your registration, and join our marketplace</p>
+                <p>{{modalBody}}</p>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="goToLogin()">OK</button>
@@ -160,20 +160,13 @@
                 </fieldset>
 
 
-                <fieldset class="form-group"
-                          [class.hidden]="true">
-                    <input type="text" class="form-control"
-                           formControlName="role">
+                <fieldset class="form-group" [class.hidden]="true"><input type="text" class="form-control" formControlName="role">
                 </fieldset>
 
                 <!--<re-captcha (captchaResponse)="handleCorrectCaptcha($event)"-->
                 <!--[site_key]="'6LdLzCcTAAAAAA9mjgJ0uo0nHvoYNHiVCuPn-g-f'"></re-captcha>-->
                 <!--<button class='btn btn-primary' type='submit' [disabled]='!myForm.valid || !fCaptchaPassed' data-toggle="modal" data-target="#myModal">Sign Up</button><button class='btn btn-primary' type='submit' [disabled]='!myForm.valid || !fCaptchaPassed' data-toggle="modal" data-target="#myModal">Sign Up</button>-->
-                <button class='btn btn-primary' type='submit'
-                        [disabled]='!myForm.valid'
-                        data-toggle="modal"
-                        data-target="#modalSignup">Sign Up
-                </button>
+                <button class='btn btn-primary' type='submit' [disabled]='!myForm.valid'>Sign Up</button>
 
             </form>
 

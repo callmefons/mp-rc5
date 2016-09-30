@@ -1,17 +1,16 @@
 import {Component, OnInit, OnDestroy} from '@angular/core';
 import {AuthService} from "../shared/api-service/auth/auth.service";
-import {storage} from "../shared/helpers/storage";
 import {Router} from "@angular/router";
 import {User} from "../shared/models/user.model";
 import {Validators, FormGroup, FormBuilder} from "@angular/forms";
 import {Country} from "../shared/ng2-service/ng2-country/country";
 import {State} from "../shared/ng2-service/ng2-country/state";
-import {emailValidator, passwordValidator} from "../shared/helpers/validators";
 import {Subscription, Observable} from "rxjs";
 import {DataCountryService} from "../shared/ng2-service/ng2-country/country.service";
 import {DataStateService} from "../shared/ng2-service/ng2-country/state.service";
 import {ValidationService} from "../shared/validation/validation.service";
 
+declare  var $: any;
 
 @Component({
     moduleId: module.id,
@@ -38,6 +37,12 @@ export class AuthRegisterVendorComponent implements OnInit, OnDestroy {
     countrySelected:boolean = false;
     citytype:boolean = false;
     statetype:boolean = false;
+
+    //Modal
+    regisStatus: boolean = false;
+    showModal: boolean = false;
+    modalTitle: string = '';
+    modalBody: string = '';
 
     constructor(private _fb:FormBuilder,
                 private _countryService:DataCountryService,
@@ -71,22 +76,30 @@ export class AuthRegisterVendorComponent implements OnInit, OnDestroy {
     }
 
     onSubmit(value:Object) {
-            this.auth$ = this._authService.signup(value);
-            this.sub = this.auth$.subscribe((res) => {
-                },
-                error => this.errorMessage = <any>error);
+        this.auth$ = this._authService.signup(value);
+        this.sub = this.auth$.subscribe((res) => {
+            //console.log(res);
+            this.modalTitle = res.status;
+            $("#modalSignup").modal();
+            if(res.status == 'success'){
+                this.regisStatus = true;
+                this.modalBody = 'Please check your email for a link to complete your registration, and join our marketplace';
+            }else {
+                this.modalBody = res.errormessage;
+            }
+        }, error => this.errorMessage = <any>error);
     }
 
     onSelectCountry(country_name:string) {
         this.countrySelected = true;
 
         if (country_name == 'Thailand') {
-            this.citys = this._stateService.getStates().filter(item=> item.country_name == country_name)
+            this.citys = this._stateService.getStates().filter(item=> item.country_name == country_name);
             this.citytype = true;
             this.statetype = false;
         }
         if (country_name == 'United States') {
-            this.states = this._stateService.getStates().filter(item=> item.country_name == country_name)
+            this.states = this._stateService.getStates().filter(item=> item.country_name == country_name);
             this.statetype = true;
             this.citytype = false;
         }
@@ -98,7 +111,7 @@ export class AuthRegisterVendorComponent implements OnInit, OnDestroy {
     }
 
     goToLogin() {
-        this._router.navigate(['']);
+        this.regisStatus == true ? this._router.navigate(['']): this._router.navigate(['/auth/register-vendor']);
     }
 
 
