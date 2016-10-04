@@ -228,37 +228,17 @@ export class VendorEditProductComponent implements OnInit, OnDestroy {
             this.myFormScreenshots,
             this.myForm.value.purchase_link,
             this.myFormPricingModel,
-            this.myFormExtraservices
-        );
-        const product_thai = new Product(
-            null,
-            this.myForm.value.name,
-            this.myFormLogo,
+            this.myFormExtraservices,
             this.myForm.value.thai_description,
             this.myForm.value.thai_shortdescription,
-            this.myForm.value.minrequirement,
-            this.myForm.value.termsncond,
-            this.myFormUrl,
-            this.myFormIndustries,
-            this.myFormLanguages,
-            this.myFormDepartments,
-            this.myFormCategories,
-            this.myFormThaiFeatures,
-            this.myFormScreenshots,
-            this.myForm.value.purchase_link,
-            this.myFormPricingModel,
-            this.myFormExtraservices
+            this.myFormThaiFeatures
         );
 
         // console.log(product_thai);
 
         this.updated = false;
 
-        let tempProduct: any[] = [];
-        tempProduct.push(product, product_thai);
-
-
-        this._productService.updateProduct(appId, tempProduct)
+        this._productService.updateProduct(appId, product)
             .subscribe((res) => {
                     this.updated = true;
                     this.onAlert('Successfully Updated', 'success');

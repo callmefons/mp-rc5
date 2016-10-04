@@ -16,6 +16,9 @@ export class Product{
     public screenshots:any[],
     public purchase_link:any[],
     public pricing_model:any[],
-    public extraservices:any[]
+    public extraservices:any[],
+    public description_th:string,
+    public shortdescription_th:string,
+    public features_th:any[]
   ){}
 }

@@ -254,21 +254,22 @@ export class VendorProfileComponent implements OnInit, OnDestroy {
         );
 
         console.log(vendor_company);
-        this.onAlert('Update Vendor Company Successfully!', 'success');
-        this.Cancle();
+        // this.onAlert('Update Vendor Company Successfully!', 'success');
+        // this.Cancle();
 
-        // this._vendorService.updateVendorCompany(vendor_company)
-        //     .subscribe((res) => {
-        //             console.log(vendor_company);
-        //             this.onAlert('Update Vendor Company Successfully!', 'success');
-        //             this.Cancle();
-        //         },
-        //         error => {
-        //             console.log(error);
-        //             this.onAlert('Update Vendor Company Failed!', 'danger');
-        //             this.Cancle();
-        //         }
-        //     );
+        this._vendorService.updateVendorCompany(vendor_company)
+            .subscribe((res) => {
+                console.log(res);
+                    console.log(vendor_company);
+                    this.onAlert('Update Vendor Company Successfully!', 'success');
+                    this.Cancle();
+                },
+                error => {
+                    console.log(error);
+                    this.onAlert('Update Vendor Company Failed!', 'danger');
+                    this.Cancle();
+                }
+            );
 
     }
 

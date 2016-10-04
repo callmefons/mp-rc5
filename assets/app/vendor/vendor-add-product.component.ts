@@ -130,14 +130,16 @@ export class VendorAddProductComponent implements OnInit, OnDestroy {
 
     onSubmit(value: any) {
 
+        //console.log(this.myFormFeatures);
+
         //Selected type file only
-        this.changeToTypeFile(this.myFormLogo, 'single');
-        this.changeToTypeFile(this.myFormScreenshots, 'multiple');
+        //this.changeToTypeFile(this.myFormLogo, 'single');
+        //this.changeToTypeFile(this.myFormScreenshots, 'multiple');
 
         const product = new Product(
             null,
             this.myForm.value.name,
-            this.myFormLogoResult,
+            this.myFormLogo,
             this.myForm.value.description,
             this.myForm.value.shortdescription,
             this.myForm.value.minrequirement,
@@ -148,44 +150,31 @@ export class VendorAddProductComponent implements OnInit, OnDestroy {
             this.myFormDepartments,
             this.myFormCategories,
             this.myFormFeatures,
-            this.myFormScreenshotsResult,
+            this.myFormScreenshots,
             this.myForm.value.purchase_link,
             this.myFormPricingModel,
-            this.myFormExtraservices
-        );
-
-        const product_thai = new Product(
-            null,
-            null,
-            null,
+            this.myFormExtraservices,
             this.myForm.value.thai_description,
             this.myForm.value.thai_shortdescription,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            this.myFormThaiFeatures,
-            null,
-            null,
-            null,
-            null
+            this.myFormThaiFeatures
         );
 
+        console.log(product)
 
-        let tempProduct: any[] = [];
-        tempProduct.push(product, product_thai);
+        this._productService.addProduct(product)
+            .subscribe((res:any) => {
+                console.log(res);
 
-        //console.log(tempProduct);
+                switch (res.status){
+                    case '413':
+                        console.log('Max Size');
+                        break;
+                    default:
+                        console.log('Server Error');
+                        break;
+                }
 
-        this._productService.addProduct(tempProduct)
-            .subscribe((res: any) => {
-                    this.added = true;
-                    this.myForm.reset();
-                },
-                error => this.errorMessage = <any>error);
+            });
 
     }
 
@@ -299,57 +288,56 @@ export class VendorAddProductComponent implements OnInit, OnDestroy {
 
     fileChangeScreenshots(imageResult: ImageResult) {
 
-        this.myFormScreenshots.push(imageResult);
+        this.myFormScreenshots.push(imageResult.resized.dataURL);
 
-        for (let i = 0; i < this.myFormScreenshots.length; i++) {
-            this.screenshotsRender[i] = this.myFormScreenshots[i].dataURL;
-        }
+        // for (let i = 0; i < this.myFormScreenshots.length; i++) {
+        //     this.screenshotsRender[i] = this.myFormScreenshots[i].dataURL;
+        // }
 
         this.screenshotsChosen = true;
-        // console.log(this.screenshotsRender)
-        // console.log(this.myFormScreenshots)
+
     }
 
 
     onDeleteScreenshot(src: any) {
-        let j = _.findIndex(this.myFormScreenshots, {'dataURL': src});
+        // let j = _.findIndex(this.myFormScreenshots, {'dataURL': src});
         let i = this.myFormScreenshots.indexOf(src);
 
-        if (j != -1) {
-            this.myFormScreenshots.splice(j, 1);
-            this.screenshotsRender.splice(j, 1);
+        if (i != -1) {
+            this.myFormScreenshots.splice(i, 1);
+            // this.screenshotsRender.splice(j, 1);
         } else {
             this.screenshotsChosen = false;
         }
 
-        // console.log(this.screenshotsRender);
-        // console.log(this.myFormScreenshots);
+
     }
 
     fileChangeLogo(imageResult: ImageResult) {
-        this.myFormLogo = imageResult;
-        this.myFormLogoRender = this.myFormLogo.dataURL;
+        console.log(imageResult.resized.dataURL)
+        this.myFormLogo = imageResult.resized.dataURL;
+        //this.myFormLogoRender = this.myFormLogo.dataURL;
         this.fileChosen = true;
     }
 
-    myFormLogoRender:any;
-    myFormLogoResult: any;
-    myFormScreenshotsResult: any [] = [];
+    // myFormLogoRender:any;
+    // myFormLogoResult: any;
+    // myFormScreenshotsResult: any [] = [];
 
-    private changeToTypeFile(data: any, type: string) {
-
-        switch (type) {
-            case 'single':
-                this.myFormLogoResult = data.file;
-                break;
-            case'multiple':
-                for (let i = 0; i < data.length; i++) {
-                    this.myFormScreenshotsResult[i] = data[i].file;
-                }
-                break;
-        }
-
-    }
+    // private changeToTypeFile(data: any, type: string) {
+    //
+    //     switch (type) {
+    //         case 'single':
+    //             this.myFormLogoResult = data.file;
+    //             break;
+    //         case'multiple':
+    //             for (let i = 0; i < data.length; i++) {
+    //                 this.myFormScreenshotsResult[i] = data[i].file;
+    //             }
+    //             break;
+    //     }
+    //
+    // }
 
     //Pricing model
 

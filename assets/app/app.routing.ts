@@ -37,6 +37,7 @@ export const APP_ROUTES: Routes = [
         component: AdminComponent,
         children: [...ADMIN_ROUTES]
     }
+    
 ];
 
 export const authProviders = [

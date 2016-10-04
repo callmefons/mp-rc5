@@ -8,8 +8,9 @@ import { storage } from '../../helpers/storage';
 import { request } from '../../helpers/request';
 import config = require('../../config/api.config');
 import 'rxjs/add/operator/cache';
-import Any = jasmine.Any;
 
+
+declare var _ :any;
 @Injectable()
 export class ProductService {
 
@@ -72,12 +73,59 @@ export class ProductService {
   }
 
   addProduct(product: any) {
-    //const body = JSON.stringify(product);
-      //console.log(product);
-    return this._http.post(`${config.apiUrl}product?token=${storage.getAuthToken()}`,
-        product, { headers: request.getJsonHeaders() }).cache()
-      .map(this.extractData)
-      .catch(this.handleError);
+
+      const body = JSON.stringify(product);
+      return this._http.post(`${config.apiUrl}product?token=${storage.getAuthToken()}`,
+          body, { headers: request.getJsonHeaders() }).cache()
+          .map(this.extractData)
+          .catch(this.handleError);
+
+      // let xhr: XMLHttpRequest = new XMLHttpRequest();
+      // xhr.open('POST', `${config.apiUrl}product?token=${storage.getAuthToken()}`, true);
+      // let formData: FormData = new FormData();
+      //
+      // let formData: FormData = new FormData();
+      // formData.append("logo", product.logo);
+      // formData.append("name", product.name);
+      // formData.append("description", product.description);
+      // formData.append("shortdescription", product.shortdescription);
+      // formData.append("minrequirement", product.minrequirement);
+      // formData.append("termsncond", product.termsncond);
+      // formData.append("youtube", product.youtube);
+      // formData.append("purchase_link", product.purchase_link);
+      // formData.append("description_th", product.description_th);
+      // formData.append("shortdescription_th", product.shortdescription_th);
+      //
+      // for(let i =0; i < product.industries.length; i++){
+      //     formData.append(`industries[${i}]`, product.industries[i]);
+      // }
+      // for(let i =0; i < product.languages.length; i++){
+      //     formData.append(`languages[${i}]`, product.languages[i]);
+      // }
+      // for(let i =0; i < product.departments.length; i++){
+      //     formData.append(`departments[${i}]`, product.departments[i]);
+      // }
+      // for(let i =0; i < product.categories.length; i++){
+      //     formData.append(`categories[${i}]`, product.categories[i]);
+      // }
+      // for(let i =0; i < product.features.length; i++){
+      //     formData.append(`features[${i}]`, product.features[i]);
+      // }
+      // for(let i =0; i < product.screenshots.length; i++){
+      //     formData.append(`screenshots[${i}]`, product.screenshots[i]);
+      // }
+      // for(let i =0; i < product.pricing_model.length; i++) {
+      //     formData.append(`pricing_model[${i}]`, JSON.stringify(product.pricing_model[i]));
+      // }
+      // for(let i =0; i < product.extraservices.length; i++){
+      //     formData.append(`extraservices[${i}]`, product.extraservices[i]);
+      // }
+      // for(let i =0; i < product.features_th.length; i++){
+      //     formData.append(`features_th[${i}]`, product.features_th[i]);
+      // }
+      //
+      // xhr.send(formData);
+      // console.log(xhr.response);
   }
 
   updateProduct(id:any, product: any){
@@ -132,6 +180,16 @@ export class ProductService {
         return this._http.post(`${config.apiUrl}tag?token=${storage.getAuthToken()}`,
             body, { headers: request.getJsonHeaders() }).cache()
             .map(this.extractData)
+            .catch(this.handleError);
+    }
+
+    searchProduct(value:string){
+        return this._http.get(`${config.apiUrl}product/search?query=${value}`)
+            .cache()
+            .map(response => {
+                const data = response.json();
+                return data;
+            })
             .catch(this.handleError);
     }
 

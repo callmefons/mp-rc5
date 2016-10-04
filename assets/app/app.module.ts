@@ -17,6 +17,7 @@ import {AuthResetPasswordComponent} from "./auth/auth-reset-password.component";
 import {ProductComponent} from "./product/product.component";
 import {ProductDetailComponent} from "./product/product-detail.component";
 import {ProductListComponent} from "./product/product-list.component";
+import {ProductSearchComponent} from './product/product-search.component';
 import {VendorComponent} from "./vendor/vendor.component";
 import {VendorListingComponent} from "./vendor/vendor-listing.component";
 import {VendorAddProductComponent} from "./vendor/vendor-add-product.component";
@@ -48,6 +49,7 @@ import {CustomerDashboardComponent} from "./customer/customer-dashboard.componen
         ProductComponent,
         ProductDetailComponent,
         ProductListComponent,
+        ProductSearchComponent,
         BrowsePageComponent,
 
         CustomerComponent,

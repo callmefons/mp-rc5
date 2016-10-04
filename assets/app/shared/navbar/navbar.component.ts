@@ -1,4 +1,6 @@
-import {Component} from '@angular/core';
+import {Component, OnInit, EventEmitter} from '@angular/core';
+import {Input, Output} from "@angular/core";
+
 import {FormGroup, FormBuilder, Validators} from '@angular/forms';
 import {Subscription} from "rxjs/Subscription";
 import {Observable} from "rxjs/Observable";
@@ -20,6 +22,9 @@ import {ValidationService} from "../validation/validation.service";
 })
 
 export class NavbarComponent {
+
+    @Output()
+    search: EventEmitter<any> = new EventEmitter();
 
     // @ViewChild('myModalSignin') public myModalSignin: ModalDirective;
     // error: boolean = false;
@@ -96,9 +101,6 @@ export class NavbarComponent {
             }, error => this.errorMessage = <any>error);
     }
 
-    singIn() {
-
-    }
 
     signOut() {
         this.login = false;
@@ -119,6 +121,12 @@ export class NavbarComponent {
             this.categoriesTag = product_tags.categories;
             this.industriesTag = product_tags.industries;
         });
+    }
+
+
+    //Search Product
+    onSearch(value:any){
+        this._router.navigate([`/product/search/${value}`]);
     }
 
     goToProductList(productId: any) {

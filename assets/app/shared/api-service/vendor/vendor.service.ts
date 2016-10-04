@@ -51,6 +51,7 @@ export class VendorService {
     }
 
     updateVendorCompany(vendor_company: VendorCompany) {
+
         const body = JSON.stringify(vendor_company);
         return this._http.put(`${config.apiUrl}developer/organization/profile?token=${storage.getAuthToken()}`,
             body, {headers: request.getJsonHeaders()}).cache()
