@@ -1,2 +1,33 @@
-<!--(success)="onSuccess($event)"-->
-<navbar-component (search)="onSearch($event)"></navbar-component>
+<navbar-component></navbar-component>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <!--Content left-->
+        </div>
+
+        <div class="col-md-9">
+            <div *ngIf="!loading">
+                <div class="row">
+                    <h3 *ngIf="!noResult">Your search - <b> {{search_keyword}}</b></h3>
+                    <h3 *ngIf="noResult">Your search - <b> {{search_keyword}}</b> did not match any documents.</h3>
+                </div>
+                <div class="row" *ngIf="!noResult">
+                    <div class="col-md-3 product" *ngFor="let product of products">
+                        <div class="product product--logo">
+                            <img [src]="product.logo" alt="product.name" class="img-responsive">
+                        </div>
+                        <div>
+                            <h4>{{product.name}}</h4>
+                            <button class="btn btn-default" (click)="goToProductDetail(product.id)">{{'More Details'|
+                                translate}}
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>

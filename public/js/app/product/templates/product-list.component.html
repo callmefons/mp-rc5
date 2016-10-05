@@ -111,14 +111,14 @@
         </div>
 
         <div class="col-md-9">
-            <div *ngIf="!loading && checkedFirst">
+            <div *ngIf="!loading">
                 <div class="row">
                     <div class="well pull-right well-border-circle">
                         <div class="well-circle"><h4>{{product_length}} {{'Service'| translate}}</h4></div>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-3 product" *ngFor="let product of products_filter">
+                    <div class="col-md-3 product" *ngFor="let product of products">
                         <div class="product product--logo">
                             <img [src]="product.logo" alt="product.name" class="img-responsive">
                         </div>

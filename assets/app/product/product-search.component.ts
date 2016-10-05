@@ -23,7 +23,12 @@ export class ProductSearchComponent implements OnInit, OnDestroy {
     //     isFirstDisabled: false,
     //     category: false
     // };
+    search_keyword:string;
     sub: Subscription;
+    products:any;
+    loading:boolean = true;
+    noResult:boolean=false;
+
     constructor(private route: ActivatedRoute,
                 private _router: Router,
                 private _productService: ProductService) {
@@ -31,24 +36,39 @@ export class ProductSearchComponent implements OnInit, OnDestroy {
     }
 
     ngOnInit() {
+        this.loading = true;
+        this.noResult = false;
+        
         this.sub = this.route
             .params
             .subscribe(params => {
-                let name = params['q'];
-                this._productService.searchProduct(name)
-                    .subscribe((res:any)=>{
-                        console.log(res);
-                    });
+                this.search_keyword = params['q'];
+                this._productService.searchProduct(this.search_keyword)
+                    .subscribe((product:any)=>{
 
-                // console.log(name);
+                    if(product.data.length > 0){
+                            this.products = product.data;
+                            this.loading = false;
+                            this.noResult = false;
+                        }else{
+                            this.loading = false;
+                            this.noResult = true;
+                        }
+
+
+                    });
 
             });
     }
 
     ngOnDestroy() {
-        // if (this.sub) {
-        //     this.sub.unsubscribe();
-        // }
+        if (this.sub) {
+            this.sub.unsubscribe();
+        }
+    }
+
+    goToProductDetail(productId: number) {
+        this._router.navigate([`product/${productId}/detail`]);
     }
 
 

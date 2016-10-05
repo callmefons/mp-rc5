@@ -193,8 +193,30 @@ export class ProductService {
             .catch(this.handleError);
     }
 
+    //Get Product Navigation bar
+    getProductByTypeAndTag(type:string, tagId:number){
+        return this._http.get(`${config.apiUrl}product/filter/${type}/${tagId}`)
+            .cache()
+            .map(response => {
+                const data = response.json();
+                return data;
+            })
+            .catch(this.handleError);
+    }
 
-  private extractData(res: Response) {
+    //Filter Product
+    getProductByFilter(value:any){
+        const body = JSON.stringify(value);
+        console.log(body)
+        return this._http.post(`${config.apiUrl}product/filter`,
+            body, { headers: request.getJsonHeaders() }).cache()
+            .map(this.extractData)
+            .catch(this.handleError);
+    }
+
+
+
+    private extractData(res: Response) {
     let body = res.json();
     return body;
   }

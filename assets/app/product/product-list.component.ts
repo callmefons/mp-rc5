@@ -19,15 +19,6 @@ declare var _: any;
 
 export class ProductListComponent implements OnInit, OnDestroy {
 
-    // public status: Object = {
-    //     isFirstOpen: true,
-    //     isFirstDisabled: false,
-    //     category: false
-    // };
-
-
-    status_type: string;
-    title_category_name: string;
 
     errorMessage: any;
     loading: boolean = true;
@@ -39,12 +30,15 @@ export class ProductListComponent implements OnInit, OnDestroy {
     products: any[] = [];
 
     /*Auto Filter*/
-    service_id: number;
+    service_id: number; //new id
+    status_id:number; //dbid
+    status_type: string;
+    title_category_name: string;
+
+
 
     /*variable for filter function*/
-    options: any = [];
-    temp_products: any = [];
-    products_filter: any = [];
+
     product_length: number;
 
     all_tag: any[] = [];
@@ -65,20 +59,11 @@ export class ProductListComponent implements OnInit, OnDestroy {
     }
 
     ngOnInit() {
-        this.all_product$ = this._productService.getProduct();
         this.sub = this.route
             .params
             .subscribe(params => {
                 this.service_id = +params['id'];
-
-                this.all_product$.subscribe((products: any) => {
-
-                    this.loading = false;
-
-                    this.getProductTags();
-
-                });
-
+                this.getProductTags();
             });
     }
 
@@ -90,8 +75,6 @@ export class ProductListComponent implements OnInit, OnDestroy {
 
 
     getProductTags() {
-
-        this.products_filter = this.products;
         this._productService.getProductTags()
             .subscribe(
                 product_tags => {
@@ -103,49 +86,53 @@ export class ProductListComponent implements OnInit, OnDestroy {
 
                     if (this.languagesTag != [] && this.departmentsTag != [] && this.categoriesTag != [] && this.industriesTag != []) {
                         this.all_tag.push(...this.industriesTag, ...this.categoriesTag, ...this.languagesTag, ...this.departmentsTag);
-                        this.setFilter();
-                        this.onAutoCheckboxFilterTag(this.service_id);
                     }
-
 
                     //Service Id Plus 1 because service_id start index at 0 but alltag start 1
                     for (let i = 0; i < this.all_tag.length; i++) {
                         if (this.all_tag[i].id === this.service_id) {
+                            this.status_id = this.all_tag[i].dbid,
                             this.status_type = this.all_tag[i].type;
                             this.title_category_name = this.all_tag[i].name;
-
-                            this.sendFilter();
                         }
                     }
+
+                    this.getAllProduct(this.status_type,this.status_id);
 
                 }),
             (error: any) => this.errorMessage = <any>error
     }
 
-    setFilter() {
-        for (let i = 0; i < this.all_tag.length; i++) {
-            this.options[i] = [];
-            for (let j = 0; j < this.products.length; j++) {
-                for (let k = 0; k < this.products[j].tag.length; k++) {
-                    if (this.products[j].tag[k].name == this.all_tag[i].name) {
-                        this.options[i].push({
-                            optionId: i,
-                            id: this.products[j].id,
-                            name: this.products[j].name,
-                            shortdescription: this.products[j].shortdescription,
-                            logo: this.products[j].logo
-                        });
-                    }
-                }
-            }
-        }
+    getAllProduct(type:string, tagId:number){
+        this.loading = true;
+        this.all_product$ = this._productService.getProductByTypeAndTag(type,tagId);
+        this.sub = this.all_product$.subscribe((product:any)=>{
+            this.products = product.data;
+            this.product_length = this.products.length;
+            this.loading = false;
+        });
     }
+    all_product2$:Observable<any>;
+    sub_two:Subscription;
+    //getProductByFilter
+    getProductByFilter(value:any){
+        console.log(value)
+            this.all_product$ = this._productService.getProductByFilter(value);
+            this.sub_two = this.all_product$.subscribe((product:any)=>{
+                //this.loading = false;
+                console.log(product);
+            });
+
+        // this.loading = true;
+
+    }
+
 
     all_industry: boolean = false;
 
     onCheckAllIndustry(event: any) {
 
-        this.tempIndustry;
+        this.tempIndustry = [];
         this.service_id = null;
 
         if (event.currentTarget.checked == true) {
@@ -165,7 +152,6 @@ export class ProductListComponent implements OnInit, OnDestroy {
     all_category: boolean = false;
 
     onCheckAllCategory(event: any) {
-
 
         this.service_id = null;
 
@@ -187,7 +173,7 @@ export class ProductListComponent implements OnInit, OnDestroy {
 
     onCheckAllLanguage(event: any) {
 
-        this.tempLanguage;
+        this.tempLanguage = [];
 
         this.service_id = null;
 
@@ -210,7 +196,7 @@ export class ProductListComponent implements OnInit, OnDestroy {
     onCheckAllDepartment(event: any) {
 
         this.service_id = null;
-        this.tempDepartment;
+        this.tempDepartment = [];
 
         if (event.currentTarget.checked == true) {
             this.all_department = true;
@@ -226,18 +212,6 @@ export class ProductListComponent implements OnInit, OnDestroy {
 
     }
 
-    onAutoCheckboxFilterTag(value: any) {
-        this.checkedFirst = true;
-        for (let i = 0; i < this.options.length; i++) {
-            if ((value - 1) == i) {
-                this.temp_products.push(...this.options[i]);
-            }
-        }
-        this.products_filter = _.uniqBy(this.temp_products, 'id');
-
-        this.product_length = this.products_filter.length;
-
-    }
 
     tempAllTag : any = [];
     tempDepartment: any = [];
@@ -286,8 +260,6 @@ export class ProductListComponent implements OnInit, OnDestroy {
             this.sendFilter();
 
         }
-
-        this.product_length = this.products_filter.length;
     }
 
     getStyle(categoryId: number) {
@@ -301,8 +273,6 @@ export class ProductListComponent implements OnInit, OnDestroy {
             //Reset all_tag when user click link navbar
             this.products = [];
             this.all_tag = [];
-            this.temp_products = [];
-            this.checkedFirst = false;
         }
     }
 
@@ -314,7 +284,10 @@ export class ProductListComponent implements OnInit, OnDestroy {
         this.tempAllTag = [];
         let category = this.title_category_name;
         this.tempAllTag.push(
-            category,
+            {
+                'filter_by':'category',
+                'value':this.status_id
+            },
             {
                 'type': 'department',
                 'value': this.tempDepartment
@@ -327,6 +300,8 @@ export class ProductListComponent implements OnInit, OnDestroy {
                 'type': 'language',
                 'value': this.tempLanguage
             });
-        // console.log(this.tempAllTag);
+         //console.log(this.tempAllTag);
+
+        this.getProductByFilter(this.tempAllTag);
     }
 }

@@ -20,15 +20,6 @@ declare var _: any;
 export class BrowsePageComponent implements OnInit, OnDestroy {
 
 
-    public status: Object = {
-        isFirstOpen: true,
-        isFirstDisabled: false,
-        category: false
-    };
-
-
-    status_type: string;
-
 
     errorMessage: any;
     loading: boolean = true;
@@ -40,7 +31,9 @@ export class BrowsePageComponent implements OnInit, OnDestroy {
     products: any[];
 
     /*Auto Filter*/
-    service_id: number;
+    service_id: number;//new id
+    status_type: string;
+    status_id:number; //dbid
 
     /*variable for filter function*/
     options: any = [];
@@ -53,8 +46,6 @@ export class BrowsePageComponent implements OnInit, OnDestroy {
     departmentsTag: ProductTags[] = [];
     industriesTag: ProductTags[] = [];
     categoriesTag: ProductTags[] = [];
-
-    checkedFirst: boolean = false;
 
     //Show Category Link
     enable: boolean = false;
@@ -79,7 +70,6 @@ export class BrowsePageComponent implements OnInit, OnDestroy {
                     //Reset all_tag when user click link navbar
                     this.all_tag = [];
                     this.temp_products = [];
-                    this.checkedFirst = false;
 
                     this.getProductTags();
 
@@ -109,14 +99,13 @@ export class BrowsePageComponent implements OnInit, OnDestroy {
 
                     if (this.languagesTag != [] && this.departmentsTag != [] && this.categoriesTag != [] && this.industriesTag != []) {
                         this.all_tag.push(...this.industriesTag, ...this.categoriesTag, ...this.languagesTag, ...this.departmentsTag);
-                        this.setFilter();
-                        this.onAutoCheckboxFilterTag(this.service_id);
                     }
 
-                    //Service Id Plus 1 because service_id start index at 0 but alltag start 1
                     for (let i = 0; i < this.all_tag.length; i++) {
                         if (this.all_tag[i].id === this.service_id) {
+                            this.onAutoCheckboxFilterTag(this.all_tag[i].id, this.all_tag[i].type);
                             this.status_type = this.all_tag[i].type;
+                            this.status_id = this.all_tag[i].dbid;
                         }
                     }
 
@@ -124,28 +113,11 @@ export class BrowsePageComponent implements OnInit, OnDestroy {
             (error: any) => this.errorMessage = <any>error
     }
 
-    setFilter() {
-        for (let i = 0; i < this.all_tag.length; i++) {
-            this.options[i] = [];
-            for (let j = 0; j < this.products.length; j++) {
-                for (let k = 0; k < this.products[j].tag.length; k++) {
-                    if (this.products[j].tag[k].name == this.all_tag[i].name) {
-                        this.options[i].push({
-                            optionId: i,
-                            id: this.products[j].id,
-                            name: this.products[j].name,
-                            shortdescription: this.products[j].shortdescription,
-                            logo: this.products[j].logo
-                        });
-                    }
-                }
-            }
-        }
-    }
-
     all_industry: boolean = false;
 
     onCheckAllIndustry(event: any) {
+
+        this.tempIndustry = [];
 
         this.service_id = null;
 
@@ -157,7 +129,7 @@ export class BrowsePageComponent implements OnInit, OnDestroy {
 
         for (let i = 0; i < this.all_tag.length; i++) {
             if (this.all_tag[i].type === 'industry') {
-                this.onCheckboxFilterTag(this.all_tag[i].id, event);
+                this.onCheckboxFilterTag(this.all_tag[i].id, this.all_tag[i].type, event);
             }
         }
 
@@ -166,6 +138,8 @@ export class BrowsePageComponent implements OnInit, OnDestroy {
     all_category: boolean = false;
 
     onCheckAllCategory(event: any) {
+
+        this.tempCategory = [];
 
         this.service_id = null;
 
@@ -177,7 +151,7 @@ export class BrowsePageComponent implements OnInit, OnDestroy {
 
         for (let i = 0; i < this.all_tag.length; i++) {
             if (this.all_tag[i].type === 'category') {
-                this.onCheckboxFilterTag(this.all_tag[i].id, event);
+                this.onCheckboxFilterTag(this.all_tag[i].id,this.all_tag[i].type, event);
             }
         }
 
@@ -186,6 +160,8 @@ export class BrowsePageComponent implements OnInit, OnDestroy {
     all_language: boolean = false;
 
     onCheckAllLanguage(event: any) {
+
+        this.tempLanguage = [];
 
         this.service_id = null;
 
@@ -197,7 +173,7 @@ export class BrowsePageComponent implements OnInit, OnDestroy {
 
         for (let i = 0; i < this.all_tag.length; i++) {
             if (this.all_tag[i].type === 'language') {
-                this.onCheckboxFilterTag(this.all_tag[i].id, event);
+                this.onCheckboxFilterTag(this.all_tag[i].id,this.all_tag[i].type, event);
             }
         }
 
@@ -206,6 +182,8 @@ export class BrowsePageComponent implements OnInit, OnDestroy {
     all_department: boolean = false;
 
     onCheckAllDepartment(event: any) {
+
+        this.tempDepartment = [];
 
         this.service_id = null;
 
@@ -217,44 +195,73 @@ export class BrowsePageComponent implements OnInit, OnDestroy {
 
         for (let i = 0; i < this.all_tag.length; i++) {
             if (this.all_tag[i].type === 'department') {
-                this.onCheckboxFilterTag(this.all_tag[i].id, event);
+                this.onCheckboxFilterTag(this.all_tag[i].id,this.all_tag[i].type, event);
             }
         }
 
     }
 
-    onAutoCheckboxFilterTag(value: any) {
-        this.checkedFirst = true;
-        for (let i = 0; i < this.options.length; i++) {
-            if ((value - 1) == i) {
-                this.temp_products.push(...this.options[i]);
-            }
+    onAutoCheckboxFilterTag(value: any,type:string) {
+
+        switch (type) {
+            case 'department':
+                this.tempDepartment.push(value);
+                break;
+            case 'industry':
+                this.tempIndustry.push(value);
+                break;
+            case 'language':
+                this.tempLanguage.push(value);
+                break;
         }
-        this.products_filter = _.uniqBy(this.temp_products, 'id');
-        this.product_length = this.products_filter.length;
+
+        this.sendFilter();
 
     }
 
-    onCheckboxFilterTag(value: any, event: any) {
+    onCheckboxFilterTag(value: any,type:string, event: any) {
+
+        this.tempAllTag  = [];
 
         if (event.currentTarget.checked == true) {
-            for (let i = 0; i < this.options.length; i++) {
-                if ((value - 1) == i) {
-                    this.temp_products.push(...this.options[i]);
-                }
+
+            switch (type) {
+                case 'department':
+                    this.tempDepartment.push(value);
+                    break;
+                case 'industry':
+                    this.tempIndustry.push(value);
+                    break;
+                case 'language':
+                    this.tempLanguage.push(value);
+                    break;
+                case 'category':
+                    this.tempCategory.push(value);
+                    break;
             }
-            this.products_filter = _.uniqBy(this.temp_products, 'name');
+
+            this.sendFilter();
+
         }
 
         if (event.currentTarget.checked == false) {
-            this.temp_products = _.filter(this.temp_products, (temp_products: any) => {
-                return temp_products.optionId !== (value - 1)
-            });
-            if (_.isEmpty(this.temp_products)) {
-                this.products_filter = this.products;
-            } else {
-                this.products_filter = _.uniqBy(this.temp_products, 'name');
+
+            switch (type) {
+                case 'department':
+                    let i = _.findIndex(this.tempDepartment, (value));
+                    this.tempDepartment.splice(i, 1);
+                    break;
+                case 'industry':
+                    let j = _.findIndex(this.tempIndustry, (value));
+                    this.tempIndustry.splice(j, 1);
+                    break;
+                case 'language':
+                    let k = _.findIndex(this.tempLanguage, (value));
+                    this.tempLanguage.splice(k, 1);
+                    break;
             }
+
+            this.sendFilter();
 
         }
 
@@ -263,6 +270,40 @@ export class BrowsePageComponent implements OnInit, OnDestroy {
 
     goToProductDetail(productId: number) {
         this._router.navigate([`product/${productId}/detail`]);
+    }
+
+    tempAllTag : any = [];
+    tempDepartment: any = [];
+    tempIndustry: any = [];
+    tempLanguage: any = [];
+    tempCategory:any = [];
+
+    private sendFilter() {
+        this.tempAllTag = [];
+        this.tempAllTag.push(
+            {
+                'filter_by':'all',
+                'value':this.status_id
+            },
+            {
+                'type': 'department',
+                'value': this.tempDepartment
+            },
+            {
+                'type': 'industry',
+                'value': this.tempIndustry
+            },
+            {
+                'type': 'language',
+                'value': this.tempLanguage
+            },
+            {
+                'type':'category',
+                'value':this.tempCategory
+            }
+
+            );
+        //console.log(this.tempAllTag);
     }
 
 }
