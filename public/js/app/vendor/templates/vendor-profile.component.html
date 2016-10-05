@@ -14,24 +14,24 @@
         </div>
     </div>
 </div>
-<div class="modal fade" id="modalResetPassword" role="dialog">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title">{{'Update Profile'| translate}}</h4>
-            </div>
-            <div class="modal-body">
-                <p *ngIf="!resetPassword">{{'Waiting' | translate}}...</p>
-                <p *ngIf="resetPassword">{{'Successfully updated'| translate}}</p>
-            </div>
-            <div class="modal-footer">
-                <button *ngIf="resetPassword"
-                        type="button" class="btn btn-primary" data-dismiss="modal">{{'OK'| translate}}
-                </button>
-            </div>
-        </div>
-    </div>
-</div>
+<!--<div class="modal fade" id="modalResetPassword" role="dialog">-->
+    <!--<div class="modal-dialog">-->
+        <!--<div class="modal-content">-->
+            <!--<div class="modal-header">-->
+                <!--<h4 class="modal-title">{{'Update Profile'| translate}}</h4>-->
+            <!--</div>-->
+            <!--<div class="modal-body">-->
+                <!--<p *ngIf="!resetPassword">{{'Waiting' | translate}}...</p>-->
+                <!--<p *ngIf="resetPassword">{{'Successfully updated'| translate}}</p>-->
+            <!--</div>-->
+            <!--<div class="modal-footer">-->
+                <!--<button *ngIf="resetPassword"-->
+                        <!--type="button" class="btn btn-primary" data-dismiss="modal">{{'OK'| translate}}-->
+                <!--</button>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>-->
 
 <navbar-vendor-component></navbar-vendor-component>
 
@@ -39,13 +39,17 @@
 
     <h1>Profile</h1>
 
-    <alert *ngIf="alerted == true" [type]="typeAlert" dismissible="true">
-        {{messageAlert}}
-    </alert>
+
+    <!--<div style="display: none" class="alert">-->
+        <!--<alert [type]="typeAlert">{{messageAlert}}</alert>-->
+    <!--</div>-->
+    <div class="alert" style="display: none">
+        <alert [type]="typeAlert" dismissible="true">{{messageAlert}}</alert>
+    </div>
 
     <div class="row">
         <div class="col-xs-12">
-            
+
 
             <tabset [justified]="true">
                 <!--Account Tab-->
@@ -114,7 +118,7 @@
                                 <button class='btn btn-primary btn-save' style="margin-right: 5px;"
                                         type='button' (click)="onSubmitVendorProfile(myFormVendorProfile.value)">Save
                                 </button>
-                                <button type="button" class="btn btn-default" (click)="Cancle()">
+                                <button type="button" class="btn btn-default" (click)="Cancel()">
                                     {{'Cancel'|translate}}
                                 </button>
                             </div>
@@ -229,7 +233,7 @@
                                 <button class='btn btn-primary btn-save' type='button' style="margin-right: 15px"
                                         (click)="onSubmitCompanyProfile(myFormCompanyProfile.value)">{{'Save' | translate}}
                                 </button>
-                                <button type="button" class="btn btn-default" (click)="Cancle()">
+                                <button type="button" class="btn btn-default" (click)="Cancel()">
                                     {{'Cancel'|translate}}
                                 </button>
                             </div>

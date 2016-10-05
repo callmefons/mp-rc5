@@ -1,4 +1,4 @@
-import {Component, ChangeDetectionStrategy, OnInit, OnDestroy} from '@angular/core';
+import {Component, ChangeDetectionStrategy, OnInit, OnDestroy, NgZone} from '@angular/core';
 import {Vendor} from "../shared/models/vendor.model";
 import {VendorCompany} from "../shared/models/vendor-company.model";
 
@@ -51,7 +51,7 @@ export class VendorProfileComponent implements OnInit, OnDestroy {
     citytype: boolean = false;
     statetype: boolean = false;
     empty: string;
-    disabled_country :boolean = true;
+    disabled_country: boolean = true;
     disabled: boolean = false;
 
     src: string = "";
@@ -77,7 +77,8 @@ export class VendorProfileComponent implements OnInit, OnDestroy {
                 private _fb: FormBuilder,
                 private _vendorService: VendorService,
                 private _countryService: DataCountryService,
-                private _stateService: DataStateService) {
+                private _stateService: DataStateService,
+                private zone:NgZone) {
 
         this.myFormVendorProfile = this._fb.group({
             name: [''],
@@ -214,18 +215,20 @@ export class VendorProfileComponent implements OnInit, OnDestroy {
 
     ///////////// Alert /////////////
     alerted: boolean = false;
-    messageAlert: string = '';
+    messageAlert: string = 'Update Vendor Profile  Successfully';
     typeAlert: string = 'success';
 
-    onAlert(msg: string, type: string){
+    onAlert(msg: string, type: string) {
+
         this.messageAlert = msg;
         this.typeAlert = type;
-        this.alerted = true;
+        $('.alert').show();
+
         setTimeout(()=> {
-            this.alerted = false;
-            this.messageAlert = '';
-        },2000);
+            $('.alert').hide()
+        }, 3000);
     }
+
 
     onSubmitCompanyProfile(value:Object){
 
@@ -253,21 +256,17 @@ export class VendorProfileComponent implements OnInit, OnDestroy {
             this.myFormCompanyProfile.value.line
         );
 
-        console.log(vendor_company);
-        // this.onAlert('Update Vendor Company Successfully!', 'success');
-        // this.Cancle();
+        this.Cancel();
 
         this._vendorService.updateVendorCompany(vendor_company)
             .subscribe((res) => {
-                console.log(res);
-                    console.log(vendor_company);
-                    this.onAlert('Update Vendor Company Successfully!', 'success');
-                    this.Cancle();
+                   //console.log(res);
+                    this.onAlert('Update Vendor Profile  Successfully', 'success');
                 },
                 error => {
-                    console.log(error);
-                    this.onAlert('Update Vendor Company Failed!', 'danger');
-                    this.Cancle();
+                    //console.log(error);
+                    this.onAlert('Failed', 'danger');
+
                 }
             );
 
@@ -284,14 +283,18 @@ export class VendorProfileComponent implements OnInit, OnDestroy {
             this.myFormVendorProfile.value.linkedin
         );
 
-        this.onAlert('Update Vendor Profile  Successfully', 'success');
-        this.Cancle();
+        this.Cancel();
 
         this._vendorService.updateVendorProfile(vendor)
             .subscribe((res) => {
-                console.log(res);
+                   //console.log(res);
+                    this.onAlert('Update Vendor Profile  Successfully', 'success');
                 },
-                error => this.errorMessage = <any>error);
+                error => {
+                  //console.log(error);
+                    this.onAlert('Failed', 'danger');
+
+                });
     }
 
 
@@ -309,8 +312,8 @@ export class VendorProfileComponent implements OnInit, OnDestroy {
         this.resetPassword = false;
         this.myPasswordForm.reset();
 
+        this.Cancel();
 
-        this.onAlert('Reset Password Account Successfully', 'success');
         // this._vendorService.resetPasswordAccount(value)
         //     .subscribe((res) => {
         //             this.resetPassword = true;
@@ -330,7 +333,7 @@ export class VendorProfileComponent implements OnInit, OnDestroy {
         this.disabled = true;
     }
 
-    Cancle() {
+    Cancel() {
             this.editMode = false;
             this.disabled = false;
 

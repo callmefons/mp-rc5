@@ -3,17 +3,16 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title">Service Updated</h4>
+                <h4 class="modal-title">{{currentStatus.btn}} ?</h4>
             </div>
             <div class="modal-body">
-                <p *ngIf="!updated">Waiting for Add Service...</p>
-                <p *ngIf="updated">Successfully Updated</p>
+                A moderator will look at your listing and make sure it is ready to appear on the Directory. You will not be able to make any edits during moderation.
+                <br>
+                You will recieve an email and an alert when your listing has been moderated.
             </div>
             <div class="modal-footer">
-                <div *ngIf="updated">
-                    <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="onCancle()">Back
-                    </button>
-                </div>
+                <button type="button" class="btn btn-primary" (click)="updateProductStatus()">Submit</button>
+                <button type="button" class="btn btn-default" (click)="toggleModal()">Cancel</button>
             </div>
         </div>
     </div>
@@ -27,18 +26,37 @@
     </div>
     <div *ngIf="!loading">
         <div class="row">
-            <h1> {{'Manage' | translate}} {{apps.name}}</h1>
-            <hr>
-            <p>{{'Enter Content in' | translate}}
-                <button class="btn  {{selectedLang == 'en' ? 'btn-primary': 'btn-default'}}" (click)="onChangeLanguaeFrom('en')">{{'English'| translate}}</button>
-                <button class="btn {{selectedLang == 'th' ? 'btn-primary': 'btn-default'}}" (click)="onChangeLanguaeFrom('th')">{{'Thai' | translate}}</button>
-            </p>
 
+            <div class="pull-left">
+                <h1> {{'Manage' | translate}} {{apps.name}}</h1>
+            </div>
+
+
+            <div class="pull-right">
+                <div class="pull-left" style="margin-right: 15px">
+                    <p style="margin-bottom: 0">Your listing is</p>
+                    <button type="button" class="btn btn-default" disabled>{{currentStatus.status}}</button>
+                </div>
+
+                <div class="pull-left" style="margin-right: 15px; margin-top: 2rem;" *ngIf="currentStatus.state == 'published'">
+                    <p style="margin-bottom: 0"></p>
+                    <button type="button" class="btn btn-primary pull-left" disabled>Publish Changes</button>
+                </div>
+
+                <div class="pull-left">
+                    <p style="margin-bottom: 0">You must first</p>
+                    <button type="button" class="btn btn-primary pull-left" (click)="toggleModal()">{{currentStatus.btn}}</button>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="row">
             <alert *ngIf="alerted === true"
-                    [type]="typeAlert" dismissible="true">
-              {{messageAlert}}
+                   [type]="typeAlert" dismissible="true">{{messageAlert}}
             </alert>
             <hr>
+
         </div>
         <!--Edit Service -->
 
@@ -46,23 +64,16 @@
             <form [formGroup]="myForm" (ngSubmit)="myForm.valid && onSubmit(apps.id,myForm.value)" novalidate>
 
                 <div class="row">
-                    <!-- Single button -->
-                    <div class="btn-group pull-right">
-                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
-                                aria-haspopup="true"
-                                aria-expanded="false">
-                            {{'Actions' | translate}}<span class="caret"></span>
-                        </button>
-                        <ul class="dropdown-menu">
-                            <li *ngIf="apps.status === 'draft' || apps.status === 'review'">
-                                <a (click)="updateProductStatus(apps.id,'pending')">{{'Sent back for Review' | translate}}</a></li>
-                            <li *ngIf="apps.status === 'approved' || apps.status === 'archived'">
-                                <a (click)="updateProductStatus(apps.id,'publish')">{{'Publish' | translate}}</a></li>
-                            <li *ngIf="apps.status === 'published'">
-                                <a (click)="updateProductStatus(apps.id,'archive')">{{'Archive' | translate}}</a></li>
-                        </ul>
-                        <span class="label label-default label-status">{{apps.status}}</span>
+
+                    <div class="pull-left ">
+                        <p>{{'Enter Content in' | translate}}
+                            <button class="btn  {{selectedLang == 'en' ? 'btn-primary': 'btn-default'}}" (click)="onChangeLanguaeFrom('en')" type="button">{{'English'| translate}}</button>
+                            <button class="btn {{selectedLang == 'th' ? 'btn-primary': 'btn-default'}}" (click)="onChangeLanguaeFrom('th')" type="button">{{'Thai' | translate}}</button>
+                        </p>
                     </div>
+
+
+                    <!-- Single button -->
                     <button
                             class='btn btn-primary pull-right btn-save' type='submit'
                             [disabled]='!myForm.valid'>{{'Save' | translate}}
@@ -74,19 +85,14 @@
 
                 </div>
                 <div class="row">
+                    <p>* The maximum size of image 5 MB.</p>
                     <!--Image-->
                     <div class="col-md-3">
-                        <img [src]="myFormLogo"
-                             [hidden]="!src" class="img-responsive previewLogo" alt="Logo">
+                        <img [src]="myFormLogo" [hidden]="!src" class="img-responsive previewLogo" alt="Logo" style="margin-bottom: 15px;">
                         <fieldset class="form-group">
                             <p *ngIf="!fileChosen">No file chosen</p>
                             <label class="custom-file-upload">
-                                <input type="file"
-                                       image-upload
-                                       #logo
-                                       (imageSelected)="fileChangeLogo($event)"
-                                       [resizeOptions]="resizeOptions"
-                                       formControlName="logo">
+                                <input type="file" image-upload #logo (imageSelected)="fileChangeLogo($event)" [resizeOptions]="resizeOptions" formControlName="logo">
                                 {{'Add Logo' | translate}}
                             </label>
                         </fieldset>
@@ -232,10 +238,10 @@
                             <form class="form-horizontal">
 
                                 <!--<div class="checkbox">-->
-                                    <!--<label>-->
-                                        <!--<input type="checkbox"-->
-                                               <!--(change)="onCheckboxPricingModelAll(0,$event)"> All-->
-                                    <!--</label>-->
+                                <!--<label>-->
+                                <!--<input type="checkbox"-->
+                                <!--(change)="onCheckboxPricingModelAll(0,$event)"> All-->
+                                <!--</label>-->
                                 <!--</div>-->
 
                                 <div class="checkbox" *ngFor="let opt of pricingmodelsTag; let i = index;">
@@ -304,7 +310,7 @@
 
                                             <div class="row">
                                                 <div class="col-xs-3">
-                                                   {{'Price range'| translate}}
+                                                    {{'Price range'| translate}}
                                                     <input type="radio" name="plan"
                                                            [checked]="pricerangeMonthly"
                                                            (change)="onSelectPricingPlan('Price range',opt.dbid, opt.name)">
@@ -348,7 +354,7 @@
 
                                             <div class="row">
                                                 <div class="col-xs-3">
-                                                   {{'Single Price' | translate}}
+                                                    {{'Single Price' | translate}}
                                                     <input
                                                             type="radio"
                                                             name="plan"
@@ -385,7 +391,7 @@
 
                                             <div class="row">
                                                 <div class="col-xs-3">
-                                                   {{'Price range' | translate }}
+                                                    {{'Price range' | translate }}
                                                     <input type="radio" name="plan"
                                                            [checked]="pricerangeYearly"
                                                            (change)="onSelectPricingPlan('Price range',opt.dbid, opt.name)">
@@ -550,6 +556,7 @@
 
                 <!--Screenshots-->
                 <div class="row">
+                    <p>* The maximum size of image 5 MB.</p>
                     <div class="col-md-12">
                         <h4>{{'Screenshots' | translate}}</h4>
                         <fieldset class="form-group">
@@ -642,66 +649,66 @@
 
                 <!--ALL TAG-->
                 <div class="row">
-                <div class="col-md-3">
-                    <h4>{{'Language'| translate}}</h4>
-                    <form class="form-horizontal">
-                        <div *ngFor="let opt of languagesTag; let i = index">
-                            <div class="checkbox">
-                                <label><input #{{opt.dbid}} type="checkbox"
-                                              (change)="onCheckboxLanguages(opt,$event)"
-                                              [checked]="checkedId(opt.dbid,'languages')"
-                                >{{opt.name}}</label>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <div class="col-md-3">
-                    <h4>{{'Category'| translate}}</h4>
-                    <p>{{'What type of service is this'| translate}}</p>
-                    <form class="form-horizontal">
-                        <div *ngFor="let opt of categoriesTag">
-                            <div class="checkbox">
-                                <label>
-                                    <input #{{opt.dbid}}
-                                           type="checkbox"
-                                           (change)="onCheckboxCategories(opt,$event)"
-                                           [checked]="checkedId(opt.dbid,'categories')"
-                                    >{{opt.name}}
-                                </label>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <div class="col-md-3">
-                    <h4>{{'Department'| translate}}</h4>
-                    <p>{{'What departments does this Service best apply to' | translate}}</p>
-                    <form class="form-horizontal">
-                        <div *ngFor="let opt of departmentsTag">
-                            <div class="checkbox">
-                                <label>
-                                    <input #{{opt.dbid}} type="checkbox"
-                                           (change)="onCheckboxDepartments(opt,$event)"
-                                           [checked]="checkedId(opt.dbid,'departments')"
+                    <div class="col-md-3">
+                        <h4>{{'Language'| translate}}</h4>
+                        <form class="form-horizontal">
+                            <div *ngFor="let opt of languagesTag; let i = index">
+                                <div class="checkbox">
+                                    <label><input #{{opt.dbid}} type="checkbox"
+                                                  (change)="onCheckboxLanguages(opt,$event)"
+                                                  [checked]="checkedId(opt.dbid,'languages')"
                                     >{{opt.name}}</label>
+                                </div>
                             </div>
-                        </div>
-                    </form>
-                </div>
-                <div class="col-md-3">
-                    <h4>{{'Industry' | translate}}</h4>
-                    <p>{{'What Industry is this Service designed for' | translate}}</p>
-                    <form class="form-horizontal">
-                        <div *ngFor="let opt of industriesTag">
-                            <div class="checkbox">
-                                <label><input #{{opt.dbid}} type="checkbox"
-                                              (change)="onCheckboxIndustries(opt,$event)"
-                                              [checked]="checkedId(opt.dbid,'industries')"
-                                >{{opt.name}}</label>
+                        </form>
+                    </div>
+                    <div class="col-md-3">
+                        <h4>{{'Category'| translate}}</h4>
+                        <p>{{'What type of service is this'| translate}}</p>
+                        <form class="form-horizontal">
+                            <div *ngFor="let opt of categoriesTag">
+                                <div class="checkbox">
+                                    <label>
+                                        <input #{{opt.dbid}}
+                                               type="checkbox"
+                                               (change)="onCheckboxCategories(opt,$event)"
+                                               [checked]="checkedId(opt.dbid,'categories')"
+                                        >{{opt.name}}
+                                    </label>
+                                </div>
                             </div>
+                        </form>
+                    </div>
+                    <div class="col-md-3">
+                        <h4>{{'Department'| translate}}</h4>
+                        <p>{{'What departments does this Service best apply to' | translate}}</p>
+                        <form class="form-horizontal">
+                            <div *ngFor="let opt of departmentsTag">
+                                <div class="checkbox">
+                                    <label>
+                                        <input #{{opt.dbid}} type="checkbox"
+                                               (change)="onCheckboxDepartments(opt,$event)"
+                                               [checked]="checkedId(opt.dbid,'departments')"
+                                        >{{opt.name}}</label>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-md-3">
+                        <h4>{{'Industry' | translate}}</h4>
+                        <p>{{'What Industry is this Service designed for' | translate}}</p>
+                        <form class="form-horizontal">
+                            <div *ngFor="let opt of industriesTag">
+                                <div class="checkbox">
+                                    <label><input #{{opt.dbid}} type="checkbox"
+                                                  (change)="onCheckboxIndustries(opt,$event)"
+                                                  [checked]="checkedId(opt.dbid,'industries')"
+                                    >{{opt.name}}</label>
+                                </div>
 
-                        </div>
-                    </form>
-                </div>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </form>
 

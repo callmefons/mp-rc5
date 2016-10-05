@@ -9,6 +9,7 @@ import {ImageUpload, ImageResult, ResizeOptions} from '../shared/ng2-service/ng2
 import {ValidationService} from "../shared/validation/validation.service";
 
 declare var _: any;
+declare var $: any;
 
 @Component({
     moduleId: module.id,
@@ -25,7 +26,6 @@ export class VendorEditProductComponent implements OnInit, OnDestroy {
     errorMessage: string;
     apps: any[];
     apps_th:any[];
-
 
     industriesTag: any[] = [];
     categoriesTag: any[] = [];
@@ -77,6 +77,7 @@ export class VendorEditProductComponent implements OnInit, OnDestroy {
                 private route: ActivatedRoute,
                 private router: Router,
                 public _sanitizer: DomSanitizationService) {
+
         this.myForm = this._fb.group({
             name: ['', Validators.compose([Validators.required, Validators.maxLength(50)])],
             logo: [''],
@@ -105,7 +106,6 @@ export class VendorEditProductComponent implements OnInit, OnDestroy {
     ngOnInit() {
         this.getProductId();
         this.updated = false;
-
     }
 
     getProductTags() {
@@ -120,7 +120,7 @@ export class VendorEditProductComponent implements OnInit, OnDestroy {
                     //noinspection TypeScriptUnresolvedVariable
                     this.pricingmodelsTag = product_tags.pricingmodels;
                 }),
-            (error: any) => this.errorMessage = <any>error
+            (error: any) => this.errorMessage = <any>error;
 
 
     }
@@ -182,25 +182,92 @@ export class VendorEditProductComponent implements OnInit, OnDestroy {
                             }
                             this.loading = false;
                             this.getProductTags();
+
+                            //console.log(apps.data['en'].id);
+                            //console.log(apps.data['en'].status);
+
+                            this.appId = apps.data['en'].id;
+                            this.appStatus = apps.data['en'].status;
+
+                            this.SetStatus(this.appStatus);
                         }
                     })
+            });
+    }
+
+    ///////////// Alert /////////////
+    alerted: boolean = false;
+    messageAlert: string = '';
+    typeAlert: string = 'success';
+
+    onAlert(msg: string, type: string){
+        this.messageAlert = msg;
+        this.typeAlert = type;
+        this.alerted = true;
+
+        setTimeout(()=> {
+            this.alerted = false;
+            this.messageAlert = '';
+        }, 3000);
+    }
+
+    currentStatus: any = {state: '', status: '', btn: ''};
+
+    allStatus = [
+        {step: 0, state: 'draft', status: 'Not Published', btn: 'Submit for Review', url: 'pending'},
+        {step: 1, state: 'pending', status: 'Under Review', btn: 'Please wait to hear back', url: 'pending'},
+        {step: 2, state: 'denied', status: 'Not Approved', btn: 'Submit for Review', url: 'pending'},
+        {step: 3, state: 'approved', status: 'Approved', btn: 'Publish', url: 'publish'},
+        {step: 4, state: 'published', status: 'Published', btn: 'Archive', url: 'archive'},
+        {step: 5, state: 'archived', status: 'Under Review', btn: 'Submit for Review', url: 'publish'}
+    ];
+
+    appStatus: any;
+    appId: any;
+
+    currentStep: number = 0;
+
+    SetStatus(status){
+        this.allStatus.forEach(s => {
+
+            if(s.state == status){
+                this.currentStatus.state = status;
+                this.currentStatus.status = s.status;
+                this.currentStatus.btn = s.btn;
+                this.currentStep = s.step;
+            }
+        });
+    }
+
+    toggleModal(){
+        $("#myModal").modal('toggle');
+    }
+
+    updateProductStatus() {
+
+        //console.log(this.currentStep);
+        //console.log(this.allStatus[this.currentStep].url);
+        this._productService.updateProductStatus(this.appId, this.allStatus[this.currentStep].url).subscribe((res) => {
+                //console.log(res);
+                this.onAlert('Your listing has been sent to a Moderator for review. We will review your listing as soon as possible.', 'success');
+                this.clear();
+            },
+            error => {
+                //console.log(error);
+                this.onAlert('Updated Failed', 'danger');
+                this.clear();
             });
 
     }
 
-    onRefresh() {
-        this.sub = this.route
-            .params
-            .subscribe(params => {
-                let id = +params['id'];
-                this._productService.getProductId(id)
-                    .subscribe(apps => {
-                        if (apps) {
-                            this.loading = false;
-                            this.apps = apps.data;
-                        }
-                    });
-            });
+    clear(){
+        this.toggleModal();
+        this.getProductId();
+        this.currentStep = 0;
+    }
+
+    onCancle() {
+        this.router.navigate([`/vendor/dashboard`]);
     }
 
     ngOnDestroy() {
@@ -415,37 +482,6 @@ export class VendorEditProductComponent implements OnInit, OnDestroy {
         } else {
             this.screenshotsChosen = false;
         }
-    }
-
-
-    ///////////// Alert /////////////
-    alerted: boolean = false;
-    messageAlert: string = '';
-    typeAlert: string = 'success';
-
-    onAlert(msg: string, type: string){
-        this.messageAlert = msg;
-        this.typeAlert = type;
-        this.alerted = true;
-
-        setTimeout(()=> {
-            this.alerted = false;
-            this.messageAlert = '';
-        }, 3000);
-    }
-
-    updateProductStatus(id: any, status: any) {
-        this._productService.updateProductStatus(id, status).subscribe(() => {
-            this.onAlert('Updated Successfully', 'success')
-            status == 'pending' ? this.onCancle(): this.onRefresh();
-        },
-        error => {
-            this.errorMessage = <any>error;
-            this.onAlert('Updated Failed', 'danger');
-        });
-
-        //location.reload();
-
     }
 
 
@@ -806,7 +842,7 @@ export class VendorEditProductComponent implements OnInit, OnDestroy {
                 this.videoType = false;
                 this.onYoutube = true;
                 setTimeout(() => {
-                   this.onYoutube = false;
+                    this.onYoutube = false;
                 },3000)
             }
 
@@ -822,10 +858,6 @@ export class VendorEditProductComponent implements OnInit, OnDestroy {
         this.embedUrl = null;
     }
 
-
-    onCancle() {
-        this.router.navigate([`/vendor/dashboard`]);
-    }
 
     thaiInput: boolean = false;
 
